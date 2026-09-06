@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ Đã đặt lại <code>{{ .Email }}</code>. Hãy nhập các link bên dưới trên từng thiết bị của bạn.",
       "selfResetDisabled": "Tùy chọn này không khả dụng. Vui lòng nhắn cho quản trị viên.",
       "selfResetThrottled": "⏳ Bạn đã đặt lại cấu hình này hôm nay. Vui lòng thử lại vào ngày mai.",
-      "botFeatures": "🧩 <b>Tính năng bot</b>\nChọn những gì khách hàng có thể tự làm."
+      "botFeatures": "🧩 <b>Tính năng bot</b>\nChọn những gì khách hàng có thể tự làm.",
+      "guideChoose": "📖 <b>Hướng dẫn cài đặt</b>\nChọn thiết bị bạn muốn cài.",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. Cài <b>Streisand</b> hoặc <b>V2Box</b> từ App Store.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, nhấn <b>+</b> → <b>Add from clipboard</b>.\n4. Kéo xuống để cập nhật rồi kết nối.",
+      "guideAndroid": "🤖 <b>Android</b>\n1. Cài <b>v2rayNG</b> hoặc <b>Hiddify</b> từ Google Play.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, nhấn <b>+</b> → <b>Import from clipboard</b>.\n4. Làm mới đăng ký, chọn máy chủ rồi kết nối.",
+      "guideWindows": "🪟 <b>Windows</b>\n1. Cài <b>Hiddify</b> hoặc <b>v2rayN</b>.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, thêm một đăng ký và dán URL vào.\n4. Cập nhật đăng ký, chọn máy chủ rồi kết nối.",
+      "guideMacos": "💻 <b>macOS</b>\n1. Cài <b>Hiddify</b> hoặc <b>V2Box</b>.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, thêm một đăng ký và dán URL vào.\n4. Cập nhật đăng ký, chọn máy chủ rồi kết nối.",
+      "guideLinux": "🐧 <b>Linux</b>\n1. Cài <b>Hiddify</b> (AppImage) hoặc <b>Nekoray</b>.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, thêm một đăng ký và dán URL vào.\n4. Cập nhật đăng ký, chọn máy chủ rồi kết nối."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 Đặt lại cấu hình của tôi",
       "confirmSelfReset": "✅ Có, đặt lại tất cả",
       "allowSelfReset": "Khách tự đặt lại cấu hình",
-      "botFeatures": "🧩 Tính năng bot"
+      "botFeatures": "🧩 Tính năng bot",
+      "setupGuide": "📖 Hướng dẫn cài đặt",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 Android",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

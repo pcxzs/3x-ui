@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ <code>{{ .Email }}</code> をリセットしました。下のリンクを各端末に読み込んでください。",
       "selfResetDisabled": "この操作は利用できません。管理者にご連絡ください。",
       "selfResetThrottled": "⏳ この設定は本日すでにリセット済みです。明日お試しください。",
-      "botFeatures": "🧩 <b>ボット機能</b>\n利用者が自分で行える操作を切り替えます。"
+      "botFeatures": "🧩 <b>ボット機能</b>\n利用者が自分で行える操作を切り替えます。",
+      "guideChoose": "📖 <b>設定ガイド</b>\n設定したい端末を選んでください。",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. App Store から <b>Streisand</b> または <b>V2Box</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで <b>+</b> → <b>Add from clipboard</b> をタップします。\n4. 下に引いて更新し、接続します。",
+      "guideAndroid": "🤖 <b>Android</b>\n1. Google Play から <b>v2rayNG</b> または <b>Hiddify</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで <b>+</b> → <b>Import from clipboard</b> をタップします。\n4. 購読を更新し、サーバーを選んで接続します。",
+      "guideWindows": "🪟 <b>Windows</b>\n1. <b>Hiddify</b> または <b>v2rayN</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
+      "guideMacos": "💻 <b>macOS</b>\n1. <b>Hiddify</b> または <b>V2Box</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
+      "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) または <b>Nekoray</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 設定をリセット",
       "confirmSelfReset": "✅ はい、すべてリセット",
       "allowSelfReset": "利用者による設定リセット",
-      "botFeatures": "🧩 ボット機能"
+      "botFeatures": "🧩 ボット機能",
+      "setupGuide": "📖 設定ガイド",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 Android",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

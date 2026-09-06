@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ <code>{{ .Email }}</code> 已重置。请在您的每台设备上导入下面的链接。",
       "selfResetDisabled": "此功能不可用，请联系管理员。",
       "selfResetThrottled": "⏳ 您今天已经重置过此配置，请明天再试。",
-      "botFeatures": "🧩 <b>机器人功能</b>\n设置客户可以自助完成的操作。"
+      "botFeatures": "🧩 <b>机器人功能</b>\n设置客户可以自助完成的操作。",
+      "guideChoose": "📖 <b>使用指南</b>\n请选择您要配置的设备。",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. 从 App Store 安装 <b>Streisand</b> 或 <b>V2Box</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中点击 <b>+</b> → <b>Add from clipboard</b>。\n4. 下拉更新，然后连接。",
+      "guideAndroid": "🤖 <b>安卓</b>\n1. 从 Google Play 安装 <b>v2rayNG</b> 或 <b>Hiddify</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中点击 <b>+</b> → <b>Import from clipboard</b>。\n4. 更新订阅，选择服务器并连接。",
+      "guideWindows": "🪟 <b>Windows</b>\n1. 安装 <b>Hiddify</b> 或 <b>v2rayN</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
+      "guideMacos": "💻 <b>macOS</b>\n1. 安装 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
+      "guideLinux": "🐧 <b>Linux</b>\n1. 安装 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 重置我的配置",
       "confirmSelfReset": "✅ 是的，全部重置",
       "allowSelfReset": "客户自助重置配置",
-      "botFeatures": "🧩 机器人功能"
+      "botFeatures": "🧩 机器人功能",
+      "setupGuide": "📖 使用指南",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 安卓",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

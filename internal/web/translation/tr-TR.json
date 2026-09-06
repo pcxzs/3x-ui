@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ <code>{{ .Email }}</code> sıfırlandı. Aşağıdaki bağlantıları her cihazınıza aktarın.",
       "selfResetDisabled": "Bu seçenek kullanılamıyor. Lütfen bir yöneticiye yazın.",
       "selfResetThrottled": "⏳ Bu yapılandırmayı bugün zaten sıfırladınız. Yarın tekrar deneyin.",
-      "botFeatures": "🧩 <b>Bot özellikleri</b>\nMüşterilerin kendi başlarına neler yapabileceğini ayarlayın."
+      "botFeatures": "🧩 <b>Bot özellikleri</b>\nMüşterilerin kendi başlarına neler yapabileceğini ayarlayın.",
+      "guideChoose": "📖 <b>Kurulum rehberi</b>\nKurmak istediğiniz cihazı seçin.",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. App Store'dan <b>Streisand</b> veya <b>V2Box</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada <b>+</b> → <b>Add from clipboard</b> dokunun.\n4. Güncellemek için aşağı çekin, sonra bağlanın.",
+      "guideAndroid": "🤖 <b>Android</b>\n1. Google Play'den <b>v2rayNG</b> veya <b>Hiddify</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada <b>+</b> → <b>Import from clipboard</b> dokunun.\n4. Aboneliği yenileyin, bir sunucu seçip bağlanın.",
+      "guideWindows": "🪟 <b>Windows</b>\n1. <b>Hiddify</b> veya <b>v2rayN</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
+      "guideMacos": "💻 <b>macOS</b>\n1. <b>Hiddify</b> veya <b>V2Box</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
+      "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) veya <b>Nekoray</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 Yapılandırmalarımı sıfırla",
       "confirmSelfReset": "✅ Evet, hepsini sıfırla",
       "allowSelfReset": "Müşteri yapılandırma sıfırlama",
-      "botFeatures": "🧩 Bot özellikleri"
+      "botFeatures": "🧩 Bot özellikleri",
+      "setupGuide": "📖 Kurulum rehberi",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 Android",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

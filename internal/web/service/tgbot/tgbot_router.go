@@ -1256,6 +1256,13 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	}
 
 	// Carries a tag, so it cannot be an exact-match case below.
+	if messageKey, ok := parseGuideCallback(callbackQuery.Data); ok {
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.setupGuide"))
+		t.sendGuide(chatId, messageKey)
+		return
+	}
+
+	// Carries a tag, so it cannot be an exact-match case below.
 	if tag, ok := parseLangCallback(callbackQuery.Data); ok {
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, languageLabel(tag))
 		t.applyLanguage(chatId, callbackQuery.From.ID, tag, callbackQuery.Message.GetMessageID())
@@ -1293,6 +1300,9 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	case "client_help":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.help"))
 		t.SendMsgToTgbot(chatId, t.helpText())
+	case "client_guide":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.setupGuide"))
+		t.guideMenu(chatId)
 	case "client_pm":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.messageAdmin"))
 		t.promptClientMessage(chatId, callbackQuery.From.ID)
@@ -1723,7 +1733,11 @@ func isClientSelfCallback(data string) bool {
 	switch data {
 	case "client_traffic", "client_commands", "client_help", "client_sub_links",
 		"client_individual_links", "client_qr_links", "client_pm",
-		"client_settings", "client_menu", "settings_lang", "client_reset_self":
+		"client_settings", "client_menu", "settings_lang", "client_reset_self",
+		"client_guide":
+		return true
+	}
+	if _, ok := parseGuideCallback(data); ok {
 		return true
 	}
 	if _, ok := parseLangCallback(data); ok {

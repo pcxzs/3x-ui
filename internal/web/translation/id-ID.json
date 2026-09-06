@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ <code>{{ .Email }}</code> telah disetel ulang. Impor tautan di bawah ini di setiap perangkat Anda.",
       "selfResetDisabled": "Opsi ini tidak tersedia. Silakan hubungi admin.",
       "selfResetThrottled": "⏳ Anda sudah menyetel ulang konfigurasi ini hari ini. Coba lagi besok.",
-      "botFeatures": "🧩 <b>Fitur bot</b>\nAtur apa yang bisa dilakukan pelanggan sendiri."
+      "botFeatures": "🧩 <b>Fitur bot</b>\nAtur apa yang bisa dilakukan pelanggan sendiri.",
+      "guideChoose": "📖 <b>Panduan pemasangan</b>\nPilih perangkat yang ingin Anda atur.",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. Pasang <b>Streisand</b> atau <b>V2Box</b> dari App Store.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, ketuk <b>+</b> → <b>Add from clipboard</b>.\n4. Tarik ke bawah untuk memperbarui, lalu sambungkan.",
+      "guideAndroid": "🤖 <b>Android</b>\n1. Pasang <b>v2rayNG</b> atau <b>Hiddify</b> dari Google Play.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, ketuk <b>+</b> → <b>Import from clipboard</b>.\n4. Segarkan langganan, pilih server, lalu sambungkan.",
+      "guideWindows": "🪟 <b>Windows</b>\n1. Pasang <b>Hiddify</b> atau <b>v2rayN</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
+      "guideMacos": "💻 <b>macOS</b>\n1. Pasang <b>Hiddify</b> atau <b>V2Box</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
+      "guideLinux": "🐧 <b>Linux</b>\n1. Pasang <b>Hiddify</b> (AppImage) atau <b>Nekoray</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 Setel ulang konfigurasi saya",
       "confirmSelfReset": "✅ Ya, setel ulang semuanya",
       "allowSelfReset": "Reset konfigurasi oleh pelanggan",
-      "botFeatures": "🧩 Fitur bot"
+      "botFeatures": "🧩 Fitur bot",
+      "setupGuide": "📖 Panduan pemasangan",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 Android",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

@@ -116,6 +116,7 @@ func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("qrCode")).WithCallbackData(t.encodeQuery("client_qr_links")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.setupGuide")).WithCallbackData(t.encodeQuery("client_guide")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.messageAdmin")).WithCallbackData(t.encodeQuery("client_pm")),

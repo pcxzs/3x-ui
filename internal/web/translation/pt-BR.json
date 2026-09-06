@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ <code>{{ .Email }}</code> foi redefinido. Importe os links abaixo em cada dispositivo.",
       "selfResetDisabled": "Esta opção não está disponível. Envie uma mensagem a um administrador.",
       "selfResetThrottled": "⏳ Você já redefiniu esta config hoje. Tente novamente amanhã.",
-      "botFeatures": "🧩 <b>Recursos do bot</b>\nDefina o que os clientes podem fazer sozinhos."
+      "botFeatures": "🧩 <b>Recursos do bot</b>\nDefina o que os clientes podem fazer sozinhos.",
+      "guideChoose": "📖 <b>Guia de instalação</b>\nEscolha o dispositivo que quer configurar.",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. Instale <b>Streisand</b> ou <b>V2Box</b> pela App Store.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, toque em <b>+</b> → <b>Add from clipboard</b>.\n4. Puxe para baixo para atualizar e conecte.",
+      "guideAndroid": "🤖 <b>Android</b>\n1. Instale <b>v2rayNG</b> ou <b>Hiddify</b> pelo Google Play.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, toque em <b>+</b> → <b>Import from clipboard</b>.\n4. Atualize a assinatura, escolha um servidor e conecte.",
+      "guideWindows": "🪟 <b>Windows</b>\n1. Instale <b>Hiddify</b> ou <b>v2rayN</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
+      "guideMacos": "💻 <b>macOS</b>\n1. Instale <b>Hiddify</b> ou <b>V2Box</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
+      "guideLinux": "🐧 <b>Linux</b>\n1. Instale <b>Hiddify</b> (AppImage) ou <b>Nekoray</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 Redefinir minhas configs",
       "confirmSelfReset": "✅ Sim, redefinir tudo",
       "allowSelfReset": "Reset de config pelo cliente",
-      "botFeatures": "🧩 Recursos do bot"
+      "botFeatures": "🧩 Recursos do bot",
+      "setupGuide": "📖 Guia de instalação",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 Android",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

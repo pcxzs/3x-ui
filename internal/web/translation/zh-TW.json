@@ -2268,7 +2268,13 @@
       "selfResetDone": "✅ <code>{{ .Email }}</code> 已重設。請在您的每台裝置上匯入下面的連結。",
       "selfResetDisabled": "此功能不可用，請聯絡管理員。",
       "selfResetThrottled": "⏳ 您今天已經重設過此設定，請明天再試。",
-      "botFeatures": "🧩 <b>機器人功能</b>\n設定客戶可以自助完成的操作。"
+      "botFeatures": "🧩 <b>機器人功能</b>\n設定客戶可以自助完成的操作。",
+      "guideChoose": "📖 <b>使用指南</b>\n請選擇您要設定的裝置。",
+      "guideIos": "🍎 <b>iPhone / iPad</b>\n1. 從 App Store 安裝 <b>Streisand</b> 或 <b>V2Box</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中點擊 <b>+</b> → <b>Add from clipboard</b>。\n4. 下拉更新，然後連線。",
+      "guideAndroid": "🤖 <b>Android</b>\n1. 從 Google Play 安裝 <b>v2rayNG</b> 或 <b>Hiddify</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中點擊 <b>+</b> → <b>Import from clipboard</b>。\n4. 更新訂閱，選擇伺服器並連線。",
+      "guideWindows": "🪟 <b>Windows</b>\n1. 安裝 <b>Hiddify</b> 或 <b>v2rayN</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
+      "guideMacos": "💻 <b>macOS</b>\n1. 安裝 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
+      "guideLinux": "🐧 <b>Linux</b>\n1. 安裝 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2363,7 +2369,13 @@
       "selfReset": "🔑 重設我的設定",
       "confirmSelfReset": "✅ 是的，全部重設",
       "allowSelfReset": "客戶自助重設設定",
-      "botFeatures": "🧩 機器人功能"
+      "botFeatures": "🧩 機器人功能",
+      "setupGuide": "📖 使用指南",
+      "guideIos": "🍎 iPhone / iPad",
+      "guideAndroid": "🤖 Android",
+      "guideWindows": "🪟 Windows",
+      "guideMacos": "💻 macOS",
+      "guideLinux": "🐧 Linux"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",
