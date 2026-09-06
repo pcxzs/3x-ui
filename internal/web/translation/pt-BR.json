@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. Instale <b>Hiddify</b> ou <b>v2rayN</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
       "guideMacos": "💻 <b>macOS</b>\n1. Instale <b>Hiddify</b> ou <b>V2Box</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Instale <b>Hiddify</b> (AppImage) ou <b>Nekoray</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 Envie um e-mail, parte de um comentário ou um ID do Telegram para buscar."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "Todos",
+      "filterExpiring": "A vencer",
+      "filterExhausted": "Sem tráfego",
+      "filterDisabled": "Desativados",
+      "filterUnbound": "Sem vínculo",
+      "rosterSearch": "🔍 Buscar"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

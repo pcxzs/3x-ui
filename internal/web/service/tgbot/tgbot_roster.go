@@ -80,14 +80,33 @@ func (t *Tgbot) rosterEntry(client *service.ClientWithAttachments) string {
 // Answers "who is on this panel and who lapses next?" in one message, the
 // overview an admin otherwise has to open the web panel for.
 func (t *Tgbot) clientRoster(chatId int64) {
+	t.clientRosterFiltered(chatId, rosterFilterAll)
+}
+
+func (t *Tgbot) clientRosterFiltered(chatId int64, filter string) {
 	clients, err := t.clientService.List()
 	if err != nil {
 		logger.Warning("tgbot: client roster failed:", err)
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"))
 		return
 	}
+	matched := filterClients(clients, filter, time.Now())
+	t.sendRoster(chatId, matched, t.rosterFilterKeyboard(filter))
+}
+
+func (t *Tgbot) rosterSearchResults(chatId int64, query string) {
+	clients, err := t.clientService.List()
+	if err != nil {
+		logger.Warning("tgbot: client roster search failed:", err)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"))
+		return
+	}
+	t.sendRoster(chatId, searchClients(clients, query), t.rosterFilterKeyboard(""))
+}
+
+func (t *Tgbot) sendRoster(chatId int64, clients []service.ClientWithAttachments, keyboard *telego.InlineKeyboardMarkup) {
 	if len(clients) == 0 {
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.rosterEmpty"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.rosterEmpty"), keyboard)
 		return
 	}
 
@@ -104,7 +123,14 @@ func (t *Tgbot) clientRoster(chatId int64) {
 		report.WriteString("\r\n\r\n")
 		report.WriteString(t.I18nBot("tgbot.messages.rosterTruncated", "Count=="+strconv.Itoa(omitted)))
 	}
-	t.SendMsgToTgbot(chatId, report.String())
+	t.SendMsgToTgbot(chatId, report.String(), keyboard)
+}
+
+// The roster is admin-only, so the typed query is re-checked against the
+// sender rather than the chat the state was stored under.
+func (t *Tgbot) startRosterSearch(chatId int64) {
+	userStateMgr.set(chatId, stateRosterSearch)
+	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.rosterSearchPrompt"))
 }
 
 // Handing a customer their invite link is the single most common admin errand,

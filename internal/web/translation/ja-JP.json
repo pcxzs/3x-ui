@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. <b>Hiddify</b> または <b>v2rayN</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
       "guideMacos": "💻 <b>macOS</b>\n1. <b>Hiddify</b> または <b>V2Box</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
       "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) または <b>Nekoray</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 検索したいメールアドレス、コメントの一部、または Telegram ID を送ってください。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "すべて",
+      "filterExpiring": "期限間近",
+      "filterExhausted": "通信量切れ",
+      "filterDisabled": "無効",
+      "filterUnbound": "未連携",
+      "rosterSearch": "🔍 検索"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

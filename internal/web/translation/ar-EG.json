@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>ويندوز</b>\n1. ثبّت <b>Hiddify</b> أو <b>v2rayN</b>.\n2. افتح صفحة روابط الاشتراك في هذا البوت وانسخ رابط اشتراكك.\n3. في التطبيق أضف اشتراكًا والصق الرابط.\n4. حدّث الاشتراك واختر خادمًا ثم اتصل.",
       "guideMacos": "💻 <b>ماك</b>\n1. ثبّت <b>Hiddify</b> أو <b>V2Box</b>.\n2. افتح صفحة روابط الاشتراك في هذا البوت وانسخ رابط اشتراكك.\n3. في التطبيق أضف اشتراكًا والصق الرابط.\n4. حدّث الاشتراك واختر خادمًا ثم اتصل.",
       "guideLinux": "🐧 <b>لينكس</b>\n1. ثبّت <b>Hiddify</b> (AppImage) أو <b>Nekoray</b>.\n2. افتح صفحة روابط الاشتراك في هذا البوت وانسخ رابط اشتراكك.\n3. في التطبيق أضف اشتراكًا والصق الرابط.\n4. حدّث الاشتراك واختر خادمًا ثم اتصل.",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 أرسل بريدًا إلكترونيًا أو جزءًا من ملاحظة أو معرّف تيليجرام للبحث."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 أندرويد",
       "guideWindows": "🪟 ويندوز",
       "guideMacos": "💻 ماك",
-      "guideLinux": "🐧 لينكس"
+      "guideLinux": "🐧 لينكس",
+      "filterAll": "الكل",
+      "filterExpiring": "على وشك الانتهاء",
+      "filterExhausted": "استُهلكت",
+      "filterDisabled": "معطّل",
+      "filterUnbound": "غير مرتبط",
+      "rosterSearch": "🔍 بحث"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

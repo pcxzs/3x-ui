@@ -10,8 +10,9 @@ import (
 )
 
 const (
-	statePmText      = "awaiting_pm_text"
-	stateReplyPrefix = "awaiting_reply:"
+	statePmText       = "awaiting_pm_text"
+	stateReplyPrefix  = "awaiting_reply:"
+	stateRosterSearch = "awaiting_roster_search"
 )
 
 // The reply target rides in the state string so a single map entry survives the
@@ -40,6 +41,13 @@ func (t *Tgbot) handleConversationState(message *telego.Message, state string) b
 			return true
 		}
 		t.previewBroadcast(chatId, text)
+		return true
+	case state == stateRosterSearch:
+		userStateMgr.clear(chatId)
+		if !checkAdmin(message.From.ID) {
+			return true
+		}
+		t.rosterSearchResults(chatId, text)
 		return true
 	case state == stateHelpText:
 		userStateMgr.clear(chatId)

@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. Install <b>Hiddify</b> or <b>v2rayN</b>.\n2. Open the Subscription links page in this bot and copy your subscription URL.\n3. In the app, add a subscription and paste the URL.\n4. Update the subscription, pick a server and connect.",
       "guideMacos": "💻 <b>macOS</b>\n1. Install <b>Hiddify</b> or <b>V2Box</b>.\n2. Open the Subscription links page in this bot and copy your subscription URL.\n3. In the app, add a subscription and paste the URL.\n4. Update the subscription, pick a server and connect.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Install <b>Hiddify</b> (AppImage) or <b>Nekoray</b>.\n2. Open the Subscription links page in this bot and copy your subscription URL.\n3. In the app, add a subscription and paste the URL.\n4. Update the subscription, pick a server and connect.",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 Send an email, a comment fragment, or a Telegram ID to search for."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "All",
+      "filterExpiring": "Expiring",
+      "filterExhausted": "Exhausted",
+      "filterDisabled": "Disabled",
+      "filterUnbound": "Unbound",
+      "rosterSearch": "🔍 Search"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

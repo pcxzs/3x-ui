@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. 安装 <b>Hiddify</b> 或 <b>v2rayN</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
       "guideMacos": "💻 <b>macOS</b>\n1. 安装 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
       "guideLinux": "🐧 <b>Linux</b>\n1. 安装 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 请发送邮箱、备注片段或 Telegram ID 进行搜索。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 安卓",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "全部",
+      "filterExpiring": "即将到期",
+      "filterExhausted": "流量耗尽",
+      "filterDisabled": "已停用",
+      "filterUnbound": "未绑定",
+      "rosterSearch": "🔍 搜索"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

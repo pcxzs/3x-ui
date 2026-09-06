@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. 安裝 <b>Hiddify</b> 或 <b>v2rayN</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
       "guideMacos": "💻 <b>macOS</b>\n1. 安裝 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
       "guideLinux": "🐧 <b>Linux</b>\n1. 安裝 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 請傳送電子郵件、備註片段或 Telegram ID 進行搜尋。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "全部",
+      "filterExpiring": "即將到期",
+      "filterExhausted": "流量耗盡",
+      "filterDisabled": "已停用",
+      "filterUnbound": "未綁定",
+      "rosterSearch": "🔍 搜尋"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

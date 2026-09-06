@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. Установите <b>Hiddify</b> или <b>v2rayN</b>.\n2. Откройте страницу ссылок подписки в этом боте и скопируйте свою ссылку.\n3. В приложении добавьте подписку и вставьте ссылку.\n4. Обновите подписку, выберите сервер и подключитесь.",
       "guideMacos": "💻 <b>macOS</b>\n1. Установите <b>Hiddify</b> или <b>V2Box</b>.\n2. Откройте страницу ссылок подписки в этом боте и скопируйте свою ссылку.\n3. В приложении добавьте подписку и вставьте ссылку.\n4. Обновите подписку, выберите сервер и подключитесь.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Установите <b>Hiddify</b> (AppImage) или <b>Nekoray</b>.\n2. Откройте страницу ссылок подписки в этом боте и скопируйте свою ссылку.\n3. В приложении добавьте подписку и вставьте ссылку.\n4. Обновите подписку, выберите сервер и подключитесь.",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 Отправьте email, часть комментария или Telegram ID для поиска."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "Все",
+      "filterExpiring": "Истекают",
+      "filterExhausted": "Исчерпан трафик",
+      "filterDisabled": "Отключены",
+      "filterUnbound": "Без Telegram",
+      "rosterSearch": "🔍 Поиск"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

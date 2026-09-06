@@ -1205,6 +1205,9 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 				t.toggleInbound(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
 			case "feature_toggle":
 				t.toggleFeature(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
+			case "roster_filter":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientRoster"))
+				t.clientRosterFiltered(chatId, dataArray[1])
 			case "notify_toggle":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
 				t.toggleNotification(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
@@ -1379,8 +1382,17 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.inviteLinks"))
 		t.inviteLinkPicker(chatId, 0)
 	case "client_roster":
+		if !isAdmin {
+			return
+		}
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientRoster"))
 		t.clientRoster(chatId)
+	case "roster_search":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.rosterSearch"))
+		t.startRosterSearch(chatId)
 	case "server":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.serverMenu"))
 		t.serverMenu(chatId)

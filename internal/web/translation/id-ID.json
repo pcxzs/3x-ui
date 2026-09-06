@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. Pasang <b>Hiddify</b> atau <b>v2rayN</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
       "guideMacos": "💻 <b>macOS</b>\n1. Pasang <b>Hiddify</b> atau <b>V2Box</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Pasang <b>Hiddify</b> (AppImage) atau <b>Nekoray</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 Kirim email, potongan komentar, atau ID Telegram untuk dicari."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "Semua",
+      "filterExpiring": "Akan berakhir",
+      "filterExhausted": "Kuota habis",
+      "filterDisabled": "Nonaktif",
+      "filterUnbound": "Belum tertaut",
+      "rosterSearch": "🔍 Cari"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

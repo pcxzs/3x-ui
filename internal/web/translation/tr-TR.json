@@ -2275,7 +2275,8 @@
       "guideWindows": "🪟 <b>Windows</b>\n1. <b>Hiddify</b> veya <b>v2rayN</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
       "guideMacos": "💻 <b>macOS</b>\n1. <b>Hiddify</b> veya <b>V2Box</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
       "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) veya <b>Nekoray</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
-      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
+      "rosterSearchPrompt": "🔍 Aramak için bir e-posta, not parçası veya Telegram kimliği gönderin."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2376,7 +2377,13 @@
       "guideAndroid": "🤖 Android",
       "guideWindows": "🪟 Windows",
       "guideMacos": "💻 macOS",
-      "guideLinux": "🐧 Linux"
+      "guideLinux": "🐧 Linux",
+      "filterAll": "Tümü",
+      "filterExpiring": "Süresi dolan",
+      "filterExhausted": "Kotası dolan",
+      "filterDisabled": "Devre dışı",
+      "filterUnbound": "Bağlanmamış",
+      "rosterSearch": "🔍 Ara"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",
