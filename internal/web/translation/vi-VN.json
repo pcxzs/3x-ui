@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "chưa bắt đầu",
       "rosterEmpty": "👥 Chưa có khách hàng nào.",
-      "rosterTruncated": "… và {{ .Count }} mục nữa. Dùng <code>/usage [Email]</code> cho một khách hàng cụ thể."
+      "rosterTruncated": "… và {{ .Count }} mục nữa. Dùng <code>/usage [Email]</code> cho một khách hàng cụ thể.",
+      "inviteDiagUnknown": "🔎 Ghi chú quản trị: không có khách hàng nào với subId <code>{{ .Token }}</code>.",
+      "inviteDiagTaken": "🔎 Ghi chú quản trị: đã được liên kết — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",

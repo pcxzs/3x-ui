@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "не розпочато",
       "rosterEmpty": "👥 Клієнтів ще немає.",
-      "rosterTruncated": "… і ще {{ .Count }}. Для конкретного клієнта використайте <code>/usage [Email]</code>."
+      "rosterTruncated": "… і ще {{ .Count }}. Для конкретного клієнта використайте <code>/usage [Email]</code>.",
+      "inviteDiagUnknown": "🔎 Нотатка для адміна: клієнта з subId <code>{{ .Token }}</code> немає.",
+      "inviteDiagTaken": "🔎 Нотатка для адміна: вже прив'язаний — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",

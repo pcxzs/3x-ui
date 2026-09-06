@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "未開始",
       "rosterEmpty": "👥 クライアントはまだありません。",
-      "rosterTruncated": "… ほか {{ .Count }} 件。特定のクライアントは <code>/usage [Email]</code> で確認してください。"
+      "rosterTruncated": "… ほか {{ .Count }} 件。特定のクライアントは <code>/usage [Email]</code> で確認してください。",
+      "inviteDiagUnknown": "🔎 管理者向け: subId <code>{{ .Token }}</code> のクライアントは存在しません。",
+      "inviteDiagTaken": "🔎 管理者向け: すでに紐付け済み — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",

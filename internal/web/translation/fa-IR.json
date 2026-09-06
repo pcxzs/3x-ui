@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "شروع‌نشده",
       "rosterEmpty": "👥 هنوز کاربری وجود ندارد.",
-      "rosterTruncated": "… و {{ .Count }} مورد دیگر. برای یک کاربر مشخص از <code>/usage [Email]</code> استفاده کنید."
+      "rosterTruncated": "… و {{ .Count }} مورد دیگر. برای یک کاربر مشخص از <code>/usage [Email]</code> استفاده کنید.",
+      "inviteDiagUnknown": "🔎 یادداشت ادمین: هیچ کاربری با subId <code>{{ .Token }}</code> وجود ندارد.",
+      "inviteDiagTaken": "🔎 یادداشت ادمین: از قبل متصل است — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",

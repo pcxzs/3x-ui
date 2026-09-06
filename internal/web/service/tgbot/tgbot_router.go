@@ -198,7 +198,7 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 		t.startSetHelp(chatId)
 	case "start":
 		if len(commandArgs) > 0 {
-			t.claimInvite(chatId, message.From.ID, commandArgs[0])
+			t.claimInvite(chatId, message.From.ID, commandArgs[0], isAdmin)
 		}
 		msg += t.I18nBot("tgbot.commands.start", "Firstname=="+html.EscapeString(message.From.FirstName))
 		if isAdmin {

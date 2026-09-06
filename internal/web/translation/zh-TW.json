@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "未開始",
       "rosterEmpty": "👥 目前還沒有用戶。",
-      "rosterTruncated": "… 還有 {{ .Count }} 筆。查看特定用戶請使用 <code>/usage [Email]</code>。"
+      "rosterTruncated": "… 還有 {{ .Count }} 筆。查看特定用戶請使用 <code>/usage [Email]</code>。",
+      "inviteDiagUnknown": "🔎 管理員提示：沒有用戶使用 subId <code>{{ .Token }}</code>。",
+      "inviteDiagTaken": "🔎 管理員提示：已綁定 — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",

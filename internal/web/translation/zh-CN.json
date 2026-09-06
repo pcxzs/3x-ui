@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "未开始",
       "rosterEmpty": "👥 目前还没有客户。",
-      "rosterTruncated": "… 还有 {{ .Count }} 条。查看特定客户请使用 <code>/usage [Email]</code>。"
+      "rosterTruncated": "… 还有 {{ .Count }} 条。查看特定客户请使用 <code>/usage [Email]</code>。",
+      "inviteDiagUnknown": "🔎 管理员提示：没有客户使用 subId <code>{{ .Token }}</code>。",
+      "inviteDiagTaken": "🔎 管理员提示：已绑定 — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",

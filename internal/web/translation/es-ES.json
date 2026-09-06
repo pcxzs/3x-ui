@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "sin iniciar",
       "rosterEmpty": "👥 Todavía no hay clientes.",
-      "rosterTruncated": "… y {{ .Count }} más. Usa <code>/usage [Email]</code> para un cliente concreto."
+      "rosterTruncated": "… y {{ .Count }} más. Usa <code>/usage [Email]</code> para un cliente concreto.",
+      "inviteDiagUnknown": "🔎 Nota de administrador: ningún cliente tiene el subId <code>{{ .Token }}</code>.",
+      "inviteDiagTaken": "🔎 Nota de administrador: ya vinculado — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",

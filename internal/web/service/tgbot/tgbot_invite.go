@@ -1,6 +1,7 @@
 package tgbot
 
 import (
+	"strconv"
 	"strings"
 
 	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
@@ -19,40 +20,108 @@ const (
 
 // A client's SubID doubles as its invite token. Unknown and already-claimed
 // tokens share one reply so a prober cannot tell valid SubIDs from invalid ones.
-func (t *Tgbot) resolveInviteToken(token string, fromID int64) (inviteOutcome, *model.ClientRecord) {
+func (t *Tgbot) resolveInviteToken(token string, fromID int64) (inviteOutcome, []*model.ClientRecord) {
 	token = strings.TrimSpace(token)
 	if token == "" || fromID <= 0 {
 		return inviteInvalid, nil
 	}
-	record, err := t.clientService.GetRecordBySubID(token)
-	if err != nil || record == nil {
+	records, err := t.clientService.GetRecordsBySubID(token)
+	if err != nil || len(records) == 0 {
 		return inviteInvalid, nil
 	}
-	switch record.TgID {
-	case 0:
-		return inviteBindable, record
-	case fromID:
-		return inviteAlreadyOwned, record
-	default:
-		return inviteTaken, record
+
+	// One subscription can span several clients, so a token is only claimable
+	// when no part of it belongs to a third party.
+	owned := false
+	for _, record := range records {
+		switch record.TgID {
+		case 0:
+		case fromID:
+			owned = true
+		default:
+			return inviteTaken, records
+		}
 	}
+	for _, record := range records {
+		if record.TgID == 0 {
+			return inviteBindable, records
+		}
+	}
+	if owned {
+		return inviteAlreadyOwned, records
+	}
+	return inviteInvalid, records
 }
 
-func (t *Tgbot) claimInvite(chatId int64, fromID int64, token string) {
-	outcome, record := t.resolveInviteToken(token, fromID)
+func (t *Tgbot) claimInvite(chatId int64, fromID int64, token string, isAdmin bool) {
+	outcome, records := t.resolveInviteToken(token, fromID)
 	switch outcome {
 	case inviteAlreadyOwned:
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+record.Email))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+recordEmails(records)))
 	case inviteBindable:
-		if err := t.bindRecordToUser(record, fromID); err != nil {
+		bound, err := t.bindRecordsToUser(records, fromID)
+		if err != nil {
 			logger.Warning("tgbot: invite bind failed:", err)
 			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"))
 			return
 		}
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+record.Email))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+strings.Join(bound, ", ")))
 	default:
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteInvalid"))
+		// The deliberately vague reply above leaves an admin with nothing to go
+		// on, so they alone also get the reason the token was refused.
+		if isAdmin {
+			t.SendMsgToTgbot(chatId, t.inviteDiagnosis(token, records))
+		}
 	}
+}
+
+// Names each client behind the token that is already spoken for, so the admin
+// can see which Telegram account to chase rather than guessing.
+func inviteHolders(records []*model.ClientRecord) string {
+	held := make([]string, 0, len(records))
+	for _, record := range records {
+		if record.TgID != 0 {
+			held = append(held, record.Email+" → "+strconv.FormatInt(record.TgID, 10))
+		}
+	}
+	return strings.Join(held, ", ")
+}
+
+func (t *Tgbot) inviteDiagnosis(token string, records []*model.ClientRecord) string {
+	holders := inviteHolders(records)
+	if holders == "" {
+		return t.I18nBot("tgbot.messages.inviteDiagUnknown", "Token=="+token)
+	}
+	return t.I18nBot("tgbot.messages.inviteDiagTaken", "Detail=="+holders)
+}
+
+func recordEmails(records []*model.ClientRecord) string {
+	emails := make([]string, 0, len(records))
+	for _, record := range records {
+		emails = append(emails, record.Email)
+	}
+	return strings.Join(emails, ", ")
+}
+
+// Every unbound client behind the token is bound, so a subscription spanning
+// several inbounds does not leave the customer holding only one of its configs.
+func (t *Tgbot) bindRecordsToUser(records []*model.ClientRecord, tgID int64) ([]string, error) {
+	bound := make([]string, 0, len(records))
+	for _, record := range records {
+		if record.TgID == tgID {
+			bound = append(bound, record.Email)
+			continue
+		}
+		if record.TgID != 0 {
+			continue
+		}
+		if err := t.bindRecordToUser(record, tgID); err != nil {
+			return bound, err
+		}
+		bound = append(bound, record.Email)
+	}
+	return bound, nil
 }
 
 func (t *Tgbot) bindRecordToUser(record *model.ClientRecord, tgID int64) error {

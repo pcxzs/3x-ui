@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "belum dimulai",
       "rosterEmpty": "👥 Belum ada klien.",
-      "rosterTruncated": "… dan {{ .Count }} lainnya. Gunakan <code>/usage [Email]</code> untuk klien tertentu."
+      "rosterTruncated": "… dan {{ .Count }} lainnya. Gunakan <code>/usage [Email]</code> untuk klien tertentu.",
+      "inviteDiagUnknown": "🔎 Catatan admin: tidak ada klien dengan subId <code>{{ .Token }}</code>.",
+      "inviteDiagTaken": "🔎 Catatan admin: sudah terhubung — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",

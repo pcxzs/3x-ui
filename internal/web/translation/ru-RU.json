@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "не начат",
       "rosterEmpty": "👥 Клиентов пока нет.",
-      "rosterTruncated": "… и ещё {{ .Count }}. Для конкретного клиента используйте <code>/usage [Email]</code>."
+      "rosterTruncated": "… и ещё {{ .Count }}. Для конкретного клиента используйте <code>/usage [Email]</code>.",
+      "inviteDiagUnknown": "🔎 Заметка для админа: клиента с subId <code>{{ .Token }}</code> нет.",
+      "inviteDiagTaken": "🔎 Заметка для админа: уже привязан — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",

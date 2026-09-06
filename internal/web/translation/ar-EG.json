@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "لم تبدأ",
       "rosterEmpty": "👥 لا يوجد عملاء بعد.",
-      "rosterTruncated": "… و{{ .Count }} غيرهم. استخدم <code>/usage [Email]</code> لعميل محدّد."
+      "rosterTruncated": "… و{{ .Count }} غيرهم. استخدم <code>/usage [Email]</code> لعميل محدّد.",
+      "inviteDiagUnknown": "🔎 ملاحظة للمشرف: لا يوجد عميل بـ subId <code>{{ .Token }}</code>.",
+      "inviteDiagTaken": "🔎 ملاحظة للمشرف: مرتبط بالفعل — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",

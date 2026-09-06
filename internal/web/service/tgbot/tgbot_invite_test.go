@@ -2,6 +2,7 @@ package tgbot
 
 import (
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/mhsanaei/3x-ui/v3/internal/database"
@@ -52,21 +53,21 @@ func TestResolveInviteToken(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			got, rec := tg.resolveInviteToken(tc.token, tc.from)
+			got, recs := tg.resolveInviteToken(tc.token, tc.from)
 			if got != tc.want {
 				t.Fatalf("outcome = %v, want %v", got, tc.want)
 			}
 			if tc.email == "" {
-				if rec != nil {
-					t.Fatalf("record = %+v, want nil", rec)
+				if len(recs) != 0 {
+					t.Fatalf("records = %+v, want none", recs)
 				}
 				return
 			}
-			if rec == nil {
-				t.Fatal("record = nil, want a client record")
+			if len(recs) != 1 {
+				t.Fatalf("resolved %d records, want exactly 1", len(recs))
 			}
-			if rec.Email != tc.email {
-				t.Fatalf("record.Email = %q, want %q", rec.Email, tc.email)
+			if recs[0].Email != tc.email {
+				t.Fatalf("record.Email = %q, want %q", recs[0].Email, tc.email)
 			}
 		})
 	}
@@ -79,11 +80,72 @@ func TestResolveInviteTokenTrimsWhitespace(t *testing.T) {
 	seedClient(t, "trim@x", "subtrim0000000003", 0)
 
 	tg := &Tgbot{}
-	got, rec := tg.resolveInviteToken("  subtrim0000000003\n", 42)
+	got, recs := tg.resolveInviteToken("  subtrim0000000003\n", 42)
 	if got != inviteBindable {
 		t.Fatalf("outcome = %v, want inviteBindable", got)
 	}
-	if rec == nil || rec.Email != "trim@x" {
-		t.Fatalf("record = %+v, want trim@x", rec)
+	if len(recs) != 1 || recs[0].Email != "trim@x" {
+		t.Fatalf("records = %+v, want trim@x", recs)
+	}
+}
+
+// A subscription can span several clients, so a token that maps to more than
+// one must bind every unbound part — otherwise the customer receives one config
+// and silently loses the rest.
+func TestClaimInviteBindsEveryClientSharingSubID(t *testing.T) {
+	initInviteDB(t)
+	const shared = "subshared00000003"
+	seedClient(t, "multi-a@x", shared, 0)
+	seedClient(t, "multi-b@x", shared, 0)
+	seedClient(t, "multi-c@x", shared, 0)
+
+	tg := &Tgbot{}
+	outcome, records := tg.resolveInviteToken(shared, 7000)
+	if outcome != inviteBindable {
+		t.Fatalf("outcome = %v, want inviteBindable", outcome)
+	}
+	if len(records) != 3 {
+		t.Fatalf("resolved %d records, want all 3 sharing the subId", len(records))
+	}
+}
+
+// A token part-owned by a third party must not be claimable: one stranger
+// holding a slice of a shared subscription blocks the whole token.
+func TestResolveInviteTokenRefusesPartiallyTakenSubID(t *testing.T) {
+	initInviteDB(t)
+	const shared = "subpartial0000004"
+	seedClient(t, "part-free@x", shared, 0)
+	seedClient(t, "part-held@x", shared, 9999)
+
+	tg := &Tgbot{}
+	if outcome, _ := tg.resolveInviteToken(shared, 7001); outcome != inviteTaken {
+		t.Fatalf("outcome = %v, want inviteTaken", outcome)
+	}
+}
+
+// The vague public reply is right for a stranger and useless for an admin, who
+// needs to know which account is holding the token.
+func TestInviteDiagnosis(t *testing.T) {
+	initInviteDB(t)
+	seedClient(t, "diag@x", "subdiag0000000005", 4242)
+	tg := &Tgbot{}
+
+	// Without a localizer I18nBot echoes the key and drops its parameters, so
+	// the holder detail is asserted on the helper that builds it.
+	_, records := tg.resolveInviteToken("subdiag0000000005", 7002)
+	holders := inviteHolders(records)
+	if !strings.Contains(holders, "diag@x") || !strings.Contains(holders, "4242") {
+		t.Fatalf("holders %q should name the client and the holding Telegram id", holders)
+	}
+	if key := tg.inviteDiagnosis("subdiag0000000005", records); key != "tgbot.messages.inviteDiagTaken" {
+		t.Fatalf("diagnosis key = %q, want the already-bound key", key)
+	}
+
+	_, none := tg.resolveInviteToken("nosuchtoken000006", 7002)
+	if inviteHolders(none) != "" {
+		t.Fatal("an unknown token has no holders")
+	}
+	if key := tg.inviteDiagnosis("nosuchtoken000006", none); key != "tgbot.messages.inviteDiagUnknown" {
+		t.Fatalf("diagnosis key = %q, want the unknown-token key", key)
 	}
 }

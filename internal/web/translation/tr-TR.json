@@ -2225,7 +2225,9 @@
       "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
       "rosterNotStarted": "başlamadı",
       "rosterEmpty": "👥 Henüz istemci yok.",
-      "rosterTruncated": "… ve {{ .Count }} tane daha. Belirli bir istemci için <code>/usage [Email]</code> kullanın."
+      "rosterTruncated": "… ve {{ .Count }} tane daha. Belirli bir istemci için <code>/usage [Email]</code> kullanın.",
+      "inviteDiagUnknown": "🔎 Yönetici notu: <code>{{ .Token }}</code> subId'li istemci yok.",
+      "inviteDiagTaken": "🔎 Yönetici notu: zaten bağlı — {{ .Detail }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
