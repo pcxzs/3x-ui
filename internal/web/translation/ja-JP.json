@@ -2101,7 +2101,9 @@
       "usageDesc": "クライアント使用量を表示: /usage メール",
       "inboundDesc": "インバウンド検索: /inbound 備考（管理者）",
       "restartDesc": "Xray コアを再起動（管理者）",
-      "clearallDesc": "全クライアントのトラフィックをリセット（管理者）"
+      "clearallDesc": "全クライアントのトラフィックをリセット（管理者）",
+      "pmUsage": "❗ コマンドの後にメッセージを書いてください。例: <code>/pm 接続できません</code>",
+      "sendUsage": "❗ 使い方: <code>/send &lt;chatId&gt; &lt;メッセージ&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "CPU使用率は{{ .Percent }}%、しきい値{{ .Threshold }}%を超えました",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ あなたの Telegram アカウントは <code>{{ .Email }}</code> にリンクされました。\r\n",
       "inviteInvalid": "❗ この招待リンクは無効か、すでに使用されています。\r\n",
       "inviteLink": "🔗 <code>{{ .Email }}</code> の招待リンク:\r\n<code>{{ .Link }}</code>\r\n\r\n最初に開いた人がこのクライアントにリンクされます。\r\n",
-      "credentialsRotated": "🔑 セキュリティのため <code>{{ .Email }}</code> の設定を更新しました。アプリでサブスクリプションを更新してください。購読リンクは変更されていません。\r\n"
+      "credentialsRotated": "🔑 セキュリティのため <code>{{ .Email }}</code> の設定を更新しました。アプリでサブスクリプションを更新してください。購読リンクは変更されていません。\r\n",
+      "pmSent": "✅ メッセージを管理者に送信しました。\r\n",
+      "pmNotLinked": "❗ まず提供元からの招待リンクでアカウントをリンクしてください。\r\n",
+      "pmHeader": "💬 {{ .Name }} からのメッセージ — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ 管理者に届けたいメッセージを送信してください。\r\n",
+      "replyPrompt": "✍️ 返信を送信してください。クライアントに届きます。\r\n",
+      "replyDelivered": "✅ 返信を配信しました。\r\n",
+      "replyFailed": "❗ 返信を配信できませんでした: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "ソートされたトラフィック使用レポート",
       "inviteLink": "🔗 招待リンク",
       "resetCredentials": "🔑 認証情報をリセット",
-      "confirmResetCredentials": "✅ 認証情報をリセットしますか？"
+      "confirmResetCredentials": "✅ 認証情報をリセットしますか？",
+      "replyToClient": "💬 返信"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

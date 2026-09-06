@@ -2101,7 +2101,9 @@
       "usageDesc": "مشاهده مصرف کاربر: /usage ایمیل",
       "inboundDesc": "جستجوی ورودی‌ها: /inbound نام (مدیر)",
       "restartDesc": "راه‌اندازی مجدد هسته Xray (مدیر)",
-      "clearallDesc": "صفر کردن ترافیک همه کاربران (مدیر)"
+      "clearallDesc": "صفر کردن ترافیک همه کاربران (مدیر)",
+      "pmUsage": "❗ پیام خود را بعد از دستور بنویسید، مثلاً <code>/pm نمی‌توانم وصل شوم</code>",
+      "sendUsage": "❗ روش استفاده: <code>/send &lt;chatId&gt; &lt;پیام&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ حساب تلگرام شما به <code>{{ .Email }}</code> متصل شد.\r\n",
       "inviteInvalid": "❗ این لینک دعوت نامعتبر است یا قبلاً استفاده شده است.\r\n",
       "inviteLink": "🔗 لینک دعوت برای <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nاولین کسی که آن را باز کند به این کاربر متصل می‌شود.\r\n",
-      "credentialsRotated": "🔑 تنظیمات <code>{{ .Email }}</code> به دلایل امنیتی به‌روزرسانی شد. لطفاً اشتراک خود را در برنامه تازه‌سازی کنید — لینک اشتراک شما تغییر نکرده است.\r\n"
+      "credentialsRotated": "🔑 تنظیمات <code>{{ .Email }}</code> به دلایل امنیتی به‌روزرسانی شد. لطفاً اشتراک خود را در برنامه تازه‌سازی کنید — لینک اشتراک شما تغییر نکرده است.\r\n",
+      "pmSent": "✅ پیام شما برای مدیر ارسال شد.\r\n",
+      "pmNotLinked": "❗ ابتدا حساب خود را با لینک دعوت متصل کنید.\r\n",
+      "pmHeader": "💬 پیام از {{ .Name }} — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ پیامی که می‌خواهید مدیر دریافت کند را بفرستید.\r\n",
+      "replyPrompt": "✍️ پاسخ خود را بفرستید؛ برای کاربر ارسال می‌شود.\r\n",
+      "replyDelivered": "✅ پاسخ ارسال شد.\r\n",
+      "replyFailed": "❗ ارسال پاسخ ممکن نشد: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "گزارش استفاده از ترافیک مرتب‌شده",
       "inviteLink": "🔗 لینک دعوت",
       "resetCredentials": "🔑 تغییر کلید اتصال",
-      "confirmResetCredentials": "✅ تغییر کلید اتصال تأیید شود؟"
+      "confirmResetCredentials": "✅ تغییر کلید اتصال تأیید شود؟",
+      "replyToClient": "💬 پاسخ"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

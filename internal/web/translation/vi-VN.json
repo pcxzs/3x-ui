@@ -2101,7 +2101,9 @@
       "usageDesc": "Xem mức dùng của khách: /usage email",
       "inboundDesc": "Tìm inbound: /inbound tên (quản trị)",
       "restartDesc": "Khởi động lại lõi Xray (quản trị)",
-      "clearallDesc": "Đặt lại lưu lượng mọi khách hàng (quản trị)"
+      "clearallDesc": "Đặt lại lưu lượng mọi khách hàng (quản trị)",
+      "pmUsage": "❗ Viết tin nhắn sau lệnh, ví dụ <code>/pm tôi không kết nối được</code>",
+      "sendUsage": "❗ Cách dùng: <code>/send &lt;chatId&gt; &lt;tin nhắn&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "Sử dụng CPU {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ Tài khoản Telegram của bạn đã được liên kết với <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ Liên kết mời này không hợp lệ hoặc đã được sử dụng.\r\n",
       "inviteLink": "🔗 Liên kết mời cho <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nNgười đầu tiên mở nó sẽ được liên kết với client này.\r\n",
-      "credentialsRotated": "🔑 Cấu hình cho <code>{{ .Email }}</code> đã được cập nhật vì lý do bảo mật. Vui lòng làm mới đăng ký trong ứng dụng — liên kết đăng ký không thay đổi.\r\n"
+      "credentialsRotated": "🔑 Cấu hình cho <code>{{ .Email }}</code> đã được cập nhật vì lý do bảo mật. Vui lòng làm mới đăng ký trong ứng dụng — liên kết đăng ký không thay đổi.\r\n",
+      "pmSent": "✅ Tin nhắn của bạn đã được gửi tới quản trị viên.\r\n",
+      "pmNotLinked": "❗ Hãy liên kết tài khoản trước bằng liên kết mời từ nhà cung cấp.\r\n",
+      "pmHeader": "💬 Tin nhắn từ {{ .Name }} — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ Gửi tin nhắn bạn muốn quản trị viên nhận.\r\n",
+      "replyPrompt": "✍️ Gửi câu trả lời của bạn; nó sẽ được chuyển tới khách hàng.\r\n",
+      "replyDelivered": "✅ Đã gửi trả lời.\r\n",
+      "replyFailed": "❗ Không thể gửi trả lời: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "Báo cáo sử dụng lưu lượng đã sắp xếp",
       "inviteLink": "🔗 Liên kết mời",
       "resetCredentials": "🔑 Đặt lại thông tin đăng nhập",
-      "confirmResetCredentials": "✅ Xác nhận đặt lại thông tin đăng nhập?"
+      "confirmResetCredentials": "✅ Xác nhận đặt lại thông tin đăng nhập?",
+      "replyToClient": "💬 Trả lời"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

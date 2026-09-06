@@ -2101,7 +2101,9 @@
       "usageDesc": "Show client usage: /usage email",
       "inboundDesc": "Search inbounds: /inbound remark (admin)",
       "restartDesc": "Restart Xray core (admin)",
-      "clearallDesc": "Reset all clients' traffic (admin)"
+      "clearallDesc": "Reset all clients' traffic (admin)",
+      "pmUsage": "❗ Write your message after the command, for example <code>/pm I cannot connect</code>",
+      "sendUsage": "❗ Usage: <code>/send &lt;chatId&gt; &lt;message&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ Your Telegram account is now linked to <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ This invite link is invalid or has already been used.\r\n",
       "inviteLink": "🔗 Invite link for <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nThe first person to open it is linked to this client.\r\n",
-      "credentialsRotated": "🔑 The configuration for <code>{{ .Email }}</code> was updated for security. Please refresh your subscription in your app — your subscription link has not changed.\r\n"
+      "credentialsRotated": "🔑 The configuration for <code>{{ .Email }}</code> was updated for security. Please refresh your subscription in your app — your subscription link has not changed.\r\n",
+      "pmSent": "✅ Your message was sent to the admin.\r\n",
+      "pmNotLinked": "❗ Link your account first with the invite link from your provider.\r\n",
+      "pmHeader": "💬 Message from {{ .Name }} — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ Send the message you want the admin to receive.\r\n",
+      "replyPrompt": "✍️ Send your reply; it will be delivered to the client.\r\n",
+      "replyDelivered": "✅ Reply delivered.\r\n",
+      "replyFailed": "❗ Could not deliver the reply: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "Sorted Traffic Usage Report",
       "inviteLink": "🔗 Invite Link",
       "resetCredentials": "🔑 Reset Credentials",
-      "confirmResetCredentials": "✅ Confirm Reset Credentials?"
+      "confirmResetCredentials": "✅ Confirm Reset Credentials?",
+      "replyToClient": "💬 Reply"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

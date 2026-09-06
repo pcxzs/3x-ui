@@ -2101,7 +2101,9 @@
       "usageDesc": "Ver o uso do cliente: /usage email",
       "inboundDesc": "Buscar entradas: /inbound nome (admin)",
       "restartDesc": "Reiniciar o núcleo Xray (admin)",
-      "clearallDesc": "Zerar o tráfego de todos os clientes (admin)"
+      "clearallDesc": "Zerar o tráfego de todos os clientes (admin)",
+      "pmUsage": "❗ Escreva sua mensagem após o comando, por exemplo <code>/pm não consigo conectar</code>",
+      "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensagem&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "A carga da CPU {{ .Percent }}% excede o limite de {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ Sua conta do Telegram agora está vinculada a <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ Este link de convite é inválido ou já foi utilizado.\r\n",
       "inviteLink": "🔗 Link de convite para <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nA primeira pessoa que abri-lo será vinculada a este cliente.\r\n",
-      "credentialsRotated": "🔑 A configuração de <code>{{ .Email }}</code> foi atualizada por segurança. Atualize sua assinatura no aplicativo — o link de assinatura não mudou.\r\n"
+      "credentialsRotated": "🔑 A configuração de <code>{{ .Email }}</code> foi atualizada por segurança. Atualize sua assinatura no aplicativo — o link de assinatura não mudou.\r\n",
+      "pmSent": "✅ Sua mensagem foi enviada ao administrador.\r\n",
+      "pmNotLinked": "❗ Vincule sua conta primeiro com o link de convite do seu provedor.\r\n",
+      "pmHeader": "💬 Mensagem de {{ .Name }} — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ Envie a mensagem que deseja que o administrador receba.\r\n",
+      "replyPrompt": "✍️ Envie sua resposta; ela será entregue ao cliente.\r\n",
+      "replyDelivered": "✅ Resposta entregue.\r\n",
+      "replyFailed": "❗ Não foi possível entregar a resposta: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "Relatório de Uso de Tráfego Ordenado",
       "inviteLink": "🔗 Link de convite",
       "resetCredentials": "🔑 Redefinir credenciais",
-      "confirmResetCredentials": "✅ Confirmar redefinição de credenciais?"
+      "confirmResetCredentials": "✅ Confirmar redefinição de credenciais?",
+      "replyToClient": "💬 Responder"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

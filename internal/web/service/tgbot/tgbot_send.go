@@ -2,6 +2,7 @@ package tgbot
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"strings"
 	"time"
@@ -176,6 +177,21 @@ func (t *Tgbot) SendMsgToTgbot(chatId int64, msg string, replyMarkup ...telego.R
 			time.Sleep(100 * time.Millisecond)
 		}
 	}
+}
+
+// Sends without a parse mode and surfaces the error, so relayed free-form text
+// cannot fail on stray markup and the sender learns when delivery was refused.
+func (t *Tgbot) sendDirect(chatId int64, text string) error {
+	if !isRunning {
+		return errors.New("telegram bot is not running")
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+	_, err := bot.SendMessage(ctx, &telego.SendMessageParams{
+		ChatID: tu.ID(chatId),
+		Text:   text,
+	})
+	return err
 }
 
 // SendMsgToTgbotAdmins sends a message to all admin Telegram chats.

@@ -2101,7 +2101,9 @@
       "usageDesc": "查看客戶端用量：/usage 郵箱",
       "inboundDesc": "搜尋入站：/inbound 備註（管理員）",
       "restartDesc": "重啟 Xray 核心（管理員）",
-      "clearallDesc": "重置所有客戶端流量（管理員）"
+      "clearallDesc": "重置所有客戶端流量（管理員）",
+      "pmUsage": "❗ 請在指令後寫下訊息，例如 <code>/pm 我無法連線</code>",
+      "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;訊息&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率為 {{ .Percent }}%，超過閾值 {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ 您的 Telegram 帳號已綁定至 <code>{{ .Email }}</code>。\r\n",
       "inviteInvalid": "❗ 此邀請連結無效或已被使用。\r\n",
       "inviteLink": "🔗 <code>{{ .Email }}</code> 的邀請連結：\r\n<code>{{ .Link }}</code>\r\n\r\n第一個開啟它的人將綁定至此客戶端。\r\n",
-      "credentialsRotated": "🔑 基於安全考量，<code>{{ .Email }}</code> 的設定已更新。請在應用程式中重新整理訂閱——您的訂閱連結未變。\r\n"
+      "credentialsRotated": "🔑 基於安全考量，<code>{{ .Email }}</code> 的設定已更新。請在應用程式中重新整理訂閱——您的訂閱連結未變。\r\n",
+      "pmSent": "✅ 您的訊息已傳送給管理員。\r\n",
+      "pmNotLinked": "❗ 請先使用服務商提供的邀請連結綁定您的帳號。\r\n",
+      "pmHeader": "💬 來自 {{ .Name }} 的訊息 — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ 請傳送您希望管理員收到的訊息。\r\n",
+      "replyPrompt": "✍️ 請傳送您的回覆，它將轉達給客戶。\r\n",
+      "replyDelivered": "✅ 回覆已送達。\r\n",
+      "replyFailed": "❗ 無法送達回覆：{{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "排序過的流量使用報告",
       "inviteLink": "🔗 邀請連結",
       "resetCredentials": "🔑 重設憑證",
-      "confirmResetCredentials": "✅ 確認重設憑證？"
+      "confirmResetCredentials": "✅ 確認重設憑證？",
+      "replyToClient": "💬 回覆"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

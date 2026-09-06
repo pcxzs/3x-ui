@@ -2101,7 +2101,9 @@
       "usageDesc": "İstemci kullanımını göster: /usage e-posta",
       "inboundDesc": "Gelenleri ara: /inbound ad (yönetici)",
       "restartDesc": "Xray çekirdeğini yeniden başlat (yönetici)",
-      "clearallDesc": "Tüm istemcilerin trafiğini sıfırla (yönetici)"
+      "clearallDesc": "Tüm istemcilerin trafiğini sıfırla (yönetici)",
+      "pmUsage": "❗ Mesajınızı komuttan sonra yazın, örneğin <code>/pm bağlanamıyorum</code>",
+      "sendUsage": "❗ Kullanım: <code>/send &lt;chatId&gt; &lt;mesaj&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Yükü ({{ .Percent }}%), {{ .Threshold }}% eşiğini aşıyor",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ Telegram hesabınız <code>{{ .Email }}</code> ile bağlandı.\r\n",
       "inviteInvalid": "❗ Bu davet bağlantısı geçersiz veya daha önce kullanılmış.\r\n",
       "inviteLink": "🔗 <code>{{ .Email }}</code> için davet bağlantısı:\r\n<code>{{ .Link }}</code>\r\n\r\nBağlantıyı ilk açan kişi bu istemciye bağlanır.\r\n",
-      "credentialsRotated": "🔑 <code>{{ .Email }}</code> yapılandırması güvenlik nedeniyle güncellendi. Lütfen uygulamanızda aboneliği yenileyin — abonelik bağlantınız değişmedi.\r\n"
+      "credentialsRotated": "🔑 <code>{{ .Email }}</code> yapılandırması güvenlik nedeniyle güncellendi. Lütfen uygulamanızda aboneliği yenileyin — abonelik bağlantınız değişmedi.\r\n",
+      "pmSent": "✅ Mesajınız yöneticiye gönderildi.\r\n",
+      "pmNotLinked": "❗ Önce sağlayıcınızdan aldığınız davet bağlantısıyla hesabınızı bağlayın.\r\n",
+      "pmHeader": "💬 {{ .Name }} kullanıcısından mesaj — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ Yöneticinin almasını istediğiniz mesajı gönderin.\r\n",
+      "replyPrompt": "✍️ Yanıtınızı gönderin; istemciye iletilecek.\r\n",
+      "replyDelivered": "✅ Yanıt iletildi.\r\n",
+      "replyFailed": "❗ Yanıt iletilemedi: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "Sıralı Trafik Kullanım Raporu",
       "inviteLink": "🔗 Davet Bağlantısı",
       "resetCredentials": "🔑 Kimlik Bilgilerini Sıfırla",
-      "confirmResetCredentials": "✅ Kimlik Bilgileri Sıfırlansın mı?"
+      "confirmResetCredentials": "✅ Kimlik Bilgileri Sıfırlansın mı?",
+      "replyToClient": "💬 Yanıtla"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

@@ -2101,7 +2101,9 @@
       "usageDesc": "عرض استهلاك العميل: /usage البريد",
       "inboundDesc": "البحث في الواردات: /inbound الاسم (مشرف)",
       "restartDesc": "إعادة تشغيل نواة Xray (مشرف)",
-      "clearallDesc": "تصفير استهلاك جميع العملاء (مشرف)"
+      "clearallDesc": "تصفير استهلاك جميع العملاء (مشرف)",
+      "pmUsage": "❗ اكتب رسالتك بعد الأمر، مثال <code>/pm لا أستطيع الاتصال</code>",
+      "sendUsage": "❗ الاستخدام: <code>/send &lt;chatId&gt; &lt;الرسالة&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "حمل المعالج {{ .Percent }}% عدى الحد المسموح ({{ .Threshold }}%)",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ تم ربط حساب تيليجرام الخاص بك بـ <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ رابط الدعوة هذا غير صالح أو تم استخدامه بالفعل.\r\n",
       "inviteLink": "🔗 رابط الدعوة لـ <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nأول شخص يفتحه سيتم ربطه بهذا العميل.\r\n",
-      "credentialsRotated": "🔑 تم تحديث إعدادات <code>{{ .Email }}</code> لأسباب أمنية. يرجى تحديث اشتراكك في التطبيق — رابط الاشتراك لم يتغير.\r\n"
+      "credentialsRotated": "🔑 تم تحديث إعدادات <code>{{ .Email }}</code> لأسباب أمنية. يرجى تحديث اشتراكك في التطبيق — رابط الاشتراك لم يتغير.\r\n",
+      "pmSent": "✅ تم إرسال رسالتك إلى المسؤول.\r\n",
+      "pmNotLinked": "❗ اربط حسابك أولاً باستخدام رابط الدعوة.\r\n",
+      "pmHeader": "💬 رسالة من {{ .Name }} — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ أرسل الرسالة التي تريد أن يستلمها المسؤول.\r\n",
+      "replyPrompt": "✍️ أرسل ردك؛ سيتم تسليمه إلى العميل.\r\n",
+      "replyDelivered": "✅ تم تسليم الرد.\r\n",
+      "replyFailed": "❗ تعذر تسليم الرد: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "تقرير استخدام الترافيك المرتب",
       "inviteLink": "🔗 رابط الدعوة",
       "resetCredentials": "🔑 إعادة تعيين بيانات الاتصال",
-      "confirmResetCredentials": "✅ تأكيد إعادة تعيين بيانات الاتصال؟"
+      "confirmResetCredentials": "✅ تأكيد إعادة تعيين بيانات الاتصال؟",
+      "replyToClient": "💬 رد"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

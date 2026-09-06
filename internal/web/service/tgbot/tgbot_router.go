@@ -83,6 +83,9 @@ func (t *Tgbot) OnReceive() {
 		h.HandleMessage(func(ctx *th.Context, message telego.Message) error {
 			userStateMgr.maybePrune(time.Hour)
 			if userState, exists := userStateMgr.get(message.Chat.ID); exists {
+				if t.handleConversationState(&message, userState) {
+					return nil
+				}
 				switch userState {
 				case "awaiting_email":
 					if client_Email == strings.TrimSpace(message.Text) {
@@ -212,6 +215,25 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 		} else {
 			msg += t.I18nBot("tgbot.commands.usage")
 		}
+	case "pm":
+		onlyMessage = true
+		t.startClientMessage(message, strings.TrimSpace(strings.Join(commandArgs, " ")))
+	case "send":
+		onlyMessage = true
+		if !isAdmin {
+			handleUnknownCommand()
+			break
+		}
+		if len(commandArgs) < 2 {
+			msg += t.I18nBot("tgbot.commands.sendUsage")
+			break
+		}
+		target, err := strconv.ParseInt(commandArgs[0], 10, 64)
+		if err != nil {
+			msg += t.I18nBot("tgbot.commands.sendUsage")
+			break
+		}
+		t.deliverAdminReply(chatId, target, strings.TrimSpace(strings.Join(commandArgs[1:], " ")))
 	case "inbound":
 		onlyMessage = true
 		if isAdmin && len(commandArgs) > 0 {
@@ -350,6 +372,10 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 			case "client_invite_link":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.inviteLink"))
 				t.sendInviteLink(chatId, email)
+				return
+			case "pm_reply":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.replyToClient"))
+				t.promptAdminReply(chatId, email)
 				return
 			case "reset_cred":
 				inlineKeyboard := tu.InlineKeyboard(

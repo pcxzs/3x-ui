@@ -2101,7 +2101,9 @@
       "usageDesc": "Lihat pemakaian klien: /usage email",
       "inboundDesc": "Cari inbound: /inbound nama (admin)",
       "restartDesc": "Mulai ulang inti Xray (admin)",
-      "clearallDesc": "Reset trafik semua klien (admin)"
+      "clearallDesc": "Reset trafik semua klien (admin)",
+      "pmUsage": "❗ Tulis pesan Anda setelah perintah, misalnya <code>/pm saya tidak bisa terhubung</code>",
+      "sendUsage": "❗ Penggunaan: <code>/send &lt;chatId&gt; &lt;pesan&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ Akun Telegram Anda kini tertaut ke <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ Tautan undangan ini tidak valid atau sudah digunakan.\r\n",
       "inviteLink": "🔗 Tautan undangan untuk <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nOrang pertama yang membukanya akan tertaut ke klien ini.\r\n",
-      "credentialsRotated": "🔑 Konfigurasi untuk <code>{{ .Email }}</code> diperbarui demi keamanan. Silakan segarkan langganan Anda di aplikasi — tautan langganan tidak berubah.\r\n"
+      "credentialsRotated": "🔑 Konfigurasi untuk <code>{{ .Email }}</code> diperbarui demi keamanan. Silakan segarkan langganan Anda di aplikasi — tautan langganan tidak berubah.\r\n",
+      "pmSent": "✅ Pesan Anda telah dikirim ke admin.\r\n",
+      "pmNotLinked": "❗ Tautkan akun Anda dulu dengan tautan undangan dari penyedia Anda.\r\n",
+      "pmHeader": "💬 Pesan dari {{ .Name }} — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ Kirim pesan yang ingin diterima admin.\r\n",
+      "replyPrompt": "✍️ Kirim balasan Anda; pesan akan diteruskan ke klien.\r\n",
+      "replyDelivered": "✅ Balasan terkirim.\r\n",
+      "replyFailed": "❗ Balasan tidak dapat dikirim: {{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "Laporan Penggunaan Lalu Lintas yang Terurut",
       "inviteLink": "🔗 Tautan Undangan",
       "resetCredentials": "🔑 Atur Ulang Kredensial",
-      "confirmResetCredentials": "✅ Konfirmasi Atur Ulang Kredensial?"
+      "confirmResetCredentials": "✅ Konfirmasi Atur Ulang Kredensial?",
+      "replyToClient": "💬 Balas"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

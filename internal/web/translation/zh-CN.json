@@ -2101,7 +2101,9 @@
       "usageDesc": "查看客户端用量：/usage 邮箱",
       "inboundDesc": "搜索入站：/inbound 备注（管理员）",
       "restartDesc": "重启 Xray 内核（管理员）",
-      "clearallDesc": "重置所有客户端流量（管理员）"
+      "clearallDesc": "重置所有客户端流量（管理员）",
+      "pmUsage": "❗ 请在命令后写下消息，例如 <code>/pm 我无法连接</code>",
+      "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;消息&gt;</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率为 {{ .Percent }}%，超过阈值 {{ .Threshold }}%",
@@ -2174,7 +2176,14 @@
       "inviteBound": "✅ 您的 Telegram 账号已绑定到 <code>{{ .Email }}</code>。\r\n",
       "inviteInvalid": "❗ 此邀请链接无效或已被使用。\r\n",
       "inviteLink": "🔗 <code>{{ .Email }}</code> 的邀请链接：\r\n<code>{{ .Link }}</code>\r\n\r\n第一个打开它的人将绑定到此客户端。\r\n",
-      "credentialsRotated": "🔑 出于安全考虑，<code>{{ .Email }}</code> 的配置已更新。请在应用中刷新订阅——您的订阅链接未变。\r\n"
+      "credentialsRotated": "🔑 出于安全考虑，<code>{{ .Email }}</code> 的配置已更新。请在应用中刷新订阅——您的订阅链接未变。\r\n",
+      "pmSent": "✅ 您的消息已发送给管理员。\r\n",
+      "pmNotLinked": "❗ 请先使用服务商提供的邀请链接绑定您的账号。\r\n",
+      "pmHeader": "💬 来自 {{ .Name }} 的消息 — {{ .Clients }}\r\n",
+      "pmPrompt": "✍️ 请发送您希望管理员收到的消息。\r\n",
+      "replyPrompt": "✍️ 请发送您的回复，它将转达给客户。\r\n",
+      "replyDelivered": "✅ 回复已送达。\r\n",
+      "replyFailed": "❗ 无法送达回复：{{ .Error }}\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2219,7 +2228,8 @@
       "SortedTrafficUsageReport": "排序的流量使用报告",
       "inviteLink": "🔗 邀请链接",
       "resetCredentials": "🔑 重置凭据",
-      "confirmResetCredentials": "✅ 确认重置凭据？"
+      "confirmResetCredentials": "✅ 确认重置凭据？",
+      "replyToClient": "💬 回复"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",
