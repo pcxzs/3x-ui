@@ -116,6 +116,16 @@ func (s *userStateStore) get(chatID int64) (string, bool) {
 	return e.state, ok
 }
 
+// Atomic so a command handler can end a pending flow and name the flow it
+// ended without racing the message handler for the same entry.
+func (s *userStateStore) take(chatID int64) (string, bool) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	e, ok := s.states[chatID]
+	delete(s.states, chatID)
+	return e.state, ok
+}
+
 func (s *userStateStore) clear(chatID int64) {
 	s.mu.Lock()
 	delete(s.states, chatID)

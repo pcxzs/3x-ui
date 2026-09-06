@@ -88,6 +88,26 @@ func (t *Tgbot) handleConversationState(message *telego.Message, state string) b
 	return false
 }
 
+// The router already took the state, so /cancel only names what was
+// interrupted: the sender's real question is which side was spared the message.
+func cancelledKey(pending string) string {
+	switch {
+	case pending == statePmText:
+		return "tgbot.messages.pmCancelled"
+	case strings.HasPrefix(pending, stateReplyPrefix):
+		return "tgbot.messages.replyCancelled"
+	case pending == "":
+		return "tgbot.messages.cancelNothing"
+	}
+	return "tgbot.messages.cancelled"
+}
+
+// Both prompts have to advertise the way out, so the hint is appended rather
+// than baked into each prompt's translation.
+func (t *Tgbot) promptWithCancel(key string) string {
+	return t.I18nBot(key) + t.I18nBot("tgbot.messages.cancelHint")
+}
+
 // Only clients already bound to a Telegram account may message admins, which
 // keeps the admin inbox free of traffic from arbitrary strangers.
 func (t *Tgbot) clientEmailsFor(tgUserID int64) []string {
@@ -110,7 +130,7 @@ func (t *Tgbot) startClientMessage(message *telego.Message, text string) {
 	}
 	if text == "" {
 		userStateMgr.set(chatId, statePmText)
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.pmPrompt"))
+		t.SendMsgToTgbot(chatId, t.promptWithCancel("tgbot.messages.pmPrompt"))
 		return
 	}
 	t.forwardClientMessage(message, text)
@@ -124,7 +144,7 @@ func (t *Tgbot) promptClientMessage(chatId int64, tgUserID int64) {
 		return
 	}
 	userStateMgr.set(chatId, statePmText)
-	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.pmPrompt"))
+	t.SendMsgToTgbot(chatId, t.promptWithCancel("tgbot.messages.pmPrompt"))
 }
 
 func (t *Tgbot) forwardClientMessage(message *telego.Message, text string) {
@@ -163,7 +183,7 @@ func (t *Tgbot) promptAdminReply(chatId int64, target string) {
 		return
 	}
 	userStateMgr.set(chatId, stateReplyPrefix+target)
-	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.replyPrompt"))
+	t.SendMsgToTgbot(chatId, t.promptWithCancel("tgbot.messages.replyPrompt"))
 }
 
 func (t *Tgbot) deliverAdminReply(adminChatId int64, target int64, text string) {

@@ -86,3 +86,41 @@ func newTestMessage(chatID, fromID int64) *telego.Message {
 		From: &telego.User{ID: fromID},
 	}
 }
+
+// /cancel has to name the flow it ended: the sender's question is whether the
+// message went out, and a bare "cancelled" does not answer it.
+func TestCancelledKey(t *testing.T) {
+	tests := []struct {
+		name    string
+		pending string
+		want    string
+	}{
+		{"pending message to admin", statePmText, "tgbot.messages.pmCancelled"},
+		{"pending admin reply", stateReplyPrefix + "12345", "tgbot.messages.replyCancelled"},
+		{"another flow", stateBroadcast, "tgbot.messages.cancelled"},
+		{"nothing pending", "", "tgbot.messages.cancelNothing"},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			if got := cancelledKey(tc.pending); got != tc.want {
+				t.Fatalf("cancelledKey(%q) = %q, want %q", tc.pending, got, tc.want)
+			}
+		})
+	}
+}
+
+// take is what lets /cancel report accurately: a read that left the state
+// behind would send the next typed line to the admin the user just cancelled.
+func TestTakeClearsAndReturnsState(t *testing.T) {
+	userStateMgr.reset()
+	t.Cleanup(userStateMgr.reset)
+
+	userStateMgr.set(77, statePmText)
+	if state, ok := userStateMgr.take(77); !ok || state != statePmText {
+		t.Fatalf("take = (%q, %v), want the pending state", state, ok)
+	}
+	if state, ok := userStateMgr.take(77); ok || state != "" {
+		t.Fatalf("take after take = (%q, %v), want the entry gone", state, ok)
+	}
+}

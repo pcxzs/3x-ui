@@ -30,7 +30,7 @@ var commandsByLevel = map[userLevel]map[string]bool{
 	},
 	levelClient: {
 		"start": true, "help": true, "status": true, "id": true,
-		"usage": true, "pm": true,
+		"usage": true, "pm": true, "cancel": true,
 	},
 }
 

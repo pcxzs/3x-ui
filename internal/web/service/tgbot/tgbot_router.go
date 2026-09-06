@@ -69,9 +69,11 @@ func (t *Tgbot) OnReceive() {
 				messageWorkerPool <- struct{}{}        // Acquire worker
 				defer func() { <-messageWorkerPool }() // Release worker
 
-				userStateMgr.clear(message.Chat.ID)
+				// Any command ends a pending conversation; the state travels
+				// on so /cancel can say which one it ended.
+				pending, _ := userStateMgr.take(message.Chat.ID)
 				scoped := t.forUser(message.From.ID)
-				scoped.answerCommand(&message, message.Chat.ID, scoped.levelOf(message.From.ID))
+				scoped.answerCommand(&message, message.Chat.ID, scoped.levelOf(message.From.ID), pending)
 			}()
 			return nil
 		}, th.AnyCommand())
@@ -198,7 +200,7 @@ func (t *Tgbot) OnReceive() {
 }
 
 // answerCommand processes incoming command messages from Telegram users.
-func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userLevel) {
+func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userLevel, pending string) {
 	msg, onlyMessage := "", false
 	isAdmin := level == levelAdmin
 
@@ -252,6 +254,9 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userL
 			msg += t.I18nBot("tgbot.commands.welcome", "Hostname=="+hostname)
 		}
 		msg += "\n\n" + t.I18nBot("tgbot.commands.pleaseChoose")
+	case "cancel":
+		onlyMessage = true
+		msg += t.I18nBot(cancelledKey(pending))
 	case "status":
 		onlyMessage = true
 		msg += t.I18nBot("tgbot.commands.status")
