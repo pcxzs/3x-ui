@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Configurações</b>",
       "languagePrompt": "🌐 Escolha o idioma em que o bot deve responder.",
       "languageSaved": "🌐 Idioma definido como {{ .Language }}.",
-      "newClientHeader": "🎉 <b>Um novo cliente iniciou o bot</b>"
+      "newClientHeader": "🎉 <b>Um novo cliente iniciou o bot</b>",
+      "renewMuted": "🔕 Você não será mais avisado sobre <code>{{ .Email }}</code> neste período. Renovar reativa os avisos.",
+      "renewRequested": "✅ Seu pedido de renovação foi enviado. Você terá retorno em breve.",
+      "renewRequestThrottled": "⏳ Você já pediu renovação hoje. Aguarde uma resposta.",
+      "renewRequestCard": "🔄 <b>Renovação solicitada</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Idioma",
       "backToMenu": "🔙 Voltar",
       "backToSettings": "🔙 Voltar",
-      "notifyNewClient": "Avisos de novos clientes"
+      "notifyNewClient": "Avisos de novos clientes",
+      "renewRequest": "🔄 Renovar",
+      "renewMute": "🔕 Parar avisos"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

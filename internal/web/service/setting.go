@@ -81,7 +81,15 @@ var defaultValueMap = map[string]string{
 	"tgBotNotifyServerUsage":      "true",
 	"tgBotNotifyDepleteSoon":      "true",
 	"tgBotNotifyNewClient":        "true",
+	"tgBotNotifyQuota":            "true",
 	"tgBotUserLangs":              "{}",
+	"tgBotDailyHour":              "8",
+	"tgBotSilentNotices":          "true",
+	"tgBotAllowSelfReset":         "false",
+	"tgBotRenewOptOut":            "{}",
+	"tgBotRenewReqAt":             "{}",
+	"tgBotQuotaWarned":            "{}",
+	"tgBotSelfResetAt":            "{}",
 	"tgRunTime":                   "@daily",
 	"tgBotBackup":                 "false",
 	"tgCpu":                       "80",
@@ -634,6 +642,76 @@ func (s *SettingService) GetTgBotUserLangs() (string, error) {
 
 func (s *SettingService) SetTgBotUserLangs(value string) error {
 	return s.setString("tgBotUserLangs", value)
+}
+
+func (s *SettingService) GetTgBotNotifyQuota() (bool, error) {
+	return s.getBool("tgBotNotifyQuota")
+}
+
+func (s *SettingService) SetTgBotNotifyQuota(value bool) error {
+	return s.setBool("tgBotNotifyQuota", value)
+}
+
+// Customers may reset their own configs only where an operator has opted in:
+// the reset knocks every one of that client's devices offline until re-import.
+func (s *SettingService) GetTgBotAllowSelfReset() (bool, error) {
+	return s.getBool("tgBotAllowSelfReset")
+}
+
+func (s *SettingService) SetTgBotAllowSelfReset(value bool) error {
+	return s.setBool("tgBotAllowSelfReset", value)
+}
+
+func (s *SettingService) GetTgBotSilentNotices() (bool, error) {
+	return s.getBool("tgBotSilentNotices")
+}
+
+func (s *SettingService) SetTgBotSilentNotices(value bool) error {
+	return s.setBool("tgBotSilentNotices", value)
+}
+
+// The hour of day the customer-facing daily pass runs, kept apart from
+// tgRunTime so an operator's report cadence and their customers' are separate.
+func (s *SettingService) GetTgBotDailyHour() (int, error) {
+	return s.getInt("tgBotDailyHour")
+}
+
+func (s *SettingService) SetTgBotDailyHour(hour int) error {
+	return s.setString("tgBotDailyHour", strconv.Itoa(hour))
+}
+
+// Four small per-client maps, each one JSON object in a single row rather than
+// a row per client, so tracking more about a client never grows the table.
+func (s *SettingService) GetTgBotRenewOptOut() (string, error) {
+	return s.getString("tgBotRenewOptOut")
+}
+
+func (s *SettingService) SetTgBotRenewOptOut(value string) error {
+	return s.setString("tgBotRenewOptOut", value)
+}
+
+func (s *SettingService) GetTgBotRenewReqAt() (string, error) {
+	return s.getString("tgBotRenewReqAt")
+}
+
+func (s *SettingService) SetTgBotRenewReqAt(value string) error {
+	return s.setString("tgBotRenewReqAt", value)
+}
+
+func (s *SettingService) GetTgBotQuotaWarned() (string, error) {
+	return s.getString("tgBotQuotaWarned")
+}
+
+func (s *SettingService) SetTgBotQuotaWarned(value string) error {
+	return s.setString("tgBotQuotaWarned", value)
+}
+
+func (s *SettingService) GetTgBotSelfResetAt() (string, error) {
+	return s.getString("tgBotSelfResetAt")
+}
+
+func (s *SettingService) SetTgBotSelfResetAt(value string) error {
+	return s.setString("tgBotSelfResetAt", value)
 }
 
 func (s *SettingService) GetTgCpu() (int, error) {

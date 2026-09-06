@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>تنظیمات</b>",
       "languagePrompt": "🌐 زبانی را که ربات باید با آن پاسخ دهد انتخاب کنید.",
       "languageSaved": "🌐 زبان روی {{ .Language }} تنظیم شد.",
-      "newClientHeader": "🎉 <b>یک مشتری جدید ربات را استارت کرد</b>"
+      "newClientHeader": "🎉 <b>یک مشتری جدید ربات را استارت کرد</b>",
+      "renewMuted": "🔕 دیگر درباره <code>{{ .Email }}</code> در این دوره یادآوری دریافت نمی‌کنید. با تمدید، یادآوری‌ها دوباره فعال می‌شوند.",
+      "renewRequested": "✅ درخواست تمدید شما ارسال شد. به‌زودی پاسخ می‌گیرید.",
+      "renewRequestThrottled": "⏳ امروز قبلاً درخواست تمدید داده‌اید. لطفاً منتظر پاسخ بمانید.",
+      "renewRequestCard": "🔄 <b>درخواست تمدید</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2345,7 +2349,9 @@
       "language": "🌐 زبان",
       "backToMenu": "🔙 بازگشت",
       "backToSettings": "🔙 بازگشت",
-      "notifyNewClient": "اطلاع از مشتری جدید"
+      "notifyNewClient": "اطلاع از مشتری جدید",
+      "renewRequest": "🔄 تمدید",
+      "renewMute": "🔕 یادآوری نکن"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

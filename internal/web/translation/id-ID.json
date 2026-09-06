@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Pengaturan</b>",
       "languagePrompt": "🌐 Pilih bahasa yang digunakan bot untuk membalas.",
       "languageSaved": "🌐 Bahasa diatur ke {{ .Language }}.",
-      "newClientHeader": "🎉 <b>Pelanggan baru baru saja memulai bot</b>"
+      "newClientHeader": "🎉 <b>Pelanggan baru baru saja memulai bot</b>",
+      "renewMuted": "🔕 Anda tidak akan diingatkan lagi tentang <code>{{ .Email }}</code> pada periode ini. Perpanjangan mengaktifkannya kembali.",
+      "renewRequested": "✅ Permintaan perpanjangan Anda telah dikirim. Anda akan segera dihubungi.",
+      "renewRequestThrottled": "⏳ Anda sudah meminta perpanjangan hari ini. Mohon tunggu balasan.",
+      "renewRequestCard": "🔄 <b>Permintaan perpanjangan</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Bahasa",
       "backToMenu": "🔙 Kembali",
       "backToSettings": "🔙 Kembali",
-      "notifyNewClient": "Pemberitahuan Pelanggan Baru"
+      "notifyNewClient": "Pemberitahuan Pelanggan Baru",
+      "renewRequest": "🔄 Perpanjang",
+      "renewMute": "🔕 Hentikan pengingat"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

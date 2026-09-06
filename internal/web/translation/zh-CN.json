@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>设置</b>",
       "languagePrompt": "🌐 选择机器人回复所用的语言。",
       "languageSaved": "🌐 语言已设置为 {{ .Language }}。",
-      "newClientHeader": "🎉 <b>有新客户刚刚启动了机器人</b>"
+      "newClientHeader": "🎉 <b>有新客户刚刚启动了机器人</b>",
+      "renewMuted": "🔕 本期不再提醒 <code>{{ .Email }}</code>。续费后提醒会重新开启。",
+      "renewRequested": "✅ 续费请求已发送，我们会尽快回复您。",
+      "renewRequestThrottled": "⏳ 您今天已经提交过续费请求，请等待回复。",
+      "renewRequestCard": "🔄 <b>续费请求</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2345,7 +2349,9 @@
       "language": "🌐 语言",
       "backToMenu": "🔙 返回",
       "backToSettings": "🔙 返回",
-      "notifyNewClient": "新客户提醒"
+      "notifyNewClient": "新客户提醒",
+      "renewRequest": "🔄 续费",
+      "renewMute": "🔕 停止提醒"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

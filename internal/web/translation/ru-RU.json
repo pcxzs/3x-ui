@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Настройки</b>",
       "languagePrompt": "🌐 Выберите язык, на котором будет отвечать бот.",
       "languageSaved": "🌐 Язык изменён на {{ .Language }}.",
-      "newClientHeader": "🎉 <b>Новый клиент запустил бота</b>"
+      "newClientHeader": "🎉 <b>Новый клиент запустил бота</b>",
+      "renewMuted": "🔕 Напоминания о <code>{{ .Email }}</code> в этом периоде отключены. Продление включит их снова.",
+      "renewRequested": "✅ Запрос на продление отправлен. Скоро вам ответят.",
+      "renewRequestThrottled": "⏳ Вы уже запросили продление сегодня. Дождитесь ответа.",
+      "renewRequestCard": "🔄 <b>Запрошено продление</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Язык",
       "backToMenu": "🔙 Назад",
       "backToSettings": "🔙 Назад",
-      "notifyNewClient": "Оповещения о новых клиентах"
+      "notifyNewClient": "Оповещения о новых клиентах",
+      "renewRequest": "🔄 Продлить",
+      "renewMute": "🔕 Не напоминать"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

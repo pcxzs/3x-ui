@@ -94,7 +94,7 @@ func (t *Tgbot) notifyRenewals() {
 		}
 		byRung[rung] = append(byRung[rung], renewalNotice{
 			email:   record.Email,
-			outcome: t.remindCustomer(record.Email, record.TgID, rung),
+			outcome: t.remindCustomer(record.Email, record.TgID, rung, record.ExpiryTime),
 		})
 	}
 
@@ -160,6 +160,7 @@ const (
 	deliveryUnlinked
 	deliveryFailed
 	deliveryDelivered
+	deliveryMuted
 )
 
 // A cross means the bot tried and Telegram refused; the dash means there was no
@@ -172,6 +173,8 @@ func (o deliveryOutcome) mark() string {
 		return "❌ "
 	case deliveryUnlinked:
 		return "➖ "
+	case deliveryMuted:
+		return "🔕 "
 	default:
 		return ""
 	}
@@ -179,7 +182,7 @@ func (o deliveryOutcome) mark() string {
 
 // Sends through sendHTMLDirect rather than SendMsgToTgbot because the summary
 // has to distinguish a delivered reminder from one Telegram refused.
-func (t *Tgbot) remindCustomer(email string, tgID int64, rung renewalRung) deliveryOutcome {
+func (t *Tgbot) remindCustomer(email string, tgID int64, rung renewalRung, expiry int64) deliveryOutcome {
 	messageKey, notifies := rungMessageKey[rung]
 	if !notifies {
 		return deliveryNone
@@ -187,9 +190,12 @@ func (t *Tgbot) remindCustomer(email string, tgID int64, rung renewalRung) deliv
 	if tgID == 0 {
 		return deliveryUnlinked
 	}
+	if t.isRenewMuted(email, expiry) {
+		return deliveryMuted
+	}
 
 	scoped := t.forUser(tgID)
-	if err := scoped.sendHTMLDirect(tgID, scoped.I18nBot(messageKey, "Email=="+email)); err != nil {
+	if err := scoped.sendHTMLDirect(tgID, scoped.I18nBot(messageKey, "Email=="+email), scoped.renewKeyboard(email)); err != nil {
 		logger.Warning("tgbot: renewal reminder refused for", email, ":", err)
 		return deliveryFailed
 	}

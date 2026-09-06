@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Ayarlar</b>",
       "languagePrompt": "🌐 Botun yanıt vereceği dili seçin.",
       "languageSaved": "🌐 Dil {{ .Language }} olarak ayarlandı.",
-      "newClientHeader": "🎉 <b>Yeni bir müşteri botu başlattı</b>"
+      "newClientHeader": "🎉 <b>Yeni bir müşteri botu başlattı</b>",
+      "renewMuted": "🔕 Bu dönem <code>{{ .Email }}</code> için tekrar hatırlatılmayacaksınız. Yenileme hatırlatmaları geri açar.",
+      "renewRequested": "✅ Yenileme talebiniz gönderildi. Kısa süre içinde dönüş yapılacak.",
+      "renewRequestThrottled": "⏳ Bugün zaten yenileme talebinde bulundunuz. Lütfen yanıtı bekleyin.",
+      "renewRequestCard": "🔄 <b>Yenileme talebi</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Dil",
       "backToMenu": "🔙 Geri",
       "backToSettings": "🔙 Geri",
-      "notifyNewClient": "Yeni Müşteri Bildirimleri"
+      "notifyNewClient": "Yeni Müşteri Bildirimleri",
+      "renewRequest": "🔄 Yenile",
+      "renewMute": "🔕 Hatırlatma"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

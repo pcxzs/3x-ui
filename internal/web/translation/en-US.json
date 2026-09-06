@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Settings</b>",
       "languagePrompt": "🌐 Choose the language the bot should reply in.",
       "languageSaved": "🌐 Language set to {{ .Language }}.",
-      "newClientHeader": "🎉 <b>A new customer just started the bot</b>"
+      "newClientHeader": "🎉 <b>A new customer just started the bot</b>",
+      "renewMuted": "🔕 You will not be reminded about <code>{{ .Email }}</code> again this period. Renewing it turns reminders back on.",
+      "renewRequested": "✅ Your renewal request has been sent. You will hear back shortly.",
+      "renewRequestThrottled": "⏳ You already asked to renew today. Please wait for a reply.",
+      "renewRequestCard": "🔄 <b>Renewal requested</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Language",
       "backToMenu": "🔙 Back",
       "backToSettings": "🔙 Back",
-      "notifyNewClient": "New Customer Alerts"
+      "notifyNewClient": "New Customer Alerts",
+      "renewRequest": "🔄 Renew",
+      "renewMute": "🔕 Stop reminders"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

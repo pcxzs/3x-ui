@@ -16,6 +16,8 @@ var clientSelfPrefixes = []string{
 	"qr_subjson ",
 	"qr_pick ",
 	"qr_one ",
+	"renew_req ",
+	"renew_mute ",
 }
 
 func clientSelfAction(data string) (verb string, arg string, ok bool) {

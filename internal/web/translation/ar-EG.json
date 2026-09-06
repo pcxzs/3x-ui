@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>الإعدادات</b>",
       "languagePrompt": "🌐 اختر اللغة التي يرد بها البوت.",
       "languageSaved": "🌐 تم ضبط اللغة على {{ .Language }}.",
-      "newClientHeader": "🎉 <b>عميل جديد بدأ استخدام البوت</b>"
+      "newClientHeader": "🎉 <b>عميل جديد بدأ استخدام البوت</b>",
+      "renewMuted": "🔕 لن يتم تذكيرك بشأن <code>{{ .Email }}</code> مرة أخرى هذه الفترة. التجديد يعيد تفعيل التذكيرات.",
+      "renewRequested": "✅ تم إرسال طلب التجديد. سيصلك الرد قريبًا.",
+      "renewRequestThrottled": "⏳ لقد طلبت التجديد اليوم بالفعل. يرجى انتظار الرد.",
+      "renewRequestCard": "🔄 <b>طلب تجديد</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2345,7 +2349,9 @@
       "language": "🌐 اللغة",
       "backToMenu": "🔙 رجوع",
       "backToSettings": "🔙 رجوع",
-      "notifyNewClient": "تنبيهات العملاء الجدد"
+      "notifyNewClient": "تنبيهات العملاء الجدد",
+      "renewRequest": "🔄 تجديد",
+      "renewMute": "🔕 إيقاف التذكير"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

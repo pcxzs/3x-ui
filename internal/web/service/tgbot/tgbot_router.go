@@ -1773,6 +1773,12 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			if target, index, ok := splitQRTarget(arg); ok {
 				t.sendIndividualLinkQR(chatId, target, index)
 			}
+		case "renew_req":
+			t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.renewRequest"))
+			t.requestRenewal(chatId, &callbackQuery.From, arg)
+		case "renew_mute":
+			t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.renewMute"))
+			t.muteRenewal(chatId, callbackQuery.From.ID, arg)
 		}
 	}
 }

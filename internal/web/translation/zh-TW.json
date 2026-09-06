@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>設定</b>",
       "languagePrompt": "🌐 選擇機器人回覆所使用的語言。",
       "languageSaved": "🌐 語言已設定為 {{ .Language }}。",
-      "newClientHeader": "🎉 <b>有新客戶剛剛啟動了機器人</b>"
+      "newClientHeader": "🎉 <b>有新客戶剛剛啟動了機器人</b>",
+      "renewMuted": "🔕 本期不再提醒 <code>{{ .Email }}</code>。續約後提醒會重新開啟。",
+      "renewRequested": "✅ 續約請求已送出，我們會盡快回覆您。",
+      "renewRequestThrottled": "⏳ 您今天已經送出續約請求，請等待回覆。",
+      "renewRequestCard": "🔄 <b>續約請求</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2345,7 +2349,9 @@
       "language": "🌐 語言",
       "backToMenu": "🔙 返回",
       "backToSettings": "🔙 返回",
-      "notifyNewClient": "新客戶提醒"
+      "notifyNewClient": "新客戶提醒",
+      "renewRequest": "🔄 續約",
+      "renewMute": "🔕 停止提醒"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

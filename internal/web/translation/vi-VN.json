@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Cài đặt</b>",
       "languagePrompt": "🌐 Chọn ngôn ngữ bot sẽ dùng để trả lời.",
       "languageSaved": "🌐 Đã đặt ngôn ngữ thành {{ .Language }}.",
-      "newClientHeader": "🎉 <b>Một khách hàng mới vừa khởi động bot</b>"
+      "newClientHeader": "🎉 <b>Một khách hàng mới vừa khởi động bot</b>",
+      "renewMuted": "🔕 Bạn sẽ không được nhắc về <code>{{ .Email }}</code> trong kỳ này nữa. Gia hạn sẽ bật lại nhắc nhở.",
+      "renewRequested": "✅ Yêu cầu gia hạn của bạn đã được gửi. Bạn sẽ sớm nhận được phản hồi.",
+      "renewRequestThrottled": "⏳ Bạn đã yêu cầu gia hạn hôm nay. Vui lòng chờ phản hồi.",
+      "renewRequestCard": "🔄 <b>Yêu cầu gia hạn</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Ngôn ngữ",
       "backToMenu": "🔙 Quay lại",
       "backToSettings": "🔙 Quay lại",
-      "notifyNewClient": "Cảnh báo khách hàng mới"
+      "notifyNewClient": "Cảnh báo khách hàng mới",
+      "renewRequest": "🔄 Gia hạn",
+      "renewMute": "🔕 Ngừng nhắc"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

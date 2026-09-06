@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>Налаштування</b>",
       "languagePrompt": "🌐 Оберіть мову, якою бот має відповідати.",
       "languageSaved": "🌐 Мову змінено на {{ .Language }}.",
-      "newClientHeader": "🎉 <b>Новий клієнт щойно запустив бота</b>"
+      "newClientHeader": "🎉 <b>Новий клієнт щойно запустив бота</b>",
+      "renewMuted": "🔕 Нагадування про <code>{{ .Email }}</code> у цьому періоді вимкнено. Продовження ввімкне їх знову.",
+      "renewRequested": "✅ Запит на продовження надіслано. Незабаром вам відповідять.",
+      "renewRequestThrottled": "⏳ Ви вже запитали продовження сьогодні. Зачекайте на відповідь.",
+      "renewRequestCard": "🔄 <b>Запит на продовження</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2345,7 +2349,9 @@
       "language": "🌐 Мова",
       "backToMenu": "🔙 Назад",
       "backToSettings": "🔙 Назад",
-      "notifyNewClient": "Сповіщення про нових клієнтів"
+      "notifyNewClient": "Сповіщення про нових клієнтів",
+      "renewRequest": "🔄 Продовжити",
+      "renewMute": "🔕 Не нагадувати"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

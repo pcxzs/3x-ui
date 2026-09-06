@@ -256,18 +256,33 @@ func (t *Tgbot) sendDirect(chatId int64, text string) error {
 
 // Sends with the same HTML parse mode the bot uses everywhere, but surfaces the
 // error so admin-authored markup can be rejected before it is stored.
-func (t *Tgbot) sendHTMLDirect(chatId int64, text string) error {
+func (t *Tgbot) sendHTMLDirect(chatId int64, text string, replyMarkup ...telego.ReplyMarkup) error {
 	if !isRunning {
 		return errors.New("telegram bot is not running")
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
-	_, err := bot.SendMessage(ctx, &telego.SendMessageParams{
-		ChatID:    tu.ID(chatId),
-		Text:      text,
-		ParseMode: "HTML",
-	})
+	params := &telego.SendMessageParams{
+		ChatID:              tu.ID(chatId),
+		Text:                text,
+		ParseMode:           "HTML",
+		DisableNotification: t.noticesAreSilent(),
+	}
+	if len(replyMarkup) > 0 {
+		params.ReplyMarkup = replyMarkup[0]
+	}
+	_, err := bot.SendMessage(ctx, params)
 	return err
+}
+
+// A routine reminder should not buzz a phone at the hour the pass happens to
+// run; a lookup failure keeps the buzz rather than silencing something urgent.
+func (t *Tgbot) noticesAreSilent() bool {
+	silent, err := t.settingService.GetTgBotSilentNotices()
+	if err != nil {
+		return false
+	}
+	return silent
 }
 
 // SendMsgToTgbotAdmins sends a message to all admin Telegram chats.

@@ -2257,7 +2257,11 @@
       "settings": "⚙️ <b>設定</b>",
       "languagePrompt": "🌐 ボットが返信する言語を選んでください。",
       "languageSaved": "🌐 言語を {{ .Language }} に設定しました。",
-      "newClientHeader": "🎉 <b>新しい顧客がボットを開始しました</b>"
+      "newClientHeader": "🎉 <b>新しい顧客がボットを開始しました</b>",
+      "renewMuted": "🔕 今期は <code>{{ .Email }}</code> の通知を送りません。更新すると通知が再開します。",
+      "renewRequested": "✅ 更新リクエストを送信しました。まもなくご連絡します。",
+      "renewRequestThrottled": "⏳ 本日はすでに更新を申請済みです。返信をお待ちください。",
+      "renewRequestCard": "🔄 <b>更新リクエスト</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2345,7 +2349,9 @@
       "language": "🌐 言語",
       "backToMenu": "🔙 戻る",
       "backToSettings": "🔙 戻る",
-      "notifyNewClient": "新規顧客の通知"
+      "notifyNewClient": "新規顧客の通知",
+      "renewRequest": "🔄 更新",
+      "renewMute": "🔕 通知を止める"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",
