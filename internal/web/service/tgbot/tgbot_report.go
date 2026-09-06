@@ -292,6 +292,48 @@ func (t *Tgbot) getExhausted(chatId int64) {
 	}
 }
 
+// A client that already lapsed has been switched off by the traffic job, so it
+// can no longer be near a threshold: it is reported as disabled, not expiring.
+func partitionExpiringClients(traffics []*xray.ClientTraffic, now, exDiff, trDiff int64) (exhausted, disabled []xray.ClientTraffic) {
+	for _, traffic := range traffics {
+		if !traffic.Enable {
+			disabled = append(disabled, *traffic)
+			continue
+		}
+		if (traffic.ExpiryTime > 0 && (traffic.ExpiryTime-now < exDiff)) ||
+			(traffic.Total > 0 && (traffic.Total-(traffic.Up+traffic.Down) < trDiff)) {
+			exhausted = append(exhausted, *traffic)
+		}
+	}
+	return exhausted, disabled
+}
+
+// Returns an empty string when there is nothing worth interrupting the customer
+// for, so the caller never has to decide whether a notice is warranted.
+func (t *Tgbot) buildExhaustedNotice(exhausted, disabled []xray.ClientTraffic) string {
+	if len(exhausted) == 0 && len(disabled) == 0 {
+		return ""
+	}
+	var output strings.Builder
+	output.WriteString(t.I18nBot("tgbot.messages.exhaustedCount", "Type=="+t.I18nBot("tgbot.clients")))
+	output.WriteString(t.I18nBot("tgbot.messages.disabled", "Disabled=="+strconv.Itoa(len(disabled))))
+	if len(disabled) > 0 {
+		output.WriteString(t.I18nBot("tgbot.clients"))
+		output.WriteString(":\r\n")
+		for _, traffic := range disabled {
+			output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false))
+			output.WriteString("\r\n")
+		}
+	}
+	output.WriteString("\r\n")
+	output.WriteString(t.I18nBot("tgbot.messages.depleteSoon", "Deplete=="+strconv.Itoa(len(exhausted))))
+	for _, traffic := range exhausted {
+		output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false))
+		output.WriteString("\r\n")
+	}
+	return output.String()
+}
+
 // notifyExhausted sends notifications for exhausted clients.
 func (t *Tgbot) notifyExhausted() {
 	trDiff := int64(0)
@@ -321,40 +363,11 @@ func (t *Tgbot) notifyExhausted() {
 						if client.TgID != 0 {
 							chatID := client.TgID
 							if !int64Contains(chatIDsDone, chatID) && !checkAdmin(chatID) {
-								var disabledClients []xray.ClientTraffic
-								var exhaustedClients []xray.ClientTraffic
 								traffics, err := t.inboundService.GetClientTrafficTgBot(client.TgID)
 								if err == nil && len(traffics) > 0 {
-									var output strings.Builder
-									output.WriteString(t.I18nBot("tgbot.messages.exhaustedCount", "Type=="+t.I18nBot("tgbot.clients")))
-									for _, traffic := range traffics {
-										if traffic.Enable {
-											if (traffic.ExpiryTime > 0 && (traffic.ExpiryTime-now < exDiff)) ||
-												(traffic.Total > 0 && (traffic.Total-(traffic.Up+traffic.Down) < trDiff)) {
-												exhaustedClients = append(exhaustedClients, *traffic)
-											}
-										} else {
-											disabledClients = append(disabledClients, *traffic)
-										}
-									}
-									if len(exhaustedClients) > 0 {
-										output.WriteString(t.I18nBot("tgbot.messages.disabled", "Disabled=="+strconv.Itoa(len(disabledClients))))
-										if len(disabledClients) > 0 {
-											output.WriteString(t.I18nBot("tgbot.clients"))
-											output.WriteString(":\r\n")
-											for _, traffic := range disabledClients {
-												output.WriteString(" ")
-												output.WriteString(traffic.Email)
-											}
-											output.WriteString("\r\n")
-										}
-										output.WriteString("\r\n")
-										output.WriteString(t.I18nBot("tgbot.messages.depleteSoon", "Deplete=="+strconv.Itoa(len(exhaustedClients))))
-										for _, traffic := range exhaustedClients {
-											output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false))
-											output.WriteString("\r\n")
-										}
-										t.SendMsgToTgbot(chatID, output.String())
+									exhaustedClients, disabledClients := partitionExpiringClients(traffics, now, exDiff, trDiff)
+									if notice := t.buildExhaustedNotice(exhaustedClients, disabledClients); notice != "" {
+										t.SendMsgToTgbot(chatID, notice)
 									}
 									chatIDsDone = append(chatIDsDone, chatID)
 								}
