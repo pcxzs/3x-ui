@@ -47,12 +47,18 @@ func (t *Tgbot) OnReceive() {
 		tgBotMutex.Unlock()
 
 		h.HandleMessage(func(ctx *th.Context, message telego.Message) error {
+			if !isPrivateChat(message.Chat) {
+				return nil
+			}
 			userStateMgr.clear(message.Chat.ID)
 			t.SendMsgToTgbot(message.Chat.ID, t.I18nBot("tgbot.keyboardClosed"), tu.ReplyKeyboardRemove())
 			return nil
 		}, th.TextEqual(t.I18nBot("tgbot.buttons.closeKeyboard")))
 
 		h.HandleMessage(func(ctx *th.Context, message telego.Message) error {
+			if !isPrivateChat(message.Chat) {
+				return nil
+			}
 			if !t.isCommandForCurrentBot(&message) {
 				return nil
 			}
@@ -69,6 +75,9 @@ func (t *Tgbot) OnReceive() {
 		}, th.AnyCommand())
 
 		h.HandleCallbackQuery(func(ctx *th.Context, query telego.CallbackQuery) error {
+			if !isPrivateChat(query.Message.GetChat()) {
+				return nil
+			}
 			// Use goroutine with worker pool for concurrent callback processing
 			go func() {
 				messageWorkerPool <- struct{}{}        // Acquire worker
@@ -81,9 +90,18 @@ func (t *Tgbot) OnReceive() {
 		}, th.AnyCallbackQueryWithMessage())
 
 		h.HandleMessage(func(ctx *th.Context, message telego.Message) error {
+			if !isPrivateChat(message.Chat) {
+				return nil
+			}
 			userStateMgr.maybePrune(time.Hour)
 			if userState, exists := userStateMgr.get(message.Chat.ID); exists {
 				if t.handleConversationState(&message, userState) {
+					return nil
+				}
+				// The wizard states below are keyed by chat while authorization
+				// keys by sender, so the admin check cannot be left to whoever
+				// set the state.
+				if !checkAdmin(message.From.ID) {
 					return nil
 				}
 				switch userState {
