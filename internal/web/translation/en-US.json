@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>Invite links</b> — {{ .Count }} clients\r\n✅ already bound · ❌ not yet. Tap one for its link.",
       "inviteAlreadyHolder": "❗ Your Telegram account is already linked to a config. Ask an admin if you need to switch.",
       "noBoundClient": "🔗 No config is linked to this Telegram account yet.\r\nAsk your admin for an invite link and open it.",
-      "noBoundClientAdmin": "🔗 You haven't bound a config to this account yet.\r\nOpen 🛡 Admin → 🔗 Invite Links, pick your own client and open its link."
+      "noBoundClientAdmin": "🔗 You haven't bound a config to this account yet.\r\nOpen 🛡 Admin → 🔗 Invite Links, pick your own client and open its link.",
+      "renewThreeDays": "🔔 Hi — your subscription <code>{{ .Email }}</code> is due for renewal in 3 days.",
+      "renewTomorrow": "🔔 Hi — your subscription <code>{{ .Email }}</code> is due for renewal tomorrow.",
+      "renewToday": "🔔 Hi — your subscription <code>{{ .Email }}</code> is due for renewal today.",
+      "renewOverdue": "⚠️ Your subscription <code>{{ .Email }}</code> is past its renewal date. Please renew to keep it working.",
+      "renewSummaryOverdue": "⚠️ Overdue ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 Due today ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 Due tomorrow ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 Due in 3 days ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>Renewal reminders sent</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",

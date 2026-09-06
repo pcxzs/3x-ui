@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>Enlaces de invitación</b> — {{ .Count }} clientes\r\n✅ vinculado · ❌ sin vincular. Toca uno para su enlace.",
       "inviteAlreadyHolder": "❗ Tu cuenta de Telegram ya está vinculada a una configuración. Pide a un administrador si necesitas cambiarla.",
       "noBoundClient": "🔗 Todavía no hay ninguna configuración vinculada a esta cuenta.\r\nPide un enlace de invitación a tu administrador y ábrelo.",
-      "noBoundClientAdmin": "🔗 Aún no has vinculado ninguna configuración a esta cuenta.\r\nAbre 🛡 Administración → 🔗 Enlaces de invitación, elige tu cliente y abre su enlace."
+      "noBoundClientAdmin": "🔗 Aún no has vinculado ninguna configuración a esta cuenta.\r\nAbre 🛡 Administración → 🔗 Enlaces de invitación, elige tu cliente y abre su enlace.",
+      "renewThreeDays": "🔔 Hola: tu suscripción <code>{{ .Email }}</code> vence en 3 días.",
+      "renewTomorrow": "🔔 Hola: tu suscripción <code>{{ .Email }}</code> vence mañana.",
+      "renewToday": "🔔 Hola: tu suscripción <code>{{ .Email }}</code> vence hoy.",
+      "renewOverdue": "⚠️ Tu suscripción <code>{{ .Email }}</code> ha pasado su fecha de renovación. Renuévala para seguir usándola.",
+      "renewSummaryOverdue": "⚠️ Vencidas ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 Vencen hoy ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 Vencen mañana ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 Vencen en 3 días ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>Recordatorios de renovación enviados</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",

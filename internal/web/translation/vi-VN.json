@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>Liên kết mời</b> — {{ .Count }} khách hàng\r\n✅ đã liên kết · ❌ chưa. Chạm vào một mục để lấy liên kết.",
       "inviteAlreadyHolder": "❗ Tài khoản Telegram của bạn đã liên kết với một cấu hình. Liên hệ quản trị viên nếu cần đổi.",
       "noBoundClient": "🔗 Chưa có cấu hình nào liên kết với tài khoản này.\r\nHãy xin quản trị viên một liên kết mời và mở nó.",
-      "noBoundClientAdmin": "🔗 Bạn chưa liên kết cấu hình nào với tài khoản này.\r\nMở 🛡 Quản trị → 🔗 Liên kết mời, chọn khách hàng của bạn và mở liên kết."
+      "noBoundClientAdmin": "🔗 Bạn chưa liên kết cấu hình nào với tài khoản này.\r\nMở 🛡 Quản trị → 🔗 Liên kết mời, chọn khách hàng của bạn và mở liên kết.",
+      "renewThreeDays": "🔔 Xin chào — gói <code>{{ .Email }}</code> đến hạn gia hạn sau 3 ngày.",
+      "renewTomorrow": "🔔 Xin chào — gói <code>{{ .Email }}</code> đến hạn gia hạn vào ngày mai.",
+      "renewToday": "🔔 Xin chào — gói <code>{{ .Email }}</code> đến hạn gia hạn hôm nay.",
+      "renewOverdue": "⚠️ Gói <code>{{ .Email }}</code> đã quá hạn gia hạn. Vui lòng gia hạn để tiếp tục sử dụng.",
+      "renewSummaryOverdue": "⚠️ Quá hạn ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 Hôm nay ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 Ngày mai ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 Sau 3 ngày ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>Đã gửi nhắc gia hạn</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",

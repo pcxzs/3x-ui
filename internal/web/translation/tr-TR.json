@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>Davet bağlantıları</b> — {{ .Count }} istemci\r\n✅ bağlı · ❌ değil. Bağlantı için birine dokunun.",
       "inviteAlreadyHolder": "❗ Telegram hesabınız zaten bir yapılandırmaya bağlı. Değiştirmek için yöneticiye başvurun.",
       "noBoundClient": "🔗 Bu hesaba henüz bir yapılandırma bağlı değil.\r\nYöneticinizden davet bağlantısı isteyip açın.",
-      "noBoundClientAdmin": "🔗 Bu hesaba henüz bir yapılandırma bağlamadınız.\r\n🛡 Yönetim → 🔗 Davet Bağlantıları'nı açın, kendi istemcinizi seçip bağlantısını açın."
+      "noBoundClientAdmin": "🔗 Bu hesaba henüz bir yapılandırma bağlamadınız.\r\n🛡 Yönetim → 🔗 Davet Bağlantıları'nı açın, kendi istemcinizi seçip bağlantısını açın.",
+      "renewThreeDays": "🔔 Merhaba — <code>{{ .Email }}</code> aboneliğinizin yenilenmesine 3 gün kaldı.",
+      "renewTomorrow": "🔔 Merhaba — <code>{{ .Email }}</code> aboneliğiniz yarın yenilenmeli.",
+      "renewToday": "🔔 Merhaba — <code>{{ .Email }}</code> aboneliğiniz bugün yenilenmeli.",
+      "renewOverdue": "⚠️ <code>{{ .Email }}</code> aboneliğinizin yenilenme tarihi geçti. Çalışmaya devam etmesi için yenileyin.",
+      "renewSummaryOverdue": "⚠️ Gecikmiş ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 Bugün ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 Yarın ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 3 gün sonra ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>Yenileme hatırlatmaları gönderildi</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",

@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>邀請連結</b> — {{ .Count }} 位用戶\r\n✅ 已綁定 · ❌ 未綁定。點擊任一項取得連結。",
       "inviteAlreadyHolder": "❗ 你的 Telegram 帳號已綁定一個設定。如需更換請聯絡管理員。",
       "noBoundClient": "🔗 此帳號尚未綁定任何設定。\r\n請向管理員索取邀請連結並開啟。",
-      "noBoundClientAdmin": "🔗 你還沒有為此帳號綁定設定。\r\n開啟 🛡 管理 → 🔗 邀請連結，選擇你自己的用戶並開啟其連結。"
+      "noBoundClientAdmin": "🔗 你還沒有為此帳號綁定設定。\r\n開啟 🛡 管理 → 🔗 邀請連結，選擇你自己的用戶並開啟其連結。",
+      "renewThreeDays": "🔔 你好 — 訂閱 <code>{{ .Email }}</code> 將在 3 天後到期。",
+      "renewTomorrow": "🔔 你好 — 訂閱 <code>{{ .Email }}</code> 明天到期。",
+      "renewToday": "🔔 你好 — 訂閱 <code>{{ .Email }}</code> 今天到期。",
+      "renewOverdue": "⚠️ 訂閱 <code>{{ .Email }}</code> 已過期。請續費以繼續使用。",
+      "renewSummaryOverdue": "⚠️ 已過期 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 今天到期 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 明天到期 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 3 天後到期 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>已發送續費提醒</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",

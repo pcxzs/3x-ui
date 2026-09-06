@@ -36,6 +36,7 @@ func (t *Tgbot) SendReport() {
 
 	t.sendExhaustedToAdmins()
 	t.notifyExhausted()
+	t.notifyRenewals()
 
 	backupEnable, err := t.settingService.GetTgBotBackup()
 	if err == nil && backupEnable {

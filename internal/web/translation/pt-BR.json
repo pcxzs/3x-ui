@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>Links de convite</b> — {{ .Count }} clientes\r\n✅ vinculado · ❌ não vinculado. Toque em um para o link.",
       "inviteAlreadyHolder": "❗ Sua conta do Telegram já está vinculada a uma configuração. Fale com um administrador para trocar.",
       "noBoundClient": "🔗 Nenhuma configuração está vinculada a esta conta ainda.\r\nPeça um link de convite ao administrador e abra-o.",
-      "noBoundClientAdmin": "🔗 Você ainda não vinculou uma configuração a esta conta.\r\nAbra 🛡 Administração → 🔗 Links de convite, escolha seu cliente e abra o link."
+      "noBoundClientAdmin": "🔗 Você ainda não vinculou uma configuração a esta conta.\r\nAbra 🛡 Administração → 🔗 Links de convite, escolha seu cliente e abra o link.",
+      "renewThreeDays": "🔔 Olá — sua assinatura <code>{{ .Email }}</code> vence em 3 dias.",
+      "renewTomorrow": "🔔 Olá — sua assinatura <code>{{ .Email }}</code> vence amanhã.",
+      "renewToday": "🔔 Olá — sua assinatura <code>{{ .Email }}</code> vence hoje.",
+      "renewOverdue": "⚠️ Sua assinatura <code>{{ .Email }}</code> passou da data de renovação. Renove para continuar usando.",
+      "renewSummaryOverdue": "⚠️ Vencidas ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 Vencem hoje ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 Vencem amanhã ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 Vencem em 3 dias ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>Lembretes de renovação enviados</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",

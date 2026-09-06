@@ -77,6 +77,7 @@ var defaultValueMap = map[string]string{
 	"tgBotAPIServer":              "",
 	"tgBotChatId":                 "",
 	"tgBotHelpText":               "",
+	"tgBotLadderRun":              "",
 	"tgRunTime":                   "@daily",
 	"tgBotBackup":                 "false",
 	"tgCpu":                       "80",
@@ -559,6 +560,16 @@ func (s *SettingService) GetTgBotHelpText() (string, error) {
 
 func (s *SettingService) SetTgBotHelpText(text string) error {
 	return s.setString("tgBotHelpText", text)
+}
+
+// Holds the date the renewal ladder last completed, so an hourly cron cannot
+// walk the same customers down the same rungs repeatedly.
+func (s *SettingService) GetTgBotLadderRun() (string, error) {
+	return s.getString("tgBotLadderRun")
+}
+
+func (s *SettingService) SetTgBotLadderRun(day string) error {
+	return s.setString("tgBotLadderRun", day)
 }
 
 func (s *SettingService) GetTgbotEnabled() (bool, error) {

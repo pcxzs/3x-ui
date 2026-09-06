@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>Tautan undangan</b> — {{ .Count }} klien\r\n✅ sudah terhubung · ❌ belum. Ketuk salah satu untuk tautannya.",
       "inviteAlreadyHolder": "❗ Akun Telegram Anda sudah terhubung ke sebuah konfigurasi. Hubungi admin bila perlu diganti.",
       "noBoundClient": "🔗 Belum ada konfigurasi yang terhubung ke akun ini.\r\nMinta tautan undangan kepada admin lalu buka.",
-      "noBoundClientAdmin": "🔗 Anda belum menghubungkan konfigurasi ke akun ini.\r\nBuka 🛡 Admin → 🔗 Tautan Undangan, pilih klien Anda lalu buka tautannya."
+      "noBoundClientAdmin": "🔗 Anda belum menghubungkan konfigurasi ke akun ini.\r\nBuka 🛡 Admin → 🔗 Tautan Undangan, pilih klien Anda lalu buka tautannya.",
+      "renewThreeDays": "🔔 Halo — langganan <code>{{ .Email }}</code> jatuh tempo dalam 3 hari.",
+      "renewTomorrow": "🔔 Halo — langganan <code>{{ .Email }}</code> jatuh tempo besok.",
+      "renewToday": "🔔 Halo — langganan <code>{{ .Email }}</code> jatuh tempo hari ini.",
+      "renewOverdue": "⚠️ Langganan <code>{{ .Email }}</code> sudah melewati tanggal perpanjangan. Silakan perpanjang agar tetap aktif.",
+      "renewSummaryOverdue": "⚠️ Terlambat ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 Hari ini ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 Besok ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 3 hari lagi ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>Pengingat perpanjangan terkirim</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",

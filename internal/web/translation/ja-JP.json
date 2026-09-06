@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>招待リンク</b> — {{ .Count }} 件\r\n✅ 紐付け済み · ❌ 未紐付け。タップするとリンクが出ます。",
       "inviteAlreadyHolder": "❗ このアカウントは既に設定に紐付いています。変更が必要なら管理者にご連絡ください。",
       "noBoundClient": "🔗 このアカウントにはまだ設定が紐付いていません。\r\n管理者から招待リンクをもらって開いてください。",
-      "noBoundClientAdmin": "🔗 このアカウントにはまだ設定を紐付けていません。\r\n🛡 管理 → 🔗 招待リンク から自分のクライアントを選び、リンクを開いてください。"
+      "noBoundClientAdmin": "🔗 このアカウントにはまだ設定を紐付けていません。\r\n🛡 管理 → 🔗 招待リンク から自分のクライアントを選び、リンクを開いてください。",
+      "renewThreeDays": "🔔 <code>{{ .Email }}</code> の更新期限まであと3日です。",
+      "renewTomorrow": "🔔 <code>{{ .Email }}</code> の更新期限は明日です。",
+      "renewToday": "🔔 <code>{{ .Email }}</code> の更新期限は本日です。",
+      "renewOverdue": "⚠️ <code>{{ .Email }}</code> の更新期限を過ぎています。継続には更新が必要です。",
+      "renewSummaryOverdue": "⚠️ 期限切れ ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 本日 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 明日 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 3日後 ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>更新リマインダーを送信しました</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",

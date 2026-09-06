@@ -2235,7 +2235,16 @@
       "invitePicker": "🔗 <b>روابط الدعوة</b> — {{ .Count }} عميل\r\n✅ مرتبط · ❌ غير مرتبط. اضغط على واحد للحصول على رابطه.",
       "inviteAlreadyHolder": "❗ حسابك مرتبط بالفعل بإعداد. راجع المشرف إذا احتجت التغيير.",
       "noBoundClient": "🔗 لا يوجد إعداد مرتبط بهذا الحساب بعد.\r\nاطلب من المشرف رابط دعوة وافتحه.",
-      "noBoundClientAdmin": "🔗 لم تربط أي إعداد بهذا الحساب بعد.\r\nافتح 🛡 المشرف ← 🔗 روابط الدعوة واختر عميلك ثم افتح رابطه."
+      "noBoundClientAdmin": "🔗 لم تربط أي إعداد بهذا الحساب بعد.\r\nافتح 🛡 المشرف ← 🔗 روابط الدعوة واختر عميلك ثم افتح رابطه.",
+      "renewThreeDays": "🔔 مرحبًا — اشتراكك <code>{{ .Email }}</code> يحين تجديده بعد 3 أيام.",
+      "renewTomorrow": "🔔 مرحبًا — اشتراكك <code>{{ .Email }}</code> يحين تجديده غدًا.",
+      "renewToday": "🔔 مرحبًا — اشتراكك <code>{{ .Email }}</code> يحين تجديده اليوم.",
+      "renewOverdue": "⚠️ تجاوز اشتراكك <code>{{ .Email }}</code> موعد التجديد. يرجى التجديد ليستمر العمل.",
+      "renewSummaryOverdue": "⚠️ متأخر ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryToday": "📅 اليوم ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryTomorrow": "📅 غدًا ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryThreeDays": "📅 بعد 3 أيام ({{ .Count }}): {{ .Clients }}",
+      "renewSummaryHeader": "🔔 <b>تم إرسال تذكيرات التجديد</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
