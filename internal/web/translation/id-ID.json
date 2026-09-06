@@ -2173,7 +2173,8 @@
       "memoryThreshold": "Penggunaan memori {{ .Percent }}% melebihi ambang batas {{ .Threshold }}%",
       "inviteBound": "✅ Akun Telegram Anda kini tertaut ke <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ Tautan undangan ini tidak valid atau sudah digunakan.\r\n",
-      "inviteLink": "🔗 Tautan undangan untuk <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nOrang pertama yang membukanya akan tertaut ke klien ini.\r\n"
+      "inviteLink": "🔗 Tautan undangan untuk <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nOrang pertama yang membukanya akan tertaut ke klien ini.\r\n",
+      "credentialsRotated": "🔑 Konfigurasi untuk <code>{{ .Email }}</code> diperbarui demi keamanan. Silakan segarkan langganan Anda di aplikasi — tautan langganan tidak berubah.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 Komentar",
       "ResetAllTraffics": "Reset Semua Lalu Lintas",
       "SortedTrafficUsageReport": "Laporan Penggunaan Lalu Lintas yang Terurut",
-      "inviteLink": "🔗 Tautan Undangan"
+      "inviteLink": "🔗 Tautan Undangan",
+      "resetCredentials": "🔑 Atur Ulang Kredensial",
+      "confirmResetCredentials": "✅ Konfirmasi Atur Ulang Kredensial?"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }}: Dinonaktifkan dengan berhasil.",
       "askToAddUserId": "Konfigurasi Anda tidak ditemukan!\r\nSilakan minta admin Anda untuk menggunakan ChatID Telegram Anda dalam konfigurasi Anda.\r\n\r\nChatID Pengguna Anda: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Pilih Klien untuk Inbound {{ .Inbound }}",
-      "chooseInbound": "Pilih Inbound"
+      "chooseInbound": "Pilih Inbound",
+      "resetCredentialsSuccess": "✅ Kredensial untuk {{ .Email }} telah diatur ulang."
     }
   },
   "email": {

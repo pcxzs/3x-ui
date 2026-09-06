@@ -2173,7 +2173,8 @@
       "memoryThreshold": "Bellek kullanımı {{ .Percent }}% eşiği {{ .Threshold }}% aşıyor",
       "inviteBound": "✅ Telegram hesabınız <code>{{ .Email }}</code> ile bağlandı.\r\n",
       "inviteInvalid": "❗ Bu davet bağlantısı geçersiz veya daha önce kullanılmış.\r\n",
-      "inviteLink": "🔗 <code>{{ .Email }}</code> için davet bağlantısı:\r\n<code>{{ .Link }}</code>\r\n\r\nBağlantıyı ilk açan kişi bu istemciye bağlanır.\r\n"
+      "inviteLink": "🔗 <code>{{ .Email }}</code> için davet bağlantısı:\r\n<code>{{ .Link }}</code>\r\n\r\nBağlantıyı ilk açan kişi bu istemciye bağlanır.\r\n",
+      "credentialsRotated": "🔑 <code>{{ .Email }}</code> yapılandırması güvenlik nedeniyle güncellendi. Lütfen uygulamanızda aboneliği yenileyin — abonelik bağlantınız değişmedi.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 Yorum",
       "ResetAllTraffics": "Tüm Trafikleri Sıfırla",
       "SortedTrafficUsageReport": "Sıralı Trafik Kullanım Raporu",
-      "inviteLink": "🔗 Davet Bağlantısı"
+      "inviteLink": "🔗 Davet Bağlantısı",
+      "resetCredentials": "🔑 Kimlik Bilgilerini Sıfırla",
+      "confirmResetCredentials": "✅ Kimlik Bilgileri Sıfırlansın mı?"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }}: Başarıyla devre dışı bırakıldı.",
       "askToAddUserId": "Yapılandırmanız bulunamadı!\r\nLütfen yöneticinizden Telegram Chat ID'nizi yapılandırmanıza eklemesini isteyin.\r\n\r\nSizin Chat ID'niz: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Gelen Bağlantı {{ .Inbound }} için bir Kullanıcı Seçin",
-      "chooseInbound": "Bir Gelen Bağlantı Seçin"
+      "chooseInbound": "Bir Gelen Bağlantı Seçin",
+      "resetCredentialsSuccess": "✅ {{ .Email }} için kimlik bilgileri sıfırlandı."
     }
   },
   "email": {

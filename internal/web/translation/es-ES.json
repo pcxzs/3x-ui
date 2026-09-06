@@ -2173,7 +2173,8 @@
       "memoryThreshold": "Uso de memoria {{ .Percent }}% supera el umbral de {{ .Threshold }}%",
       "inviteBound": "✅ Tu cuenta de Telegram ahora está vinculada a <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ Este enlace de invitación no es válido o ya se ha utilizado.\r\n",
-      "inviteLink": "🔗 Enlace de invitación para <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nLa primera persona que lo abra quedará vinculada a este cliente.\r\n"
+      "inviteLink": "🔗 Enlace de invitación para <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nLa primera persona que lo abra quedará vinculada a este cliente.\r\n",
+      "credentialsRotated": "🔑 La configuración de <code>{{ .Email }}</code> se actualizó por seguridad. Actualiza tu suscripción en la aplicación: el enlace de suscripción no ha cambiado.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 Comentario",
       "ResetAllTraffics": "Reiniciar todo el tráfico",
       "SortedTrafficUsageReport": "Informe de uso de tráfico ordenado",
-      "inviteLink": "🔗 Enlace de invitación"
+      "inviteLink": "🔗 Enlace de invitación",
+      "resetCredentials": "🔑 Restablecer credenciales",
+      "confirmResetCredentials": "✅ ¿Confirmar restablecer credenciales?"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }} : Deshabilitado exitosamente.",
       "askToAddUserId": "¡No se encuentra su configuración!\r\nPor favor, pídale a su administrador que use su ChatID de usuario de Telegram en su(s) configuración(es).\r\n\r\nSu ChatID de usuario: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Elige un Cliente para Inbound {{ .Inbound }}",
-      "chooseInbound": "Elige un Inbound"
+      "chooseInbound": "Elige un Inbound",
+      "resetCredentialsSuccess": "✅ Credenciales restablecidas para {{ .Email }}."
     }
   },
   "email": {

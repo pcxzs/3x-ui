@@ -731,6 +731,7 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.toggle")).WithCallbackData(t.encodeQuery("toggle_enable "+email)),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.resetCredentials")).WithCallbackData(t.encodeQuery("reset_cred "+email)),
 		),
 	)
 	if len(messageID) > 0 {
@@ -738,6 +739,25 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 	} else {
 		t.SendMsgToTgbot(chatId, output, inlineKeyboard)
 	}
+}
+
+// Rotates the client's protocol secret so a shared config stops working, then
+// tells the owner to refresh: their subscription URL is unchanged by design.
+func (t *Tgbot) rotateClientCredentials(chatId int64, email string, messageID ...int) {
+	needRestart, err := t.clientService.RotateClientCredentialsByEmail(&t.inboundService, email)
+	if needRestart {
+		t.xrayService.SetToNeedRestart()
+	}
+	if err != nil {
+		logger.Warning("tgbot: credential rotation failed:", err)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation")+"\r\n"+err.Error())
+		return
+	}
+
+	if record, rErr := t.clientService.GetRecordByEmail(nil, email); rErr == nil && record.TgID != 0 && record.TgID != chatId {
+		t.SendMsgToTgbot(record.TgID, t.I18nBot("tgbot.messages.credentialsRotated", "Email=="+email))
+	}
+	t.searchClient(chatId, email, messageID...)
 }
 
 // getCommonClientButtons returns the shared inline keyboard rows for the

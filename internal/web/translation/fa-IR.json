@@ -2173,7 +2173,8 @@
       "memoryThreshold": "مصرف حافظه {{ .Percent }}% از حد آستانه {{ .Threshold }}% فراتر رفته است",
       "inviteBound": "✅ حساب تلگرام شما به <code>{{ .Email }}</code> متصل شد.\r\n",
       "inviteInvalid": "❗ این لینک دعوت نامعتبر است یا قبلاً استفاده شده است.\r\n",
-      "inviteLink": "🔗 لینک دعوت برای <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nاولین کسی که آن را باز کند به این کاربر متصل می‌شود.\r\n"
+      "inviteLink": "🔗 لینک دعوت برای <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nاولین کسی که آن را باز کند به این کاربر متصل می‌شود.\r\n",
+      "credentialsRotated": "🔑 تنظیمات <code>{{ .Email }}</code> به دلایل امنیتی به‌روزرسانی شد. لطفاً اشتراک خود را در برنامه تازه‌سازی کنید — لینک اشتراک شما تغییر نکرده است.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 نظر",
       "ResetAllTraffics": "بازنشانی همه ترافیک‌ها",
       "SortedTrafficUsageReport": "گزارش استفاده از ترافیک مرتب‌شده",
-      "inviteLink": "🔗 لینک دعوت"
+      "inviteLink": "🔗 لینک دعوت",
+      "resetCredentials": "🔑 تغییر کلید اتصال",
+      "confirmResetCredentials": "✅ تغییر کلید اتصال تأیید شود؟"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }} : با موفقیت غیرفعال شد.",
       "askToAddUserId": "پیکربندی شما یافت نشد!\r\nلطفاً از مدیر خود بخواهید که شناسه کاربر تلگرام خود را در پیکربندی (های) خود استفاده کند.\r\n\r\nشناسه کاربری شما: <code>{{ .TgUserID }}</code>",
       "chooseClient": "یک مشتری برای ورودی {{ .Inbound }} انتخاب کنید",
-      "chooseInbound": "یک ورودی انتخاب کنید"
+      "chooseInbound": "یک ورودی انتخاب کنید",
+      "resetCredentialsSuccess": "✅ کلید اتصال {{ .Email }} تغییر کرد."
     }
   },
   "email": {

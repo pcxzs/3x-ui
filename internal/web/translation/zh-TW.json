@@ -2173,7 +2173,8 @@
       "memoryThreshold": "記憶體使用率 {{ .Percent }}% 超過閾值 {{ .Threshold }}%",
       "inviteBound": "✅ 您的 Telegram 帳號已綁定至 <code>{{ .Email }}</code>。\r\n",
       "inviteInvalid": "❗ 此邀請連結無效或已被使用。\r\n",
-      "inviteLink": "🔗 <code>{{ .Email }}</code> 的邀請連結：\r\n<code>{{ .Link }}</code>\r\n\r\n第一個開啟它的人將綁定至此客戶端。\r\n"
+      "inviteLink": "🔗 <code>{{ .Email }}</code> 的邀請連結：\r\n<code>{{ .Link }}</code>\r\n\r\n第一個開啟它的人將綁定至此客戶端。\r\n",
+      "credentialsRotated": "🔑 基於安全考量，<code>{{ .Email }}</code> 的設定已更新。請在應用程式中重新整理訂閱——您的訂閱連結未變。\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 評論",
       "ResetAllTraffics": "重設所有流量",
       "SortedTrafficUsageReport": "排序過的流量使用報告",
-      "inviteLink": "🔗 邀請連結"
+      "inviteLink": "🔗 邀請連結",
+      "resetCredentials": "🔑 重設憑證",
+      "confirmResetCredentials": "✅ 確認重設憑證？"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }}：已成功禁用。",
       "askToAddUserId": "未找到您的配置！\r\n請向管理員詢問，在您的配置中使用您的 Telegram 使用者 ChatID。\r\n\r\n您的使用者 ChatID：<code>{{ .TgUserID }}</code>",
       "chooseClient": "為入站 {{ .Inbound }} 選擇一個客戶",
-      "chooseInbound": "選擇一個入站"
+      "chooseInbound": "選擇一個入站",
+      "resetCredentialsSuccess": "✅ 已重設 {{ .Email }} 的憑證。"
     }
   },
   "email": {

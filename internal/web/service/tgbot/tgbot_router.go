@@ -351,6 +351,19 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.inviteLink"))
 				t.sendInviteLink(chatId, email)
 				return
+			case "reset_cred":
+				inlineKeyboard := tu.InlineKeyboard(
+					tu.InlineKeyboardRow(
+						tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.cancel")).WithCallbackData(t.encodeQuery("client_cancel "+email)),
+					),
+					tu.InlineKeyboardRow(
+						tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.confirmResetCredentials")).WithCallbackData(t.encodeQuery("reset_cred_c "+email)),
+					),
+				)
+				t.editMessageCallbackTgBot(chatId, callbackQuery.Message.GetMessageID(), inlineKeyboard)
+			case "reset_cred_c":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.resetCredentialsSuccess", "Email=="+email))
+				t.rotateClientCredentials(chatId, email, callbackQuery.Message.GetMessageID())
 			case "client_get_usage":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.messages.email", "Email=="+email))
 				t.searchClient(chatId, email)

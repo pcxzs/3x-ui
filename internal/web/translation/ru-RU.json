@@ -2173,7 +2173,8 @@
       "memoryThreshold": "🔴 Использование памяти {{ .Percent }}% превышает пороговое значение {{ .Threshold }}%",
       "inviteBound": "✅ Ваш аккаунт Telegram привязан к <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ Эта ссылка-приглашение недействительна или уже использована.\r\n",
-      "inviteLink": "🔗 Ссылка-приглашение для <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nПервый, кто её откроет, будет привязан к этому клиенту.\r\n"
+      "inviteLink": "🔗 Ссылка-приглашение для <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nПервый, кто её откроет, будет привязан к этому клиенту.\r\n",
+      "credentialsRotated": "🔑 Конфигурация <code>{{ .Email }}</code> обновлена в целях безопасности. Обновите подписку в приложении — ссылка на подписку не изменилась.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 Комментарий",
       "ResetAllTraffics": "Сбросить весь трафик",
       "SortedTrafficUsageReport": "Отсортированный отчет об использовании трафика",
-      "inviteLink": "🔗 Ссылка-приглашение"
+      "inviteLink": "🔗 Ссылка-приглашение",
+      "resetCredentials": "🔑 Сбросить учётные данные",
+      "confirmResetCredentials": "✅ Подтвердить сброс учётных данных?"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }}: Отключено успешно.",
       "askToAddUserId": "❌ Ваша конфигурация не найдена!\r\n💭 Пожалуйста, попросите администратора использовать ваш Telegram User ID в конфигурации.\r\n\r\n🆔 Ваш User ID: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Выберите клиента для входящего подключения {{ .Inbound }}",
-      "chooseInbound": "Выберите входящее подключение"
+      "chooseInbound": "Выберите входящее подключение",
+      "resetCredentialsSuccess": "✅ Учётные данные для {{ .Email }} сброшены."
     }
   },
   "email": {

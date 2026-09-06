@@ -2173,7 +2173,8 @@
       "memoryThreshold": "استخدام الذاكرة {{ .Percent }}% يتجاوز الحد {{ .Threshold }}%",
       "inviteBound": "✅ تم ربط حساب تيليجرام الخاص بك بـ <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ رابط الدعوة هذا غير صالح أو تم استخدامه بالفعل.\r\n",
-      "inviteLink": "🔗 رابط الدعوة لـ <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nأول شخص يفتحه سيتم ربطه بهذا العميل.\r\n"
+      "inviteLink": "🔗 رابط الدعوة لـ <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nأول شخص يفتحه سيتم ربطه بهذا العميل.\r\n",
+      "credentialsRotated": "🔑 تم تحديث إعدادات <code>{{ .Email }}</code> لأسباب أمنية. يرجى تحديث اشتراكك في التطبيق — رابط الاشتراك لم يتغير.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 تعليق",
       "ResetAllTraffics": "إعادة ضبط جميع الترافيك",
       "SortedTrafficUsageReport": "تقرير استخدام الترافيك المرتب",
-      "inviteLink": "🔗 رابط الدعوة"
+      "inviteLink": "🔗 رابط الدعوة",
+      "resetCredentials": "🔑 إعادة تعيين بيانات الاتصال",
+      "confirmResetCredentials": "✅ تأكيد إعادة تعيين بيانات الاتصال؟"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }}: اتعطل بنجاح.",
       "askToAddUserId": "مافيش إعدادات ليك!\r\nاطلب من الأدمن يضيف الـ Telegram ChatID الخاص بيك في إعداداتك.\r\n\r\nالـ ChatID بتاعك: <code>{{ .TgUserID }}</code>",
       "chooseClient": "اختار عميل للإدخال {{ .Inbound }}",
-      "chooseInbound": "اختار الإدخال"
+      "chooseInbound": "اختار الإدخال",
+      "resetCredentialsSuccess": "✅ تم إعادة تعيين بيانات {{ .Email }}."
     }
   },
   "email": {

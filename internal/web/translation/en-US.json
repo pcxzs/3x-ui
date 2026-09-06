@@ -2173,7 +2173,8 @@
       "memoryThreshold": "Memory Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
       "inviteBound": "✅ Your Telegram account is now linked to <code>{{ .Email }}</code>.\r\n",
       "inviteInvalid": "❗ This invite link is invalid or has already been used.\r\n",
-      "inviteLink": "🔗 Invite link for <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nThe first person to open it is linked to this client.\r\n"
+      "inviteLink": "🔗 Invite link for <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nThe first person to open it is linked to this client.\r\n",
+      "credentialsRotated": "🔑 The configuration for <code>{{ .Email }}</code> was updated for security. Please refresh your subscription in your app — your subscription link has not changed.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2216,7 +2217,9 @@
       "change_comment": "⚙️💬 Comment",
       "ResetAllTraffics": "Reset All Traffic",
       "SortedTrafficUsageReport": "Sorted Traffic Usage Report",
-      "inviteLink": "🔗 Invite Link"
+      "inviteLink": "🔗 Invite Link",
+      "resetCredentials": "🔑 Reset Credentials",
+      "confirmResetCredentials": "✅ Confirm Reset Credentials?"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",
@@ -2239,7 +2242,8 @@
       "disableSuccess": "✅ {{ .Email }}: Disabled successfully.",
       "askToAddUserId": "Your configuration is not found!\r\nPlease ask your admin to use your Telegram ChatID in your configuration(s).\r\n\r\nYour ChatID: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Choose a Client for Inbound {{ .Inbound }}",
-      "chooseInbound": "Choose an Inbound"
+      "chooseInbound": "Choose an Inbound",
+      "resetCredentialsSuccess": "✅ Credentials reset for {{ .Email }}."
     }
   },
   "email": {
