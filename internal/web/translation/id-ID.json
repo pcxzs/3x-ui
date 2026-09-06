@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ Tulis pesan Anda setelah perintah, misalnya <code>/pm saya tidak bisa terhubung</code>",
       "sendUsage": "❗ Penggunaan: <code>/send &lt;chatId&gt; &lt;pesan&gt;</code>",
       "helpAdminExtraCommands": "Untuk menyiarkan pesan ke semua klien yang tertaut:\r\n<code>/broadcast</code>\r\n\r\nUntuk membalas klien:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nUntuk mengubah teks bantuan yang dilihat klien:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "Untuk mengirim pesan ke administrator:\r\n<code>/pm [Text]</code>\r\n\r\nUntuk melihat bantuan ini lagi:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "Untuk mengirim pesan ke administrator:\r\n<code>/pm [Text]</code>\r\n\r\nUntuk melihat bantuan ini lagi:\r\n<code>/help</code>",
+      "whoisUsage": "Untuk melihat klien yang dimiliki sebuah akun Telegram:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ Teks bantuan telah dikembalikan ke bawaan.",
       "helpTextEmpty": "❌ Teks bantuan kosong.",
       "helpTextInvalid": "❌ Telegram menolak menampilkan teks tersebut, jadi tidak disimpan.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ Gagal menyimpan teks bantuan.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ Gagal menyimpan teks bantuan.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ Email saat ini: <code>{{ .Email }}</code>\n\nKirim email yang baru.",
+      "commentPrompt": "💬 Mengedit <code>{{ .Email }}</code>\n\nKirim komentar baru, atau <code>-</code> untuk menghapusnya.",
+      "clientEditFailed": "❌ Operasi gagal: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> diubah menjadi <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 Klien <code>{{ .Email }}</code> telah dihapus.",
+      "subIDRegenerated": "🔄 ID langganan baru diterbitkan untuk <code>{{ .Email }}</code>. Tautan langganan dan undangan lama tidak berfungsi lagi.",
+      "depletedNone": "🧹 Tidak ada klien habis yang perlu dihapus.",
+      "depletedDeleted": "🧹 {{ .Count }} klien habis telah dihapus.",
+      "whoisEmpty": "🔍 Tidak ada klien yang tertaut ke ID Telegram <code>{{ .ID }}</code>.",
+      "whoisHeader": "🔍 ID Telegram <code>{{ .ID }}</code> memiliki {{ .Count }} klien:"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ Konfirmasi Atur Ulang Kredensial?",
       "replyToClient": "💬 Balas",
       "broadcast": "📢 Siaran",
-      "confirmBroadcast": "✅ Kirim ke {{ .Count }} pengguna"
+      "confirmBroadcast": "✅ Kirim ke {{ .Count }} pengguna",
+      "editClient": "✏️ Edit Klien",
+      "deleteClient": "🗑 Hapus Klien",
+      "confirmDeleteClient": "✅ Konfirmasi hapus klien?",
+      "newSubID": "🔄 ID Langganan Baru",
+      "confirmNewSubID": "✅ Konfirmasi ID langganan baru?",
+      "delDepleted": "🧹 Hapus yang Habis",
+      "confirmDelDepleted": "✅ Konfirmasi hapus klien yang habis?"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

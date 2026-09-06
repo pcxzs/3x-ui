@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ コマンドの後にメッセージを書いてください。例: <code>/pm 接続できません</code>",
       "sendUsage": "❗ 使い方: <code>/send &lt;chatId&gt; &lt;メッセージ&gt;</code>",
       "helpAdminExtraCommands": "連携済みの全クライアントに一斉配信する:\r\n<code>/broadcast</code>\r\n\r\nクライアントに返信する:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nクライアント向けヘルプ文を変更する:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "管理者にメッセージを送る:\r\n<code>/pm [Text]</code>\r\n\r\nこのヘルプをもう一度表示する:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "管理者にメッセージを送る:\r\n<code>/pm [Text]</code>\r\n\r\nこのヘルプをもう一度表示する:\r\n<code>/help</code>",
+      "whoisUsage": "Telegram アカウントが保有するクライアントを調べる:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "CPU使用率は{{ .Percent }}%、しきい値{{ .Threshold }}%を超えました",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ ヘルプ文を既定に戻しました。",
       "helpTextEmpty": "❌ ヘルプ文が空です。",
       "helpTextInvalid": "❌ Telegram がその文面を表示できなかったため、保存されませんでした。\r\n{{ .Error }}",
-      "helpTextFailed": "❌ ヘルプ文の保存に失敗しました。\r\n{{ .Error }}"
+      "helpTextFailed": "❌ ヘルプ文の保存に失敗しました。\r\n{{ .Error }}",
+      "renamePrompt": "✏️ 現在のメール: <code>{{ .Email }}</code>\n\n新しいメールを送信してください。",
+      "commentPrompt": "💬 <code>{{ .Email }}</code> を編集中\n\n新しいコメントを送信、または <code>-</code> で消去します。",
+      "clientEditFailed": "❌ 操作に失敗しました: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> を <code>{{ .New }}</code> に変更しました。",
+      "clientDeleted": "🗑 クライアント <code>{{ .Email }}</code> を削除しました。",
+      "subIDRegenerated": "🔄 <code>{{ .Email }}</code> に新しいサブスクリプション ID を発行しました。以前のサブスクリプションと招待リンクは無効になります。",
+      "depletedNone": "🧹 削除対象の使い切ったクライアントはありません。",
+      "depletedDeleted": "🧹 使い切ったクライアント {{ .Count }} 件を削除しました。",
+      "whoisEmpty": "🔍 Telegram ID <code>{{ .ID }}</code> に紐づくクライアントはありません。",
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> は {{ .Count }} 件のクライアントを保有しています:"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ 認証情報をリセットしますか？",
       "replyToClient": "💬 返信",
       "broadcast": "📢 一斉配信",
-      "confirmBroadcast": "✅ {{ .Count }} 人のユーザーに送信"
+      "confirmBroadcast": "✅ {{ .Count }} 人のユーザーに送信",
+      "editClient": "✏️ クライアントを編集",
+      "deleteClient": "🗑 クライアントを削除",
+      "confirmDeleteClient": "✅ クライアントを削除しますか？",
+      "newSubID": "🔄 新しいサブスクリプション ID",
+      "confirmNewSubID": "✅ 新しいサブスクリプション ID を発行しますか？",
+      "delDepleted": "🧹 使い切ったものを削除",
+      "confirmDelDepleted": "✅ 使い切ったクライアントを削除しますか？"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

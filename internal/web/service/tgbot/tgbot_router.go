@@ -248,6 +248,17 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 			break
 		}
 		t.deliverAdminReply(chatId, target, strings.TrimSpace(strings.Join(commandArgs[1:], " ")))
+	case "whois":
+		onlyMessage = true
+		if !isAdmin {
+			handleUnknownCommand()
+			break
+		}
+		if len(commandArgs) == 0 {
+			msg += t.I18nBot("tgbot.commands.whoisUsage")
+			break
+		}
+		t.whoIs(chatId, commandArgs[0])
 	case "inbound":
 		onlyMessage = true
 		if isAdmin && len(commandArgs) > 0 {
@@ -404,6 +415,39 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 			case "reset_cred_c":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.resetCredentialsSuccess", "Email=="+email))
 				t.rotateClientCredentials(chatId, email, callbackQuery.Message.GetMessageID())
+			case "client_edit":
+				t.clientEditMenu(chatId, email, callbackQuery.Message.GetMessageID())
+			case "client_edit_email":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.change_email"))
+				t.promptClientEdit(chatId, email, stateEditEmailPrefix, "tgbot.messages.renamePrompt")
+			case "client_edit_comment":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.change_comment"))
+				t.promptClientEdit(chatId, email, stateEditCommentPrefix, "tgbot.messages.commentPrompt")
+			case "client_new_subid":
+				inlineKeyboard := tu.InlineKeyboard(
+					tu.InlineKeyboardRow(
+						tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.cancel")).WithCallbackData(t.encodeQuery("client_cancel "+email)),
+					),
+					tu.InlineKeyboardRow(
+						tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.confirmNewSubID")).WithCallbackData(t.encodeQuery("client_new_subid_c "+email)),
+					),
+				)
+				t.editMessageCallbackTgBot(chatId, callbackQuery.Message.GetMessageID(), inlineKeyboard)
+			case "client_new_subid_c":
+				t.regenerateSubID(chatId, email, callbackQuery.Message.GetMessageID())
+			case "client_delete":
+				inlineKeyboard := tu.InlineKeyboard(
+					tu.InlineKeyboardRow(
+						tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.cancel")).WithCallbackData(t.encodeQuery("client_cancel "+email)),
+					),
+					tu.InlineKeyboardRow(
+						tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.confirmDeleteClient")).WithCallbackData(t.encodeQuery("client_delete_c "+email)),
+					),
+				)
+				t.editMessageCallbackTgBot(chatId, callbackQuery.Message.GetMessageID(), inlineKeyboard)
+			case "client_delete_c":
+				t.deleteMessageTgBot(chatId, callbackQuery.Message.GetMessageID())
+				t.deleteClient(chatId, email)
 			case "client_get_usage":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.messages.email", "Email=="+email))
 				t.searchClient(chatId, email)
@@ -1239,7 +1283,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		t.onlineClients(chatId, callbackQuery.Message.GetMessageID())
 	case "commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.whoisUsage"))
 	case "broadcast":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.broadcast"))
 		t.startBroadcast(chatId)
@@ -1249,6 +1293,22 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 	case "broadcast_cancel":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.canceled", "Email=="))
 		t.cancelBroadcast(chatId)
+	case "del_depleted":
+		inlineKeyboard := tu.InlineKeyboard(
+			tu.InlineKeyboardRow(
+				tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.cancel")).WithCallbackData(t.encodeQuery("del_depleted_cancel")),
+			),
+			tu.InlineKeyboardRow(
+				tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.confirmDelDepleted")).WithCallbackData(t.encodeQuery("del_depleted_c")),
+			),
+		)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.AreYouSure"), inlineKeyboard)
+	case "del_depleted_cancel":
+		t.deleteMessageTgBot(chatId, callbackQuery.Message.GetMessageID())
+		t.SendMsgToTgbotDeleteAfter(chatId, t.I18nBot("tgbot.messages.cancel"), 1, tu.ReplyKeyboardRemove())
+	case "del_depleted_c":
+		t.deleteMessageTgBot(chatId, callbackQuery.Message.GetMessageID())
+		t.deleteDepletedClients(chatId)
 	case "add_client":
 		client_Email = t.randomLowerAndNum(8)
 		client_LimitIP = 0

@@ -50,6 +50,7 @@ func (t *Tgbot) SendAnswer(chatId int64, msg string, isAdmin bool) {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.broadcast")).WithCallbackData(t.encodeQuery("broadcast")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.delDepleted")).WithCallbackData(t.encodeQuery("del_depleted")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("pages.settings.subSettings")).WithCallbackData(t.encodeQuery("admin_client_sub_links")),

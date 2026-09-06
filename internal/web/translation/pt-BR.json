@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ Escreva sua mensagem após o comando, por exemplo <code>/pm não consigo conectar</code>",
       "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensagem&gt;</code>",
       "helpAdminExtraCommands": "Para transmitir uma mensagem a todos os clientes vinculados:\r\n<code>/broadcast</code>\r\n\r\nPara responder a um cliente:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nPara alterar o texto de ajuda que os clientes veem:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "Para enviar mensagem ao administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara ver esta ajuda novamente:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "Para enviar mensagem ao administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara ver esta ajuda novamente:\r\n<code>/help</code>",
+      "whoisUsage": "Para consultar quais clientes uma conta do Telegram possui:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "A carga da CPU {{ .Percent }}% excede o limite de {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ O texto de ajuda foi restaurado ao padrão.",
       "helpTextEmpty": "❌ O texto de ajuda está vazio.",
       "helpTextInvalid": "❌ O Telegram recusou renderizar esse texto, então ele não foi salvo.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ Falha ao salvar o texto de ajuda.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ Falha ao salvar o texto de ajuda.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ E-mail atual: <code>{{ .Email }}</code>\n\nEnvie o novo e-mail.",
+      "commentPrompt": "💬 Editando <code>{{ .Email }}</code>\n\nEnvie o novo comentário ou <code>-</code> para apagá-lo.",
+      "clientEditFailed": "❌ A operação falhou: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> foi renomeado para <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 O cliente <code>{{ .Email }}</code> foi excluído.",
+      "subIDRegenerated": "🔄 Um novo ID de assinatura foi emitido para <code>{{ .Email }}</code>. Os links de assinatura e convite antigos não funcionam mais.",
+      "depletedNone": "🧹 Nenhum cliente esgotado para excluir.",
+      "depletedDeleted": "🧹 {{ .Count }} cliente(s) esgotado(s) excluído(s).",
+      "whoisEmpty": "🔍 Nenhum cliente está vinculado ao ID do Telegram <code>{{ .ID }}</code>.",
+      "whoisHeader": "🔍 O ID do Telegram <code>{{ .ID }}</code> possui {{ .Count }} cliente(s):"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ Confirmar redefinição de credenciais?",
       "replyToClient": "💬 Responder",
       "broadcast": "📢 Transmissão",
-      "confirmBroadcast": "✅ Enviar para {{ .Count }} usuários"
+      "confirmBroadcast": "✅ Enviar para {{ .Count }} usuários",
+      "editClient": "✏️ Editar cliente",
+      "deleteClient": "🗑 Excluir cliente",
+      "confirmDeleteClient": "✅ Confirmar exclusão do cliente?",
+      "newSubID": "🔄 Novo ID de assinatura",
+      "confirmNewSubID": "✅ Confirmar novo ID de assinatura?",
+      "delDepleted": "🧹 Excluir esgotados",
+      "confirmDelDepleted": "✅ Confirmar exclusão dos clientes esgotados?"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

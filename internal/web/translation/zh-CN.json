@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ 请在命令后写下消息，例如 <code>/pm 我无法连接</code>",
       "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;消息&gt;</code>",
       "helpAdminExtraCommands": "向所有已绑定的用户群发消息：\r\n<code>/broadcast</code>\r\n\r\n回复某位用户：\r\n<code>/send [ChatID] [Text]</code>\r\n\r\n修改用户看到的帮助内容：\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "联系管理员：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本帮助：\r\n<code>/help</code>"
+      "helpClientExtraCommands": "联系管理员：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本帮助：\r\n<code>/help</code>",
+      "whoisUsage": "查询某个 Telegram 账号拥有哪些客户端:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率为 {{ .Percent }}%，超过阈值 {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ 帮助内容已恢复为默认。",
       "helpTextEmpty": "❌ 帮助内容为空。",
       "helpTextInvalid": "❌ Telegram 无法渲染该内容，因此未保存。\r\n{{ .Error }}",
-      "helpTextFailed": "❌ 保存帮助内容失败。\r\n{{ .Error }}"
+      "helpTextFailed": "❌ 保存帮助内容失败。\r\n{{ .Error }}",
+      "renamePrompt": "✏️ 当前邮箱: <code>{{ .Email }}</code>\n\n请发送新的邮箱。",
+      "commentPrompt": "💬 正在编辑 <code>{{ .Email }}</code>\n\n请发送新的备注，或发送 <code>-</code> 清空。",
+      "clientEditFailed": "❌ 操作失败: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> 已重命名为 <code>{{ .New }}</code>。",
+      "clientDeleted": "🗑 客户端 <code>{{ .Email }}</code> 已删除。",
+      "subIDRegenerated": "🔄 已为 <code>{{ .Email }}</code> 生成新的订阅 ID。旧的订阅链接和邀请链接均已失效。",
+      "depletedNone": "🧹 没有需要删除的已耗尽客户端。",
+      "depletedDeleted": "🧹 已删除 {{ .Count }} 个已耗尽客户端。",
+      "whoisEmpty": "🔍 没有客户端绑定到 Telegram ID <code>{{ .ID }}</code>。",
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> 拥有 {{ .Count }} 个客户端:"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ 确认重置凭据？",
       "replyToClient": "💬 回复",
       "broadcast": "📢 群发消息",
-      "confirmBroadcast": "✅ 发送给 {{ .Count }} 位用户"
+      "confirmBroadcast": "✅ 发送给 {{ .Count }} 位用户",
+      "editClient": "✏️ 编辑客户端",
+      "deleteClient": "🗑 删除客户端",
+      "confirmDeleteClient": "✅ 确认删除客户端？",
+      "newSubID": "🔄 新订阅 ID",
+      "confirmNewSubID": "✅ 确认生成新订阅 ID？",
+      "delDepleted": "🧹 删除已耗尽",
+      "confirmDelDepleted": "✅ 确认删除已耗尽的客户端？"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ Escribe tu mensaje después del comando, por ejemplo <code>/pm no puedo conectarme</code>",
       "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensaje&gt;</code>",
       "helpAdminExtraCommands": "Para difundir un mensaje a todos los clientes vinculados:\r\n<code>/broadcast</code>\r\n\r\nPara responder a un cliente:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nPara cambiar el texto de ayuda que ven los clientes:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "Para escribir al administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara volver a ver esta ayuda:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "Para escribir al administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara volver a ver esta ayuda:\r\n<code>/help</code>",
+      "whoisUsage": "Para consultar qué clientes tiene una cuenta de Telegram:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "El uso de CPU {{ .Percent }}% es mayor que el umbral {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ El texto de ayuda se ha restaurado al predeterminado.",
       "helpTextEmpty": "❌ El texto de ayuda está vacío.",
       "helpTextInvalid": "❌ Telegram no pudo mostrar ese texto, por lo que no se guardó.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ No se pudo guardar el texto de ayuda.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ No se pudo guardar el texto de ayuda.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ Correo actual: <code>{{ .Email }}</code>\n\nEnvía el nuevo correo.",
+      "commentPrompt": "💬 Editando <code>{{ .Email }}</code>\n\nEnvía el nuevo comentario o <code>-</code> para borrarlo.",
+      "clientEditFailed": "❌ La operación falló: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> se renombró a <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 El cliente <code>{{ .Email }}</code> fue eliminado.",
+      "subIDRegenerated": "🔄 Se emitió un nuevo ID de suscripción para <code>{{ .Email }}</code>. Los enlaces de suscripción e invitación anteriores ya no funcionan.",
+      "depletedNone": "🧹 No hay clientes agotados que eliminar.",
+      "depletedDeleted": "🧹 Se eliminaron {{ .Count }} cliente(s) agotado(s).",
+      "whoisEmpty": "🔍 Ningún cliente está vinculado al ID de Telegram <code>{{ .ID }}</code>.",
+      "whoisHeader": "🔍 El ID de Telegram <code>{{ .ID }}</code> tiene {{ .Count }} cliente(s):"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ ¿Confirmar restablecer credenciales?",
       "replyToClient": "💬 Responder",
       "broadcast": "📢 Difusión",
-      "confirmBroadcast": "✅ Enviar a {{ .Count }} usuarios"
+      "confirmBroadcast": "✅ Enviar a {{ .Count }} usuarios",
+      "editClient": "✏️ Editar cliente",
+      "deleteClient": "🗑 Eliminar cliente",
+      "confirmDeleteClient": "✅ ¿Confirmar eliminación del cliente?",
+      "newSubID": "🔄 Nuevo ID de suscripción",
+      "confirmNewSubID": "✅ ¿Confirmar nuevo ID de suscripción?",
+      "delDepleted": "🧹 Eliminar agotados",
+      "confirmDelDepleted": "✅ ¿Confirmar eliminación de clientes agotados?"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

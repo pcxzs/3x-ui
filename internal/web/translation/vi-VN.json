@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ Viết tin nhắn sau lệnh, ví dụ <code>/pm tôi không kết nối được</code>",
       "sendUsage": "❗ Cách dùng: <code>/send &lt;chatId&gt; &lt;tin nhắn&gt;</code>",
       "helpAdminExtraCommands": "Để phát tin tới tất cả khách hàng đã liên kết:\r\n<code>/broadcast</code>\r\n\r\nĐể trả lời một khách hàng:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nĐể thay đổi nội dung trợ giúp mà khách hàng thấy:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "Để nhắn tin cho quản trị viên:\r\n<code>/pm [Text]</code>\r\n\r\nĐể xem lại trợ giúp này:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "Để nhắn tin cho quản trị viên:\r\n<code>/pm [Text]</code>\r\n\r\nĐể xem lại trợ giúp này:\r\n<code>/help</code>",
+      "whoisUsage": "Để xem một tài khoản Telegram đang giữ những khách hàng nào:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "Sử dụng CPU {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ Đã khôi phục nội dung trợ giúp mặc định.",
       "helpTextEmpty": "❌ Nội dung trợ giúp đang trống.",
       "helpTextInvalid": "❌ Telegram không hiển thị được nội dung đó nên chưa được lưu.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ Không lưu được nội dung trợ giúp.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ Không lưu được nội dung trợ giúp.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ Email hiện tại: <code>{{ .Email }}</code>\n\nGửi email mới.",
+      "commentPrompt": "💬 Đang sửa <code>{{ .Email }}</code>\n\nGửi ghi chú mới, hoặc <code>-</code> để xóa.",
+      "clientEditFailed": "❌ Thao tác thất bại: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> đã được đổi thành <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 Đã xóa khách hàng <code>{{ .Email }}</code>.",
+      "subIDRegenerated": "🔄 Đã cấp ID đăng ký mới cho <code>{{ .Email }}</code>. Các liên kết đăng ký và lời mời cũ không còn hoạt động.",
+      "depletedNone": "🧹 Không có khách hàng đã hết hạn nào để xóa.",
+      "depletedDeleted": "🧹 Đã xóa {{ .Count }} khách hàng đã hết hạn.",
+      "whoisEmpty": "🔍 Không có khách hàng nào được liên kết với Telegram ID <code>{{ .ID }}</code>.",
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> có {{ .Count }} khách hàng:"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ Xác nhận đặt lại thông tin đăng nhập?",
       "replyToClient": "💬 Trả lời",
       "broadcast": "📢 Phát tin",
-      "confirmBroadcast": "✅ Gửi tới {{ .Count }} người dùng"
+      "confirmBroadcast": "✅ Gửi tới {{ .Count }} người dùng",
+      "editClient": "✏️ Sửa khách hàng",
+      "deleteClient": "🗑 Xóa khách hàng",
+      "confirmDeleteClient": "✅ Xác nhận xóa khách hàng?",
+      "newSubID": "🔄 ID đăng ký mới",
+      "confirmNewSubID": "✅ Xác nhận ID đăng ký mới?",
+      "delDepleted": "🧹 Xóa đã hết hạn",
+      "confirmDelDepleted": "✅ Xác nhận xóa các khách hàng đã hết hạn?"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

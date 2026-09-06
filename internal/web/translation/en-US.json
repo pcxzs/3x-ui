@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ Write your message after the command, for example <code>/pm I cannot connect</code>",
       "sendUsage": "❗ Usage: <code>/send &lt;chatId&gt; &lt;message&gt;</code>",
       "helpAdminExtraCommands": "To broadcast a message to all linked clients:\r\n<code>/broadcast</code>\r\n\r\nTo reply to a client:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nTo change the help text clients see:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "To message the administrator:\r\n<code>/pm [Text]</code>\r\n\r\nTo see this help again:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "To message the administrator:\r\n<code>/pm [Text]</code>\r\n\r\nTo see this help again:\r\n<code>/help</code>",
+      "whoisUsage": "To look up which clients a Telegram account holds:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ The help text has been restored to the default.",
       "helpTextEmpty": "❌ The help text is empty.",
       "helpTextInvalid": "❌ Telegram refused to render that text, so it was not saved.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ Failed to save the help text.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ Failed to save the help text.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ Current email: <code>{{ .Email }}</code>\n\nSend the new email.",
+      "commentPrompt": "💬 Editing <code>{{ .Email }}</code>\n\nSend the new comment, or <code>-</code> to clear it.",
+      "clientEditFailed": "❌ Operation failed: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> was renamed to <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 Client <code>{{ .Email }}</code> was deleted.",
+      "subIDRegenerated": "🔄 A new subscription ID was issued for <code>{{ .Email }}</code>. The old subscription and invite links no longer work.",
+      "depletedNone": "🧹 No depleted clients to delete.",
+      "depletedDeleted": "🧹 Deleted {{ .Count }} depleted client(s).",
+      "whoisEmpty": "🔍 No clients are linked to Telegram ID <code>{{ .ID }}</code>.",
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> holds {{ .Count }} client(s):"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ Confirm Reset Credentials?",
       "replyToClient": "💬 Reply",
       "broadcast": "📢 Broadcast",
-      "confirmBroadcast": "✅ Send to {{ .Count }} users"
+      "confirmBroadcast": "✅ Send to {{ .Count }} users",
+      "editClient": "✏️ Edit Client",
+      "deleteClient": "🗑 Delete Client",
+      "confirmDeleteClient": "✅ Confirm Delete Client?",
+      "newSubID": "🔄 New Subscription ID",
+      "confirmNewSubID": "✅ Confirm New Subscription ID?",
+      "delDepleted": "🧹 Delete Depleted",
+      "confirmDelDepleted": "✅ Confirm Delete Depleted Clients?"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

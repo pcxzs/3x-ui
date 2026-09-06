@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ اكتب رسالتك بعد الأمر، مثال <code>/pm لا أستطيع الاتصال</code>",
       "sendUsage": "❗ الاستخدام: <code>/send &lt;chatId&gt; &lt;الرسالة&gt;</code>",
       "helpAdminExtraCommands": "لبث رسالة إلى جميع العملاء المرتبطين:\r\n<code>/broadcast</code>\r\n\r\nللرد على عميل:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nلتغيير نص المساعدة الذي يراه العملاء:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "لمراسلة المسؤول:\r\n<code>/pm [Text]</code>\r\n\r\nلعرض هذه المساعدة مرة أخرى:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "لمراسلة المسؤول:\r\n<code>/pm [Text]</code>\r\n\r\nلعرض هذه المساعدة مرة أخرى:\r\n<code>/help</code>",
+      "whoisUsage": "لمعرفة العملاء الذين يملكهم حساب تيليجرام:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "حمل المعالج {{ .Percent }}% عدى الحد المسموح ({{ .Threshold }}%)",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ تمت استعادة نص المساعدة الافتراضي.",
       "helpTextEmpty": "❌ نص المساعدة فارغ.",
       "helpTextInvalid": "❌ رفض تيليجرام عرض هذا النص، لذلك لم يتم حفظه.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ فشل حفظ نص المساعدة.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ فشل حفظ نص المساعدة.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ البريد الحالي: <code>{{ .Email }}</code>\n\nأرسل البريد الجديد.",
+      "commentPrompt": "💬 تعديل <code>{{ .Email }}</code>\n\nأرسل التعليق الجديد، أو <code>-</code> لمسحه.",
+      "clientEditFailed": "❌ فشلت العملية: {{ .Error }}",
+      "clientRenamed": "✏️ تم تغيير <code>{{ .Old }}</code> إلى <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 تم حذف العميل <code>{{ .Email }}</code>.",
+      "subIDRegenerated": "🔄 تم إصدار معرّف اشتراك جديد لـ <code>{{ .Email }}</code>. لم تعد روابط الاشتراك والدعوة القديمة تعمل.",
+      "depletedNone": "🧹 لا يوجد عملاء منتهية صلاحيتهم للحذف.",
+      "depletedDeleted": "🧹 تم حذف {{ .Count }} من العملاء المنتهية صلاحيتهم.",
+      "whoisEmpty": "🔍 لا يوجد عملاء مرتبطون بمعرّف تيليجرام <code>{{ .ID }}</code>.",
+      "whoisHeader": "🔍 معرّف تيليجرام <code>{{ .ID }}</code> يملك {{ .Count }} من العملاء:"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ تأكيد إعادة تعيين بيانات الاتصال؟",
       "replyToClient": "💬 رد",
       "broadcast": "📢 بث جماعي",
-      "confirmBroadcast": "✅ إرسال إلى {{ .Count }} مستخدم"
+      "confirmBroadcast": "✅ إرسال إلى {{ .Count }} مستخدم",
+      "editClient": "✏️ تعديل العميل",
+      "deleteClient": "🗑 حذف العميل",
+      "confirmDeleteClient": "✅ تأكيد حذف العميل؟",
+      "newSubID": "🔄 معرّف اشتراك جديد",
+      "confirmNewSubID": "✅ تأكيد معرّف الاشتراك الجديد؟",
+      "delDepleted": "🧹 حذف المنتهية",
+      "confirmDelDepleted": "✅ تأكيد حذف العملاء المنتهية صلاحيتهم؟"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

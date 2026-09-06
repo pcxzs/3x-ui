@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ 請在指令後寫下訊息，例如 <code>/pm 我無法連線</code>",
       "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;訊息&gt;</code>",
       "helpAdminExtraCommands": "向所有已綁定的使用者群發訊息：\r\n<code>/broadcast</code>\r\n\r\n回覆某位使用者：\r\n<code>/send [ChatID] [Text]</code>\r\n\r\n修改使用者看到的說明內容：\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "聯絡管理員：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本說明：\r\n<code>/help</code>"
+      "helpClientExtraCommands": "聯絡管理員：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本說明：\r\n<code>/help</code>",
+      "whoisUsage": "查詢某個 Telegram 帳號擁有哪些用戶端:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率為 {{ .Percent }}%，超過閾值 {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ 說明內容已恢復為預設。",
       "helpTextEmpty": "❌ 說明內容為空。",
       "helpTextInvalid": "❌ Telegram 無法渲染該內容，因此未儲存。\r\n{{ .Error }}",
-      "helpTextFailed": "❌ 儲存說明內容失敗。\r\n{{ .Error }}"
+      "helpTextFailed": "❌ 儲存說明內容失敗。\r\n{{ .Error }}",
+      "renamePrompt": "✏️ 目前電子郵件: <code>{{ .Email }}</code>\n\n請傳送新的電子郵件。",
+      "commentPrompt": "💬 正在編輯 <code>{{ .Email }}</code>\n\n請傳送新的備註，或傳送 <code>-</code> 清空。",
+      "clientEditFailed": "❌ 操作失敗: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> 已重新命名為 <code>{{ .New }}</code>。",
+      "clientDeleted": "🗑 用戶端 <code>{{ .Email }}</code> 已刪除。",
+      "subIDRegenerated": "🔄 已為 <code>{{ .Email }}</code> 產生新的訂閱 ID。舊的訂閱連結與邀請連結均已失效。",
+      "depletedNone": "🧹 沒有需要刪除的已耗盡用戶端。",
+      "depletedDeleted": "🧹 已刪除 {{ .Count }} 個已耗盡用戶端。",
+      "whoisEmpty": "🔍 沒有用戶端綁定到 Telegram ID <code>{{ .ID }}</code>。",
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> 擁有 {{ .Count }} 個用戶端:"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ 確認重設憑證？",
       "replyToClient": "💬 回覆",
       "broadcast": "📢 群發訊息",
-      "confirmBroadcast": "✅ 發送給 {{ .Count }} 位使用者"
+      "confirmBroadcast": "✅ 發送給 {{ .Count }} 位使用者",
+      "editClient": "✏️ 編輯用戶端",
+      "deleteClient": "🗑 刪除用戶端",
+      "confirmDeleteClient": "✅ 確認刪除用戶端？",
+      "newSubID": "🔄 新訂閱 ID",
+      "confirmNewSubID": "✅ 確認產生新訂閱 ID？",
+      "delDepleted": "🧹 刪除已耗盡",
+      "confirmDelDepleted": "✅ 確認刪除已耗盡的用戶端？"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ Напишіть повідомлення після команди, наприклад <code>/pm не можу підключитися</code>",
       "sendUsage": "❗ Використання: <code>/send &lt;chatId&gt; &lt;повідомлення&gt;</code>",
       "helpAdminExtraCommands": "Розіслати повідомлення всім прив'язаним клієнтам:\r\n<code>/broadcast</code>\r\n\r\nВідповісти клієнту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nЗмінити текст довідки для клієнтів:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "Написати адміністратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказати цю довідку знову:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "Написати адміністратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказати цю довідку знову:\r\n<code>/help</code>",
+      "whoisUsage": "Щоб дізнатися, якими клієнтами володіє акаунт Telegram:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "Навантаження ЦП  {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ Текст довідки повернено до типового.",
       "helpTextEmpty": "❌ Текст довідки порожній.",
       "helpTextInvalid": "❌ Telegram не зміг відобразити цей текст, тому його не збережено.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ Не вдалося зберегти текст довідки.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ Не вдалося зберегти текст довідки.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ Поточний email: <code>{{ .Email }}</code>\n\nНадішліть новий email.",
+      "commentPrompt": "💬 Редагування <code>{{ .Email }}</code>\n\nНадішліть новий комментар або <code>-</code>, щоб очистити його.",
+      "clientEditFailed": "❌ Операція не виконана: {{ .Error }}",
+      "clientRenamed": "✏️ <code>{{ .Old }}</code> перейменовано на <code>{{ .New }}</code>.",
+      "clientDeleted": "🗑 Клієнта <code>{{ .Email }}</code> видалено.",
+      "subIDRegenerated": "🔄 Для <code>{{ .Email }}</code> видано новий ID підписки. Попередні посилання підписки та запрошення більше не працюють.",
+      "depletedNone": "🧹 Вичерпаних клієнтів для видалення немає.",
+      "depletedDeleted": "🧹 Видалено вичерпаних клієнтів: {{ .Count }}.",
+      "whoisEmpty": "🔍 До Telegram ID <code>{{ .ID }}</code> не привʼязано жодного клієнта.",
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> має клієнтів: {{ .Count }}:"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ Підтвердити скидання облікових даних?",
       "replyToClient": "💬 Відповісти",
       "broadcast": "📢 Розсилка",
-      "confirmBroadcast": "✅ Надіслати {{ .Count }} користувачам"
+      "confirmBroadcast": "✅ Надіслати {{ .Count }} користувачам",
+      "editClient": "✏️ Змінити клієнта",
+      "deleteClient": "🗑 Видалити клієнта",
+      "confirmDeleteClient": "✅ Підтвердити видалення клієнта?",
+      "newSubID": "🔄 Новий ID підписки",
+      "confirmNewSubID": "✅ Підтвердити новий ID підписки?",
+      "delDepleted": "🧹 Видалити вичерпані",
+      "confirmDelDepleted": "✅ Підтвердити видалення вичерпаних клієнтів?"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

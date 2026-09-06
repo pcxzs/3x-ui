@@ -2105,7 +2105,8 @@
       "pmUsage": "❗ پیام خود را بعد از دستور بنویسید، مثلاً <code>/pm نمی‌توانم وصل شوم</code>",
       "sendUsage": "❗ روش استفاده: <code>/send &lt;chatId&gt; &lt;پیام&gt;</code>",
       "helpAdminExtraCommands": "برای ارسال پیام همگانی به همه کاربران متصل:\r\n<code>/broadcast</code>\r\n\r\nبرای پاسخ به یک کاربر:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nبرای تغییر متن راهنمای کاربران:\r\n<code>/sethelp</code>",
-      "helpClientExtraCommands": "برای ارسال پیام به مدیر:\r\n<code>/pm [Text]</code>\r\n\r\nبرای دیدن دوباره این راهنما:\r\n<code>/help</code>"
+      "helpClientExtraCommands": "برای ارسال پیام به مدیر:\r\n<code>/pm [Text]</code>\r\n\r\nبرای دیدن دوباره این راهنما:\r\n<code>/help</code>",
+      "whoisUsage": "برای دیدن کاربران متصل به یک حساب تلگرام:\r\n<code>/whois [TelegramID]</code>"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2197,7 +2198,17 @@
       "helpTextReset": "✅ متن راهنما به حالت پیش‌فرض بازگردانده شد.",
       "helpTextEmpty": "❌ متن راهنما خالی است.",
       "helpTextInvalid": "❌ تلگرام نتوانست این متن را نمایش دهد، بنابراین ذخیره نشد.\r\n{{ .Error }}",
-      "helpTextFailed": "❌ ذخیره متن راهنما ناموفق بود.\r\n{{ .Error }}"
+      "helpTextFailed": "❌ ذخیره متن راهنما ناموفق بود.\r\n{{ .Error }}",
+      "renamePrompt": "✏️ ایمیل کنونی: <code>{{ .Email }}</code>\n\nایمیل جدید را ارسال کنید.",
+      "commentPrompt": "💬 ویرایش <code>{{ .Email }}</code>\n\nنظر جدید را ارسال کنید یا برای پاک کردن <code>-</code> بفرستید.",
+      "clientEditFailed": "❌ عملیات انجام نشد: {{ .Error }}",
+      "clientRenamed": "✏️ نام <code>{{ .Old }}</code> به <code>{{ .New }}</code> تغییر یافت.",
+      "clientDeleted": "🗑 کاربر <code>{{ .Email }}</code> حذف شد.",
+      "subIDRegenerated": "🔄 شناسه اشتراک جدیدی برای <code>{{ .Email }}</code> صادر شد. لینک‌های اشتراک و دعوت قبلی دیگر کار نمی‌کنند.",
+      "depletedNone": "🧹 کاربر منقضی‌شده‌ای برای حذف وجود ندارد.",
+      "depletedDeleted": "🧹 {{ .Count }} کاربر منقضی‌شده حذف شد.",
+      "whoisEmpty": "🔍 هیچ کاربری به شناسه تلگرام <code>{{ .ID }}</code> متصل نیست.",
+      "whoisHeader": "🔍 شناسه تلگرام <code>{{ .ID }}</code> دارای {{ .Count }} کاربر است:"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2245,7 +2256,14 @@
       "confirmResetCredentials": "✅ تغییر کلید اتصال تأیید شود؟",
       "replyToClient": "💬 پاسخ",
       "broadcast": "📢 پیام همگانی",
-      "confirmBroadcast": "✅ ارسال به {{ .Count }} کاربر"
+      "confirmBroadcast": "✅ ارسال به {{ .Count }} کاربر",
+      "editClient": "✏️ ویرایش کاربر",
+      "deleteClient": "🗑 حذف کاربر",
+      "confirmDeleteClient": "✅ حذف کاربر تأیید شود؟",
+      "newSubID": "🔄 شناسه اشتراک جدید",
+      "confirmNewSubID": "✅ شناسه اشتراک جدید تأیید شود؟",
+      "delDepleted": "🧹 حذف منقضی‌شده‌ها",
+      "confirmDelDepleted": "✅ حذف کاربران منقضی‌شده تأیید شود؟"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

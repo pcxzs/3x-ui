@@ -733,6 +733,10 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.toggle")).WithCallbackData(t.encodeQuery("toggle_enable "+email)),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.resetCredentials")).WithCallbackData(t.encodeQuery("reset_cred "+email)),
 		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.editClient")).WithCallbackData(t.encodeQuery("client_edit "+email)),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.deleteClient")).WithCallbackData(t.encodeQuery("client_delete "+email)),
+		),
 	)
 	if len(messageID) > 0 {
 		t.editMessageTgBot(chatId, messageID[0], output, inlineKeyboard)

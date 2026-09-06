@@ -48,6 +48,22 @@ func (t *Tgbot) handleConversationState(message *telego.Message, state string) b
 		}
 		t.saveHelpText(chatId, text)
 		return true
+	case strings.HasPrefix(state, stateEditEmailPrefix):
+		userStateMgr.clear(chatId)
+		target, ok := stateTarget(state, stateEditEmailPrefix)
+		if !ok || !checkAdmin(message.From.ID) {
+			return true
+		}
+		t.applyEmailEdit(chatId, target, text)
+		return true
+	case strings.HasPrefix(state, stateEditCommentPrefix):
+		userStateMgr.clear(chatId)
+		target, ok := stateTarget(state, stateEditCommentPrefix)
+		if !ok || !checkAdmin(message.From.ID) {
+			return true
+		}
+		t.applyCommentEdit(chatId, target, text)
+		return true
 	case state == statePmText:
 		userStateMgr.clear(chatId)
 		t.forwardClientMessage(message, text)
