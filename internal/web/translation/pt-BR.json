@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 Nota do administrador: já vinculado — {{ .Detail }}",
       "adminPanel": "🛡 <b>Painel de administração</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>Links de convite</b> — {{ .Count }} clientes\r\n✅ vinculado · ❌ não vinculado. Toque em um para o link.",
-      "inviteAlreadyHolder": "❗ Sua conta do Telegram já está vinculada a uma configuração. Fale com um administrador para trocar."
+      "inviteAlreadyHolder": "❗ Sua conta do Telegram já está vinculada a uma configuração. Fale com um administrador para trocar.",
+      "noBoundClient": "🔗 Nenhuma configuração está vinculada a esta conta ainda.\r\nPeça um link de convite ao administrador e abra-o.",
+      "noBoundClientAdmin": "🔗 Você ainda não vinculou uma configuração a esta conta.\r\nAbra 🛡 Administração → 🔗 Links de convite, escolha seu cliente e abra o link."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }}: Usuário do Telegram removido com sucesso.",
       "enableSuccess": "✅ {{ .Email }}: Ativado com sucesso.",
       "disableSuccess": "✅ {{ .Email }}: Desativado com sucesso.",
-      "askToAddUserId": "Sua configuração não foi encontrada!\r\nPeça ao seu administrador para usar seu Telegram ChatID em suas configurações.\r\n\r\nSeu ChatID: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Escolha um cliente para Inbound {{ .Inbound }}",
       "chooseInbound": "Escolha um Inbound",
       "resetCredentialsSuccess": "✅ Credenciais redefinidas para {{ .Email }}."

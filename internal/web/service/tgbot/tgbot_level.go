@@ -41,3 +41,13 @@ func commandAllowed(level userLevel, command string) bool {
 	allowed, ok := commandsByLevel[level]
 	return ok && allowed[command]
 }
+
+// Only an admin can reach a client button with nothing bound: everyone else
+// without a config resolves to levelStranger and never gets a keyboard. So the
+// advice points at the admin panel rather than at asking an admin.
+func (t *Tgbot) noBoundClientMsg(level userLevel) string {
+	if level == levelAdmin {
+		return t.I18nBot("tgbot.messages.noBoundClientAdmin")
+	}
+	return t.I18nBot("tgbot.messages.noBoundClient")
+}

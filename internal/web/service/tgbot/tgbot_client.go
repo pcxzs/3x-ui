@@ -562,7 +562,7 @@ func (t *Tgbot) getClientUsage(chatId int64, tgUserID int64, email ...string) {
 	}
 
 	if len(traffics) == 0 {
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.askToAddUserId", "TgUserID=="+strconv.FormatInt(tgUserID, 10)))
+		t.SendMsgToTgbot(chatId, t.noBoundClientMsg(t.levelOf(tgUserID)))
 		return
 	}
 

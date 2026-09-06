@@ -56,3 +56,25 @@ func TestAdminCommandsAreNeverAllowedBelowAdmin(t *testing.T) {
 		}
 	}
 }
+
+// The old wording told people to have an admin paste their ChatID into a
+// config, which is the manual flow invite links replaced. An admin with nothing
+// bound needs pointing at the admin panel, not at themselves.
+func TestNoBoundClientMsgIsLevelAware(t *testing.T) {
+	tg := &Tgbot{}
+	admin := tg.noBoundClientMsg(levelAdmin)
+	client := tg.noBoundClientMsg(levelClient)
+
+	if admin == client {
+		t.Fatal("an admin and a customer must get different advice")
+	}
+	if admin != "tgbot.messages.noBoundClientAdmin" {
+		t.Fatalf("admin message key = %q", admin)
+	}
+	if client != "tgbot.messages.noBoundClient" {
+		t.Fatalf("client message key = %q", client)
+	}
+	if got := tg.noBoundClientMsg(levelStranger); got != client {
+		t.Fatalf("stranger should get the customer wording, got %q", got)
+	}
+}

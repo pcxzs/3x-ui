@@ -1265,7 +1265,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			return
 		}
 		if len(traffics) == 0 {
-			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.askToAddUserId", "TgUserID=="+strconv.FormatInt(tgUserID, 10)))
+			t.SendMsgToTgbot(chatId, t.noBoundClientMsg(level))
 			return
 		}
 		var buttons []telego.InlineKeyboardButton
@@ -1287,7 +1287,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			return
 		}
 		if len(traffics) == 0 {
-			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.askToAddUserId", "TgUserID=="+strconv.FormatInt(tgUserID, 10)))
+			t.SendMsgToTgbot(chatId, t.noBoundClientMsg(level))
 			return
 		}
 		var buttons2 []telego.InlineKeyboardButton
@@ -1309,7 +1309,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			return
 		}
 		if len(traffics) == 0 {
-			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.askToAddUserId", "TgUserID=="+strconv.FormatInt(tgUserID, 10)))
+			t.SendMsgToTgbot(chatId, t.noBoundClientMsg(level))
 			return
 		}
 		var buttons3 []telego.InlineKeyboardButton

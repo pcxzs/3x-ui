@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 管理者向け: すでに紐付け済み — {{ .Detail }}",
       "adminPanel": "🛡 <b>管理パネル</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>招待リンク</b> — {{ .Count }} 件\r\n✅ 紐付け済み · ❌ 未紐付け。タップするとリンクが出ます。",
-      "inviteAlreadyHolder": "❗ このアカウントは既に設定に紐付いています。変更が必要なら管理者にご連絡ください。"
+      "inviteAlreadyHolder": "❗ このアカウントは既に設定に紐付いています。変更が必要なら管理者にご連絡ください。",
+      "noBoundClient": "🔗 このアカウントにはまだ設定が紐付いていません。\r\n管理者から招待リンクをもらって開いてください。",
+      "noBoundClientAdmin": "🔗 このアカウントにはまだ設定を紐付けていません。\r\n🛡 管理 → 🔗 招待リンク から自分のクライアントを選び、リンクを開いてください。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }}：Telegramユーザーが正常に削除されました。",
       "enableSuccess": "✅ {{ .Email }}：正常に有効化されました。",
       "disableSuccess": "✅ {{ .Email }}：正常に無効化されました。",
-      "askToAddUserId": "設定が見つかりませんでした！\r\n管理者に問い合わせて、設定にTelegramユーザーのChatIDを使用してください。\r\n\r\nあなたのユーザーChatID：<code>{{ .TgUserID }}</code>",
       "chooseClient": "インバウンド {{ .Inbound }} のクライアントを選択",
       "chooseInbound": "インバウンドを選択",
       "resetCredentialsSuccess": "✅ {{ .Email }} の認証情報をリセットしました。"

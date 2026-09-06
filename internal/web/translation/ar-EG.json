@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 ملاحظة للمشرف: مرتبط بالفعل — {{ .Detail }}",
       "adminPanel": "🛡 <b>لوحة المشرف</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>روابط الدعوة</b> — {{ .Count }} عميل\r\n✅ مرتبط · ❌ غير مرتبط. اضغط على واحد للحصول على رابطه.",
-      "inviteAlreadyHolder": "❗ حسابك مرتبط بالفعل بإعداد. راجع المشرف إذا احتجت التغيير."
+      "inviteAlreadyHolder": "❗ حسابك مرتبط بالفعل بإعداد. راجع المشرف إذا احتجت التغيير.",
+      "noBoundClient": "🔗 لا يوجد إعداد مرتبط بهذا الحساب بعد.\r\nاطلب من المشرف رابط دعوة وافتحه.",
+      "noBoundClientAdmin": "🔗 لم تربط أي إعداد بهذا الحساب بعد.\r\nافتح 🛡 المشرف ← 🔗 روابط الدعوة واختر عميلك ثم افتح رابطه."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }}: مستخدم Telegram اتحذف بنجاح.",
       "enableSuccess": "✅ {{ .Email }}: اتفعل بنجاح.",
       "disableSuccess": "✅ {{ .Email }}: اتعطل بنجاح.",
-      "askToAddUserId": "مافيش إعدادات ليك!\r\nاطلب من الأدمن يضيف الـ Telegram ChatID الخاص بيك في إعداداتك.\r\n\r\nالـ ChatID بتاعك: <code>{{ .TgUserID }}</code>",
       "chooseClient": "اختار عميل للإدخال {{ .Inbound }}",
       "chooseInbound": "اختار الإدخال",
       "resetCredentialsSuccess": "✅ تم إعادة تعيين بيانات {{ .Email }}."

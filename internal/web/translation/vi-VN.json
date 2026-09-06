@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 Ghi chú quản trị: đã được liên kết — {{ .Detail }}",
       "adminPanel": "🛡 <b>Bảng quản trị</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>Liên kết mời</b> — {{ .Count }} khách hàng\r\n✅ đã liên kết · ❌ chưa. Chạm vào một mục để lấy liên kết.",
-      "inviteAlreadyHolder": "❗ Tài khoản Telegram của bạn đã liên kết với một cấu hình. Liên hệ quản trị viên nếu cần đổi."
+      "inviteAlreadyHolder": "❗ Tài khoản Telegram của bạn đã liên kết với một cấu hình. Liên hệ quản trị viên nếu cần đổi.",
+      "noBoundClient": "🔗 Chưa có cấu hình nào liên kết với tài khoản này.\r\nHãy xin quản trị viên một liên kết mời và mở nó.",
+      "noBoundClientAdmin": "🔗 Bạn chưa liên kết cấu hình nào với tài khoản này.\r\nMở 🛡 Quản trị → 🔗 Liên kết mời, chọn khách hàng của bạn và mở liên kết."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }} : Người Dùng Telegram Đã Được Xóa Thành Công.",
       "enableSuccess": "✅ {{ .Email }} : Đã Bật Thành Công.",
       "disableSuccess": "✅ {{ .Email }} : Đã Tắt Thành Công.",
-      "askToAddUserId": "Cấu hình của bạn không được tìm thấy!\r\nVui lòng yêu cầu Quản trị viên sử dụng ID người dùng telegram của bạn trong cấu hình của bạn.\r\n\r\nID người dùng của bạn: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Chọn một Khách hàng cho Inbound {{ .Inbound }}",
       "chooseInbound": "Chọn một Inbound",
       "resetCredentialsSuccess": "✅ Đã đặt lại thông tin đăng nhập cho {{ .Email }}."

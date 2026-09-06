@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 Catatan admin: sudah terhubung — {{ .Detail }}",
       "adminPanel": "🛡 <b>Panel admin</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>Tautan undangan</b> — {{ .Count }} klien\r\n✅ sudah terhubung · ❌ belum. Ketuk salah satu untuk tautannya.",
-      "inviteAlreadyHolder": "❗ Akun Telegram Anda sudah terhubung ke sebuah konfigurasi. Hubungi admin bila perlu diganti."
+      "inviteAlreadyHolder": "❗ Akun Telegram Anda sudah terhubung ke sebuah konfigurasi. Hubungi admin bila perlu diganti.",
+      "noBoundClient": "🔗 Belum ada konfigurasi yang terhubung ke akun ini.\r\nMinta tautan undangan kepada admin lalu buka.",
+      "noBoundClientAdmin": "🔗 Anda belum menghubungkan konfigurasi ke akun ini.\r\nBuka 🛡 Admin → 🔗 Tautan Undangan, pilih klien Anda lalu buka tautannya."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }}: Pengguna Telegram dihapus dengan berhasil.",
       "enableSuccess": "✅ {{ .Email }}: Diaktifkan dengan berhasil.",
       "disableSuccess": "✅ {{ .Email }}: Dinonaktifkan dengan berhasil.",
-      "askToAddUserId": "Konfigurasi Anda tidak ditemukan!\r\nSilakan minta admin Anda untuk menggunakan ChatID Telegram Anda dalam konfigurasi Anda.\r\n\r\nChatID Pengguna Anda: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Pilih Klien untuk Inbound {{ .Inbound }}",
       "chooseInbound": "Pilih Inbound",
       "resetCredentialsSuccess": "✅ Kredensial untuk {{ .Email }} telah diatur ulang."

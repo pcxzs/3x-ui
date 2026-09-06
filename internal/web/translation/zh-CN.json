@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 管理员提示：已绑定 — {{ .Detail }}",
       "adminPanel": "🛡 <b>管理面板</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>邀请链接</b> — {{ .Count }} 位客户\r\n✅ 已绑定 · ❌ 未绑定。点击任意一项获取链接。",
-      "inviteAlreadyHolder": "❗ 你的 Telegram 账号已绑定一个配置。如需更换请联系管理员。"
+      "inviteAlreadyHolder": "❗ 你的 Telegram 账号已绑定一个配置。如需更换请联系管理员。",
+      "noBoundClient": "🔗 此账号尚未绑定任何配置。\r\n请向管理员索取邀请链接并打开。",
+      "noBoundClientAdmin": "🔗 你还没有为此账号绑定配置。\r\n打开 🛡 管理 → 🔗 邀请链接，选择你自己的客户并打开其链接。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }}：Telegram 用户已成功移除。",
       "enableSuccess": "✅ {{ .Email }}：已成功启用。",
       "disableSuccess": "✅ {{ .Email }}：已成功禁用。",
-      "askToAddUserId": "未找到您的配置！\r\n请向管理员询问，在您的配置中使用您的 Telegram 用户 ChatID。\r\n\r\n您的用户 ChatID：<code>{{ .TgUserID }}</code>",
       "chooseClient": "为入站 {{ .Inbound }} 选择一个客户",
       "chooseInbound": "选择一个入站",
       "resetCredentialsSuccess": "✅ 已重置 {{ .Email }} 的凭据。"

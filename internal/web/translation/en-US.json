@@ -2233,7 +2233,9 @@
       "inviteDiagTaken": "🔎 Admin note: already bound — {{ .Detail }}",
       "adminPanel": "🛡 <b>Admin panel</b> — {{ .Hostname }}",
       "invitePicker": "🔗 <b>Invite links</b> — {{ .Count }} clients\r\n✅ already bound · ❌ not yet. Tap one for its link.",
-      "inviteAlreadyHolder": "❗ Your Telegram account is already linked to a config. Ask an admin if you need to switch."
+      "inviteAlreadyHolder": "❗ Your Telegram account is already linked to a config. Ask an admin if you need to switch.",
+      "noBoundClient": "🔗 No config is linked to this Telegram account yet.\r\nAsk your admin for an invite link and open it.",
+      "noBoundClientAdmin": "🔗 You haven't bound a config to this account yet.\r\nOpen 🛡 Admin → 🔗 Invite Links, pick your own client and open its link."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2323,7 +2325,6 @@
       "removedTGUserSuccess": "✅ {{ .Email }}: Telegram User removed successfully.",
       "enableSuccess": "✅ {{ .Email }}: Enabled successfully.",
       "disableSuccess": "✅ {{ .Email }}: Disabled successfully.",
-      "askToAddUserId": "Your configuration is not found!\r\nPlease ask your admin to use your Telegram ChatID in your configuration(s).\r\n\r\nYour ChatID: <code>{{ .TgUserID }}</code>",
       "chooseClient": "Choose a Client for Inbound {{ .Inbound }}",
       "chooseInbound": "Choose an Inbound",
       "resetCredentialsSuccess": "✅ Credentials reset for {{ .Email }}."
