@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ Envie a mensagem que deseja que o administrador receba.\r\n",
       "replyPrompt": "✍️ Envie sua resposta; ela será entregue ao cliente.\r\n",
       "replyDelivered": "✅ Resposta entregue.\r\n",
-      "replyFailed": "❗ Não foi possível entregar a resposta: {{ .Error }}\r\n"
+      "replyFailed": "❗ Não foi possível entregar a resposta: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 Envie a mensagem que deseja transmitir a todos os usuários vinculados.",
+      "broadcastPreview": "👀 A prévia da transmissão está abaixo. Confirme para enviar.",
+      "broadcastEmpty": "❌ A mensagem de transmissão está vazia.",
+      "broadcastNoRecipients": "❌ Ainda não há usuários vinculados a uma conta do Telegram.",
+      "broadcastCancelled": "❌ Transmissão cancelada.",
+      "broadcastDone": "✅ Transmissão concluída.\r\nEntregues: {{ .Sent }}\r\nFalhas: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 Link de convite",
       "resetCredentials": "🔑 Redefinir credenciais",
       "confirmResetCredentials": "✅ Confirmar redefinição de credenciais?",
-      "replyToClient": "💬 Responder"
+      "replyToClient": "💬 Responder",
+      "broadcast": "📢 Transmissão",
+      "confirmBroadcast": "✅ Enviar para {{ .Count }} usuários"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

@@ -34,6 +34,13 @@ func (t *Tgbot) handleConversationState(message *telego.Message, state string) b
 	text := strings.TrimSpace(message.Text)
 
 	switch {
+	case state == stateBroadcast:
+		userStateMgr.clear(chatId)
+		if !checkAdmin(message.From.ID) {
+			return true
+		}
+		t.previewBroadcast(chatId, text)
+		return true
 	case state == statePmText:
 		userStateMgr.clear(chatId)
 		t.forwardClientMessage(message, text)

@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ پیامی که می‌خواهید مدیر دریافت کند را بفرستید.\r\n",
       "replyPrompt": "✍️ پاسخ خود را بفرستید؛ برای کاربر ارسال می‌شود.\r\n",
       "replyDelivered": "✅ پاسخ ارسال شد.\r\n",
-      "replyFailed": "❗ ارسال پاسخ ممکن نشد: {{ .Error }}\r\n"
+      "replyFailed": "❗ ارسال پاسخ ممکن نشد: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 پیامی را که می‌خواهید برای همه کاربران متصل ارسال شود بفرستید.",
+      "broadcastPreview": "👀 پیش‌نمایش پیام همگانی در ادامه آمده است. برای ارسال تأیید کنید.",
+      "broadcastEmpty": "❌ متن پیام همگانی خالی است.",
+      "broadcastNoRecipients": "❌ هنوز هیچ کاربری به حساب تلگرام متصل نشده است.",
+      "broadcastCancelled": "❌ ارسال پیام همگانی لغو شد.",
+      "broadcastDone": "✅ ارسال پیام همگانی پایان یافت.\r\nتحویل‌شده: {{ .Sent }}\r\nناموفق: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 لینک دعوت",
       "resetCredentials": "🔑 تغییر کلید اتصال",
       "confirmResetCredentials": "✅ تغییر کلید اتصال تأیید شود؟",
-      "replyToClient": "💬 پاسخ"
+      "replyToClient": "💬 پاسخ",
+      "broadcast": "📢 پیام همگانی",
+      "confirmBroadcast": "✅ ارسال به {{ .Count }} کاربر"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

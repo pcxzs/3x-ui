@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ Отправьте сообщение, которое должен получить администратор.\r\n",
       "replyPrompt": "✍️ Отправьте ответ; он будет доставлен клиенту.\r\n",
       "replyDelivered": "✅ Ответ доставлен.\r\n",
-      "replyFailed": "❗ Не удалось доставить ответ: {{ .Error }}\r\n"
+      "replyFailed": "❗ Не удалось доставить ответ: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 Отправьте сообщение, которое нужно разослать всем привязанным пользователям.",
+      "broadcastPreview": "👀 Предпросмотр рассылки показан ниже. Подтвердите отправку.",
+      "broadcastEmpty": "❌ Текст рассылки пуст.",
+      "broadcastNoRecipients": "❌ Пока нет пользователей, привязанных к Telegram.",
+      "broadcastCancelled": "❌ Рассылка отменена.",
+      "broadcastDone": "✅ Рассылка завершена.\r\nДоставлено: {{ .Sent }}\r\nОшибок: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 Ссылка-приглашение",
       "resetCredentials": "🔑 Сбросить учётные данные",
       "confirmResetCredentials": "✅ Подтвердить сброс учётных данных?",
-      "replyToClient": "💬 Ответить"
+      "replyToClient": "💬 Ответить",
+      "broadcast": "📢 Рассылка",
+      "confirmBroadcast": "✅ Отправить {{ .Count }} пользователям"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

@@ -49,6 +49,9 @@ func (t *Tgbot) SendAnswer(chatId int64, msg string, isAdmin bool) {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.addClient")).WithCallbackData(t.encodeQuery("add_client")),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.broadcast")).WithCallbackData(t.encodeQuery("broadcast")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("pages.settings.subSettings")).WithCallbackData(t.encodeQuery("admin_client_sub_links")),
 			tu.InlineKeyboardButton(t.I18nBot("subscription.individualLinks")).WithCallbackData(t.encodeQuery("admin_client_individual_links")),
 			tu.InlineKeyboardButton(t.I18nBot("qrCode")).WithCallbackData(t.encodeQuery("admin_client_qr_links")),

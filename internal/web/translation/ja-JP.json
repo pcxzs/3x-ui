@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ 管理者に届けたいメッセージを送信してください。\r\n",
       "replyPrompt": "✍️ 返信を送信してください。クライアントに届きます。\r\n",
       "replyDelivered": "✅ 返信を配信しました。\r\n",
-      "replyFailed": "❗ 返信を配信できませんでした: {{ .Error }}\r\n"
+      "replyFailed": "❗ 返信を配信できませんでした: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 連携済みの全ユーザーに配信したいメッセージを送信してください。",
+      "broadcastPreview": "👀 配信内容のプレビューを以下に表示します。送信するには確認してください。",
+      "broadcastEmpty": "❌ 配信メッセージが空です。",
+      "broadcastNoRecipients": "❌ Telegram アカウントに連携済みのユーザーがまだいません。",
+      "broadcastCancelled": "❌ 一斉配信をキャンセルしました。",
+      "broadcastDone": "✅ 一斉配信が完了しました。\r\n送信成功: {{ .Sent }}\r\n失敗: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 招待リンク",
       "resetCredentials": "🔑 認証情報をリセット",
       "confirmResetCredentials": "✅ 認証情報をリセットしますか？",
-      "replyToClient": "💬 返信"
+      "replyToClient": "💬 返信",
+      "broadcast": "📢 一斉配信",
+      "confirmBroadcast": "✅ {{ .Count }} 人のユーザーに送信"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

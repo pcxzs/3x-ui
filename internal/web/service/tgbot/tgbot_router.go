@@ -215,6 +215,13 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 		} else {
 			msg += t.I18nBot("tgbot.commands.usage")
 		}
+	case "broadcast":
+		onlyMessage = true
+		if !isAdmin {
+			handleUnknownCommand()
+			break
+		}
+		t.startBroadcast(chatId)
 	case "pm":
 		onlyMessage = true
 		t.startClientMessage(message, strings.TrimSpace(strings.Join(commandArgs, " ")))
@@ -1226,6 +1233,15 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 	case "commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands"))
+	case "broadcast":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.broadcast"))
+		t.startBroadcast(chatId)
+	case "broadcast_send":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+		t.runBroadcast(chatId)
+	case "broadcast_cancel":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.canceled", "Email=="))
+		t.cancelBroadcast(chatId)
 	case "add_client":
 		client_Email = t.randomLowerAndNum(8)
 		client_LimitIP = 0

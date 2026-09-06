@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ Kirim pesan yang ingin diterima admin.\r\n",
       "replyPrompt": "✍️ Kirim balasan Anda; pesan akan diteruskan ke klien.\r\n",
       "replyDelivered": "✅ Balasan terkirim.\r\n",
-      "replyFailed": "❗ Balasan tidak dapat dikirim: {{ .Error }}\r\n"
+      "replyFailed": "❗ Balasan tidak dapat dikirim: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 Kirim pesan yang ingin Anda siarkan ke semua pengguna yang tertaut.",
+      "broadcastPreview": "👀 Pratinjau siaran Anda ditampilkan di bawah. Konfirmasi untuk mengirim.",
+      "broadcastEmpty": "❌ Pesan siaran kosong.",
+      "broadcastNoRecipients": "❌ Belum ada pengguna yang tertaut ke akun Telegram.",
+      "broadcastCancelled": "❌ Siaran dibatalkan.",
+      "broadcastDone": "✅ Siaran selesai.\r\nTerkirim: {{ .Sent }}\r\nGagal: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 Tautan Undangan",
       "resetCredentials": "🔑 Atur Ulang Kredensial",
       "confirmResetCredentials": "✅ Konfirmasi Atur Ulang Kredensial?",
-      "replyToClient": "💬 Balas"
+      "replyToClient": "💬 Balas",
+      "broadcast": "📢 Siaran",
+      "confirmBroadcast": "✅ Kirim ke {{ .Count }} pengguna"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

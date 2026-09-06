@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ أرسل الرسالة التي تريد أن يستلمها المسؤول.\r\n",
       "replyPrompt": "✍️ أرسل ردك؛ سيتم تسليمه إلى العميل.\r\n",
       "replyDelivered": "✅ تم تسليم الرد.\r\n",
-      "replyFailed": "❗ تعذر تسليم الرد: {{ .Error }}\r\n"
+      "replyFailed": "❗ تعذر تسليم الرد: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 أرسل الرسالة التي تريد بثها إلى جميع المستخدمين المرتبطين.",
+      "broadcastPreview": "👀 معاينة رسالة البث موضحة أدناه. أكّد للإرسال.",
+      "broadcastEmpty": "❌ رسالة البث فارغة.",
+      "broadcastNoRecipients": "❌ لا يوجد مستخدمون مرتبطون بحساب تيليجرام بعد.",
+      "broadcastCancelled": "❌ تم إلغاء البث.",
+      "broadcastDone": "✅ انتهى البث.\r\nتم التسليم: {{ .Sent }}\r\nفشل: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 رابط الدعوة",
       "resetCredentials": "🔑 إعادة تعيين بيانات الاتصال",
       "confirmResetCredentials": "✅ تأكيد إعادة تعيين بيانات الاتصال؟",
-      "replyToClient": "💬 رد"
+      "replyToClient": "💬 رد",
+      "broadcast": "📢 بث جماعي",
+      "confirmBroadcast": "✅ إرسال إلى {{ .Count }} مستخدم"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

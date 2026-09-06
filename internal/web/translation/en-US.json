@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ Send the message you want the admin to receive.\r\n",
       "replyPrompt": "✍️ Send your reply; it will be delivered to the client.\r\n",
       "replyDelivered": "✅ Reply delivered.\r\n",
-      "replyFailed": "❗ Could not deliver the reply: {{ .Error }}\r\n"
+      "replyFailed": "❗ Could not deliver the reply: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 Send the message you want to broadcast to all linked users.",
+      "broadcastPreview": "👀 Preview of your broadcast is shown below. Confirm to send it.",
+      "broadcastEmpty": "❌ The broadcast message is empty.",
+      "broadcastNoRecipients": "❌ No users are linked to a Telegram account yet.",
+      "broadcastCancelled": "❌ Broadcast cancelled.",
+      "broadcastDone": "✅ Broadcast finished.\r\nDelivered: {{ .Sent }}\r\nFailed: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 Invite Link",
       "resetCredentials": "🔑 Reset Credentials",
       "confirmResetCredentials": "✅ Confirm Reset Credentials?",
-      "replyToClient": "💬 Reply"
+      "replyToClient": "💬 Reply",
+      "broadcast": "📢 Broadcast",
+      "confirmBroadcast": "✅ Send to {{ .Count }} users"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

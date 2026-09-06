@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ Gửi tin nhắn bạn muốn quản trị viên nhận.\r\n",
       "replyPrompt": "✍️ Gửi câu trả lời của bạn; nó sẽ được chuyển tới khách hàng.\r\n",
       "replyDelivered": "✅ Đã gửi trả lời.\r\n",
-      "replyFailed": "❗ Không thể gửi trả lời: {{ .Error }}\r\n"
+      "replyFailed": "❗ Không thể gửi trả lời: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 Hãy gửi nội dung bạn muốn phát tới tất cả người dùng đã liên kết.",
+      "broadcastPreview": "👀 Bản xem trước của tin phát ở bên dưới. Xác nhận để gửi.",
+      "broadcastEmpty": "❌ Nội dung phát tin đang trống.",
+      "broadcastNoRecipients": "❌ Chưa có người dùng nào liên kết với tài khoản Telegram.",
+      "broadcastCancelled": "❌ Đã hủy phát tin.",
+      "broadcastDone": "✅ Đã phát tin xong.\r\nĐã gửi: {{ .Sent }}\r\nThất bại: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 Liên kết mời",
       "resetCredentials": "🔑 Đặt lại thông tin đăng nhập",
       "confirmResetCredentials": "✅ Xác nhận đặt lại thông tin đăng nhập?",
-      "replyToClient": "💬 Trả lời"
+      "replyToClient": "💬 Trả lời",
+      "broadcast": "📢 Phát tin",
+      "confirmBroadcast": "✅ Gửi tới {{ .Count }} người dùng"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

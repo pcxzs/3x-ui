@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ Yöneticinin almasını istediğiniz mesajı gönderin.\r\n",
       "replyPrompt": "✍️ Yanıtınızı gönderin; istemciye iletilecek.\r\n",
       "replyDelivered": "✅ Yanıt iletildi.\r\n",
-      "replyFailed": "❗ Yanıt iletilemedi: {{ .Error }}\r\n"
+      "replyFailed": "❗ Yanıt iletilemedi: {{ .Error }}\r\n",
+      "broadcastPrompt": "📢 Bağlı tüm kullanıcılara göndermek istediğiniz mesajı yazın.",
+      "broadcastPreview": "👀 Toplu mesajın önizlemesi aşağıdadır. Göndermek için onaylayın.",
+      "broadcastEmpty": "❌ Toplu mesaj boş.",
+      "broadcastNoRecipients": "❌ Henüz bir Telegram hesabına bağlı kullanıcı yok.",
+      "broadcastCancelled": "❌ Toplu mesaj iptal edildi.",
+      "broadcastDone": "✅ Toplu mesaj tamamlandı.\r\nİletilen: {{ .Sent }}\r\nBaşarısız: {{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 Davet Bağlantısı",
       "resetCredentials": "🔑 Kimlik Bilgilerini Sıfırla",
       "confirmResetCredentials": "✅ Kimlik Bilgileri Sıfırlansın mı?",
-      "replyToClient": "💬 Yanıtla"
+      "replyToClient": "💬 Yanıtla",
+      "broadcast": "📢 Toplu Mesaj",
+      "confirmBroadcast": "✅ {{ .Count }} kullanıcıya gönder"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

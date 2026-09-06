@@ -2183,7 +2183,13 @@
       "pmPrompt": "✍️ 请发送您希望管理员收到的消息。\r\n",
       "replyPrompt": "✍️ 请发送您的回复，它将转达给客户。\r\n",
       "replyDelivered": "✅ 回复已送达。\r\n",
-      "replyFailed": "❗ 无法送达回复：{{ .Error }}\r\n"
+      "replyFailed": "❗ 无法送达回复：{{ .Error }}\r\n",
+      "broadcastPrompt": "📢 请发送你想群发给所有已绑定用户的消息。",
+      "broadcastPreview": "👀 群发内容预览如下，确认后即可发送。",
+      "broadcastEmpty": "❌ 群发内容为空。",
+      "broadcastNoRecipients": "❌ 目前还没有用户绑定 Telegram 账号。",
+      "broadcastCancelled": "❌ 已取消群发。",
+      "broadcastDone": "✅ 群发完成。\r\n已送达：{{ .Sent }}\r\n失败：{{ .Failed }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2229,7 +2235,9 @@
       "inviteLink": "🔗 邀请链接",
       "resetCredentials": "🔑 重置凭据",
       "confirmResetCredentials": "✅ 确认重置凭据？",
-      "replyToClient": "💬 回复"
+      "replyToClient": "💬 回复",
+      "broadcast": "📢 群发消息",
+      "confirmBroadcast": "✅ 发送给 {{ .Count }} 位用户"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",
