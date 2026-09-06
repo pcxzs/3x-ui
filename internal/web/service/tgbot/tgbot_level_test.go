@@ -59,9 +59,8 @@ func TestAdminCommandsAreNeverAllowedBelowAdmin(t *testing.T) {
 	}
 }
 
-// The old wording told people to have an admin paste their ChatID into a
-// config, which is the manual flow invite links replaced. An admin with nothing
-// bound needs pointing at the admin panel, not at themselves.
+// The old wording described the manual ChatID flow that invite links replaced; an
+// admin with nothing bound needs pointing at the admin panel, not at themselves.
 func TestNoBoundClientMsgIsLevelAware(t *testing.T) {
 	tg := &Tgbot{}
 	admin := tg.noBoundClientMsg(levelAdmin)

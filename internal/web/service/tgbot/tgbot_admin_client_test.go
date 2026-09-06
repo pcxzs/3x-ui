@@ -176,9 +176,8 @@ func TestEditClientRecordRejectsDuplicateEmail(t *testing.T) {
 	}
 }
 
-// A disabled inbound carries no traffic, so offering it to a customer as one of
-// "their" inbounds points them at a route that cannot work. An admin still needs
-// to see it, because attached-but-off is what explains a support ticket.
+// A disabled inbound carries no traffic, so offering it to a customer points at a
+// dead route; an admin still sees it, because attached-but-off explains a ticket.
 func TestDescribeAttachedInboundsHidesDisabledFromCustomers(t *testing.T) {
 	dbDir := t.TempDir()
 	t.Setenv("XUI_DB_FOLDER", dbDir)

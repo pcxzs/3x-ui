@@ -26,9 +26,8 @@ func (t *Tgbot) selfResetEnabled() bool {
 	return enabled
 }
 
-// selfResetGate is the whole authorisation for a customer resetting their own
-// config. An empty key means refuse in silence: telling a stranger why would
-// confirm whether the client they named exists.
+// selfResetGate is the whole authorisation for a customer resetting their own config.
+// An empty key means refuse in silence: saying why would confirm the client exists.
 func (t *Tgbot) selfResetGate(tgUserID int64, email string) (bool, string) {
 	if !t.selfResetEnabled() {
 		return false, "tgbot.messages.selfResetDisabled"

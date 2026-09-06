@@ -31,9 +31,8 @@ var rungMessageKey = map[renewalRung]string{
 	rungOverdue:   "tgbot.messages.renewOverdue",
 }
 
-// A zero expiry never lapses and a negative one has not started counting, so
-// neither is on the ladder. Days are compared as calendar days, not as 24-hour
-// blocks, so "tomorrow" means the next date rather than the next 24 hours.
+// A zero expiry never lapses and a negative one has not started counting, so neither
+// is on the ladder. Days are calendar days, so "tomorrow" is the next date, not +24h.
 func expiryRung(expiryTime int64, now time.Time) renewalRung {
 	if expiryTime <= 0 {
 		return rungNone

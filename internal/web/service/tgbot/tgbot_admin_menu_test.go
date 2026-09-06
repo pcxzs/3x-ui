@@ -92,9 +92,8 @@ func TestAdminPanelReachesEveryAction(t *testing.T) {
 	}
 }
 
-// Every fleet-wide action belongs behind Bulk actions, where each one reports
-// its reach before applying. Leaving one on the Clients menu is what let a
-// whole-panel traffic reset sit one tap from browsing clients.
+// Every fleet-wide action belongs behind Bulk actions, which reports its reach first;
+// one left on the Clients menu put a panel-wide reset one tap from browsing clients.
 func TestFleetWideActionsLiveOnlyInBulkMenu(t *testing.T) {
 	initLangDB(t)
 	tg := new(Tgbot)

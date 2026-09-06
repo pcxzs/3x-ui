@@ -11,10 +11,8 @@ import (
 
 func neverMuted(string, int64) bool { return false }
 
-// The manual button promises a count before it chases anyone, so the count has
-// to agree with what the pass would actually send.
-// The rungs compare calendar days in the panel's own zone, so the fixture is
-// anchored there rather than in UTC.
+// The manual button promises a count before it chases anyone, so the count must agree
+// with the pass; the rungs compare calendar days in the panel's own zone.
 func TestPlanReminders(t *testing.T) {
 	now := time.Date(2026, 9, 1, 12, 0, 0, 0, time.Local)
 	plan := planReminders(rosterFixture(now), now, true, neverMuted, map[string]int64{})

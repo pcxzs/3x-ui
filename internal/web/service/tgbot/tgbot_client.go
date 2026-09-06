@@ -81,9 +81,8 @@ func (t *Tgbot) BuildClientDraftMessage() string {
 
 // describeAttachedInbounds returns a short "remark1, remark2" list for the given
 // inbound ids, falling back to "#id" when an inbound can't be loaded.
-// A disabled inbound carries no traffic, so listing it on a customer's card
-// offers them a route that cannot work. Admins keep seeing it, marked, because
-// "attached but switched off" is exactly what explains a support ticket.
+// A disabled inbound carries no traffic, so listing it on a customer's card offers a
+// dead route; admins keep seeing it marked, as attached-but-off explains a ticket.
 func (t *Tgbot) describeAttachedInbounds(ids []int, hideDisabled bool) string {
 	if len(ids) == 0 {
 		return ""
@@ -605,9 +604,8 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 		),
 	}
 
-	// Only offered once a client is actually bound. One config per Telegram
-	// account means a customer moving to a new account cannot rebind until the
-	// old binding is cleared, so this is the admin's release valve.
+	// Offered only once a client is bound: a customer moving to a new account cannot
+	// rebind until the old binding is cleared, so this is the admin's release valve.
 	if record, err := t.clientService.GetRecordByEmail(nil, email); err == nil && record.TgID != 0 {
 		rows = append(rows, tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.removeTGUser")).WithCallbackData(t.encodeQuery("tgid_remove "+email)),

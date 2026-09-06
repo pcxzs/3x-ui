@@ -44,9 +44,8 @@ func (t *Tgbot) dailyHour() int {
 	return hour
 }
 
-// RunDailyPass sends the customer-facing notices once a day at the hour an
-// admin chose. It is scheduled hourly and gates itself, so changing the hour
-// takes effect without touching the cron entry or restarting the panel.
+// RunDailyPass sends the customer-facing notices once a day at the hour an admin chose.
+// It is scheduled hourly and gates itself, so a change needs no cron edit or restart.
 func (t *Tgbot) RunDailyPass() {
 	if !t.IsRunning() {
 		return

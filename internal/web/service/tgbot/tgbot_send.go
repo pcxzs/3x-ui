@@ -118,9 +118,8 @@ func (t *Tgbot) adminSettingsKeyboard() *telego.InlineKeyboardMarkup {
 	)
 }
 
-// clientKeyboard is what a customer sees, and what an admin sees first. Every
-// way of getting or rotating a config lives behind My Configs, so the grid is
-// the same five buttons whether or not self-reset is switched on.
+// clientKeyboard is what a customer sees, and what an admin sees first. Every way of
+// getting or rotating a config lives behind My Configs, so the grid never changes.
 func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
 	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(
@@ -292,9 +291,8 @@ func (t *Tgbot) sendHTMLDirect(chatId int64, text string, replyMarkup ...telego.
 	return err
 }
 
-// quiet returns a copy of the bot whose sends carry no alert, reading the
-// setting once rather than once per recipient. A lookup failure keeps the buzz
-// rather than silencing something an operator wanted to hear.
+// quiet returns a copy of the bot whose sends carry no alert, reading the setting once
+// rather than per recipient. A lookup failure keeps the buzz rather than silencing it.
 func (t *Tgbot) quiet() *Tgbot {
 	silent, err := t.settingService.GetTgBotSilentNotices()
 	if err != nil {

@@ -4,9 +4,8 @@ import (
 	"testing"
 )
 
-// The IDOR this guards: callback data is attacker-controlled, so a customer who
-// knows or guesses another customer's client name must not be able to fetch
-// that client's subscription URL — which would hand over their whole config.
+// The IDOR this guards: a customer who guesses another's client name must not be able
+// to fetch that client's subscription URL, which would hand over their whole config.
 func TestOwnsClientRefusesAnotherCustomersClient(t *testing.T) {
 	initInviteDB(t)
 	seedClient(t, "mine@x", "subowner000000001", 1001)

@@ -106,9 +106,8 @@ func (t *Tgbot) OnReceive() {
 				if t.handleConversationState(&message, userState) {
 					return nil
 				}
-				// The wizard states below are keyed by chat while authorization
-				// keys by sender, so the admin check cannot be left to whoever
-				// set the state.
+				// Wizard states key by chat while authorization keys by sender, so the
+				// admin check cannot be left to whoever set the state.
 				if !checkAdmin(message.From.ID) {
 					return nil
 				}
@@ -272,9 +271,8 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userL
 				t.getClientUsage(chatId, message.From.ID, 0, commandArgs[0])
 			}
 		} else {
-			// Bare /usage answers for the caller's own configs. Printing the
-			// syntax instead made the common case the one that needed an
-			// argument the customer would have to look up first.
+			// Bare /usage answers for the caller's own configs: printing the syntax
+			// made the common case the one needing an argument they must look up.
 			t.getClientUsage(chatId, message.From.ID, 0)
 		}
 	case "broadcast":

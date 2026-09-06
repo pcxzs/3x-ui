@@ -6,9 +6,8 @@ import (
 	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
 )
 
-// Each protocol keeps its secret in a different field, so rotation must target
-// the right one and must never disturb subId: the subscription URL has to keep
-// working while a leaked raw link stops.
+// Rotation must target each protocol's own secret field and never disturb subId,
+// so the subscription URL keeps working while a leaked raw link stops.
 func TestRotateClientSecretPerProtocol(t *testing.T) {
 	tests := []struct {
 		name      string

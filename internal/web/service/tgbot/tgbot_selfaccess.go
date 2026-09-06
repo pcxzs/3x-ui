@@ -5,9 +5,8 @@ import (
 	"strings"
 )
 
-// Per-client callbacks a customer may send for their OWN client. The list is
-// the single source of truth for both the level gate and the ownership check,
-// so a new action cannot be admitted by one and forgotten by the other.
+// Per-client callbacks a customer may send for their OWN client — the single source of
+// truth for both the level gate and the ownership check, so neither can forget one.
 var clientSelfPrefixes = []string{
 	"client_sub_links ",
 	"client_individual_links ",
@@ -43,10 +42,8 @@ func clientSelfTarget(verb, arg string) string {
 	return strings.TrimSpace(arg)
 }
 
-// Callback data is attacker-controlled. Telegram's MTProto layer lets a user's
-// own client post arbitrary bytes against any message the bot sent, so the fact
-// that we rendered a button is no evidence of what comes back: the target is
-// re-checked against the caller's own clients on every request.
+// Callback data is attacker-controlled: a user's own client can post arbitrary bytes
+// against any message we sent, so the target is re-checked against their own clients.
 func (t *Tgbot) ownsClient(tgUserID int64, email string) bool {
 	if email == "" || tgUserID <= 0 {
 		return false

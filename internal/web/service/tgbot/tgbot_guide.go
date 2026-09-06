@@ -9,9 +9,8 @@ import (
 
 const guideCallbackPrefix = "guide_"
 
-// guidePlatform is one entry in the setup picker. The message key is looked up
-// from this table rather than built from the tag, so callback data can never
-// reach the localizer as an arbitrary key.
+// guidePlatform is one entry in the setup picker. The message key comes from this
+// table rather than the tag, so callback data can never reach the localizer.
 type guidePlatform struct {
 	tag        string
 	labelKey   string

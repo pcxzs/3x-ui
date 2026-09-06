@@ -7,9 +7,8 @@ import (
 	"strings"
 )
 
-// The OS hostname is never reachable from the internet, so falling back to it
-// hands the customer a URL that cannot resolve and a certificate that cannot
-// match. The configured certificate names the domain the server answers to.
+// The OS hostname is never reachable from the internet, so falling back to it hands the
+// customer an unresolvable URL; the configured certificate names the real domain.
 func domainFromCertificate(certFile string) string {
 	if certFile == "" {
 		return ""

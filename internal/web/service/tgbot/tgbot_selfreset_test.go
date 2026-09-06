@@ -5,9 +5,8 @@ import (
 	"time"
 )
 
-// The reset knocks every one of a client's devices offline, so an unreadable
-// setting must leave it closed. This is the opposite of the notification
-// toggles, which fail open because a spurious notice is harmless.
+// The reset knocks every one of a client's devices offline, so an unreadable setting
+// must fail closed — unlike the notification toggles, where a spurious notice is harmless.
 func TestSelfResetFailsClosed(t *testing.T) {
 	initLangDB(t)
 	tg := new(Tgbot)

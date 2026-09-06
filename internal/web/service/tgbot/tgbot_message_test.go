@@ -6,9 +6,8 @@ import (
 	"github.com/mymmrac/telego"
 )
 
-// Only clients already bound to a Telegram account may reach an admin; an
-// unbound chat must resolve to no client so the message is refused rather than
-// forwarded, otherwise anyone who finds the bot can page the operator.
+// Only clients already bound may reach an admin: an unbound chat must resolve to no
+// client, or anyone who finds the bot could page the operator.
 func TestClientEmailsForOnlyResolvesBoundAccounts(t *testing.T) {
 	initInviteDB(t)
 	seedClient(t, "bound-a@x", "sub00000000000a", 4242)
@@ -37,9 +36,8 @@ func TestClientEmailsForOnlyResolvesBoundAccounts(t *testing.T) {
 	})
 }
 
-// A reply is addressed by a chat id carried in the state string. A malformed or
-// zero target must not be accepted, or the reply would be sent to the wrong
-// chat, or to chat 0.
+// A reply is addressed by a chat id carried in the state string, so a malformed or
+// zero target must be refused rather than sent to the wrong chat, or to chat 0.
 func TestParseReplyTarget(t *testing.T) {
 	tests := []struct {
 		name  string

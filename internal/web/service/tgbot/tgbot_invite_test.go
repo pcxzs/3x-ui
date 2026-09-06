@@ -25,9 +25,8 @@ func seedClient(t *testing.T, email, subID string, tgID int64) {
 	}
 }
 
-// A SubID doubles as the invite token, so binding must be first-claim-wins:
-// an unclaimed client binds, the owner re-tapping is idempotent, and a client
-// already held by someone else must never be reassigned by a stranger.
+// A SubID doubles as the invite token, so binding is first-claim-wins: the owner
+// re-tapping is idempotent, and a client held by someone else is never reassigned.
 func TestResolveInviteToken(t *testing.T) {
 	initInviteDB(t)
 	seedClient(t, "unclaimed@x", "subfree0000000001", 0)
@@ -89,9 +88,8 @@ func TestResolveInviteTokenTrimsWhitespace(t *testing.T) {
 	}
 }
 
-// A subscription can span several clients, so a token that maps to more than
-// one must bind every unbound part — otherwise the customer receives one config
-// and silently loses the rest.
+// A subscription can span several clients, so a token mapping to more than one must
+// bind every unbound part — otherwise the customer silently loses the rest.
 func TestClaimInviteBindsEveryClientSharingSubID(t *testing.T) {
 	initInviteDB(t)
 	const shared = "subshared00000003"
@@ -150,9 +148,8 @@ func TestInviteDiagnosis(t *testing.T) {
 	}
 }
 
-// A second subscription is now allowed, but only up to the ceiling: without a
-// ceiling a customer could collect other people's configs by collecting their
-// invite links.
+// A second subscription is allowed only up to the ceiling: without one a customer
+// could collect other people's configs by collecting their invite links.
 func TestBindingHeadroom(t *testing.T) {
 	initInviteDB(t)
 	seedClient(t, "held-a@x", "subheld0000000007", 8100)
@@ -209,9 +206,8 @@ func TestBindingHeadroomIgnoresTheTokenBeingClaimed(t *testing.T) {
 	}
 }
 
-// The ceiling counts subscriptions, not client records: one subscription
-// spanning several inbounds is a single config to the customer, and counting
-// its parts would refuse a household long before it reached the limit.
+// The ceiling counts subscriptions, not client records: counting the parts of one
+// multi-inbound subscription would refuse a household long before the limit.
 func TestBindingHeadroomCountsSubscriptionsNotRecords(t *testing.T) {
 	initInviteDB(t)
 	const spread = "subspread00000010"
@@ -331,9 +327,8 @@ func TestNewClientNotice(t *testing.T) {
 	}
 }
 
-// A customer holding several configs is the case the ceiling exists to bound,
-// so an admin must be able to see it on the arrival notice; a first arrival
-// must read exactly as it did before.
+// An admin must see on the arrival notice when a customer holds several configs,
+// while a first arrival must read exactly as it did before.
 func TestNewClientNoticeNamesTheHoldingCount(t *testing.T) {
 	initLangDB(t)
 	tg := new(Tgbot)

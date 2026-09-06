@@ -133,9 +133,8 @@ func (t *Tgbot) startRosterSearch(chatId int64) {
 	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.rosterSearchPrompt"))
 }
 
-// Handing a customer their invite link is the single most common admin errand,
-// so the picker lists clients directly rather than making the operator recall
-// an email and type /usage first.
+// Handing a customer their invite link is the commonest admin errand, so the picker
+// lists clients directly rather than making the operator recall an email first.
 func (t *Tgbot) inviteLinkPicker(chatId int64, messageID int) {
 	clients, err := t.clientService.List()
 	if err != nil {

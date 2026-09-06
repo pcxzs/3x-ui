@@ -5,9 +5,8 @@ import (
 	"time"
 )
 
-// Mirrors reset_exp_c's arithmetic. A negative expiry is the panel's marker
-// for "N days from first use", so a lapsed client restarts rather than being
-// extended from a date already in the past.
+// Mirrors reset_exp_c's arithmetic: a negative expiry marks "N days from first use",
+// so a lapsed client restarts rather than being extended from a date already past.
 func TestExtendedExpiry(t *testing.T) {
 	now := time.Date(2026, 8, 31, 12, 0, 0, 0, time.UTC)
 	const dayMs = int64(24 * 60 * 60000)

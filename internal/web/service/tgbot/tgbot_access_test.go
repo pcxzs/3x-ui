@@ -5,9 +5,8 @@ import (
 	"testing"
 )
 
-// Callback data is attacker-controlled, so any button that names a client must
-// resolve through clientSelfAction — the gate that re-checks ownership. A new
-// targeted callback added without that gate is an IDOR, and fails here.
+// Callback data is attacker-controlled, so any button naming a client must resolve
+// through clientSelfAction; a targeted callback added without that gate is an IDOR.
 func TestTargetedClientCallbacksAreOwnershipChecked(t *testing.T) {
 	initLangDB(t)
 	tg := &Tgbot{}
@@ -82,9 +81,8 @@ func TestOwnsClientRejectsMissingIdentity(t *testing.T) {
 	}
 }
 
-// The default-deny gate is what stops a non-admin reaching an admin callback.
-// Anything listed here must stay outside the customer allowlist, or a level-1
-// user could disable clients in bulk or reset another customer's config.
+// Default-deny stops a non-admin reaching an admin callback: anything listed here
+// must stay outside the customer allowlist, or a client could run bulk actions.
 func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
 	adminOnly := []string{
 		"admin_panel", "admin_clients", "admin_reports", "admin_messaging", "admin_settings",
@@ -106,9 +104,8 @@ func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
 	}
 }
 
-// The hour and binding-limit pickers are admin-only, so their parsers must not
-// be reachable through the customer allowlist even though both are matched
-// before the outer switch.
+// The hour and binding-limit pickers are admin-only, so their parsers must not be
+// reachable through the customer allowlist despite matching before the outer switch.
 func TestHourCallbackIsNotACustomerAction(t *testing.T) {
 	for _, data := range []string{
 		"set_hour 0", "set_hour 8", "set_hour 23",

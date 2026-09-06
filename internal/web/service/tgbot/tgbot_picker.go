@@ -38,9 +38,8 @@ func (t *Tgbot) pickerKeyboard(verb string, emails []string) *telego.InlineKeybo
 	return tu.InlineKeyboardGrid(tu.InlineKeyboardCols(pickerColumns(len(buttons)), buttons...))
 }
 
-// clientPicker resolves which of the caller's own configs a verb applies to.
-// The emails come from the caller's Telegram id, so an auto-selected config is
-// necessarily one they own.
+// clientPicker resolves which of the caller's own configs a verb applies to. The
+// emails come from the caller's Telegram id, so an auto-selected config is theirs.
 func (t *Tgbot) clientPicker(chatId int64, from *telego.User, verb string, level userLevel) {
 	traffics, err := t.inboundService.GetClientTrafficTgBot(from.ID)
 	if err != nil {
