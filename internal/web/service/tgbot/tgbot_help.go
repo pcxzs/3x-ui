@@ -25,6 +25,18 @@ func (t *Tgbot) helpText() string {
 	return stored
 }
 
+// The admin command sheet is built in one place so /help and the Commands
+// button cannot drift apart as commands are added.
+func (t *Tgbot) adminCommandHelp() string {
+	return strings.Join([]string{
+		t.I18nBot("tgbot.commands.helpAdminCommands"),
+		t.I18nBot("tgbot.commands.helpAdminExtraCommands"),
+		t.I18nBot("tgbot.commands.whoisUsage"),
+		t.I18nBot("tgbot.commands.serverMenuUsage"),
+		t.I18nBot("tgbot.commands.clientsUsage"),
+	}, "\r\n\r\n")
+}
+
 func (t *Tgbot) startSetHelp(chatId int64) {
 	userStateMgr.set(chatId, stateHelpText)
 	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.helpTextPrompt", "Reset=="+helpTextReset))

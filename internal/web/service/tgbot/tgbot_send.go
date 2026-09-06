@@ -14,17 +14,18 @@ import (
 )
 
 // sendResponse sends the response message based on the onlyMessage flag.
-func (t *Tgbot) sendResponse(chatId int64, msg string, onlyMessage, isAdmin bool) {
+func (t *Tgbot) sendResponse(chatId int64, msg string, onlyMessage bool, level userLevel) {
 	if onlyMessage {
 		t.SendMsgToTgbot(chatId, msg)
 	} else {
-		t.SendAnswer(chatId, msg, isAdmin)
+		t.SendAnswer(chatId, msg, level)
 	}
 }
 
-// SendAnswer sends a response message with an inline keyboard to the specified chat.
-func (t *Tgbot) SendAnswer(chatId int64, msg string, isAdmin bool) {
-	numericKeyboard := tu.InlineKeyboard(
+// adminKeyboard is the operator console, reached only from the Admin button on
+// the client panel so an admin sees what their customers see by default.
+func (t *Tgbot) adminKeyboard() *telego.InlineKeyboardMarkup {
+	return tu.InlineKeyboard(
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.SortedTrafficUsageReport")).WithCallbackData(t.encodeQuery("get_sorted_traffic_usage_report")),
 		),
@@ -59,10 +60,21 @@ func (t *Tgbot) SendAnswer(chatId int64, msg string, isAdmin bool) {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.clientRoster")).WithCallbackData(t.encodeQuery("client_roster")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.inviteLinks")).WithCallbackData(t.encodeQuery("invite_links")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.serverMenu")).WithCallbackData(t.encodeQuery("server")),
 		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToUserPanel")).WithCallbackData(t.encodeQuery("user_panel")),
+		),
 	)
-	numericKeyboardClient := tu.InlineKeyboard(
+}
+
+// clientKeyboard is what a customer sees, and what an admin sees first. The
+// Admin row is appended only for admins, so nothing hints at a second panel.
+func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
+	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.clientUsage")).WithCallbackData(t.encodeQuery("client_traffic")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.commands")).WithCallbackData(t.encodeQuery("client_commands")),
@@ -74,15 +86,22 @@ func (t *Tgbot) SendAnswer(chatId int64, msg string, isAdmin bool) {
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("qrCode")).WithCallbackData(t.encodeQuery("client_qr_links")),
 		),
-	)
-
-	var ReplyMarkup telego.ReplyMarkup
-	if isAdmin {
-		ReplyMarkup = numericKeyboard
-	} else {
-		ReplyMarkup = numericKeyboardClient
 	}
-	t.SendMsgToTgbot(chatId, msg, ReplyMarkup)
+	if level == levelAdmin {
+		rows = append(rows, tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.adminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
+		))
+	}
+	return tu.InlineKeyboardGrid(rows)
+}
+
+// SendAnswer sends a response message with the keyboard the caller's level earns.
+func (t *Tgbot) SendAnswer(chatId int64, msg string, level userLevel) {
+	if level == levelStranger {
+		t.SendMsgToTgbot(chatId, msg)
+		return
+	}
+	t.SendMsgToTgbot(chatId, msg, t.clientKeyboard(level))
 }
 
 const telegramPageLimit = 2000

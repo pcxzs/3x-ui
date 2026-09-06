@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "Написати адміністратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказати цю довідку знову:\r\n<code>/help</code>",
       "whoisUsage": "Щоб дізнатися, якими клієнтами володіє акаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Відкрити керування сервером:\r\n<code>/server</code>",
-      "clientsUsage": "Список усіх клієнтів зі строком і трафіком:\r\n<code>/clients</code>"
+      "clientsUsage": "Список усіх клієнтів зі строком і трафіком:\r\n<code>/clients</code>",
+      "strangerGreeting": "Привіт 👋"
     },
     "messages": {
       "cpuThreshold": "Навантаження ЦП  {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 Клієнтів ще немає.",
       "rosterTruncated": "… і ще {{ .Count }}. Для конкретного клієнта використайте <code>/usage [Email]</code>.",
       "inviteDiagUnknown": "🔎 Нотатка для адміна: клієнта з subId <code>{{ .Token }}</code> немає.",
-      "inviteDiagTaken": "🔎 Нотатка для адміна: вже прив'язаний — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 Нотатка для адміна: вже прив'язаний — {{ .Detail }}",
+      "adminPanel": "🛡 <b>Панель адміна</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>Запрошення</b> — {{ .Count }} клієнтів\r\n✅ прив'язаний · ❌ ні. Натисніть, щоб отримати посилання."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 Увімкнути / вимкнути вхідне",
       "confirmXrayStop": "⏹ Так, зупинити Xray",
       "confirmPanelRestart": "♻️ Так, перезапустити панель",
-      "clientRoster": "👥 Звіт за клієнтами"
+      "clientRoster": "👥 Звіт за клієнтами",
+      "adminPanel": "🛡 Адмін",
+      "backToUserPanel": "⬅️ Назад до моєї панелі",
+      "inviteLinks": "🔗 Запрошення"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

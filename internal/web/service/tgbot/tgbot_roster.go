@@ -11,6 +11,9 @@ import (
 	"github.com/mhsanaei/3x-ui/v3/internal/logger"
 	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
 	"github.com/mhsanaei/3x-ui/v3/internal/web/service"
+
+	"github.com/mymmrac/telego"
+	tu "github.com/mymmrac/telego/telegoutil"
 )
 
 // A roster longer than this pages out over a dozen Telegram messages, which is
@@ -102,4 +105,44 @@ func (t *Tgbot) clientRoster(chatId int64) {
 		report.WriteString(t.I18nBot("tgbot.messages.rosterTruncated", "Count=="+strconv.Itoa(omitted)))
 	}
 	t.SendMsgToTgbot(chatId, report.String())
+}
+
+// Handing a customer their invite link is the single most common admin errand,
+// so the picker lists clients directly rather than making the operator recall
+// an email and type /usage first.
+func (t *Tgbot) inviteLinkPicker(chatId int64, messageID int) {
+	clients, err := t.clientService.List()
+	if err != nil {
+		logger.Warning("tgbot: invite picker failed:", err)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"))
+		return
+	}
+	if len(clients) == 0 {
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.rosterEmpty"))
+		return
+	}
+
+	sortClientsByExpiry(clients)
+	page, omitted := rosterPage(clients, rosterPageSize)
+
+	buttons := make([]telego.InlineKeyboardButton, 0, len(page))
+	for i := range page {
+		mark := "❌"
+		if page[i].TgID != 0 {
+			mark = "✅"
+		}
+		buttons = append(buttons, tu.InlineKeyboardButton(mark+" "+page[i].Email).
+			WithCallbackData(t.encodeQuery("client_invite_link "+page[i].Email)))
+	}
+	keyboard := tu.InlineKeyboardGrid(tu.InlineKeyboardCols(2, buttons...))
+
+	header := t.I18nBot("tgbot.messages.invitePicker", "Count=="+strconv.Itoa(len(clients)))
+	if omitted > 0 {
+		header += "\r\n" + t.I18nBot("tgbot.messages.rosterTruncated", "Count=="+strconv.Itoa(omitted))
+	}
+	if messageID > 0 {
+		t.editMessageTgBot(chatId, messageID, header, keyboard)
+		return
+	}
+	t.SendMsgToTgbot(chatId, header, keyboard)
 }

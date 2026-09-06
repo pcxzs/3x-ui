@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "Untuk mengirim pesan ke administrator:\r\n<code>/pm [Text]</code>\r\n\r\nUntuk melihat bantuan ini lagi:\r\n<code>/help</code>",
       "whoisUsage": "Untuk melihat klien yang dimiliki sebuah akun Telegram:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Untuk membuka kontrol server:\r\n<code>/server</code>",
-      "clientsUsage": "Untuk menampilkan semua klien beserta masa berlaku dan pemakaian:\r\n<code>/clients</code>"
+      "clientsUsage": "Untuk menampilkan semua klien beserta masa berlaku dan pemakaian:\r\n<code>/clients</code>",
+      "strangerGreeting": "Halo 👋"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 Belum ada klien.",
       "rosterTruncated": "… dan {{ .Count }} lainnya. Gunakan <code>/usage [Email]</code> untuk klien tertentu.",
       "inviteDiagUnknown": "🔎 Catatan admin: tidak ada klien dengan subId <code>{{ .Token }}</code>.",
-      "inviteDiagTaken": "🔎 Catatan admin: sudah terhubung — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 Catatan admin: sudah terhubung — {{ .Detail }}",
+      "adminPanel": "🛡 <b>Panel admin</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>Tautan undangan</b> — {{ .Count }} klien\r\n✅ sudah terhubung · ❌ belum. Ketuk salah satu untuk tautannya."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 Aktifkan / Nonaktifkan Inbound",
       "confirmXrayStop": "⏹ Ya, hentikan Xray",
       "confirmPanelRestart": "♻️ Ya, mulai ulang panel",
-      "clientRoster": "👥 Laporan Semua Klien"
+      "clientRoster": "👥 Laporan Semua Klien",
+      "adminPanel": "🛡 Admin",
+      "backToUserPanel": "⬅️ Kembali ke panel saya",
+      "inviteLinks": "🔗 Tautan Undangan"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

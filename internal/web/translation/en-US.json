@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "To message the administrator:\r\n<code>/pm [Text]</code>\r\n\r\nTo see this help again:\r\n<code>/help</code>",
       "whoisUsage": "To look up which clients a Telegram account holds:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "To open the server controls:\r\n<code>/server</code>",
-      "clientsUsage": "To list every client with expiry and usage:\r\n<code>/clients</code>"
+      "clientsUsage": "To list every client with expiry and usage:\r\n<code>/clients</code>",
+      "strangerGreeting": "Hello there 👋"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 There are no clients yet.",
       "rosterTruncated": "… and {{ .Count }} more. Use <code>/usage [Email]</code> for a specific client.",
       "inviteDiagUnknown": "🔎 Admin note: no client on this panel has subId <code>{{ .Token }}</code>.",
-      "inviteDiagTaken": "🔎 Admin note: already bound — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 Admin note: already bound — {{ .Detail }}",
+      "adminPanel": "🛡 <b>Admin panel</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>Invite links</b> — {{ .Count }} clients\r\n✅ already bound · ❌ not yet. Tap one for its link."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 Enable / Disable Inbound",
       "confirmXrayStop": "⏹ Yes, stop Xray",
       "confirmPanelRestart": "♻️ Yes, restart the panel",
-      "clientRoster": "👥 All Clients Report"
+      "clientRoster": "👥 All Clients Report",
+      "adminPanel": "🛡 Admin",
+      "backToUserPanel": "⬅️ Back to my panel",
+      "inviteLinks": "🔗 Invite Links"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

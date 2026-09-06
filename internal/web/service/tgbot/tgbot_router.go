@@ -63,7 +63,7 @@ func (t *Tgbot) OnReceive() {
 				defer func() { <-messageWorkerPool }() // Release worker
 
 				userStateMgr.clear(message.Chat.ID)
-				t.answerCommand(&message, message.Chat.ID, checkAdmin(message.From.ID))
+				t.answerCommand(&message, message.Chat.ID, t.levelOf(message.From.ID))
 			}()
 			return nil
 		}, th.AnyCommand())
@@ -75,7 +75,7 @@ func (t *Tgbot) OnReceive() {
 				defer func() { <-messageWorkerPool }() // Release worker
 
 				userStateMgr.clear(query.Message.GetChat().ID)
-				t.answerCallback(&query, checkAdmin(query.From.ID))
+				t.answerCallback(&query, t.levelOf(query.From.ID))
 			}()
 			return nil
 		}, th.AnyCallbackQueryWithMessage())
@@ -174,10 +174,22 @@ func (t *Tgbot) OnReceive() {
 }
 
 // answerCommand processes incoming command messages from Telegram users.
-func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin bool) {
+func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userLevel) {
 	msg, onlyMessage := "", false
+	isAdmin := level == levelAdmin
 
 	command, _, commandArgs := tu.ParseCommand(message.Text)
+
+	// A stranger sees one greeting and nothing else, so an unlisted command
+	// cannot betray that the bot has a client or admin side at all.
+	if !commandAllowed(level, command) {
+		if level == levelStranger {
+			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.strangerGreeting"))
+			return
+		}
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.unknown"))
+		return
+	}
 
 	// Helper function to handle unknown commands.
 	handleUnknownCommand := func() {
@@ -188,6 +200,9 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 	switch command {
 	case "help":
 		msg += t.helpText()
+		if isAdmin {
+			msg += "\r\n\r\n" + t.adminCommandHelp()
+		}
 		msg += t.I18nBot("tgbot.commands.pleaseChoose")
 	case "sethelp":
 		onlyMessage = true
@@ -199,6 +214,14 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 	case "start":
 		if len(commandArgs) > 0 {
 			t.claimInvite(chatId, message.From.ID, commandArgs[0], isAdmin)
+			// A successful claim promotes the caller mid-command, so the
+			// keyboard below is chosen from the level they now hold.
+			level = t.levelOf(message.From.ID)
+			isAdmin = level == levelAdmin
+		}
+		if level == levelStranger {
+			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.strangerGreeting"))
+			return
 		}
 		msg += t.I18nBot("tgbot.commands.start", "Firstname=="+html.EscapeString(message.From.FirstName))
 		if isAdmin {
@@ -321,7 +344,7 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 	}
 
 	if msg != "" {
-		t.sendResponse(chatId, msg, onlyMessage, isAdmin)
+		t.sendResponse(chatId, msg, onlyMessage, level)
 	}
 }
 
@@ -342,8 +365,15 @@ func isCommandForBot(text string, username string) bool {
 }
 
 // answerCallback processes callback queries from inline keyboards.
-func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool) {
+func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLevel) {
 	chatId := callbackQuery.Message.GetChat().ID
+	isAdmin := level == levelAdmin
+
+	// A stranger has no keyboard of their own, so any callback they send came
+	// from a forwarded or stale message and is ignored without a reply.
+	if level == levelStranger {
+		return
+	}
 
 	if isAdmin {
 		// get query from hash storage
@@ -1300,7 +1330,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		t.onlineClients(chatId, callbackQuery.Message.GetMessageID())
 	case "commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.whoisUsage")+"\r\n\r\n"+t.I18nBot("tgbot.commands.serverMenuUsage")+"\r\n\r\n"+t.I18nBot("tgbot.commands.clientsUsage"))
+		t.SendMsgToTgbot(chatId, t.adminCommandHelp())
 	case "broadcast":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.broadcast"))
 		t.startBroadcast(chatId)
@@ -1310,6 +1340,18 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 	case "broadcast_cancel":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.canceled", "Email=="))
 		t.cancelBroadcast(chatId)
+	case "admin_panel":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.adminPanel"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.adminPanel", "Hostname=="+hostname), t.adminKeyboard())
+	case "user_panel":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.backToUserPanel"))
+		t.SendAnswer(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), level)
+	case "invite_links":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.inviteLinks"))
+		t.inviteLinkPicker(chatId, 0)
 	case "client_roster":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientRoster"))
 		t.clientRoster(chatId)

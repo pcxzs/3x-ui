@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "聯絡管理員：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本說明：\r\n<code>/help</code>",
       "whoisUsage": "查詢某個 Telegram 帳號擁有哪些用戶端:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "開啟伺服器控制：\r\n<code>/server</code>",
-      "clientsUsage": "列出所有用戶及其到期時間和用量：\r\n<code>/clients</code>"
+      "clientsUsage": "列出所有用戶及其到期時間和用量：\r\n<code>/clients</code>",
+      "strangerGreeting": "你好 👋"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率為 {{ .Percent }}%，超過閾值 {{ .Threshold }}%",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 目前還沒有用戶。",
       "rosterTruncated": "… 還有 {{ .Count }} 筆。查看特定用戶請使用 <code>/usage [Email]</code>。",
       "inviteDiagUnknown": "🔎 管理員提示：沒有用戶使用 subId <code>{{ .Token }}</code>。",
-      "inviteDiagTaken": "🔎 管理員提示：已綁定 — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 管理員提示：已綁定 — {{ .Detail }}",
+      "adminPanel": "🛡 <b>管理面板</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>邀請連結</b> — {{ .Count }} 位用戶\r\n✅ 已綁定 · ❌ 未綁定。點擊任一項取得連結。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 啟用 / 停用入站",
       "confirmXrayStop": "⏹ 是，停止 Xray",
       "confirmPanelRestart": "♻️ 是，重啟面板",
-      "clientRoster": "👥 全部用戶報告"
+      "clientRoster": "👥 全部用戶報告",
+      "adminPanel": "🛡 管理",
+      "backToUserPanel": "⬅️ 返回我的面板",
+      "inviteLinks": "🔗 邀請連結"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

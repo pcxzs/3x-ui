@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "برای ارسال پیام به مدیر:\r\n<code>/pm [Text]</code>\r\n\r\nبرای دیدن دوباره این راهنما:\r\n<code>/help</code>",
       "whoisUsage": "برای دیدن کاربران متصل به یک حساب تلگرام:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "برای باز کردن کنترل‌های سرور:\r\n<code>/server</code>",
-      "clientsUsage": "برای فهرست همه کاربران همراه با انقضا و مصرف:\r\n<code>/clients</code>"
+      "clientsUsage": "برای فهرست همه کاربران همراه با انقضا و مصرف:\r\n<code>/clients</code>",
+      "strangerGreeting": "سلام 👋"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 هنوز کاربری وجود ندارد.",
       "rosterTruncated": "… و {{ .Count }} مورد دیگر. برای یک کاربر مشخص از <code>/usage [Email]</code> استفاده کنید.",
       "inviteDiagUnknown": "🔎 یادداشت ادمین: هیچ کاربری با subId <code>{{ .Token }}</code> وجود ندارد.",
-      "inviteDiagTaken": "🔎 یادداشت ادمین: از قبل متصل است — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 یادداشت ادمین: از قبل متصل است — {{ .Detail }}",
+      "adminPanel": "🛡 <b>پنل مدیریت</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>لینک‌های دعوت</b> — {{ .Count }} کاربر\r\n✅ متصل · ❌ متصل‌نشده. برای گرفتن لینک، یکی را انتخاب کنید."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 فعال / غیرفعال کردن ورودی",
       "confirmXrayStop": "⏹ بله، Xray متوقف شود",
       "confirmPanelRestart": "♻️ بله، پنل راه‌اندازی مجدد شود",
-      "clientRoster": "👥 گزارش همه کاربران"
+      "clientRoster": "👥 گزارش همه کاربران",
+      "adminPanel": "🛡 مدیریت",
+      "backToUserPanel": "⬅️ بازگشت به پنل من",
+      "inviteLinks": "🔗 لینک‌های دعوت"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

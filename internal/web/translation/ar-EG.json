@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "لمراسلة المسؤول:\r\n<code>/pm [Text]</code>\r\n\r\nلعرض هذه المساعدة مرة أخرى:\r\n<code>/help</code>",
       "whoisUsage": "لمعرفة العملاء الذين يملكهم حساب تيليجرام:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "لفتح أدوات الخادم:\r\n<code>/server</code>",
-      "clientsUsage": "لعرض كل العملاء مع الانتهاء والاستهلاك:\r\n<code>/clients</code>"
+      "clientsUsage": "لعرض كل العملاء مع الانتهاء والاستهلاك:\r\n<code>/clients</code>",
+      "strangerGreeting": "مرحبًا 👋"
     },
     "messages": {
       "cpuThreshold": "حمل المعالج {{ .Percent }}% عدى الحد المسموح ({{ .Threshold }}%)",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 لا يوجد عملاء بعد.",
       "rosterTruncated": "… و{{ .Count }} غيرهم. استخدم <code>/usage [Email]</code> لعميل محدّد.",
       "inviteDiagUnknown": "🔎 ملاحظة للمشرف: لا يوجد عميل بـ subId <code>{{ .Token }}</code>.",
-      "inviteDiagTaken": "🔎 ملاحظة للمشرف: مرتبط بالفعل — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 ملاحظة للمشرف: مرتبط بالفعل — {{ .Detail }}",
+      "adminPanel": "🛡 <b>لوحة المشرف</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>روابط الدعوة</b> — {{ .Count }} عميل\r\n✅ مرتبط · ❌ غير مرتبط. اضغط على واحد للحصول على رابطه."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 تفعيل / تعطيل وارد",
       "confirmXrayStop": "⏹ نعم، أوقف Xray",
       "confirmPanelRestart": "♻️ نعم، أعد تشغيل اللوحة",
-      "clientRoster": "👥 تقرير كل العملاء"
+      "clientRoster": "👥 تقرير كل العملاء",
+      "adminPanel": "🛡 المشرف",
+      "backToUserPanel": "⬅️ العودة إلى لوحتي",
+      "inviteLinks": "🔗 روابط الدعوة"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "Yöneticiye mesaj göndermek için:\r\n<code>/pm [Text]</code>\r\n\r\nBu yardımı yeniden görmek için:\r\n<code>/help</code>",
       "whoisUsage": "Bir Telegram hesabının hangi istemcilere sahip olduğunu görmek için:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Sunucu denetimlerini açmak için:\r\n<code>/server</code>",
-      "clientsUsage": "Tüm istemcileri bitiş tarihi ve kullanımıyla listelemek için:\r\n<code>/clients</code>"
+      "clientsUsage": "Tüm istemcileri bitiş tarihi ve kullanımıyla listelemek için:\r\n<code>/clients</code>",
+      "strangerGreeting": "Merhaba 👋"
     },
     "messages": {
       "cpuThreshold": "CPU Yükü ({{ .Percent }}%), {{ .Threshold }}% eşiğini aşıyor",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 Henüz istemci yok.",
       "rosterTruncated": "… ve {{ .Count }} tane daha. Belirli bir istemci için <code>/usage [Email]</code> kullanın.",
       "inviteDiagUnknown": "🔎 Yönetici notu: <code>{{ .Token }}</code> subId'li istemci yok.",
-      "inviteDiagTaken": "🔎 Yönetici notu: zaten bağlı — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 Yönetici notu: zaten bağlı — {{ .Detail }}",
+      "adminPanel": "🛡 <b>Yönetim paneli</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>Davet bağlantıları</b> — {{ .Count }} istemci\r\n✅ bağlı · ❌ değil. Bağlantı için birine dokunun."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 Gelen Bağlantıyı Aç / Kapat",
       "confirmXrayStop": "⏹ Evet, Xray'i durdur",
       "confirmPanelRestart": "♻️ Evet, paneli yeniden başlat",
-      "clientRoster": "👥 Tüm İstemci Raporu"
+      "clientRoster": "👥 Tüm İstemci Raporu",
+      "adminPanel": "🛡 Yönetim",
+      "backToUserPanel": "⬅️ Kendi panelime dön",
+      "inviteLinks": "🔗 Davet Bağlantıları"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

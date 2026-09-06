@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "Para enviar mensagem ao administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara ver esta ajuda novamente:\r\n<code>/help</code>",
       "whoisUsage": "Para consultar quais clientes uma conta do Telegram possui:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Para abrir os controles do servidor:\r\n<code>/server</code>",
-      "clientsUsage": "Para listar todos os clientes com expiração e consumo:\r\n<code>/clients</code>"
+      "clientsUsage": "Para listar todos os clientes com expiração e consumo:\r\n<code>/clients</code>",
+      "strangerGreeting": "Olá 👋"
     },
     "messages": {
       "cpuThreshold": "A carga da CPU {{ .Percent }}% excede o limite de {{ .Threshold }}%",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 Ainda não há clientes.",
       "rosterTruncated": "… e mais {{ .Count }}. Use <code>/usage [Email]</code> para um cliente específico.",
       "inviteDiagUnknown": "🔎 Nota do administrador: nenhum cliente tem o subId <code>{{ .Token }}</code>.",
-      "inviteDiagTaken": "🔎 Nota do administrador: já vinculado — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 Nota do administrador: já vinculado — {{ .Detail }}",
+      "adminPanel": "🛡 <b>Painel de administração</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>Links de convite</b> — {{ .Count }} clientes\r\n✅ vinculado · ❌ não vinculado. Toque em um para o link."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 Ativar / desativar entrada",
       "confirmXrayStop": "⏹ Sim, parar o Xray",
       "confirmPanelRestart": "♻️ Sim, reiniciar o painel",
-      "clientRoster": "👥 Relatório de clientes"
+      "clientRoster": "👥 Relatório de clientes",
+      "adminPanel": "🛡 Administração",
+      "backToUserPanel": "⬅️ Voltar ao meu painel",
+      "inviteLinks": "🔗 Links de convite"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

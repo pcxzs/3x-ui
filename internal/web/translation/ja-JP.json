@@ -2108,7 +2108,8 @@
       "helpClientExtraCommands": "管理者にメッセージを送る:\r\n<code>/pm [Text]</code>\r\n\r\nこのヘルプをもう一度表示する:\r\n<code>/help</code>",
       "whoisUsage": "Telegram アカウントが保有するクライアントを調べる:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "サーバー操作を開くには:\r\n<code>/server</code>",
-      "clientsUsage": "有効期限と使用量つきで全クライアントを一覧するには:\r\n<code>/clients</code>"
+      "clientsUsage": "有効期限と使用量つきで全クライアントを一覧するには:\r\n<code>/clients</code>",
+      "strangerGreeting": "こんにちは 👋"
     },
     "messages": {
       "cpuThreshold": "CPU使用率は{{ .Percent }}%、しきい値{{ .Threshold }}%を超えました",
@@ -2227,7 +2228,9 @@
       "rosterEmpty": "👥 クライアントはまだありません。",
       "rosterTruncated": "… ほか {{ .Count }} 件。特定のクライアントは <code>/usage [Email]</code> で確認してください。",
       "inviteDiagUnknown": "🔎 管理者向け: subId <code>{{ .Token }}</code> のクライアントは存在しません。",
-      "inviteDiagTaken": "🔎 管理者向け: すでに紐付け済み — {{ .Detail }}"
+      "inviteDiagTaken": "🔎 管理者向け: すでに紐付け済み — {{ .Detail }}",
+      "adminPanel": "🛡 <b>管理パネル</b> — {{ .Hostname }}",
+      "invitePicker": "🔗 <b>招待リンク</b> — {{ .Count }} 件\r\n✅ 紐付け済み · ❌ 未紐付け。タップするとリンクが出ます。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2293,7 +2296,10 @@
       "toggleInbound": "🔀 インバウンドの有効化 / 無効化",
       "confirmXrayStop": "⏹ はい、Xray を停止します",
       "confirmPanelRestart": "♻️ はい、パネルを再起動します",
-      "clientRoster": "👥 全クライアント一覧"
+      "clientRoster": "👥 全クライアント一覧",
+      "adminPanel": "🛡 管理",
+      "backToUserPanel": "⬅️ 自分のパネルに戻る",
+      "inviteLinks": "🔗 招待リンク"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",
