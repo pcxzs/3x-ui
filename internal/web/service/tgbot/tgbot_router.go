@@ -1197,6 +1197,10 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			case "server_inbound_toggle":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
 				t.toggleInbound(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
+			case "notify_toggle":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+				t.toggleNotification(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
+				return
 			case "add_client_toggle_attach":
 				inboundIdStr := dataArray[1]
 				inboundIdInt, err := strconv.Atoi(inboundIdStr)
@@ -1396,6 +1400,9 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	case "server":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.serverMenu"))
 		t.serverMenu(chatId)
+	case "notify_settings":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.dailyNotifications"))
+		t.notificationsMenu(chatId)
 	case "server_panel_logs":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelLogs"))
 		t.sendPanelLogs(chatId)

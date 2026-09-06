@@ -1,6 +1,7 @@
 package tgbot
 
 import (
+	"strings"
 	"testing"
 	"time"
 )
@@ -26,7 +27,7 @@ func TestExpiryRung(t *testing.T) {
 	}{
 		{"three days out", at(t, "2026-08-24 09:00"), rungThreeDays},
 		{"three days out, late in the day", at(t, "2026-08-24 23:59"), rungThreeDays},
-		{"two days out is deliberately silent", at(t, "2026-08-23 09:00"), rungNone},
+		{"two days out", at(t, "2026-08-23 09:00"), rungTwoDays},
 		{"tomorrow", at(t, "2026-08-22 00:01"), rungTomorrow},
 		{"later today", at(t, "2026-08-21 23:00"), rungToday},
 		{"earlier today is still today", at(t, "2026-08-21 01:00"), rungToday},
@@ -65,5 +66,55 @@ func TestExpiryRungUsesCalendarDaysNotElapsedHours(t *testing.T) {
 	}
 	if got := expiryRung(at(t, "2026-08-21 23:59").UnixMilli(), now); got != rungToday {
 		t.Fatalf("an expiry later tonight = %v, want rungToday", got)
+	}
+}
+
+// The 2-day rung widens what the admin summary covers without adding a fourth
+// reminder: it must carry a summary key and no customer message key.
+func TestTwoDayRungIsSummaryOnly(t *testing.T) {
+	if _, notifies := rungMessageKey[rungTwoDays]; notifies {
+		t.Fatal("rungTwoDays has a customer message key, so clients would be notified 2 days out")
+	}
+	if _, summarised := rungSummaryKey[rungTwoDays]; !summarised {
+		t.Fatal("rungTwoDays has no summary key, so admins would never see it")
+	}
+
+	// Every other rung on the ladder still reaches the customer.
+	for _, rung := range []renewalRung{rungThreeDays, rungTomorrow, rungToday, rungOverdue} {
+		if _, notifies := rungMessageKey[rung]; !notifies {
+			t.Fatalf("rung %v lost its customer message key", rung)
+		}
+	}
+}
+
+// The summary reads as a countdown, so 2 days must sit between tomorrow and 3
+// days rather than being appended wherever the map happened to order it.
+func TestRenewalSummaryOrdersTwoDaysAfterTomorrow(t *testing.T) {
+	tg := &Tgbot{}
+	summary := tg.renewalSummary(map[renewalRung][]string{
+		rungOverdue:   {"overdue@x"},
+		rungToday:     {"today@x"},
+		rungTomorrow:  {"tomorrow@x"},
+		rungTwoDays:   {"twodays@x"},
+		rungThreeDays: {"threedays@x"},
+	})
+
+	want := []string{
+		"tgbot.messages.renewSummaryOverdue",
+		"tgbot.messages.renewSummaryToday",
+		"tgbot.messages.renewSummaryTomorrow",
+		"tgbot.messages.renewSummaryTwoDays",
+		"tgbot.messages.renewSummaryThreeDays",
+	}
+	prev := -1
+	for _, key := range want {
+		next := strings.Index(summary, key)
+		if next < 0 {
+			t.Fatalf("summary is missing %q: %q", key, summary)
+		}
+		if next < prev {
+			t.Fatalf("%q appears out of countdown order in %q", key, summary)
+		}
+		prev = next
 	}
 }

@@ -78,6 +78,9 @@ func (t *Tgbot) adminReportsKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dbBackup")).WithCallbackData(t.encodeQuery("get_backup")),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dailyNotifications")).WithCallbackData(t.encodeQuery("notify_settings")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
 		),
 	)

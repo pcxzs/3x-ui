@@ -23,18 +23,26 @@ import (
 
 // SendReport sends a periodic report to admin chats.
 func (t *Tgbot) SendReport() {
-	runTime, err := t.settingService.GetTgbotRuntime()
-	if err == nil && len(runTime) > 0 {
-		msg := ""
-		msg += t.I18nBot("tgbot.messages.report", "RunTime=="+runTime)
-		msg += t.I18nBot("tgbot.messages.datetime", "DateTime=="+time.Now().Format("2006-01-02 15:04:05"))
-		t.SendMsgToTgbotAdmins(msg)
+	// The heartbeat and the usage block are one report, so they share a switch.
+	if enabled, err := t.settingService.GetTgBotNotifyServerUsage(); err != nil || enabled {
+		runTime, err := t.settingService.GetTgbotRuntime()
+		if err == nil && len(runTime) > 0 {
+			msg := ""
+			msg += t.I18nBot("tgbot.messages.report", "RunTime=="+runTime)
+			msg += t.I18nBot("tgbot.messages.datetime", "DateTime=="+time.Now().Format("2006-01-02 15:04:05"))
+			t.SendMsgToTgbotAdmins(msg)
+		}
+
+		info := t.sendServerUsage()
+		t.SendMsgToTgbotAdmins(info)
 	}
 
-	info := t.sendServerUsage()
-	t.SendMsgToTgbotAdmins(info)
+	if enabled, err := t.settingService.GetTgBotNotifyDepleteSoon(); err != nil || enabled {
+		t.sendExhaustedToAdmins()
+	}
 
-	t.sendExhaustedToAdmins()
+	// Customer-facing notices are not an operator preference: a client is told
+	// their own subscription is lapsing whatever the admin's report settings are.
 	t.notifyExhausted()
 	t.notifyRenewals()
 

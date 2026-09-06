@@ -16,11 +16,14 @@ type renewalRung int
 const (
 	rungNone renewalRung = iota
 	rungThreeDays
+	rungTwoDays
 	rungTomorrow
 	rungToday
 	rungOverdue
 )
 
+// A rung missing from this map is summarised for admins but never sent to the
+// customer: rungTwoDays exists to widen the admin's view, not to add a reminder.
 var rungMessageKey = map[renewalRung]string{
 	rungThreeDays: "tgbot.messages.renewThreeDays",
 	rungTomorrow:  "tgbot.messages.renewTomorrow",
@@ -44,6 +47,8 @@ func expiryRung(expiryTime int64, now time.Time) renewalRung {
 		return rungToday
 	case days == 1:
 		return rungTomorrow
+	case days == 2:
+		return rungTwoDays
 	case days == 3:
 		return rungThreeDays
 	default:
@@ -88,8 +93,8 @@ func (t *Tgbot) notifyRenewals() {
 			continue
 		}
 		byRung[rung] = append(byRung[rung], record.Email)
-		if record.TgID != 0 {
-			t.SendMsgToTgbot(record.TgID, t.I18nBot(rungMessageKey[rung], "Email=="+record.Email))
+		if messageKey, notifies := rungMessageKey[rung]; notifies && record.TgID != 0 {
+			t.SendMsgToTgbot(record.TgID, t.I18nBot(messageKey, "Email=="+record.Email))
 		}
 	}
 
@@ -104,7 +109,7 @@ func (t *Tgbot) notifyRenewals() {
 // Groups the day's notices so an admin sees who was chased without reading the
 // same message once per customer.
 func (t *Tgbot) renewalSummary(byRung map[renewalRung][]string) string {
-	order := []renewalRung{rungOverdue, rungToday, rungTomorrow, rungThreeDays}
+	order := []renewalRung{rungOverdue, rungToday, rungTomorrow, rungTwoDays, rungThreeDays}
 	sections := make([]string, 0, len(order))
 	for _, rung := range order {
 		emails := byRung[rung]
@@ -124,6 +129,7 @@ func (t *Tgbot) renewalSummary(byRung map[renewalRung][]string) string {
 
 var rungSummaryKey = map[renewalRung]string{
 	rungThreeDays: "tgbot.messages.renewSummaryThreeDays",
+	rungTwoDays:   "tgbot.messages.renewSummaryTwoDays",
 	rungTomorrow:  "tgbot.messages.renewSummaryTomorrow",
 	rungToday:     "tgbot.messages.renewSummaryToday",
 	rungOverdue:   "tgbot.messages.renewSummaryOverdue",

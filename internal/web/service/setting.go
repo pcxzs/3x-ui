@@ -78,6 +78,8 @@ var defaultValueMap = map[string]string{
 	"tgBotChatId":                 "",
 	"tgBotHelpText":               "",
 	"tgBotLadderRun":              "",
+	"tgBotNotifyServerUsage":      "true",
+	"tgBotNotifyDepleteSoon":      "true",
 	"tgRunTime":                   "@daily",
 	"tgBotBackup":                 "false",
 	"tgCpu":                       "80",
@@ -590,6 +592,28 @@ func (s *SettingService) SetTgbotRuntime(time string) error {
 
 func (s *SettingService) GetTgBotBackup() (bool, error) {
 	return s.getBool("tgBotBackup")
+}
+
+func (s *SettingService) SetTgBotBackup(value bool) error {
+	return s.setBool("tgBotBackup", value)
+}
+
+// The daily report is several independent notices sharing one cron. These gate
+// the admin-facing ones; customer notices are not an operator preference.
+func (s *SettingService) GetTgBotNotifyServerUsage() (bool, error) {
+	return s.getBool("tgBotNotifyServerUsage")
+}
+
+func (s *SettingService) SetTgBotNotifyServerUsage(value bool) error {
+	return s.setBool("tgBotNotifyServerUsage", value)
+}
+
+func (s *SettingService) GetTgBotNotifyDepleteSoon() (bool, error) {
+	return s.getBool("tgBotNotifyDepleteSoon")
+}
+
+func (s *SettingService) SetTgBotNotifyDepleteSoon(value bool) error {
+	return s.setBool("tgBotNotifyDepleteSoon", value)
 }
 
 func (s *SettingService) GetTgCpu() (int, error) {
