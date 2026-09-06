@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 Vencen hoy ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Vencen mañana ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Vencen en 3 días ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>Notificaciones diarias</b>\r\nToca para activar o desactivar un informe. Los clientes siempre reciben avisos de su propia suscripción.",
+      "notifications": "⚙️ <b>Notificaciones</b>\r\nToca una para activarla o desactivarla. Los clientes siempre reciben avisos sobre su propia suscripción.",
       "renewSummaryTwoDays": "📅 Vence en 2 días ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Recordatorios de renovación enviados</b>",
       "qrChoose": "📷 ¿Qué código QR necesitas para <code>{{ .Email }}</code>?",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nEscanéalo para importar solo este servidor.",
       "sectionClients": "👥 <b>Clientes</b> — crear, explorar y depurar configuraciones.",
       "sectionReports": "📊 <b>Informes</b> — qué están haciendo el panel y sus clientes ahora.",
-      "sectionMessaging": "📨 <b>Mensajería</b> — contacta a tus clientes y define lo que leen."
+      "sectionMessaging": "📨 <b>Mensajería</b> — contacta a tus clientes y define lo que leen.",
+      "settings": "⚙️ <b>Ajustes</b>",
+      "languagePrompt": "🌐 Elige el idioma en el que responderá el bot.",
+      "languageSaved": "🌐 Idioma establecido en {{ .Language }}.",
+      "newClientHeader": "🎉 <b>Un nuevo cliente ha iniciado el bot</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ ¿Confirmar Eliminar Usuario de Telegram?",
       "confirmToggle": "✅ ¿Confirmar habilitar/deshabilitar usuario?",
       "dbBackup": "Obtener Copia de Seguridad de BD",
-      "dailyNotifications": "⚙️ Notificaciones diarias",
+      "notifications": "⚙️ Notificaciones",
       "notifyServerUsage": "Informe de uso del servidor",
       "notifyDepleteSoon": "Informe de próximos a agotarse",
       "notifyBackup": "Copia de seguridad",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 Informes",
       "sectionMessaging": "📨 Mensajería",
       "backToAdminPanel": "⬅️ Panel de administración",
-      "setHelpText": "✏️ Editar texto de ayuda"
+      "setHelpText": "✏️ Editar texto de ayuda",
+      "help": "❓ Ayuda",
+      "messageAdmin": "✉️ Escribir al admin",
+      "settings": "⚙️ Ajustes",
+      "language": "🌐 Idioma",
+      "backToMenu": "🔙 Volver",
+      "backToSettings": "🔙 Volver",
+      "notifyNewClient": "Avisos de clientes nuevos"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

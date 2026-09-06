@@ -91,12 +91,12 @@ func TestTwoDayRungIsSummaryOnly(t *testing.T) {
 // days rather than being appended wherever the map happened to order it.
 func TestRenewalSummaryOrdersTwoDaysAfterTomorrow(t *testing.T) {
 	tg := &Tgbot{}
-	summary := tg.renewalSummary(map[renewalRung][]string{
-		rungOverdue:   {"overdue@x"},
-		rungToday:     {"today@x"},
-		rungTomorrow:  {"tomorrow@x"},
-		rungTwoDays:   {"twodays@x"},
-		rungThreeDays: {"threedays@x"},
+	summary := tg.renewalSummary(map[renewalRung][]renewalNotice{
+		rungOverdue:   {{email: "overdue@x"}},
+		rungToday:     {{email: "today@x"}},
+		rungTomorrow:  {{email: "tomorrow@x"}},
+		rungTwoDays:   {{email: "twodays@x"}},
+		rungThreeDays: {{email: "threedays@x"}},
 	})
 
 	want := []string{
@@ -116,5 +116,49 @@ func TestRenewalSummaryOrdersTwoDaysAfterTomorrow(t *testing.T) {
 			t.Fatalf("%q appears out of countdown order in %q", key, summary)
 		}
 		prev = next
+	}
+}
+
+// An admin reading the summary needs to know who actually got their reminder,
+// so a delivered, a refused and an unlinked customer must not look alike.
+func TestSummaryClientListMarksDelivery(t *testing.T) {
+	tests := []struct {
+		name   string
+		notice renewalNotice
+		want   string
+	}{
+		{name: "delivered", notice: renewalNotice{email: "reached@x", outcome: deliveryDelivered}, want: "✅ reached@x"},
+		{name: "refused", notice: renewalNotice{email: "blocked@x", outcome: deliveryFailed}, want: "❌ blocked@x"},
+		{name: "no telegram account", notice: renewalNotice{email: "unlinked@x", outcome: deliveryUnlinked}, want: "➖ unlinked@x"},
+	}
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			if got := summaryClientList([]renewalNotice{tc.notice}); got != tc.want {
+				t.Fatalf("summaryClientList = %q, want %q", got, tc.want)
+			}
+		})
+	}
+}
+
+// Nobody is messaged 2 days out, so a tick or a cross there would report on a
+// reminder that was never sent.
+func TestSummaryClientListLeavesUnsentRungUnmarked(t *testing.T) {
+	got := summaryClientList([]renewalNotice{{email: "twodays@x", outcome: deliveryNone}})
+	if got != "twodays@x" {
+		t.Fatalf("summaryClientList = %q, want the bare email", got)
+	}
+}
+
+// Marks are per client, so the list must stay sorted by email rather than by
+// whichever send happened to finish first.
+func TestSummaryClientListSortsByEmail(t *testing.T) {
+	got := summaryClientList([]renewalNotice{
+		{email: "carol@x", outcome: deliveryDelivered},
+		{email: "alice@x", outcome: deliveryFailed},
+		{email: "bob@x", outcome: deliveryUnlinked},
+	})
+	want := "❌ alice@x, ➖ bob@x, ✅ carol@x"
+	if got != want {
+		t.Fatalf("summaryClientList = %q, want %q", got, want)
 	}
 }

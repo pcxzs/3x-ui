@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 امروز ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 فردا ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 سه روز دیگر ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>اعلان‌های روزانه</b>\r\nبرای روشن یا خاموش کردن هر گزارش ضربه بزنید. مشترکان همیشه دربارهٔ اشتراک خودشان مطلع می‌شوند.",
+      "notifications": "⚙️ <b>اعلان‌ها</b>\r\nبرای روشن یا خاموش کردن هر مورد روی آن بزنید. مشتریان همیشه دربارهٔ اشتراک خودشان مطلع می‌شوند.",
       "renewSummaryTwoDays": "📅 سررسید تا ۲ روز دیگر ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>یادآوری‌های تمدید ارسال شد</b>",
       "qrChoose": "📷 برای <code>{{ .Email }}</code> کدام QR را می‌خواهید؟",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nبرای وارد کردن فقط همین سرور اسکن کنید.",
       "sectionClients": "👥 <b>کاربران</b> — ساخت، مرور و پاک‌سازی کانفیگ‌ها.",
       "sectionReports": "📊 <b>گزارش‌ها</b> — وضعیت فعلی پنل و کاربران.",
-      "sectionMessaging": "📨 <b>پیام‌رسانی</b> — با کاربران ارتباط بگیرید و متن راهنما را تعیین کنید."
+      "sectionMessaging": "📨 <b>پیام‌رسانی</b> — با کاربران ارتباط بگیرید و متن راهنما را تعیین کنید.",
+      "settings": "⚙️ <b>تنظیمات</b>",
+      "languagePrompt": "🌐 زبانی را که ربات باید با آن پاسخ دهد انتخاب کنید.",
+      "languageSaved": "🌐 زبان روی {{ .Language }} تنظیم شد.",
+      "newClientHeader": "🎉 <b>یک مشتری جدید ربات را استارت کرد</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ تأیید حذف کاربر تلگرام؟",
       "confirmToggle": "✅ تایید فعال/غیرفعال کردن کاربر؟",
       "dbBackup": "دریافت پشتیبان",
-      "dailyNotifications": "⚙️ اعلان‌های روزانه",
+      "notifications": "⚙️ اعلان‌ها",
       "notifyServerUsage": "گزارش وضعیت سرور",
       "notifyDepleteSoon": "گزارش رو به اتمام",
       "notifyBackup": "پشتیبان‌گیری پایگاه داده",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 گزارش‌ها",
       "sectionMessaging": "📨 پیام‌رسانی",
       "backToAdminPanel": "⬅️ پنل مدیریت",
-      "setHelpText": "✏️ تنظیم متن راهنما"
+      "setHelpText": "✏️ تنظیم متن راهنما",
+      "help": "❓ راهنما",
+      "messageAdmin": "✉️ پیام به مدیر",
+      "settings": "⚙️ تنظیمات",
+      "language": "🌐 زبان",
+      "backToMenu": "🔙 بازگشت",
+      "backToSettings": "🔙 بازگشت",
+      "notifyNewClient": "اطلاع از مشتری جدید"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

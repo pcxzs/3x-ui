@@ -167,14 +167,20 @@ type LoginAttempt struct {
 
 // Tgbot provides business logic for Telegram bot integration.
 // It handles bot commands, user interactions, and status reporting via Telegram.
+// Shared rather than a Tgbot field: it caches CPU samples and IP lookups behind
+// a mutex, which a per-user copy of the bot must point at rather than fork.
+var serverService service.ServerService
+
 type Tgbot struct {
 	inboundService service.InboundService
 	clientService  service.ClientService
 	settingService service.SettingService
-	serverService  service.ServerService
 	xrayService    service.XrayService
 	panelService   panel.PanelService
 	lastStatus     *service.Status
+	// Set by forUser so a reply renders in the language its recipient picked;
+	// empty means the panel-wide bot language.
+	lang string
 }
 
 // NewTgbot creates a new Tgbot instance.
@@ -184,7 +190,7 @@ func (t *Tgbot) NewTgbot() *Tgbot {
 
 // I18nBot retrieves a localized message for the bot interface.
 func (t *Tgbot) I18nBot(name string, params ...string) string {
-	return locale.I18n(locale.Bot, name, params...)
+	return locale.I18nLang(t.lang, name, params...)
 }
 
 // GetHashStorage returns the hash storage instance for callback queries.

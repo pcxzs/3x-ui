@@ -101,7 +101,7 @@ func (t *Tgbot) serverMenu(chatId int64) {
 }
 
 func (t *Tgbot) sendPanelLogs(chatId int64) {
-	lines := t.serverService.GetLogs(logLineCount, panelLogLevel, "false")
+	lines := serverService.GetLogs(logLineCount, panelLogLevel, "false")
 	// logger.GetLogs answers newest first, which reads backwards in a chat, so
 	// the dump is flipped into file order before the tail is taken.
 	slices.Reverse(lines)
@@ -109,8 +109,8 @@ func (t *Tgbot) sendPanelLogs(chatId int64) {
 }
 
 func (t *Tgbot) sendXrayLogs(chatId int64) {
-	freedoms, blackholes := t.serverService.GetDefaultLogOutboundTags()
-	entries := t.serverService.GetXrayLogs(logLineCount, "", "true", "true", "true", freedoms, blackholes)
+	freedoms, blackholes := serverService.GetDefaultLogOutboundTags()
+	entries := serverService.GetXrayLogs(logLineCount, "", "true", "true", "true", freedoms, blackholes)
 	t.sendLogDump(chatId, formatXrayLogEntries(entries))
 }
 

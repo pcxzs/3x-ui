@@ -78,7 +78,7 @@ func (t *Tgbot) adminReportsKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dbBackup")).WithCallbackData(t.encodeQuery("get_backup")),
 		),
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dailyNotifications")).WithCallbackData(t.encodeQuery("notify_settings")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.notifications")).WithCallbackData(t.encodeQuery("notify_settings")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
@@ -107,7 +107,7 @@ func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
 	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.clientUsage")).WithCallbackData(t.encodeQuery("client_traffic")),
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.commands")).WithCallbackData(t.encodeQuery("client_commands")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.help")).WithCallbackData(t.encodeQuery("client_help")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("pages.settings.subSettings")).WithCallbackData(t.encodeQuery("client_sub_links")),
@@ -115,6 +115,10 @@ func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("qrCode")).WithCallbackData(t.encodeQuery("client_qr_links")),
+		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.messageAdmin")).WithCallbackData(t.encodeQuery("client_pm")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.settings")).WithCallbackData(t.encodeQuery("client_settings")),
 		),
 	}
 	if level == levelAdmin {

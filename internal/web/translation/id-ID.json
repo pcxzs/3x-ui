@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 Hari ini ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Besok ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 hari lagi ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>Notifikasi harian</b>\r\nKetuk untuk menyalakan atau mematikan laporan. Pelanggan selalu diberi tahu tentang langganan mereka sendiri.",
+      "notifications": "⚙️ <b>Notifikasi</b>\r\nKetuk untuk menyalakan atau mematikan. Pelanggan selalu diberi tahu tentang langganan mereka sendiri.",
       "renewSummaryTwoDays": "📅 Jatuh tempo dalam 2 hari ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Pengingat perpanjangan terkirim</b>",
       "qrChoose": "📷 QR mana yang Anda perlukan untuk <code>{{ .Email }}</code>?",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nPindai untuk mengimpor server ini saja.",
       "sectionClients": "👥 <b>Klien</b> — buat, telusuri, dan bersihkan konfigurasi klien.",
       "sectionReports": "📊 <b>Laporan</b> — kondisi panel dan kliennya saat ini.",
-      "sectionMessaging": "📨 <b>Pesan</b> — jangkau pelanggan dan atur apa yang mereka baca."
+      "sectionMessaging": "📨 <b>Pesan</b> — jangkau pelanggan dan atur apa yang mereka baca.",
+      "settings": "⚙️ <b>Pengaturan</b>",
+      "languagePrompt": "🌐 Pilih bahasa yang digunakan bot untuk membalas.",
+      "languageSaved": "🌐 Bahasa diatur ke {{ .Language }}.",
+      "newClientHeader": "🎉 <b>Pelanggan baru baru saja memulai bot</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ Konfirmasi Hapus Pengguna Telegram?",
       "confirmToggle": "✅ Konfirmasi Aktifkan/Nonaktifkan Pengguna?",
       "dbBackup": "Dapatkan Cadangan DB",
-      "dailyNotifications": "⚙️ Notifikasi Harian",
+      "notifications": "⚙️ Notifikasi",
       "notifyServerUsage": "Laporan Penggunaan Server",
       "notifyDepleteSoon": "Laporan Segera Habis",
       "notifyBackup": "Cadangan Basis Data",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 Laporan",
       "sectionMessaging": "📨 Pesan",
       "backToAdminPanel": "⬅️ Panel admin",
-      "setHelpText": "✏️ Atur Teks Bantuan"
+      "setHelpText": "✏️ Atur Teks Bantuan",
+      "help": "❓ Bantuan",
+      "messageAdmin": "✉️ Pesan ke admin",
+      "settings": "⚙️ Pengaturan",
+      "language": "🌐 Bahasa",
+      "backToMenu": "🔙 Kembali",
+      "backToSettings": "🔙 Kembali",
+      "notifyNewClient": "Pemberitahuan Pelanggan Baru"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

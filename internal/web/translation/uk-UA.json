@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 Сьогодні ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Завтра ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Через 3 дні ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>Щоденні сповіщення</b>\r\nНатисніть, щоб увімкнути або вимкнути звіт. Клієнти завжди отримують сповіщення про власну підписку.",
+      "notifications": "⚙️ <b>Сповіщення</b>\r\nНатисніть, щоб увімкнути або вимкнути. Клієнти завжди отримують сповіщення про власну підписку.",
       "renewSummaryTwoDays": "📅 Спливає через 2 дні ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Нагадування про продовження надіслано</b>",
       "qrChoose": "📷 Який QR потрібен для <code>{{ .Email }}</code>?",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nВідскануйте, щоб імпортувати лише цей сервер.",
       "sectionClients": "👥 <b>Клієнти</b> — створення, перегляд і очищення конфігурацій.",
       "sectionReports": "📊 <b>Звіти</b> — що відбувається з панеллю та клієнтами зараз.",
-      "sectionMessaging": "📨 <b>Повідомлення</b> — зв'язок із клієнтами та текст, який вони читають."
+      "sectionMessaging": "📨 <b>Повідомлення</b> — зв'язок із клієнтами та текст, який вони читають.",
+      "settings": "⚙️ <b>Налаштування</b>",
+      "languagePrompt": "🌐 Оберіть мову, якою бот має відповідати.",
+      "languageSaved": "🌐 Мову змінено на {{ .Language }}.",
+      "newClientHeader": "🎉 <b>Новий клієнт щойно запустив бота</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ Підтвердити видалення користувача Telegram?",
       "confirmToggle": "✅ Підтвердити ввімкнути/вимкнути користувача?",
       "dbBackup": "Отримати резервну копію БД",
-      "dailyNotifications": "⚙️ Щоденні сповіщення",
+      "notifications": "⚙️ Сповіщення",
       "notifyServerUsage": "Звіт про навантаження сервера",
       "notifyDepleteSoon": "Звіт про закінчення",
       "notifyBackup": "Резервна копія БД",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 Звіти",
       "sectionMessaging": "📨 Повідомлення",
       "backToAdminPanel": "⬅️ Панель адміна",
-      "setHelpText": "✏️ Змінити текст довідки"
+      "setHelpText": "✏️ Змінити текст довідки",
+      "help": "❓ Допомога",
+      "messageAdmin": "✉️ Написати адміну",
+      "settings": "⚙️ Налаштування",
+      "language": "🌐 Мова",
+      "backToMenu": "🔙 Назад",
+      "backToSettings": "🔙 Назад",
+      "notifyNewClient": "Сповіщення про нових клієнтів"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

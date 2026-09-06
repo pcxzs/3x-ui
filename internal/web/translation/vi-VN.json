@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 Hôm nay ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Ngày mai ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Sau 3 ngày ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>Thông báo hằng ngày</b>\r\nChạm để bật hoặc tắt một báo cáo. Khách hàng luôn được thông báo về gói đăng ký của chính họ.",
+      "notifications": "⚙️ <b>Thông báo</b>\r\nChạm để bật hoặc tắt. Khách hàng luôn được thông báo về gói của chính họ.",
       "renewSummaryTwoDays": "📅 Đến hạn sau 2 ngày ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Đã gửi nhắc gia hạn</b>",
       "qrChoose": "📷 Bạn cần mã QR nào cho <code>{{ .Email }}</code>?",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nQuét để chỉ nhập máy chủ này.",
       "sectionClients": "👥 <b>Khách hàng</b> — tạo, duyệt và dọn dẹp cấu hình.",
       "sectionReports": "📊 <b>Báo cáo</b> — tình trạng hiện tại của bảng điều khiển và khách hàng.",
-      "sectionMessaging": "📨 <b>Tin nhắn</b> — liên hệ khách hàng và đặt nội dung họ đọc."
+      "sectionMessaging": "📨 <b>Tin nhắn</b> — liên hệ khách hàng và đặt nội dung họ đọc.",
+      "settings": "⚙️ <b>Cài đặt</b>",
+      "languagePrompt": "🌐 Chọn ngôn ngữ bot sẽ dùng để trả lời.",
+      "languageSaved": "🌐 Đã đặt ngôn ngữ thành {{ .Language }}.",
+      "newClientHeader": "🎉 <b>Một khách hàng mới vừa khởi động bot</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ Xác Nhận Xóa Người Dùng Telegram?",
       "confirmToggle": "✅ Xác nhận Bật/Tắt người dùng?",
       "dbBackup": "Tải bản sao lưu cơ sở dữ liệu",
-      "dailyNotifications": "⚙️ Thông báo hằng ngày",
+      "notifications": "⚙️ Thông báo",
       "notifyServerUsage": "Báo cáo sử dụng máy chủ",
       "notifyDepleteSoon": "Báo cáo sắp hết hạn",
       "notifyBackup": "Sao lưu cơ sở dữ liệu",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 Báo cáo",
       "sectionMessaging": "📨 Tin nhắn",
       "backToAdminPanel": "⬅️ Bảng quản trị",
-      "setHelpText": "✏️ Đặt văn bản trợ giúp"
+      "setHelpText": "✏️ Đặt văn bản trợ giúp",
+      "help": "❓ Trợ giúp",
+      "messageAdmin": "✉️ Nhắn cho quản trị",
+      "settings": "⚙️ Cài đặt",
+      "language": "🌐 Ngôn ngữ",
+      "backToMenu": "🔙 Quay lại",
+      "backToSettings": "🔙 Quay lại",
+      "notifyNewClient": "Cảnh báo khách hàng mới"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

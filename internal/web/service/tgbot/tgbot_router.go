@@ -51,7 +51,8 @@ func (t *Tgbot) OnReceive() {
 				return nil
 			}
 			userStateMgr.clear(message.Chat.ID)
-			t.SendMsgToTgbot(message.Chat.ID, t.I18nBot("tgbot.keyboardClosed"), tu.ReplyKeyboardRemove())
+			scoped := t.forUser(message.From.ID)
+			scoped.SendMsgToTgbot(message.Chat.ID, scoped.I18nBot("tgbot.keyboardClosed"), tu.ReplyKeyboardRemove())
 			return nil
 		}, th.TextEqual(t.I18nBot("tgbot.buttons.closeKeyboard")))
 
@@ -69,7 +70,8 @@ func (t *Tgbot) OnReceive() {
 				defer func() { <-messageWorkerPool }() // Release worker
 
 				userStateMgr.clear(message.Chat.ID)
-				t.answerCommand(&message, message.Chat.ID, t.levelOf(message.From.ID))
+				scoped := t.forUser(message.From.ID)
+				scoped.answerCommand(&message, message.Chat.ID, scoped.levelOf(message.From.ID))
 			}()
 			return nil
 		}, th.AnyCommand())
@@ -84,7 +86,8 @@ func (t *Tgbot) OnReceive() {
 				defer func() { <-messageWorkerPool }() // Release worker
 
 				userStateMgr.clear(query.Message.GetChat().ID)
-				t.answerCallback(&query, t.levelOf(query.From.ID))
+				scoped := t.forUser(query.From.ID)
+				scoped.answerCallback(&query, scoped.levelOf(query.From.ID))
 			}()
 			return nil
 		}, th.AnyCallbackQueryWithMessage())
@@ -94,6 +97,9 @@ func (t *Tgbot) OnReceive() {
 				return nil
 			}
 			userStateMgr.maybePrune(time.Hour)
+			// Shadowed so every reply in this handler renders in the sender's
+			// language without rewriting each call below.
+			t := t.forUser(message.From.ID)
 			if userState, exists := userStateMgr.get(message.Chat.ID); exists {
 				if t.handleConversationState(&message, userState) {
 					return nil
@@ -231,7 +237,7 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userL
 		t.startSetHelp(chatId)
 	case "start":
 		if len(commandArgs) > 0 {
-			t.claimInvite(chatId, message.From.ID, commandArgs[0], isAdmin)
+			t.claimInvite(chatId, message.From, commandArgs[0], isAdmin)
 			// A successful claim promotes the caller mid-command, so the
 			// keyboard below is chosen from the level they now hold.
 			level = t.levelOf(message.From.ID)
@@ -1247,6 +1253,13 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		return
 	}
 
+	// Carries a tag, so it cannot be an exact-match case below.
+	if tag, ok := parseLangCallback(callbackQuery.Data); ok {
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, languageLabel(tag))
+		t.applyLanguage(chatId, callbackQuery.From.ID, tag, callbackQuery.Message.GetMessageID())
+		return
+	}
+
 	switch callbackQuery.Data {
 	case "get_usage":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.serverUsage"))
@@ -1271,8 +1284,25 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientUsage"))
 		t.getClientUsage(chatId, tgUserID)
 	case "client_commands":
+		// Kept for keyboards already sitting in chat history, whose Commands
+		// button was replaced by Help.
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpClientCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpClientExtraCommands"))
+	case "client_help":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.help"))
+		t.SendMsgToTgbot(chatId, t.helpText())
+	case "client_pm":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.messageAdmin"))
+		t.promptClientMessage(chatId, callbackQuery.From.ID)
+	case "client_settings":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.settings"))
+		t.settingsMenu(chatId)
+	case "settings_lang":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.language"))
+		t.languageMenu(chatId, callbackQuery.From.ID, callbackQuery.Message.GetMessageID())
+	case "client_menu":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.backToMenu"))
+		t.SendAnswer(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), level)
 	case "client_sub_links":
 		// show user's own clients to choose one for sub links
 		tgUserID := callbackQuery.From.ID
@@ -1401,7 +1431,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.serverMenu"))
 		t.serverMenu(chatId)
 	case "notify_settings":
-		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.dailyNotifications"))
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.notifications"))
 		t.notificationsMenu(chatId)
 	case "server_panel_logs":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelLogs"))
@@ -1757,8 +1787,12 @@ func checkAdmin(tgId int64) bool {
 // safe to run for a non-admin. Every other callback is admin-only (default-deny).
 func isClientSelfCallback(data string) bool {
 	switch data {
-	case "client_traffic", "client_commands", "client_sub_links",
-		"client_individual_links", "client_qr_links":
+	case "client_traffic", "client_commands", "client_help", "client_sub_links",
+		"client_individual_links", "client_qr_links", "client_pm",
+		"client_settings", "client_menu", "settings_lang":
+		return true
+	}
+	if _, ok := parseLangCallback(data); ok {
 		return true
 	}
 	_, _, ok := clientSelfAction(data)

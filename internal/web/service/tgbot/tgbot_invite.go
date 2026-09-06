@@ -1,12 +1,16 @@
 package tgbot
 
 import (
+	"html"
 	"strconv"
 	"strings"
 
 	"github.com/mhsanaei/3x-ui/v3/internal/database/model"
 	"github.com/mhsanaei/3x-ui/v3/internal/logger"
 	"github.com/mhsanaei/3x-ui/v3/internal/util/common"
+
+	"github.com/mymmrac/telego"
+	tu "github.com/mymmrac/telego/telegoutil"
 )
 
 type inviteOutcome int
@@ -54,7 +58,8 @@ func (t *Tgbot) resolveInviteToken(token string, fromID int64) (inviteOutcome, [
 	return inviteInvalid, records
 }
 
-func (t *Tgbot) claimInvite(chatId int64, fromID int64, token string, isAdmin bool) {
+func (t *Tgbot) claimInvite(chatId int64, from *telego.User, token string, isAdmin bool) {
+	fromID := from.ID
 	outcome, records := t.resolveInviteToken(token, fromID)
 
 	// One config per Telegram account: a second claim would let one person
@@ -68,6 +73,9 @@ func (t *Tgbot) claimInvite(chatId int64, fromID int64, token string, isAdmin bo
 	case inviteAlreadyOwned:
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+recordEmails(records)))
 	case inviteBindable:
+		// Read before binding: afterwards every record names this account, so
+		// a first arrival and a re-tap would look the same.
+		fresh := freshBindings(records)
 		bound, err := t.bindRecordsToUser(records, fromID)
 		if err != nil {
 			logger.Warning("tgbot: invite bind failed:", err)
@@ -75,6 +83,9 @@ func (t *Tgbot) claimInvite(chatId int64, fromID int64, token string, isAdmin bo
 			return
 		}
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+strings.Join(bound, ", ")))
+		if len(fresh) > 0 {
+			t.notifyNewClient(from, fresh)
+		}
 	default:
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteInvalid"))
 		// The deliberately vague reply above leaves an admin with nothing to go
@@ -190,4 +201,58 @@ func (t *Tgbot) sendInviteLink(chatId int64, email string) {
 		return
 	}
 	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteLink", "Email=="+email, "Link=="+link))
+}
+
+// Records with no Telegram account are the ones a claim actually binds, so they
+// alone mark a customer arriving rather than returning.
+func freshBindings(records []*model.ClientRecord) []string {
+	var fresh []string
+	for _, record := range records {
+		if record.TgID == 0 {
+			fresh = append(fresh, record.Email)
+		}
+	}
+	return fresh
+}
+
+// Carries a tappable mention so an admin can open the chat, and the numeric id
+// so they can still find the account if the display name is unusable.
+func (t *Tgbot) newClientNotice(tgID int64, firstName, username string, emails []string) string {
+	id := strconv.FormatInt(tgID, 10)
+	name := html.EscapeString(firstName)
+	if name == "" {
+		name = id
+	}
+	mention := `<a href="tg://user?id=` + id + `">` + name + `</a>`
+	if username != "" {
+		mention += " (@" + html.EscapeString(username) + ")"
+	}
+
+	return t.I18nBot("tgbot.messages.newClientHeader") + "\r\n" +
+		mention + " · <code>" + id + "</code>\r\n" +
+		html.EscapeString(strings.Join(emails, ", "))
+}
+
+// A lookup failure notifies anyway: an admin ignoring a notice is cheaper than
+// silently missing every customer who arrives.
+func (t *Tgbot) notifyNewClient(from *telego.User, emails []string) {
+	enabled, err := t.settingService.GetTgBotNotifyNewClient()
+	if err != nil {
+		logger.Warning("tgbot: new-client notification setting lookup failed:", err)
+		enabled = true
+	}
+	if !enabled {
+		return
+	}
+
+	replyKeyboard := tu.InlineKeyboard(
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.replyToClient")).
+				WithCallbackData(t.encodeQuery("pm_reply " + strconv.FormatInt(from.ID, 10))),
+		),
+	)
+	for _, adminId := range adminIds {
+		scoped := t.forUser(adminId)
+		scoped.SendMsgToTgbot(adminId, scoped.newClientNotice(from.ID, from.FirstName, from.Username, emails), replyKeyboard)
+	}
 }

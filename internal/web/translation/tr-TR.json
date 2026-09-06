@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 Bugün ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Yarın ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 gün sonra ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>Günlük bildirimler</b>\r\nBir raporu açmak veya kapatmak için dokunun. Müşteriler kendi abonelikleri hakkında her zaman bilgilendirilir.",
+      "notifications": "⚙️ <b>Bildirimler</b>\r\nAçmak veya kapatmak için dokunun. Müşteriler kendi abonelikleri hakkında her zaman bilgilendirilir.",
       "renewSummaryTwoDays": "📅 2 gün içinde doluyor ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Yenileme hatırlatmaları gönderildi</b>",
       "qrChoose": "📷 <code>{{ .Email }}</code> için hangi QR gerekiyor?",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nYalnızca bu sunucuyu almak için tarayın.",
       "sectionClients": "👥 <b>İstemciler</b> — yapılandırma oluşturma, gözden geçirme ve temizleme.",
       "sectionReports": "📊 <b>Raporlar</b> — panelin ve istemcilerin şu anki durumu.",
-      "sectionMessaging": "📨 <b>Mesajlaşma</b> — müşterilerinize ulaşın ve okuduklarını belirleyin."
+      "sectionMessaging": "📨 <b>Mesajlaşma</b> — müşterilerinize ulaşın ve okuduklarını belirleyin.",
+      "settings": "⚙️ <b>Ayarlar</b>",
+      "languagePrompt": "🌐 Botun yanıt vereceği dili seçin.",
+      "languageSaved": "🌐 Dil {{ .Language }} olarak ayarlandı.",
+      "newClientHeader": "🎉 <b>Yeni bir müşteri botu başlattı</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ Telegram Kullanıcısını Kaldırmayı Onayla?",
       "confirmToggle": "✅ Kullanıcıyı Etkinleştirme/Devre Dışı Bırakmayı Onayla?",
       "dbBackup": "Veritabanı Yedeği Al",
-      "dailyNotifications": "⚙️ Günlük Bildirimler",
+      "notifications": "⚙️ Bildirimler",
       "notifyServerUsage": "Sunucu Kullanım Raporu",
       "notifyDepleteSoon": "Tükenmek Üzere Raporu",
       "notifyBackup": "Veritabanı Yedeği",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 Raporlar",
       "sectionMessaging": "📨 Mesajlaşma",
       "backToAdminPanel": "⬅️ Yönetim paneli",
-      "setHelpText": "✏️ Yardım Metnini Ayarla"
+      "setHelpText": "✏️ Yardım Metnini Ayarla",
+      "help": "❓ Yardım",
+      "messageAdmin": "✉️ Yöneticiye yaz",
+      "settings": "⚙️ Ayarlar",
+      "language": "🌐 Dil",
+      "backToMenu": "🔙 Geri",
+      "backToSettings": "🔙 Geri",
+      "notifyNewClient": "Yeni Müşteri Bildirimleri"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

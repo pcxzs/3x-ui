@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 本日 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 明日 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3日後 ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>毎日の通知</b>\r\nタップしてレポートのオン・オフを切り替えます。お客様にはご自身のサブスクリプションについて常に通知されます。",
+      "notifications": "⚙️ <b>通知</b>\r\nタップしてオン・オフを切り替えます。顧客には自身のサブスクリプションについて常に通知されます。",
       "renewSummaryTwoDays": "📅 2 日後に期限 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>更新リマインダーを送信しました</b>",
       "qrChoose": "📷 <code>{{ .Email }}</code> のどの QR が必要ですか？",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nこのサーバーだけを取り込むには読み取ってください。",
       "sectionClients": "👥 <b>クライアント</b> — 設定の作成・一覧・整理。",
       "sectionReports": "📊 <b>レポート</b> — パネルとクライアントの現在の状況。",
-      "sectionMessaging": "📨 <b>メッセージ</b> — 顧客への連絡と表示文の設定。"
+      "sectionMessaging": "📨 <b>メッセージ</b> — 顧客への連絡と表示文の設定。",
+      "settings": "⚙️ <b>設定</b>",
+      "languagePrompt": "🌐 ボットが返信する言語を選んでください。",
+      "languageSaved": "🌐 言語を {{ .Language }} に設定しました。",
+      "newClientHeader": "🎉 <b>新しい顧客がボットを開始しました</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ Telegramユーザーを削除しますか？",
       "confirmToggle": "✅ ユーザーを有効/無効にしますか？",
       "dbBackup": "データベースバックアップを取得",
-      "dailyNotifications": "⚙️ 毎日の通知",
+      "notifications": "⚙️ 通知",
       "notifyServerUsage": "サーバー使用状況レポート",
       "notifyDepleteSoon": "期限間近レポート",
       "notifyBackup": "データベースバックアップ",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 レポート",
       "sectionMessaging": "📨 メッセージ",
       "backToAdminPanel": "⬅️ 管理パネル",
-      "setHelpText": "✏️ ヘルプ文を設定"
+      "setHelpText": "✏️ ヘルプ文を設定",
+      "help": "❓ ヘルプ",
+      "messageAdmin": "✉️ 管理者に連絡",
+      "settings": "⚙️ 設定",
+      "language": "🌐 言語",
+      "backToMenu": "🔙 戻る",
+      "backToSettings": "🔙 戻る",
+      "notifyNewClient": "新規顧客の通知"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

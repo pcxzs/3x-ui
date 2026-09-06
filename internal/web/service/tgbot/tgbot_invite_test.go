@@ -182,3 +182,104 @@ func TestHoldsAnyClientIgnoresTheTokenBeingClaimed(t *testing.T) {
 		t.Fatal("records behind the claimed token must not count against the cap")
 	}
 }
+
+// The admin notice means "a new customer just came online", so a re-tap of a
+// link by the account that already holds it must not count as an arrival.
+func TestFreshBindings(t *testing.T) {
+	const holder = int64(7000)
+
+	tests := []struct {
+		name    string
+		records []*model.ClientRecord
+		want    []string
+	}{
+		{
+			name:    "an unclaimed client is new",
+			records: []*model.ClientRecord{{Email: "a@x", TgID: 0}},
+			want:    []string{"a@x"},
+		},
+		{
+			name:    "every unclaimed client behind the token is new",
+			records: []*model.ClientRecord{{Email: "a@x", TgID: 0}, {Email: "b@x", TgID: 0}},
+			want:    []string{"a@x", "b@x"},
+		},
+		{
+			name:    "a re-tap by the holder is not new",
+			records: []*model.ClientRecord{{Email: "a@x", TgID: holder}},
+			want:    nil,
+		},
+		{
+			name:    "a client held by someone else is not new",
+			records: []*model.ClientRecord{{Email: "a@x", TgID: 999}},
+			want:    nil,
+		},
+		{
+			name:    "a partly claimed token reports only what binds",
+			records: []*model.ClientRecord{{Email: "a@x", TgID: holder}, {Email: "b@x", TgID: 0}},
+			want:    []string{"b@x"},
+		},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			got := freshBindings(tc.records)
+			if strings.Join(got, ",") != strings.Join(tc.want, ",") {
+				t.Fatalf("freshBindings = %v, want %v", got, tc.want)
+			}
+		})
+	}
+}
+
+// The notice exists so an admin can reach the person who just arrived, and it
+// carries user-controlled text into an HTML message.
+func TestNewClientNotice(t *testing.T) {
+	tg := &Tgbot{}
+
+	tests := []struct {
+		name      string
+		firstName string
+		username  string
+		want      []string
+		absent    []string
+	}{
+		{
+			name:      "links to the user by id",
+			firstName: "Amy",
+			want:      []string{`tg://user?id=7000`, "Amy", "7000"},
+		},
+		{
+			name:      "includes the @username when there is one",
+			firstName: "Amy",
+			username:  "amyx",
+			want:      []string{"@amyx"},
+		},
+		{
+			name:      "omits the @ when there is no username",
+			firstName: "Amy",
+			want:      []string{"Amy"},
+			absent:    []string{"(@"},
+		},
+		{
+			name:      "escapes markup in the display name",
+			firstName: `<b>bold</b>`,
+			want:      []string{"&lt;b&gt;bold&lt;/b&gt;"},
+			absent:    []string{"<b>bold</b>"},
+		},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			notice := tg.newClientNotice(7000, tc.firstName, tc.username, []string{"a@x"})
+			for _, want := range tc.want {
+				if !strings.Contains(notice, want) {
+					t.Fatalf("notice is missing %q: %q", want, notice)
+				}
+			}
+			for _, absent := range tc.absent {
+				if strings.Contains(notice, absent) {
+					t.Fatalf("notice leaks %q: %q", absent, notice)
+				}
+			}
+		})
+	}
+}

@@ -57,11 +57,11 @@ func (t *Tgbot) SendBackupToAdmins() {
 	if !t.IsRunning() {
 		return
 	}
-	dbData, err := t.serverService.GetDb()
+	dbData, err := serverService.GetDb()
 	if err != nil {
 		logger.Error("Error in getting db backup: ", err)
 	}
-	dbFilename := t.serverService.BackupFilename("")
+	dbFilename := serverService.BackupFilename("")
 	for i, adminId := range adminIds {
 		t.sendBackupData(adminId, dbData, dbFilename)
 		// Add delay between sends to avoid Telegram rate limits
@@ -116,7 +116,7 @@ func (t *Tgbot) prepareServerUsageInfo() string {
 	if cachedStatus, found := t.getCachedStatus(); found {
 		t.lastStatus = cachedStatus
 	} else {
-		t.lastStatus = t.serverService.GetStatus(t.lastStatus)
+		t.lastStatus = serverService.GetStatus(t.lastStatus)
 		t.setCachedStatus(t.lastStatus)
 	}
 	var onlines []string
@@ -431,11 +431,11 @@ func (t *Tgbot) onlineClients(chatId int64, messageID ...int) {
 
 // sendBackup sends a backup of the database and configuration files.
 func (t *Tgbot) sendBackup(chatId int64) {
-	dbData, err := t.serverService.GetDb()
+	dbData, err := serverService.GetDb()
 	if err != nil {
 		logger.Error("Error in getting db backup: ", err)
 	}
-	t.sendBackupData(chatId, dbData, t.serverService.BackupFilename(""))
+	t.sendBackupData(chatId, dbData, serverService.BackupFilename(""))
 }
 
 func (t *Tgbot) sendBackupData(chatId int64, dbData []byte, dbFilename string) {

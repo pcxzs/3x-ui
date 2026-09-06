@@ -80,6 +80,8 @@ var defaultValueMap = map[string]string{
 	"tgBotLadderRun":              "",
 	"tgBotNotifyServerUsage":      "true",
 	"tgBotNotifyDepleteSoon":      "true",
+	"tgBotNotifyNewClient":        "true",
+	"tgBotUserLangs":              "{}",
 	"tgRunTime":                   "@daily",
 	"tgBotBackup":                 "false",
 	"tgCpu":                       "80",
@@ -614,6 +616,24 @@ func (s *SettingService) GetTgBotNotifyDepleteSoon() (bool, error) {
 
 func (s *SettingService) SetTgBotNotifyDepleteSoon(value bool) error {
 	return s.setBool("tgBotNotifyDepleteSoon", value)
+}
+
+func (s *SettingService) GetTgBotNotifyNewClient() (bool, error) {
+	return s.getBool("tgBotNotifyNewClient")
+}
+
+func (s *SettingService) SetTgBotNotifyNewClient(value bool) error {
+	return s.setBool("tgBotNotifyNewClient", value)
+}
+
+// Per-user bot languages live in one JSON row rather than a row per user, so a
+// growing user base does not grow the settings table.
+func (s *SettingService) GetTgBotUserLangs() (string, error) {
+	return s.getString("tgBotUserLangs")
+}
+
+func (s *SettingService) SetTgBotUserLangs(value string) error {
+	return s.setString("tgBotUserLangs", value)
 }
 
 func (s *SettingService) GetTgCpu() (int, error) {

@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 اليوم ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 غدًا ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 بعد 3 أيام ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>الإشعارات اليومية</b>\r\nاضغط لتشغيل أو إيقاف أي تقرير. يتم دائمًا إخطار العملاء بشأن اشتراكاتهم.",
+      "notifications": "⚙️ <b>الإشعارات</b>\r\nاضغط على أي منها لتشغيله أو إيقافه. يتم دائمًا إخطار العملاء بشأن اشتراكهم.",
       "renewSummaryTwoDays": "📅 تنتهي خلال يومين ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>تم إرسال تذكيرات التجديد</b>",
       "qrChoose": "📷 أي رمز QR تحتاج لـ <code>{{ .Email }}</code>؟",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nامسحه لاستيراد هذا الخادم فقط.",
       "sectionClients": "👥 <b>العملاء</b> — إنشاء وتصفح وتنظيف إعدادات العملاء.",
       "sectionReports": "📊 <b>التقارير</b> — ما تفعله اللوحة وعملاؤها الآن.",
-      "sectionMessaging": "📨 <b>المراسلة</b> — تواصل مع عملائك وحدّد ما يقرؤونه."
+      "sectionMessaging": "📨 <b>المراسلة</b> — تواصل مع عملائك وحدّد ما يقرؤونه.",
+      "settings": "⚙️ <b>الإعدادات</b>",
+      "languagePrompt": "🌐 اختر اللغة التي يرد بها البوت.",
+      "languageSaved": "🌐 تم ضبط اللغة على {{ .Language }}.",
+      "newClientHeader": "🎉 <b>عميل جديد بدأ استخدام البوت</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ تأكيد حذف مستخدم Telegram؟",
       "confirmToggle": "✅ تأكيد تفعيل/تعطيل المستخدم؟",
       "dbBackup": "احصل على نسخة DB",
-      "dailyNotifications": "⚙️ الإشعارات اليومية",
+      "notifications": "⚙️ الإشعارات",
       "notifyServerUsage": "تقرير استخدام الخادم",
       "notifyDepleteSoon": "تقرير قرب الانتهاء",
       "notifyBackup": "نسخة احتياطية لقاعدة البيانات",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 التقارير",
       "sectionMessaging": "📨 المراسلة",
       "backToAdminPanel": "⬅️ لوحة المشرف",
-      "setHelpText": "✏️ تعيين نص المساعدة"
+      "setHelpText": "✏️ تعيين نص المساعدة",
+      "help": "❓ مساعدة",
+      "messageAdmin": "✉️ مراسلة المشرف",
+      "settings": "⚙️ الإعدادات",
+      "language": "🌐 اللغة",
+      "backToMenu": "🔙 رجوع",
+      "backToSettings": "🔙 رجوع",
+      "notifyNewClient": "تنبيهات العملاء الجدد"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

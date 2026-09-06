@@ -108,6 +108,17 @@ func (t *Tgbot) startClientMessage(message *telego.Message, text string) {
 	t.forwardClientMessage(message, text)
 }
 
+// The button has no text to carry, so it always opens the prompt rather than
+// sending anything.
+func (t *Tgbot) promptClientMessage(chatId int64, tgUserID int64) {
+	if len(t.clientEmailsFor(tgUserID)) == 0 {
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.pmNotLinked"))
+		return
+	}
+	userStateMgr.set(chatId, statePmText)
+	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.pmPrompt"))
+}
+
 func (t *Tgbot) forwardClientMessage(message *telego.Message, text string) {
 	chatId := message.Chat.ID
 	emails := t.clientEmailsFor(message.From.ID)

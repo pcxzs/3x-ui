@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 今天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 明天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 天后到期 ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>每日通知</b>\r\n点按可开启或关闭报告。客户始终会收到自己订阅的通知。",
+      "notifications": "⚙️ <b>通知</b>\r\n点按以开启或关闭。客户始终会收到关于自己订阅的通知。",
       "renewSummaryTwoDays": "📅 2 天后到期（{{ .Count }}）：{{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>已发送续费提醒</b>",
       "qrChoose": "📷 需要 <code>{{ .Email }}</code> 的哪个二维码？",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n扫描可仅导入此节点。",
       "sectionClients": "👥 <b>客户</b> — 创建、浏览和清理客户配置。",
       "sectionReports": "📊 <b>报告</b> — 面板与客户的当前状态。",
-      "sectionMessaging": "📨 <b>消息</b> — 联系客户并设置他们看到的内容。"
+      "sectionMessaging": "📨 <b>消息</b> — 联系客户并设置他们看到的内容。",
+      "settings": "⚙️ <b>设置</b>",
+      "languagePrompt": "🌐 选择机器人回复所用的语言。",
+      "languageSaved": "🌐 语言已设置为 {{ .Language }}。",
+      "newClientHeader": "🎉 <b>有新客户刚刚启动了机器人</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ 确认移除 Telegram 用户？",
       "confirmToggle": "✅ 确认启用/禁用用户？",
       "dbBackup": "获取数据库备份",
-      "dailyNotifications": "⚙️ 每日通知",
+      "notifications": "⚙️ 通知",
       "notifyServerUsage": "服务器状态报告",
       "notifyDepleteSoon": "即将到期报告",
       "notifyBackup": "数据库备份",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 报告",
       "sectionMessaging": "📨 消息",
       "backToAdminPanel": "⬅️ 管理面板",
-      "setHelpText": "✏️ 设置帮助文本"
+      "setHelpText": "✏️ 设置帮助文本",
+      "help": "❓ 帮助",
+      "messageAdmin": "✉️ 联系管理员",
+      "settings": "⚙️ 设置",
+      "language": "🌐 语言",
+      "backToMenu": "🔙 返回",
+      "backToSettings": "🔙 返回",
+      "notifyNewClient": "新客户提醒"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

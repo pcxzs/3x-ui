@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 今天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 明天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 天後到期 ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>每日通知</b>\r\n點擊可開啟或關閉報告。客戶始終會收到自己訂閱的通知。",
+      "notifications": "⚙️ <b>通知</b>\r\n點按以開啟或關閉。客戶一律會收到關於自己訂閱的通知。",
       "renewSummaryTwoDays": "📅 2 天後到期（{{ .Count }}）：{{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>已發送續費提醒</b>",
       "qrChoose": "📷 需要 <code>{{ .Email }}</code> 的哪個 QR？",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n掃描可僅匯入此節點。",
       "sectionClients": "👥 <b>用戶</b> — 建立、瀏覽和清理用戶設定。",
       "sectionReports": "📊 <b>報告</b> — 面板與用戶的目前狀態。",
-      "sectionMessaging": "📨 <b>訊息</b> — 聯絡用戶並設定他們看到的內容。"
+      "sectionMessaging": "📨 <b>訊息</b> — 聯絡用戶並設定他們看到的內容。",
+      "settings": "⚙️ <b>設定</b>",
+      "languagePrompt": "🌐 選擇機器人回覆所使用的語言。",
+      "languageSaved": "🌐 語言已設定為 {{ .Language }}。",
+      "newClientHeader": "🎉 <b>有新客戶剛剛啟動了機器人</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ 確認移除 Telegram 使用者？",
       "confirmToggle": "✅ 確認啟用/禁用使用者？",
       "dbBackup": "獲取資料庫備份",
-      "dailyNotifications": "⚙️ 每日通知",
+      "notifications": "⚙️ 通知",
       "notifyServerUsage": "伺服器狀態報告",
       "notifyDepleteSoon": "即將到期報告",
       "notifyBackup": "資料庫備份",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 報告",
       "sectionMessaging": "📨 訊息",
       "backToAdminPanel": "⬅️ 管理面板",
-      "setHelpText": "✏️ 設定說明文字"
+      "setHelpText": "✏️ 設定說明文字",
+      "help": "❓ 說明",
+      "messageAdmin": "✉️ 聯絡管理員",
+      "settings": "⚙️ 設定",
+      "language": "🌐 語言",
+      "backToMenu": "🔙 返回",
+      "backToSettings": "🔙 返回",
+      "notifyNewClient": "新客戶提醒"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

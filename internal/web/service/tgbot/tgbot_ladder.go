@@ -85,17 +85,17 @@ func (t *Tgbot) notifyRenewals() {
 	}
 
 	now := time.Now()
-	byRung := map[renewalRung][]string{}
+	byRung := map[renewalRung][]renewalNotice{}
 	for i := range records {
 		record := &records[i].ClientRecord
 		rung := expiryRung(record.ExpiryTime, now)
 		if rung == rungNone {
 			continue
 		}
-		byRung[rung] = append(byRung[rung], record.Email)
-		if messageKey, notifies := rungMessageKey[rung]; notifies && record.TgID != 0 {
-			t.SendMsgToTgbot(record.TgID, t.I18nBot(messageKey, "Email=="+record.Email))
-		}
+		byRung[rung] = append(byRung[rung], renewalNotice{
+			email:   record.Email,
+			outcome: t.remindCustomer(record.Email, record.TgID, rung),
+		})
 	}
 
 	if summary := t.renewalSummary(byRung); summary != "" {
@@ -108,18 +108,17 @@ func (t *Tgbot) notifyRenewals() {
 
 // Groups the day's notices so an admin sees who was chased without reading the
 // same message once per customer.
-func (t *Tgbot) renewalSummary(byRung map[renewalRung][]string) string {
+func (t *Tgbot) renewalSummary(byRung map[renewalRung][]renewalNotice) string {
 	order := []renewalRung{rungOverdue, rungToday, rungTomorrow, rungTwoDays, rungThreeDays}
 	sections := make([]string, 0, len(order))
 	for _, rung := range order {
-		emails := byRung[rung]
-		if len(emails) == 0 {
+		notices := byRung[rung]
+		if len(notices) == 0 {
 			continue
 		}
-		sort.Strings(emails)
 		sections = append(sections, t.I18nBot(rungSummaryKey[rung],
-			"Count=="+strconv.Itoa(len(emails)),
-			"Clients=="+strings.Join(emails, ", ")))
+			"Count=="+strconv.Itoa(len(notices)),
+			"Clients=="+summaryClientList(notices)))
 	}
 	if len(sections) == 0 {
 		return ""
@@ -133,4 +132,66 @@ var rungSummaryKey = map[renewalRung]string{
 	rungTomorrow:  "tgbot.messages.renewSummaryTomorrow",
 	rungToday:     "tgbot.messages.renewSummaryToday",
 	rungOverdue:   "tgbot.messages.renewSummaryOverdue",
+}
+
+// Sorted by email so the list reads the same each day rather than following
+// whichever send finished first.
+func summaryClientList(notices []renewalNotice) string {
+	sort.Slice(notices, func(i, j int) bool { return notices[i].email < notices[j].email })
+	lines := make([]string, 0, len(notices))
+	for _, notice := range notices {
+		lines = append(lines, notice.outcome.mark()+notice.email)
+	}
+	return strings.Join(lines, ", ")
+}
+
+// renewalNotice is one client's place on the ladder plus what became of the
+// reminder, so the admin summary can say who was actually reached.
+type renewalNotice struct {
+	email   string
+	outcome deliveryOutcome
+}
+
+type deliveryOutcome int
+
+const (
+	// The rung sends no customer reminder, so there is nothing to report.
+	deliveryNone deliveryOutcome = iota
+	deliveryUnlinked
+	deliveryFailed
+	deliveryDelivered
+)
+
+// A cross means the bot tried and Telegram refused; the dash means there was no
+// account to try, which is an admin's job to fix rather than the customer's.
+func (o deliveryOutcome) mark() string {
+	switch o {
+	case deliveryDelivered:
+		return "✅ "
+	case deliveryFailed:
+		return "❌ "
+	case deliveryUnlinked:
+		return "➖ "
+	default:
+		return ""
+	}
+}
+
+// Sends through sendHTMLDirect rather than SendMsgToTgbot because the summary
+// has to distinguish a delivered reminder from one Telegram refused.
+func (t *Tgbot) remindCustomer(email string, tgID int64, rung renewalRung) deliveryOutcome {
+	messageKey, notifies := rungMessageKey[rung]
+	if !notifies {
+		return deliveryNone
+	}
+	if tgID == 0 {
+		return deliveryUnlinked
+	}
+
+	scoped := t.forUser(tgID)
+	if err := scoped.sendHTMLDirect(tgID, scoped.I18nBot(messageKey, "Email=="+email)); err != nil {
+		logger.Warning("tgbot: renewal reminder refused for", email, ":", err)
+		return deliveryFailed
+	}
+	return deliveryDelivered
 }

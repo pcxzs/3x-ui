@@ -2243,7 +2243,7 @@
       "renewSummaryToday": "📅 Vencem hoje ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Vencem amanhã ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Vencem em 3 dias ({{ .Count }}): {{ .Clients }}",
-      "dailyNotifications": "⚙️ <b>Notificações diárias</b>\r\nToque para ativar ou desativar um relatório. Os clientes sempre são avisados sobre a própria assinatura.",
+      "notifications": "⚙️ <b>Notificações</b>\r\nToque para ativar ou desativar. Os clientes sempre são avisados sobre a própria assinatura.",
       "renewSummaryTwoDays": "📅 Vence em 2 dias ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Lembretes de renovação enviados</b>",
       "qrChoose": "📷 Qual QR você precisa para <code>{{ .Email }}</code>?",
@@ -2253,7 +2253,11 @@
       "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nEscaneie para importar apenas este servidor.",
       "sectionClients": "👥 <b>Clientes</b> — criar, navegar e limpar configurações.",
       "sectionReports": "📊 <b>Relatórios</b> — o que o painel e seus clientes estão fazendo agora.",
-      "sectionMessaging": "📨 <b>Mensagens</b> — fale com seus clientes e defina o que eles leem."
+      "sectionMessaging": "📨 <b>Mensagens</b> — fale com seus clientes e defina o que eles leem.",
+      "settings": "⚙️ <b>Configurações</b>",
+      "languagePrompt": "🌐 Escolha o idioma em que o bot deve responder.",
+      "languageSaved": "🌐 Idioma definido como {{ .Language }}.",
+      "newClientHeader": "🎉 <b>Um novo cliente iniciou o bot</b>"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2265,7 +2269,7 @@
       "confirmRemoveTGUser": "✅ Confirmar remover usuário do Telegram?",
       "confirmToggle": "✅ Confirmar ativar/desativar usuário?",
       "dbBackup": "Obter backup do DB",
-      "dailyNotifications": "⚙️ Notificações diárias",
+      "notifications": "⚙️ Notificações",
       "notifyServerUsage": "Relatório de uso do servidor",
       "notifyDepleteSoon": "Relatório de esgotamento",
       "notifyBackup": "Backup do banco de dados",
@@ -2334,7 +2338,14 @@
       "sectionReports": "📊 Relatórios",
       "sectionMessaging": "📨 Mensagens",
       "backToAdminPanel": "⬅️ Painel de administração",
-      "setHelpText": "✏️ Definir texto de ajuda"
+      "setHelpText": "✏️ Definir texto de ajuda",
+      "help": "❓ Ajuda",
+      "messageAdmin": "✉️ Falar com o admin",
+      "settings": "⚙️ Configurações",
+      "language": "🌐 Idioma",
+      "backToMenu": "🔙 Voltar",
+      "backToSettings": "🔙 Voltar",
+      "notifyNewClient": "Avisos de novos clientes"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

@@ -14,6 +14,7 @@ func TestTgBotNotifyDefaultsToEnabled(t *testing.T) {
 	}{
 		{"server usage", s.GetTgBotNotifyServerUsage},
 		{"deplete soon", s.GetTgBotNotifyDepleteSoon},
+		{"new client", s.GetTgBotNotifyNewClient},
 	}
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
@@ -39,6 +40,7 @@ func TestTgBotNotifyRoundTrip(t *testing.T) {
 	}{
 		{"server usage", s.GetTgBotNotifyServerUsage, s.SetTgBotNotifyServerUsage},
 		{"deplete soon", s.GetTgBotNotifyDepleteSoon, s.SetTgBotNotifyDepleteSoon},
+		{"new client", s.GetTgBotNotifyNewClient, s.SetTgBotNotifyNewClient},
 		{"backup", s.GetTgBotBackup, s.SetTgBotBackup},
 	}
 	for _, tc := range tests {
