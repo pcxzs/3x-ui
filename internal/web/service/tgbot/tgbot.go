@@ -21,6 +21,7 @@ import (
 	"github.com/mhsanaei/3x-ui/v3/internal/web/global"
 	"github.com/mhsanaei/3x-ui/v3/internal/web/locale"
 	"github.com/mhsanaei/3x-ui/v3/internal/web/service"
+	"github.com/mhsanaei/3x-ui/v3/internal/web/service/panel"
 
 	"github.com/mymmrac/telego"
 	th "github.com/mymmrac/telego/telegohandler"
@@ -171,6 +172,7 @@ type Tgbot struct {
 	settingService service.SettingService
 	serverService  service.ServerService
 	xrayService    service.XrayService
+	panelService   panel.PanelService
 	lastStatus     *service.Status
 }
 

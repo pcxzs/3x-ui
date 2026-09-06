@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensaje&gt;</code>",
       "helpAdminExtraCommands": "Para difundir un mensaje a todos los clientes vinculados:\r\n<code>/broadcast</code>\r\n\r\nPara responder a un cliente:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nPara cambiar el texto de ayuda que ven los clientes:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Para escribir al administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara volver a ver esta ayuda:\r\n<code>/help</code>",
-      "whoisUsage": "Para consultar qué clientes tiene una cuenta de Telegram:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "Para consultar qué clientes tiene una cuenta de Telegram:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "Para abrir los controles del servidor:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "El uso de CPU {{ .Percent }}% es mayor que el umbral {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 No hay clientes agotados que eliminar.",
       "depletedDeleted": "🧹 Se eliminaron {{ .Count }} cliente(s) agotado(s).",
       "whoisEmpty": "🔍 Ningún cliente está vinculado al ID de Telegram <code>{{ .ID }}</code>.",
-      "whoisHeader": "🔍 El ID de Telegram <code>{{ .ID }}</code> tiene {{ .Count }} cliente(s):"
+      "whoisHeader": "🔍 El ID de Telegram <code>{{ .ID }}</code> tiene {{ .Count }} cliente(s):",
+      "serverXrayRunning": "🛠 <b>Controles del servidor</b>\r\nXray Core: ✅ en ejecución",
+      "serverXrayStopped": "🛠 <b>Controles del servidor</b>\r\nXray Core: ❌ detenido",
+      "logsEmpty": "🗒 No hay entradas de registro para mostrar.",
+      "xrayStopped": "⏹ Xray Core detenido.",
+      "xrayStopFailed": "❗ No se pudo detener Xray Core.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Reiniciando el panel — el bot volverá en unos segundos.",
+      "panelRestartFailed": "❗ No se pudo reiniciar el panel.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ La entrada {{ .Remark }} está activada.",
+      "inboundDisabled": "❌ La entrada {{ .Remark }} está desactivada.",
+      "inboundToggleFailed": "❗ No se pudo cambiar el estado de la entrada.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 Nuevo ID de suscripción",
       "confirmNewSubID": "✅ ¿Confirmar nuevo ID de suscripción?",
       "delDepleted": "🧹 Eliminar agotados",
-      "confirmDelDepleted": "✅ ¿Confirmar eliminación de clientes agotados?"
+      "confirmDelDepleted": "✅ ¿Confirmar eliminación de clientes agotados?",
+      "serverMenu": "🛠 Servidor",
+      "panelLogs": "📝 Registros del panel",
+      "xrayLogs": "📄 Registros de Xray",
+      "xrayStart": "▶️ Iniciar Xray",
+      "xrayStop": "⏹ Detener Xray",
+      "xrayRestart": "🔄 Reiniciar Xray",
+      "panelRestart": "♻️ Reiniciar el panel",
+      "toggleInbound": "🔀 Activar / desactivar entrada",
+      "confirmXrayStop": "⏹ Sí, detener Xray",
+      "confirmPanelRestart": "♻️ Sí, reiniciar el panel"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

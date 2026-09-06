@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Cách dùng: <code>/send &lt;chatId&gt; &lt;tin nhắn&gt;</code>",
       "helpAdminExtraCommands": "Để phát tin tới tất cả khách hàng đã liên kết:\r\n<code>/broadcast</code>\r\n\r\nĐể trả lời một khách hàng:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nĐể thay đổi nội dung trợ giúp mà khách hàng thấy:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Để nhắn tin cho quản trị viên:\r\n<code>/pm [Text]</code>\r\n\r\nĐể xem lại trợ giúp này:\r\n<code>/help</code>",
-      "whoisUsage": "Để xem một tài khoản Telegram đang giữ những khách hàng nào:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "Để xem một tài khoản Telegram đang giữ những khách hàng nào:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "Để mở điều khiển máy chủ:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "Sử dụng CPU {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 Không có khách hàng đã hết hạn nào để xóa.",
       "depletedDeleted": "🧹 Đã xóa {{ .Count }} khách hàng đã hết hạn.",
       "whoisEmpty": "🔍 Không có khách hàng nào được liên kết với Telegram ID <code>{{ .ID }}</code>.",
-      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> có {{ .Count }} khách hàng:"
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> có {{ .Count }} khách hàng:",
+      "serverXrayRunning": "🛠 <b>Điều khiển máy chủ</b>\r\nXray Core: ✅ đang chạy",
+      "serverXrayStopped": "🛠 <b>Điều khiển máy chủ</b>\r\nXray Core: ❌ đã dừng",
+      "logsEmpty": "🗒 Không có bản ghi nào để hiển thị.",
+      "xrayStopped": "⏹ Đã dừng Xray Core.",
+      "xrayStopFailed": "❗ Không thể dừng Xray Core.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Đang khởi động lại bảng điều khiển — bot sẽ trở lại sau vài giây.",
+      "panelRestartFailed": "❗ Không thể khởi động lại bảng điều khiển.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ Inbound {{ .Remark }} đã được bật.",
+      "inboundDisabled": "❌ Inbound {{ .Remark }} đã bị tắt.",
+      "inboundToggleFailed": "❗ Không thể thay đổi trạng thái inbound.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 ID đăng ký mới",
       "confirmNewSubID": "✅ Xác nhận ID đăng ký mới?",
       "delDepleted": "🧹 Xóa đã hết hạn",
-      "confirmDelDepleted": "✅ Xác nhận xóa các khách hàng đã hết hạn?"
+      "confirmDelDepleted": "✅ Xác nhận xóa các khách hàng đã hết hạn?",
+      "serverMenu": "🛠 Máy chủ",
+      "panelLogs": "📝 Nhật ký bảng điều khiển",
+      "xrayLogs": "📄 Nhật ký Xray",
+      "xrayStart": "▶️ Khởi động Xray",
+      "xrayStop": "⏹ Dừng Xray",
+      "xrayRestart": "🔄 Khởi động lại Xray",
+      "panelRestart": "♻️ Khởi động lại bảng điều khiển",
+      "toggleInbound": "🔀 Bật / tắt inbound",
+      "confirmXrayStop": "⏹ Có, dừng Xray",
+      "confirmPanelRestart": "♻️ Có, khởi động lại bảng điều khiển"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

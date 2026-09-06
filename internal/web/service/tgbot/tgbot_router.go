@@ -259,6 +259,13 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 			break
 		}
 		t.whoIs(chatId, commandArgs[0])
+	case "server":
+		onlyMessage = true
+		if !isAdmin {
+			handleUnknownCommand()
+			break
+		}
+		t.serverMenu(chatId)
 	case "inbound":
 		onlyMessage = true
 		if isAdmin && len(commandArgs) > 0 {
@@ -1115,6 +1122,9 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 				receiver_inbound_ID = inboundIdInt
 				receiver_inbound_IDs = []int{inboundIdInt}
 				t.addClient(callbackQuery.Message.GetChat().ID, t.BuildClientDraftMessage())
+			case "server_inbound_toggle":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+				t.toggleInbound(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
 			case "add_client_toggle_attach":
 				inboundIdStr := dataArray[1]
 				inboundIdInt, err := strconv.Atoi(inboundIdStr)
@@ -1283,7 +1293,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		t.onlineClients(chatId, callbackQuery.Message.GetMessageID())
 	case "commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.whoisUsage"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.whoisUsage")+"\r\n\r\n"+t.I18nBot("tgbot.commands.serverMenuUsage"))
 	case "broadcast":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.broadcast"))
 		t.startBroadcast(chatId)
@@ -1293,6 +1303,33 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 	case "broadcast_cancel":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.canceled", "Email=="))
 		t.cancelBroadcast(chatId)
+	case "server":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.serverMenu"))
+		t.serverMenu(chatId)
+	case "server_panel_logs":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelLogs"))
+		t.sendPanelLogs(chatId)
+	case "server_xray_logs":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.xrayLogs"))
+		t.sendXrayLogs(chatId)
+	case "server_xray_restart":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.xrayRestart"))
+		t.restartXray(chatId)
+	case "server_xray_stop":
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.AreYouSure"),
+			t.confirmKeyboard("tgbot.buttons.confirmXrayStop", "server_xray_stop_c", "server"))
+	case "server_xray_stop_c":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.xrayStop"))
+		t.stopXray(chatId)
+	case "server_panel_restart":
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.AreYouSure"),
+			t.confirmKeyboard("tgbot.buttons.confirmPanelRestart", "server_panel_restart_c", "server"))
+	case "server_panel_restart_c":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelRestart"))
+		t.restartPanel(chatId)
+	case "server_inbounds":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.toggleInbound"))
+		t.refreshInboundPicker(chatId, 0)
 	case "del_depleted":
 		inlineKeyboard := tu.InlineKeyboard(
 			tu.InlineKeyboardRow(

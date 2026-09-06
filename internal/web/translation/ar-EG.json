@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ الاستخدام: <code>/send &lt;chatId&gt; &lt;الرسالة&gt;</code>",
       "helpAdminExtraCommands": "لبث رسالة إلى جميع العملاء المرتبطين:\r\n<code>/broadcast</code>\r\n\r\nللرد على عميل:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nلتغيير نص المساعدة الذي يراه العملاء:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "لمراسلة المسؤول:\r\n<code>/pm [Text]</code>\r\n\r\nلعرض هذه المساعدة مرة أخرى:\r\n<code>/help</code>",
-      "whoisUsage": "لمعرفة العملاء الذين يملكهم حساب تيليجرام:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "لمعرفة العملاء الذين يملكهم حساب تيليجرام:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "لفتح أدوات الخادم:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "حمل المعالج {{ .Percent }}% عدى الحد المسموح ({{ .Threshold }}%)",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 لا يوجد عملاء منتهية صلاحيتهم للحذف.",
       "depletedDeleted": "🧹 تم حذف {{ .Count }} من العملاء المنتهية صلاحيتهم.",
       "whoisEmpty": "🔍 لا يوجد عملاء مرتبطون بمعرّف تيليجرام <code>{{ .ID }}</code>.",
-      "whoisHeader": "🔍 معرّف تيليجرام <code>{{ .ID }}</code> يملك {{ .Count }} من العملاء:"
+      "whoisHeader": "🔍 معرّف تيليجرام <code>{{ .ID }}</code> يملك {{ .Count }} من العملاء:",
+      "serverXrayRunning": "🛠 <b>أدوات الخادم</b>\r\nنواة Xray: ✅ تعمل",
+      "serverXrayStopped": "🛠 <b>أدوات الخادم</b>\r\nنواة Xray: ❌ متوقفة",
+      "logsEmpty": "🗒 لا توجد سجلات للعرض.",
+      "xrayStopped": "⏹ تم إيقاف نواة Xray.",
+      "xrayStopFailed": "❗ تعذّر إيقاف نواة Xray.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ يتم إعادة تشغيل اللوحة الآن — سيعود البوت خلال ثوانٍ.",
+      "panelRestartFailed": "❗ تعذّر إعادة تشغيل اللوحة.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ تم تفعيل الوارد {{ .Remark }}.",
+      "inboundDisabled": "❌ تم تعطيل الوارد {{ .Remark }}.",
+      "inboundToggleFailed": "❗ تعذّر تغيير حالة الوارد.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 معرّف اشتراك جديد",
       "confirmNewSubID": "✅ تأكيد معرّف الاشتراك الجديد؟",
       "delDepleted": "🧹 حذف المنتهية",
-      "confirmDelDepleted": "✅ تأكيد حذف العملاء المنتهية صلاحيتهم؟"
+      "confirmDelDepleted": "✅ تأكيد حذف العملاء المنتهية صلاحيتهم؟",
+      "serverMenu": "🛠 الخادم",
+      "panelLogs": "📝 سجلات اللوحة",
+      "xrayLogs": "📄 سجلات Xray",
+      "xrayStart": "▶️ تشغيل Xray",
+      "xrayStop": "⏹ إيقاف Xray",
+      "xrayRestart": "🔄 إعادة تشغيل Xray",
+      "panelRestart": "♻️ إعادة تشغيل اللوحة",
+      "toggleInbound": "🔀 تفعيل / تعطيل وارد",
+      "confirmXrayStop": "⏹ نعم، أوقف Xray",
+      "confirmPanelRestart": "♻️ نعم، أعد تشغيل اللوحة"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

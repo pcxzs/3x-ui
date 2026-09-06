@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;消息&gt;</code>",
       "helpAdminExtraCommands": "向所有已绑定的用户群发消息：\r\n<code>/broadcast</code>\r\n\r\n回复某位用户：\r\n<code>/send [ChatID] [Text]</code>\r\n\r\n修改用户看到的帮助内容：\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "联系管理员：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本帮助：\r\n<code>/help</code>",
-      "whoisUsage": "查询某个 Telegram 账号拥有哪些客户端:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "查询某个 Telegram 账号拥有哪些客户端:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "打开服务器控制：\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率为 {{ .Percent }}%，超过阈值 {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 没有需要删除的已耗尽客户端。",
       "depletedDeleted": "🧹 已删除 {{ .Count }} 个已耗尽客户端。",
       "whoisEmpty": "🔍 没有客户端绑定到 Telegram ID <code>{{ .ID }}</code>。",
-      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> 拥有 {{ .Count }} 个客户端:"
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> 拥有 {{ .Count }} 个客户端:",
+      "serverXrayRunning": "🛠 <b>服务器控制</b>\r\nXray Core：✅ 运行中",
+      "serverXrayStopped": "🛠 <b>服务器控制</b>\r\nXray Core：❌ 已停止",
+      "logsEmpty": "🗒 没有可显示的日志。",
+      "xrayStopped": "⏹ Xray Core 已停止。",
+      "xrayStopFailed": "❗ 无法停止 Xray Core。\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ 正在重启面板，机器人将在几秒后恢复。",
+      "panelRestartFailed": "❗ 无法重启面板。\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ 入站 {{ .Remark }} 已启用。",
+      "inboundDisabled": "❌ 入站 {{ .Remark }} 已停用。",
+      "inboundToggleFailed": "❗ 无法更改入站状态。\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 新订阅 ID",
       "confirmNewSubID": "✅ 确认生成新订阅 ID？",
       "delDepleted": "🧹 删除已耗尽",
-      "confirmDelDepleted": "✅ 确认删除已耗尽的客户端？"
+      "confirmDelDepleted": "✅ 确认删除已耗尽的客户端？",
+      "serverMenu": "🛠 服务器",
+      "panelLogs": "📝 面板日志",
+      "xrayLogs": "📄 Xray 日志",
+      "xrayStart": "▶️ 启动 Xray",
+      "xrayStop": "⏹ 停止 Xray",
+      "xrayRestart": "🔄 重启 Xray",
+      "panelRestart": "♻️ 重启面板",
+      "toggleInbound": "🔀 启用 / 停用入站",
+      "confirmXrayStop": "⏹ 是，停止 Xray",
+      "confirmPanelRestart": "♻️ 是，重启面板"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

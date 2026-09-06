@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Penggunaan: <code>/send &lt;chatId&gt; &lt;pesan&gt;</code>",
       "helpAdminExtraCommands": "Untuk menyiarkan pesan ke semua klien yang tertaut:\r\n<code>/broadcast</code>\r\n\r\nUntuk membalas klien:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nUntuk mengubah teks bantuan yang dilihat klien:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Untuk mengirim pesan ke administrator:\r\n<code>/pm [Text]</code>\r\n\r\nUntuk melihat bantuan ini lagi:\r\n<code>/help</code>",
-      "whoisUsage": "Untuk melihat klien yang dimiliki sebuah akun Telegram:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "Untuk melihat klien yang dimiliki sebuah akun Telegram:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "Untuk membuka kontrol server:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 Tidak ada klien habis yang perlu dihapus.",
       "depletedDeleted": "🧹 {{ .Count }} klien habis telah dihapus.",
       "whoisEmpty": "🔍 Tidak ada klien yang tertaut ke ID Telegram <code>{{ .ID }}</code>.",
-      "whoisHeader": "🔍 ID Telegram <code>{{ .ID }}</code> memiliki {{ .Count }} klien:"
+      "whoisHeader": "🔍 ID Telegram <code>{{ .ID }}</code> memiliki {{ .Count }} klien:",
+      "serverXrayRunning": "🛠 <b>Kontrol server</b>\r\nXray Core: ✅ berjalan",
+      "serverXrayStopped": "🛠 <b>Kontrol server</b>\r\nXray Core: ❌ berhenti",
+      "logsEmpty": "🗒 Tidak ada entri log untuk ditampilkan.",
+      "xrayStopped": "⏹ Xray Core dihentikan.",
+      "xrayStopFailed": "❗ Tidak dapat menghentikan Xray Core.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Memulai ulang panel — bot akan kembali dalam beberapa detik.",
+      "panelRestartFailed": "❗ Tidak dapat memulai ulang panel.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ Inbound {{ .Remark }} kini aktif.",
+      "inboundDisabled": "❌ Inbound {{ .Remark }} kini nonaktif.",
+      "inboundToggleFailed": "❗ Tidak dapat mengubah status inbound.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 ID Langganan Baru",
       "confirmNewSubID": "✅ Konfirmasi ID langganan baru?",
       "delDepleted": "🧹 Hapus yang Habis",
-      "confirmDelDepleted": "✅ Konfirmasi hapus klien yang habis?"
+      "confirmDelDepleted": "✅ Konfirmasi hapus klien yang habis?",
+      "serverMenu": "🛠 Server",
+      "panelLogs": "📝 Log Panel",
+      "xrayLogs": "📄 Log Xray",
+      "xrayStart": "▶️ Mulai Xray",
+      "xrayStop": "⏹ Hentikan Xray",
+      "xrayRestart": "🔄 Mulai Ulang Xray",
+      "panelRestart": "♻️ Mulai Ulang Panel",
+      "toggleInbound": "🔀 Aktifkan / Nonaktifkan Inbound",
+      "confirmXrayStop": "⏹ Ya, hentikan Xray",
+      "confirmPanelRestart": "♻️ Ya, mulai ulang panel"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

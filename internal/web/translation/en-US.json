@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Usage: <code>/send &lt;chatId&gt; &lt;message&gt;</code>",
       "helpAdminExtraCommands": "To broadcast a message to all linked clients:\r\n<code>/broadcast</code>\r\n\r\nTo reply to a client:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nTo change the help text clients see:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "To message the administrator:\r\n<code>/pm [Text]</code>\r\n\r\nTo see this help again:\r\n<code>/help</code>",
-      "whoisUsage": "To look up which clients a Telegram account holds:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "To look up which clients a Telegram account holds:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "To open the server controls:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 No depleted clients to delete.",
       "depletedDeleted": "🧹 Deleted {{ .Count }} depleted client(s).",
       "whoisEmpty": "🔍 No clients are linked to Telegram ID <code>{{ .ID }}</code>.",
-      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> holds {{ .Count }} client(s):"
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> holds {{ .Count }} client(s):",
+      "serverXrayRunning": "🛠 <b>Server controls</b>\r\nXray Core: ✅ running",
+      "serverXrayStopped": "🛠 <b>Server controls</b>\r\nXray Core: ❌ stopped",
+      "logsEmpty": "🗒 No log entries to show.",
+      "xrayStopped": "⏹ Xray Core stopped.",
+      "xrayStopFailed": "❗ Could not stop Xray Core.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Restarting the panel now — the bot will be back in a few seconds.",
+      "panelRestartFailed": "❗ Could not restart the panel.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ Inbound {{ .Remark }} is now enabled.",
+      "inboundDisabled": "❌ Inbound {{ .Remark }} is now disabled.",
+      "inboundToggleFailed": "❗ Could not change the inbound state.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 New Subscription ID",
       "confirmNewSubID": "✅ Confirm New Subscription ID?",
       "delDepleted": "🧹 Delete Depleted",
-      "confirmDelDepleted": "✅ Confirm Delete Depleted Clients?"
+      "confirmDelDepleted": "✅ Confirm Delete Depleted Clients?",
+      "serverMenu": "🛠 Server",
+      "panelLogs": "📝 Panel Logs",
+      "xrayLogs": "📄 Xray Logs",
+      "xrayStart": "▶️ Start Xray",
+      "xrayStop": "⏹ Stop Xray",
+      "xrayRestart": "🔄 Restart Xray",
+      "panelRestart": "♻️ Restart Panel",
+      "toggleInbound": "🔀 Enable / Disable Inbound",
+      "confirmXrayStop": "⏹ Yes, stop Xray",
+      "confirmPanelRestart": "♻️ Yes, restart the panel"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Kullanım: <code>/send &lt;chatId&gt; &lt;mesaj&gt;</code>",
       "helpAdminExtraCommands": "Bağlı tüm istemcilere toplu mesaj göndermek için:\r\n<code>/broadcast</code>\r\n\r\nBir istemciye yanıt vermek için:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nİstemcilerin gördüğü yardım metnini değiştirmek için:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Yöneticiye mesaj göndermek için:\r\n<code>/pm [Text]</code>\r\n\r\nBu yardımı yeniden görmek için:\r\n<code>/help</code>",
-      "whoisUsage": "Bir Telegram hesabının hangi istemcilere sahip olduğunu görmek için:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "Bir Telegram hesabının hangi istemcilere sahip olduğunu görmek için:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "Sunucu denetimlerini açmak için:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Yükü ({{ .Percent }}%), {{ .Threshold }}% eşiğini aşıyor",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 Silinecek tükenen istemci yok.",
       "depletedDeleted": "🧹 {{ .Count }} tükenen istemci silindi.",
       "whoisEmpty": "🔍 <code>{{ .ID }}</code> Telegram kimliğine bağlı istemci yok.",
-      "whoisHeader": "🔍 <code>{{ .ID }}</code> Telegram kimliğine ait {{ .Count }} istemci var:"
+      "whoisHeader": "🔍 <code>{{ .ID }}</code> Telegram kimliğine ait {{ .Count }} istemci var:",
+      "serverXrayRunning": "🛠 <b>Sunucu denetimleri</b>\r\nXray Core: ✅ çalışıyor",
+      "serverXrayStopped": "🛠 <b>Sunucu denetimleri</b>\r\nXray Core: ❌ durduruldu",
+      "logsEmpty": "🗒 Gösterilecek kayıt yok.",
+      "xrayStopped": "⏹ Xray Core durduruldu.",
+      "xrayStopFailed": "❗ Xray Core durdurulamadı.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Panel yeniden başlatılıyor — bot birkaç saniye içinde dönecek.",
+      "panelRestartFailed": "❗ Panel yeniden başlatılamadı.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ {{ .Remark }} gelen bağlantısı etkinleştirildi.",
+      "inboundDisabled": "❌ {{ .Remark }} gelen bağlantısı devre dışı bırakıldı.",
+      "inboundToggleFailed": "❗ Gelen bağlantı durumu değiştirilemedi.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 Yeni Abonelik Kimliği",
       "confirmNewSubID": "✅ Yeni abonelik kimliğini onaylıyor musunuz?",
       "delDepleted": "🧹 Tükenenleri Sil",
-      "confirmDelDepleted": "✅ Tükenen istemcileri silmeyi onaylıyor musunuz?"
+      "confirmDelDepleted": "✅ Tükenen istemcileri silmeyi onaylıyor musunuz?",
+      "serverMenu": "🛠 Sunucu",
+      "panelLogs": "📝 Panel Kayıtları",
+      "xrayLogs": "📄 Xray Kayıtları",
+      "xrayStart": "▶️ Xray'i Başlat",
+      "xrayStop": "⏹ Xray'i Durdur",
+      "xrayRestart": "🔄 Xray'i Yeniden Başlat",
+      "panelRestart": "♻️ Paneli Yeniden Başlat",
+      "toggleInbound": "🔀 Gelen Bağlantıyı Aç / Kapat",
+      "confirmXrayStop": "⏹ Evet, Xray'i durdur",
+      "confirmPanelRestart": "♻️ Evet, paneli yeniden başlat"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

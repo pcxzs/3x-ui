@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ روش استفاده: <code>/send &lt;chatId&gt; &lt;پیام&gt;</code>",
       "helpAdminExtraCommands": "برای ارسال پیام همگانی به همه کاربران متصل:\r\n<code>/broadcast</code>\r\n\r\nبرای پاسخ به یک کاربر:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nبرای تغییر متن راهنمای کاربران:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "برای ارسال پیام به مدیر:\r\n<code>/pm [Text]</code>\r\n\r\nبرای دیدن دوباره این راهنما:\r\n<code>/help</code>",
-      "whoisUsage": "برای دیدن کاربران متصل به یک حساب تلگرام:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "برای دیدن کاربران متصل به یک حساب تلگرام:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "برای باز کردن کنترل‌های سرور:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 کاربر منقضی‌شده‌ای برای حذف وجود ندارد.",
       "depletedDeleted": "🧹 {{ .Count }} کاربر منقضی‌شده حذف شد.",
       "whoisEmpty": "🔍 هیچ کاربری به شناسه تلگرام <code>{{ .ID }}</code> متصل نیست.",
-      "whoisHeader": "🔍 شناسه تلگرام <code>{{ .ID }}</code> دارای {{ .Count }} کاربر است:"
+      "whoisHeader": "🔍 شناسه تلگرام <code>{{ .ID }}</code> دارای {{ .Count }} کاربر است:",
+      "serverXrayRunning": "🛠 <b>کنترل‌های سرور</b>\r\nهسته Xray: ✅ در حال اجرا",
+      "serverXrayStopped": "🛠 <b>کنترل‌های سرور</b>\r\nهسته Xray: ❌ متوقف",
+      "logsEmpty": "🗒 رکوردی برای نمایش وجود ندارد.",
+      "xrayStopped": "⏹ هسته Xray متوقف شد.",
+      "xrayStopFailed": "❗ توقف هسته Xray ممکن نشد.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ پنل در حال راه‌اندازی مجدد است — ربات تا چند ثانیه دیگر برمی‌گردد.",
+      "panelRestartFailed": "❗ راه‌اندازی مجدد پنل ممکن نشد.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ ورودی {{ .Remark }} فعال شد.",
+      "inboundDisabled": "❌ ورودی {{ .Remark }} غیرفعال شد.",
+      "inboundToggleFailed": "❗ تغییر وضعیت ورودی ممکن نشد.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 شناسه اشتراک جدید",
       "confirmNewSubID": "✅ شناسه اشتراک جدید تأیید شود؟",
       "delDepleted": "🧹 حذف منقضی‌شده‌ها",
-      "confirmDelDepleted": "✅ حذف کاربران منقضی‌شده تأیید شود؟"
+      "confirmDelDepleted": "✅ حذف کاربران منقضی‌شده تأیید شود؟",
+      "serverMenu": "🛠 سرور",
+      "panelLogs": "📝 گزارش‌های پنل",
+      "xrayLogs": "📄 گزارش‌های Xray",
+      "xrayStart": "▶️ اجرای Xray",
+      "xrayStop": "⏹ توقف Xray",
+      "xrayRestart": "🔄 راه‌اندازی مجدد Xray",
+      "panelRestart": "♻️ راه‌اندازی مجدد پنل",
+      "toggleInbound": "🔀 فعال / غیرفعال کردن ورودی",
+      "confirmXrayStop": "⏹ بله، Xray متوقف شود",
+      "confirmPanelRestart": "♻️ بله، پنل راه‌اندازی مجدد شود"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

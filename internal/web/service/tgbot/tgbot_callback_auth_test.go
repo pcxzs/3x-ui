@@ -36,6 +36,8 @@ func TestIsClientSelfCallback(t *testing.T) {
 		"client_edit alice@x", "client_edit_email alice@x", "client_edit_comment alice@x",
 		"client_new_subid_c alice@x", "client_delete alice@x", "client_delete_c alice@x",
 		"del_depleted", "del_depleted_c",
+		"server", "server_panel_logs", "server_xray_logs", "server_xray_restart",
+		"server_xray_stop_c", "server_panel_restart_c", "server_inbounds", "server_inbound_toggle 1",
 	}
 	for _, d := range denied {
 		if isClientSelfCallback(d) {

@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Использование: <code>/send &lt;chatId&gt; &lt;сообщение&gt;</code>",
       "helpAdminExtraCommands": "Разослать сообщение всем привязанным клиентам:\r\n<code>/broadcast</code>\r\n\r\nОтветить клиенту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nИзменить текст справки для клиентов:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Написать администратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказать эту справку снова:\r\n<code>/help</code>",
-      "whoisUsage": "Чтобы узнать, какими клиентами владеет аккаунт Telegram:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "Чтобы узнать, какими клиентами владеет аккаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "Открыть управление сервером:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "Загрузка процессора составляет {{ .Percent }}%, что превышает пороговое значение {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 Исчерпанных клиентов для удаления нет.",
       "depletedDeleted": "🧹 Удалено исчерпанных клиентов: {{ .Count }}.",
       "whoisEmpty": "🔍 К Telegram ID <code>{{ .ID }}</code> не привязан ни один клиент.",
-      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> владеет клиентами: {{ .Count }}:"
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> владеет клиентами: {{ .Count }}:",
+      "serverXrayRunning": "🛠 <b>Управление сервером</b>\r\nXray Core: ✅ работает",
+      "serverXrayStopped": "🛠 <b>Управление сервером</b>\r\nXray Core: ❌ остановлен",
+      "logsEmpty": "🗒 Записей в логе нет.",
+      "xrayStopped": "⏹ Xray Core остановлен.",
+      "xrayStopFailed": "❗ Не удалось остановить Xray Core.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Панель перезапускается — бот вернётся через несколько секунд.",
+      "panelRestartFailed": "❗ Не удалось перезапустить панель.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ Входящее {{ .Remark }} включено.",
+      "inboundDisabled": "❌ Входящее {{ .Remark }} выключено.",
+      "inboundToggleFailed": "❗ Не удалось изменить состояние входящего.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 Новый ID подписки",
       "confirmNewSubID": "✅ Подтвердить новый ID подписки?",
       "delDepleted": "🧹 Удалить исчерпанные",
-      "confirmDelDepleted": "✅ Подтвердить удаление исчерпанных клиентов?"
+      "confirmDelDepleted": "✅ Подтвердить удаление исчерпанных клиентов?",
+      "serverMenu": "🛠 Сервер",
+      "panelLogs": "📝 Логи панели",
+      "xrayLogs": "📄 Логи Xray",
+      "xrayStart": "▶️ Запустить Xray",
+      "xrayStop": "⏹ Остановить Xray",
+      "xrayRestart": "🔄 Перезапустить Xray",
+      "panelRestart": "♻️ Перезапустить панель",
+      "toggleInbound": "🔀 Включить / выключить входящее",
+      "confirmXrayStop": "⏹ Да, остановить Xray",
+      "confirmPanelRestart": "♻️ Да, перезапустить панель"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

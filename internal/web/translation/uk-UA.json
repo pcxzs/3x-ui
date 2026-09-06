@@ -2106,7 +2106,8 @@
       "sendUsage": "❗ Використання: <code>/send &lt;chatId&gt; &lt;повідомлення&gt;</code>",
       "helpAdminExtraCommands": "Розіслати повідомлення всім прив'язаним клієнтам:\r\n<code>/broadcast</code>\r\n\r\nВідповісти клієнту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nЗмінити текст довідки для клієнтів:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Написати адміністратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказати цю довідку знову:\r\n<code>/help</code>",
-      "whoisUsage": "Щоб дізнатися, якими клієнтами володіє акаунт Telegram:\r\n<code>/whois [TelegramID]</code>"
+      "whoisUsage": "Щоб дізнатися, якими клієнтами володіє акаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
+      "serverMenuUsage": "Відкрити керування сервером:\r\n<code>/server</code>"
     },
     "messages": {
       "cpuThreshold": "Навантаження ЦП  {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
@@ -2208,7 +2209,17 @@
       "depletedNone": "🧹 Вичерпаних клієнтів для видалення немає.",
       "depletedDeleted": "🧹 Видалено вичерпаних клієнтів: {{ .Count }}.",
       "whoisEmpty": "🔍 До Telegram ID <code>{{ .ID }}</code> не привʼязано жодного клієнта.",
-      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> має клієнтів: {{ .Count }}:"
+      "whoisHeader": "🔍 Telegram ID <code>{{ .ID }}</code> має клієнтів: {{ .Count }}:",
+      "serverXrayRunning": "🛠 <b>Керування сервером</b>\r\nXray Core: ✅ працює",
+      "serverXrayStopped": "🛠 <b>Керування сервером</b>\r\nXray Core: ❌ зупинено",
+      "logsEmpty": "🗒 Немає записів у журналі.",
+      "xrayStopped": "⏹ Xray Core зупинено.",
+      "xrayStopFailed": "❗ Не вдалося зупинити Xray Core.\r\n\r\n<code>{{ .Error }}</code>",
+      "panelRestarting": "♻️ Панель перезапускається — бот повернеться за кілька секунд.",
+      "panelRestartFailed": "❗ Не вдалося перезапустити панель.\r\n\r\n<code>{{ .Error }}</code>",
+      "inboundEnabled": "✅ Вхідне {{ .Remark }} увімкнено.",
+      "inboundDisabled": "❌ Вхідне {{ .Remark }} вимкнено.",
+      "inboundToggleFailed": "❗ Не вдалося змінити стан вхідного.\r\n\r\n<code>{{ .Error }}</code>"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2263,7 +2274,17 @@
       "newSubID": "🔄 Новий ID підписки",
       "confirmNewSubID": "✅ Підтвердити новий ID підписки?",
       "delDepleted": "🧹 Видалити вичерпані",
-      "confirmDelDepleted": "✅ Підтвердити видалення вичерпаних клієнтів?"
+      "confirmDelDepleted": "✅ Підтвердити видалення вичерпаних клієнтів?",
+      "serverMenu": "🛠 Сервер",
+      "panelLogs": "📝 Логи панелі",
+      "xrayLogs": "📄 Логи Xray",
+      "xrayStart": "▶️ Запустити Xray",
+      "xrayStop": "⏹ Зупинити Xray",
+      "xrayRestart": "🔄 Перезапустити Xray",
+      "panelRestart": "♻️ Перезапустити панель",
+      "toggleInbound": "🔀 Увімкнути / вимкнути вхідне",
+      "confirmXrayStop": "⏹ Так, зупинити Xray",
+      "confirmPanelRestart": "♻️ Так, перезапустити панель"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",
