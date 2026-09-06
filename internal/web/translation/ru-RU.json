@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 Какую ссылку закодировать в QR для <code>{{ .Email }}</code>?",
       "qrCaptionSub": "📷 URL подписки — {{ .Email }}\nОтсканируйте в приложении, чтобы импортировать все конфигурации сразу.",
       "qrCaptionSubJson": "📷 URL JSON-подписки — {{ .Email }}\nДля приложений, ожидающих формат JSON.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nОтсканируйте, чтобы импортировать только этот сервер."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nОтсканируйте, чтобы импортировать только этот сервер.",
+      "sectionClients": "👥 <b>Клиенты</b> — создание, просмотр и очистка конфигураций.",
+      "sectionReports": "📊 <b>Отчёты</b> — что происходит с панелью и клиентами сейчас.",
+      "sectionMessaging": "📨 <b>Сообщения</b> — связь с клиентами и текст, который они читают."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 Ссылки-приглашения",
       "qrSubscription": "📷 QR подписки",
       "qrSubJson": "📷 QR JSON",
-      "qrForLink": "📷 QR одной ссылки"
+      "qrForLink": "📷 QR одной ссылки",
+      "sectionClients": "👥 Клиенты",
+      "sectionReports": "📊 Отчёты",
+      "sectionMessaging": "📨 Сообщения",
+      "backToAdminPanel": "⬅️ Панель админа",
+      "setHelpText": "✏️ Изменить текст помощи"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

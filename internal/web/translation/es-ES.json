@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 ¿Qué enlace debe codificar el QR de <code>{{ .Email }}</code>?",
       "qrCaptionSub": "📷 URL de suscripción — {{ .Email }}\nEscanéalo en tu app para importar todas las configuraciones a la vez.",
       "qrCaptionSubJson": "📷 URL de suscripción JSON — {{ .Email }}\nPara apps que esperan el formato de suscripción JSON.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nEscanéalo para importar solo este servidor."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nEscanéalo para importar solo este servidor.",
+      "sectionClients": "👥 <b>Clientes</b> — crear, explorar y depurar configuraciones.",
+      "sectionReports": "📊 <b>Informes</b> — qué están haciendo el panel y sus clientes ahora.",
+      "sectionMessaging": "📨 <b>Mensajería</b> — contacta a tus clientes y define lo que leen."
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 Enlaces de invitación",
       "qrSubscription": "📷 QR de suscripción",
       "qrSubJson": "📷 QR JSON",
-      "qrForLink": "📷 QR de un enlace"
+      "qrForLink": "📷 QR de un enlace",
+      "sectionClients": "👥 Clientes",
+      "sectionReports": "📊 Informes",
+      "sectionMessaging": "📨 Mensajería",
+      "backToAdminPanel": "⬅️ Panel de administración",
+      "setHelpText": "✏️ Editar texto de ayuda"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

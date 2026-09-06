@@ -1217,27 +1217,6 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 				}
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.allClients"))
 				t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.chooseInbound"), inbounds)
-			case "admin_client_sub_links":
-				inbounds, err := t.getInboundsFor("get_clients_for_sub")
-				if err != nil {
-					t.sendCallbackAnswerTgBot(callbackQuery.ID, err.Error())
-					return
-				}
-				t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.chooseInbound"), inbounds)
-			case "admin_client_individual_links":
-				inbounds, err := t.getInboundsFor("get_clients_for_individual")
-				if err != nil {
-					t.sendCallbackAnswerTgBot(callbackQuery.ID, err.Error())
-					return
-				}
-				t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.chooseInbound"), inbounds)
-			case "admin_client_qr_links":
-				inbounds, err := t.getInboundsFor("get_clients_for_qr")
-				if err != nil {
-					t.sendCallbackAnswerTgBot(callbackQuery.ID, err.Error())
-					return
-				}
-				t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.chooseInbound"), inbounds)
 			}
 		}
 	}
@@ -1363,6 +1342,30 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		}
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.adminPanel"))
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.adminPanel", "Hostname=="+hostname), t.adminKeyboard())
+	case "admin_clients":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.sectionClients"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.sectionClients"), t.adminClientsKeyboard())
+	case "admin_reports":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.sectionReports"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.sectionReports"), t.adminReportsKeyboard())
+	case "admin_messaging":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.sectionMessaging"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.sectionMessaging"), t.adminMessagingKeyboard())
+	case "set_help":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.setHelpText"))
+		t.startSetHelp(chatId)
 	case "user_panel":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.backToUserPanel"))
 		t.SendAnswer(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), level)

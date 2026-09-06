@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 <code>{{ .Email }}</code> 的二维码要包含哪条链接？",
       "qrCaptionSub": "📷 订阅链接 — {{ .Email }}\n在客户端扫描即可一次导入全部配置。",
       "qrCaptionSubJson": "📷 JSON 订阅链接 — {{ .Email }}\n适用于使用 JSON 订阅格式的客户端。",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n扫描可仅导入此节点。"
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n扫描可仅导入此节点。",
+      "sectionClients": "👥 <b>客户</b> — 创建、浏览和清理客户配置。",
+      "sectionReports": "📊 <b>报告</b> — 面板与客户的当前状态。",
+      "sectionMessaging": "📨 <b>消息</b> — 联系客户并设置他们看到的内容。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 邀请链接",
       "qrSubscription": "📷 订阅二维码",
       "qrSubJson": "📷 JSON 二维码",
-      "qrForLink": "📷 单条链接二维码"
+      "qrForLink": "📷 单条链接二维码",
+      "sectionClients": "👥 客户",
+      "sectionReports": "📊 报告",
+      "sectionMessaging": "📨 消息",
+      "backToAdminPanel": "⬅️ 管理面板",
+      "setHelpText": "✏️ 设置帮助文本"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

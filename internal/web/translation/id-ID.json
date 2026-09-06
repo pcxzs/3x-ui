@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 Tautan mana yang harus dikodekan QR untuk <code>{{ .Email }}</code>?",
       "qrCaptionSub": "📷 URL langganan — {{ .Email }}\nPindai di aplikasi Anda untuk mengimpor semua konfigurasi sekaligus.",
       "qrCaptionSubJson": "📷 URL langganan JSON — {{ .Email }}\nUntuk aplikasi yang memakai format langganan JSON.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nPindai untuk mengimpor server ini saja."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nPindai untuk mengimpor server ini saja.",
+      "sectionClients": "👥 <b>Klien</b> — buat, telusuri, dan bersihkan konfigurasi klien.",
+      "sectionReports": "📊 <b>Laporan</b> — kondisi panel dan kliennya saat ini.",
+      "sectionMessaging": "📨 <b>Pesan</b> — jangkau pelanggan dan atur apa yang mereka baca."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 Tautan Undangan",
       "qrSubscription": "📷 QR Langganan",
       "qrSubJson": "📷 QR JSON",
-      "qrForLink": "📷 QR satu tautan"
+      "qrForLink": "📷 QR satu tautan",
+      "sectionClients": "👥 Klien",
+      "sectionReports": "📊 Laporan",
+      "sectionMessaging": "📨 Pesan",
+      "backToAdminPanel": "⬅️ Panel admin",
+      "setHelpText": "✏️ Atur Teks Bantuan"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

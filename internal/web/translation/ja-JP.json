@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 <code>{{ .Email }}</code> のどのリンクを QR にしますか？",
       "qrCaptionSub": "📷 サブスクリプション URL — {{ .Email }}\nクライアントアプリで読み取ると全設定を一括取り込みできます。",
       "qrCaptionSubJson": "📷 JSON サブスクリプション URL — {{ .Email }}\nJSON 形式の購読に対応したアプリ向けです。",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nこのサーバーだけを取り込むには読み取ってください。"
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nこのサーバーだけを取り込むには読み取ってください。",
+      "sectionClients": "👥 <b>クライアント</b> — 設定の作成・一覧・整理。",
+      "sectionReports": "📊 <b>レポート</b> — パネルとクライアントの現在の状況。",
+      "sectionMessaging": "📨 <b>メッセージ</b> — 顧客への連絡と表示文の設定。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 招待リンク",
       "qrSubscription": "📷 サブスクリプション QR",
       "qrSubJson": "📷 JSON QR",
-      "qrForLink": "📷 個別リンクの QR"
+      "qrForLink": "📷 個別リンクの QR",
+      "sectionClients": "👥 クライアント",
+      "sectionReports": "📊 レポート",
+      "sectionMessaging": "📨 メッセージ",
+      "backToAdminPanel": "⬅️ 管理パネル",
+      "setHelpText": "✏️ ヘルプ文を設定"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

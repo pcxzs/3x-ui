@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 QR nên mã hóa liên kết nào cho <code>{{ .Email }}</code>?",
       "qrCaptionSub": "📷 URL đăng ký — {{ .Email }}\nQuét trong ứng dụng để nhập tất cả cấu hình cùng lúc.",
       "qrCaptionSubJson": "📷 URL đăng ký JSON — {{ .Email }}\nDành cho ứng dụng dùng định dạng đăng ký JSON.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nQuét để chỉ nhập máy chủ này."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nQuét để chỉ nhập máy chủ này.",
+      "sectionClients": "👥 <b>Khách hàng</b> — tạo, duyệt và dọn dẹp cấu hình.",
+      "sectionReports": "📊 <b>Báo cáo</b> — tình trạng hiện tại của bảng điều khiển và khách hàng.",
+      "sectionMessaging": "📨 <b>Tin nhắn</b> — liên hệ khách hàng và đặt nội dung họ đọc."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 Liên kết mời",
       "qrSubscription": "📷 QR đăng ký",
       "qrSubJson": "📷 QR JSON",
-      "qrForLink": "📷 QR một liên kết"
+      "qrForLink": "📷 QR một liên kết",
+      "sectionClients": "👥 Khách hàng",
+      "sectionReports": "📊 Báo cáo",
+      "sectionMessaging": "📨 Tin nhắn",
+      "backToAdminPanel": "⬅️ Bảng quản trị",
+      "setHelpText": "✏️ Đặt văn bản trợ giúp"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

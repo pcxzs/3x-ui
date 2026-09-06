@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 <code>{{ .Email }}</code> 的 QR 要包含哪條連結？",
       "qrCaptionSub": "📷 訂閱連結 — {{ .Email }}\n在用戶端掃描即可一次匯入全部設定。",
       "qrCaptionSubJson": "📷 JSON 訂閱連結 — {{ .Email }}\n適用於使用 JSON 訂閱格式的用戶端。",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n掃描可僅匯入此節點。"
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n掃描可僅匯入此節點。",
+      "sectionClients": "👥 <b>用戶</b> — 建立、瀏覽和清理用戶設定。",
+      "sectionReports": "📊 <b>報告</b> — 面板與用戶的目前狀態。",
+      "sectionMessaging": "📨 <b>訊息</b> — 聯絡用戶並設定他們看到的內容。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 邀請連結",
       "qrSubscription": "📷 訂閱 QR",
       "qrSubJson": "📷 JSON QR",
-      "qrForLink": "📷 單條連結 QR"
+      "qrForLink": "📷 單條連結 QR",
+      "sectionClients": "👥 用戶",
+      "sectionReports": "📊 報告",
+      "sectionMessaging": "📨 訊息",
+      "backToAdminPanel": "⬅️ 管理面板",
+      "setHelpText": "✏️ 設定說明文字"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

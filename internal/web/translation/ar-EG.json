@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 أي رابط يرمّزه الـ QR لـ <code>{{ .Email }}</code>؟",
       "qrCaptionSub": "📷 رابط الاشتراك — {{ .Email }}\nامسحه في تطبيقك لاستيراد كل الإعدادات دفعة واحدة.",
       "qrCaptionSubJson": "📷 رابط اشتراك JSON — {{ .Email }}\nللتطبيقات التي تتوقع صيغة اشتراك JSON.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nامسحه لاستيراد هذا الخادم فقط."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nامسحه لاستيراد هذا الخادم فقط.",
+      "sectionClients": "👥 <b>العملاء</b> — إنشاء وتصفح وتنظيف إعدادات العملاء.",
+      "sectionReports": "📊 <b>التقارير</b> — ما تفعله اللوحة وعملاؤها الآن.",
+      "sectionMessaging": "📨 <b>المراسلة</b> — تواصل مع عملائك وحدّد ما يقرؤونه."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 روابط الدعوة",
       "qrSubscription": "📷 رمز الاشتراك",
       "qrSubJson": "📷 رمز JSON",
-      "qrForLink": "📷 رمز لرابط واحد"
+      "qrForLink": "📷 رمز لرابط واحد",
+      "sectionClients": "👥 العملاء",
+      "sectionReports": "📊 التقارير",
+      "sectionMessaging": "📨 المراسلة",
+      "backToAdminPanel": "⬅️ لوحة المشرف",
+      "setHelpText": "✏️ تعيين نص المساعدة"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

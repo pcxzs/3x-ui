@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 <code>{{ .Email }}</code> için QR hangi bağlantıyı içersin?",
       "qrCaptionSub": "📷 Abonelik URL'si — {{ .Email }}\nTüm yapılandırmaları tek seferde almak için uygulamanızda tarayın.",
       "qrCaptionSubJson": "📷 JSON abonelik URL'si — {{ .Email }}\nJSON abonelik biçimi bekleyen uygulamalar için.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nYalnızca bu sunucuyu almak için tarayın."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nYalnızca bu sunucuyu almak için tarayın.",
+      "sectionClients": "👥 <b>İstemciler</b> — yapılandırma oluşturma, gözden geçirme ve temizleme.",
+      "sectionReports": "📊 <b>Raporlar</b> — panelin ve istemcilerin şu anki durumu.",
+      "sectionMessaging": "📨 <b>Mesajlaşma</b> — müşterilerinize ulaşın ve okuduklarını belirleyin."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 Davet Bağlantıları",
       "qrSubscription": "📷 Abonelik QR",
       "qrSubJson": "📷 JSON QR",
-      "qrForLink": "📷 Tek bağlantı QR"
+      "qrForLink": "📷 Tek bağlantı QR",
+      "sectionClients": "👥 İstemciler",
+      "sectionReports": "📊 Raporlar",
+      "sectionMessaging": "📨 Mesajlaşma",
+      "backToAdminPanel": "⬅️ Yönetim paneli",
+      "setHelpText": "✏️ Yardım Metnini Ayarla"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

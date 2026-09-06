@@ -2248,7 +2248,10 @@
       "qrChooseLink": "📷 QR کدام لینک <code>{{ .Email }}</code> را رمزگذاری کند؟",
       "qrCaptionSub": "📷 لینک اشتراک — {{ .Email }}\nبرای وارد کردن همهٔ کانفیگ‌ها این را در برنامه اسکن کنید.",
       "qrCaptionSubJson": "📷 لینک اشتراک JSON — {{ .Email }}\nبرای برنامه‌هایی که فرمت اشتراک JSON می‌خواهند.",
-      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nبرای وارد کردن فقط همین سرور اسکن کنید."
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nبرای وارد کردن فقط همین سرور اسکن کنید.",
+      "sectionClients": "👥 <b>کاربران</b> — ساخت، مرور و پاک‌سازی کانفیگ‌ها.",
+      "sectionReports": "📊 <b>گزارش‌ها</b> — وضعیت فعلی پنل و کاربران.",
+      "sectionMessaging": "📨 <b>پیام‌رسانی</b> — با کاربران ارتباط بگیرید و متن راهنما را تعیین کنید."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2320,7 +2323,12 @@
       "inviteLinks": "🔗 لینک‌های دعوت",
       "qrSubscription": "📷 QR اشتراک",
       "qrSubJson": "📷 QR جیسون",
-      "qrForLink": "📷 QR یک لینک"
+      "qrForLink": "📷 QR یک لینک",
+      "sectionClients": "👥 کاربران",
+      "sectionReports": "📊 گزارش‌ها",
+      "sectionMessaging": "📨 پیام‌رسانی",
+      "backToAdminPanel": "⬅️ پنل مدیریت",
+      "setHelpText": "✏️ تنظیم متن راهنما"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",
