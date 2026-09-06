@@ -2103,7 +2103,9 @@
       "restartDesc": "Reiniciar o núcleo Xray (admin)",
       "clearallDesc": "Zerar o tráfego de todos os clientes (admin)",
       "pmUsage": "❗ Escreva sua mensagem após o comando, por exemplo <code>/pm não consigo conectar</code>",
-      "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensagem&gt;</code>"
+      "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensagem&gt;</code>",
+      "helpAdminExtraCommands": "Para transmitir uma mensagem a todos os clientes vinculados:\r\n<code>/broadcast</code>\r\n\r\nPara responder a um cliente:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nPara alterar o texto de ajuda que os clientes veem:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Para enviar mensagem ao administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara ver esta ajuda novamente:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "A carga da CPU {{ .Percent }}% excede o limite de {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ A mensagem de transmissão está vazia.",
       "broadcastNoRecipients": "❌ Ainda não há usuários vinculados a uma conta do Telegram.",
       "broadcastCancelled": "❌ Transmissão cancelada.",
-      "broadcastDone": "✅ Transmissão concluída.\r\nEntregues: {{ .Sent }}\r\nFalhas: {{ .Failed }}"
+      "broadcastDone": "✅ Transmissão concluída.\r\nEntregues: {{ .Sent }}\r\nFalhas: {{ .Failed }}",
+      "helpTextPrompt": "📝 Envie o novo texto de ajuda. Formatação HTML é suportada. Envie <code>{{ .Reset }}</code> para restaurar o padrão.",
+      "helpTextSaved": "✅ O texto de ajuda foi atualizado.",
+      "helpTextReset": "✅ O texto de ajuda foi restaurado ao padrão.",
+      "helpTextEmpty": "❌ O texto de ajuda está vazio.",
+      "helpTextInvalid": "❌ O Telegram recusou renderizar esse texto, então ele não foi salvo.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Falha ao salvar o texto de ajuda.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",

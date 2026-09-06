@@ -2103,7 +2103,9 @@
       "restartDesc": "Reiniciar el núcleo de Xray (admin)",
       "clearallDesc": "Restablecer el tráfico de todos los clientes (admin)",
       "pmUsage": "❗ Escribe tu mensaje después del comando, por ejemplo <code>/pm no puedo conectarme</code>",
-      "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensaje&gt;</code>"
+      "sendUsage": "❗ Uso: <code>/send &lt;chatId&gt; &lt;mensaje&gt;</code>",
+      "helpAdminExtraCommands": "Para difundir un mensaje a todos los clientes vinculados:\r\n<code>/broadcast</code>\r\n\r\nPara responder a un cliente:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nPara cambiar el texto de ayuda que ven los clientes:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Para escribir al administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara volver a ver esta ayuda:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "El uso de CPU {{ .Percent }}% es mayor que el umbral {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ El mensaje de difusión está vacío.",
       "broadcastNoRecipients": "❌ Todavía no hay usuarios vinculados a una cuenta de Telegram.",
       "broadcastCancelled": "❌ Difusión cancelada.",
-      "broadcastDone": "✅ Difusión finalizada.\r\nEntregados: {{ .Sent }}\r\nFallidos: {{ .Failed }}"
+      "broadcastDone": "✅ Difusión finalizada.\r\nEntregados: {{ .Sent }}\r\nFallidos: {{ .Failed }}",
+      "helpTextPrompt": "📝 Envía el nuevo texto de ayuda. Se admite formato HTML. Envía <code>{{ .Reset }}</code> para restaurar el predeterminado.",
+      "helpTextSaved": "✅ El texto de ayuda se ha actualizado.",
+      "helpTextReset": "✅ El texto de ayuda se ha restaurado al predeterminado.",
+      "helpTextEmpty": "❌ El texto de ayuda está vacío.",
+      "helpTextInvalid": "❌ Telegram no pudo mostrar ese texto, por lo que no se guardó.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ No se pudo guardar el texto de ayuda.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",

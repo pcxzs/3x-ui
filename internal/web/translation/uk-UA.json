@@ -2103,7 +2103,9 @@
       "restartDesc": "Перезапустити ядро Xray (адмін)",
       "clearallDesc": "Скинути трафік усіх клієнтів (адмін)",
       "pmUsage": "❗ Напишіть повідомлення після команди, наприклад <code>/pm не можу підключитися</code>",
-      "sendUsage": "❗ Використання: <code>/send &lt;chatId&gt; &lt;повідомлення&gt;</code>"
+      "sendUsage": "❗ Використання: <code>/send &lt;chatId&gt; &lt;повідомлення&gt;</code>",
+      "helpAdminExtraCommands": "Розіслати повідомлення всім прив'язаним клієнтам:\r\n<code>/broadcast</code>\r\n\r\nВідповісти клієнту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nЗмінити текст довідки для клієнтів:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Написати адміністратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказати цю довідку знову:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "Навантаження ЦП  {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ Текст розсилки порожній.",
       "broadcastNoRecipients": "❌ Ще немає користувачів, прив'язаних до облікового запису Telegram.",
       "broadcastCancelled": "❌ Розсилку скасовано.",
-      "broadcastDone": "✅ Розсилку завершено.\r\nДоставлено: {{ .Sent }}\r\nНевдало: {{ .Failed }}"
+      "broadcastDone": "✅ Розсилку завершено.\r\nДоставлено: {{ .Sent }}\r\nНевдало: {{ .Failed }}",
+      "helpTextPrompt": "📝 Надішліть новий текст довідки. Підтримується HTML-форматування. Надішліть <code>{{ .Reset }}</code>, щоб повернути типовий текст.",
+      "helpTextSaved": "✅ Текст довідки оновлено.",
+      "helpTextReset": "✅ Текст довідки повернено до типового.",
+      "helpTextEmpty": "❌ Текст довідки порожній.",
+      "helpTextInvalid": "❌ Telegram не зміг відобразити цей текст, тому його не збережено.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Не вдалося зберегти текст довідки.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",

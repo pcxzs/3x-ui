@@ -197,6 +197,22 @@ func (t *Tgbot) sendDirect(chatId int64, text string) error {
 	return err
 }
 
+// Sends with the same HTML parse mode the bot uses everywhere, but surfaces the
+// error so admin-authored markup can be rejected before it is stored.
+func (t *Tgbot) sendHTMLDirect(chatId int64, text string) error {
+	if !isRunning {
+		return errors.New("telegram bot is not running")
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+	_, err := bot.SendMessage(ctx, &telego.SendMessageParams{
+		ChatID:    tu.ID(chatId),
+		Text:      text,
+		ParseMode: "HTML",
+	})
+	return err
+}
+
 // SendMsgToTgbotAdmins sends a message to all admin Telegram chats.
 func (t *Tgbot) SendMsgToTgbotAdmins(msg string, replyMarkup ...telego.ReplyMarkup) {
 	if len(replyMarkup) > 0 {

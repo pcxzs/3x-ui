@@ -2103,7 +2103,9 @@
       "restartDesc": "Xray çekirdeğini yeniden başlat (yönetici)",
       "clearallDesc": "Tüm istemcilerin trafiğini sıfırla (yönetici)",
       "pmUsage": "❗ Mesajınızı komuttan sonra yazın, örneğin <code>/pm bağlanamıyorum</code>",
-      "sendUsage": "❗ Kullanım: <code>/send &lt;chatId&gt; &lt;mesaj&gt;</code>"
+      "sendUsage": "❗ Kullanım: <code>/send &lt;chatId&gt; &lt;mesaj&gt;</code>",
+      "helpAdminExtraCommands": "Bağlı tüm istemcilere toplu mesaj göndermek için:\r\n<code>/broadcast</code>\r\n\r\nBir istemciye yanıt vermek için:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nİstemcilerin gördüğü yardım metnini değiştirmek için:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Yöneticiye mesaj göndermek için:\r\n<code>/pm [Text]</code>\r\n\r\nBu yardımı yeniden görmek için:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Yükü ({{ .Percent }}%), {{ .Threshold }}% eşiğini aşıyor",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ Toplu mesaj boş.",
       "broadcastNoRecipients": "❌ Henüz bir Telegram hesabına bağlı kullanıcı yok.",
       "broadcastCancelled": "❌ Toplu mesaj iptal edildi.",
-      "broadcastDone": "✅ Toplu mesaj tamamlandı.\r\nİletilen: {{ .Sent }}\r\nBaşarısız: {{ .Failed }}"
+      "broadcastDone": "✅ Toplu mesaj tamamlandı.\r\nİletilen: {{ .Sent }}\r\nBaşarısız: {{ .Failed }}",
+      "helpTextPrompt": "📝 Yeni yardım metnini gönderin. HTML biçimlendirme desteklenir. Varsayılana dönmek için <code>{{ .Reset }}</code> gönderin.",
+      "helpTextSaved": "✅ Yardım metni güncellendi.",
+      "helpTextReset": "✅ Yardım metni varsayılana döndürüldü.",
+      "helpTextEmpty": "❌ Yardım metni boş.",
+      "helpTextInvalid": "❌ Telegram bu metni işleyemedi, bu yüzden kaydedilmedi.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Yardım metni kaydedilemedi.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",

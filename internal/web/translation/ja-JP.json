@@ -2103,7 +2103,9 @@
       "restartDesc": "Xray コアを再起動（管理者）",
       "clearallDesc": "全クライアントのトラフィックをリセット（管理者）",
       "pmUsage": "❗ コマンドの後にメッセージを書いてください。例: <code>/pm 接続できません</code>",
-      "sendUsage": "❗ 使い方: <code>/send &lt;chatId&gt; &lt;メッセージ&gt;</code>"
+      "sendUsage": "❗ 使い方: <code>/send &lt;chatId&gt; &lt;メッセージ&gt;</code>",
+      "helpAdminExtraCommands": "連携済みの全クライアントに一斉配信する:\r\n<code>/broadcast</code>\r\n\r\nクライアントに返信する:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nクライアント向けヘルプ文を変更する:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "管理者にメッセージを送る:\r\n<code>/pm [Text]</code>\r\n\r\nこのヘルプをもう一度表示する:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "CPU使用率は{{ .Percent }}%、しきい値{{ .Threshold }}%を超えました",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ 配信メッセージが空です。",
       "broadcastNoRecipients": "❌ Telegram アカウントに連携済みのユーザーがまだいません。",
       "broadcastCancelled": "❌ 一斉配信をキャンセルしました。",
-      "broadcastDone": "✅ 一斉配信が完了しました。\r\n送信成功: {{ .Sent }}\r\n失敗: {{ .Failed }}"
+      "broadcastDone": "✅ 一斉配信が完了しました。\r\n送信成功: {{ .Sent }}\r\n失敗: {{ .Failed }}",
+      "helpTextPrompt": "📝 新しいヘルプ文を送信してください。HTML 書式に対応しています。既定に戻すには <code>{{ .Reset }}</code> を送信します。",
+      "helpTextSaved": "✅ ヘルプ文を更新しました。",
+      "helpTextReset": "✅ ヘルプ文を既定に戻しました。",
+      "helpTextEmpty": "❌ ヘルプ文が空です。",
+      "helpTextInvalid": "❌ Telegram がその文面を表示できなかったため、保存されませんでした。\r\n{{ .Error }}",
+      "helpTextFailed": "❌ ヘルプ文の保存に失敗しました。\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",

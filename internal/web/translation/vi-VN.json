@@ -2103,7 +2103,9 @@
       "restartDesc": "Khởi động lại lõi Xray (quản trị)",
       "clearallDesc": "Đặt lại lưu lượng mọi khách hàng (quản trị)",
       "pmUsage": "❗ Viết tin nhắn sau lệnh, ví dụ <code>/pm tôi không kết nối được</code>",
-      "sendUsage": "❗ Cách dùng: <code>/send &lt;chatId&gt; &lt;tin nhắn&gt;</code>"
+      "sendUsage": "❗ Cách dùng: <code>/send &lt;chatId&gt; &lt;tin nhắn&gt;</code>",
+      "helpAdminExtraCommands": "Để phát tin tới tất cả khách hàng đã liên kết:\r\n<code>/broadcast</code>\r\n\r\nĐể trả lời một khách hàng:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nĐể thay đổi nội dung trợ giúp mà khách hàng thấy:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Để nhắn tin cho quản trị viên:\r\n<code>/pm [Text]</code>\r\n\r\nĐể xem lại trợ giúp này:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "Sử dụng CPU {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ Nội dung phát tin đang trống.",
       "broadcastNoRecipients": "❌ Chưa có người dùng nào liên kết với tài khoản Telegram.",
       "broadcastCancelled": "❌ Đã hủy phát tin.",
-      "broadcastDone": "✅ Đã phát tin xong.\r\nĐã gửi: {{ .Sent }}\r\nThất bại: {{ .Failed }}"
+      "broadcastDone": "✅ Đã phát tin xong.\r\nĐã gửi: {{ .Sent }}\r\nThất bại: {{ .Failed }}",
+      "helpTextPrompt": "📝 Hãy gửi nội dung trợ giúp mới. Hỗ trợ định dạng HTML. Gửi <code>{{ .Reset }}</code> để khôi phục mặc định.",
+      "helpTextSaved": "✅ Đã cập nhật nội dung trợ giúp.",
+      "helpTextReset": "✅ Đã khôi phục nội dung trợ giúp mặc định.",
+      "helpTextEmpty": "❌ Nội dung trợ giúp đang trống.",
+      "helpTextInvalid": "❌ Telegram không hiển thị được nội dung đó nên chưa được lưu.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Không lưu được nội dung trợ giúp.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",

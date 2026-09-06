@@ -187,8 +187,15 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 	// Handle the command.
 	switch command {
 	case "help":
-		msg += t.I18nBot("tgbot.commands.help")
+		msg += t.helpText()
 		msg += t.I18nBot("tgbot.commands.pleaseChoose")
+	case "sethelp":
+		onlyMessage = true
+		if !isAdmin {
+			handleUnknownCommand()
+			break
+		}
+		t.startSetHelp(chatId)
 	case "start":
 		if len(commandArgs) > 0 {
 			t.claimInvite(chatId, message.From.ID, commandArgs[0])
@@ -1156,7 +1163,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		t.getClientUsage(chatId, tgUserID)
 	case "client_commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpClientCommands"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpClientCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpClientExtraCommands"))
 	case "client_sub_links":
 		// show user's own clients to choose one for sub links
 		tgUserID := callbackQuery.From.ID
@@ -1232,7 +1239,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		t.onlineClients(chatId, callbackQuery.Message.GetMessageID())
 	case "commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands"))
 	case "broadcast":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.broadcast"))
 		t.startBroadcast(chatId)

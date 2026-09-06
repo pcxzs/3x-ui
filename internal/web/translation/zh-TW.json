@@ -2103,7 +2103,9 @@
       "restartDesc": "重啟 Xray 核心（管理員）",
       "clearallDesc": "重置所有客戶端流量（管理員）",
       "pmUsage": "❗ 請在指令後寫下訊息，例如 <code>/pm 我無法連線</code>",
-      "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;訊息&gt;</code>"
+      "sendUsage": "❗ 用法：<code>/send &lt;chatId&gt; &lt;訊息&gt;</code>",
+      "helpAdminExtraCommands": "向所有已綁定的使用者群發訊息：\r\n<code>/broadcast</code>\r\n\r\n回覆某位使用者：\r\n<code>/send [ChatID] [Text]</code>\r\n\r\n修改使用者看到的說明內容：\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "聯絡管理員：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本說明：\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率為 {{ .Percent }}%，超過閾值 {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ 群發內容為空。",
       "broadcastNoRecipients": "❌ 目前還沒有使用者綁定 Telegram 帳號。",
       "broadcastCancelled": "❌ 已取消群發。",
-      "broadcastDone": "✅ 群發完成。\r\n已送達：{{ .Sent }}\r\n失敗：{{ .Failed }}"
+      "broadcastDone": "✅ 群發完成。\r\n已送達：{{ .Sent }}\r\n失敗：{{ .Failed }}",
+      "helpTextPrompt": "📝 請發送新的說明內容，支援 HTML 格式。發送 <code>{{ .Reset }}</code> 可恢復預設內容。",
+      "helpTextSaved": "✅ 說明內容已更新。",
+      "helpTextReset": "✅ 說明內容已恢復為預設。",
+      "helpTextEmpty": "❌ 說明內容為空。",
+      "helpTextInvalid": "❌ Telegram 無法渲染該內容，因此未儲存。\r\n{{ .Error }}",
+      "helpTextFailed": "❌ 儲存說明內容失敗。\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",

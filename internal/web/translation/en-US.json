@@ -2103,7 +2103,9 @@
       "restartDesc": "Restart Xray core (admin)",
       "clearallDesc": "Reset all clients' traffic (admin)",
       "pmUsage": "❗ Write your message after the command, for example <code>/pm I cannot connect</code>",
-      "sendUsage": "❗ Usage: <code>/send &lt;chatId&gt; &lt;message&gt;</code>"
+      "sendUsage": "❗ Usage: <code>/send &lt;chatId&gt; &lt;message&gt;</code>",
+      "helpAdminExtraCommands": "To broadcast a message to all linked clients:\r\n<code>/broadcast</code>\r\n\r\nTo reply to a client:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nTo change the help text clients see:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "To message the administrator:\r\n<code>/pm [Text]</code>\r\n\r\nTo see this help again:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ The broadcast message is empty.",
       "broadcastNoRecipients": "❌ No users are linked to a Telegram account yet.",
       "broadcastCancelled": "❌ Broadcast cancelled.",
-      "broadcastDone": "✅ Broadcast finished.\r\nDelivered: {{ .Sent }}\r\nFailed: {{ .Failed }}"
+      "broadcastDone": "✅ Broadcast finished.\r\nDelivered: {{ .Sent }}\r\nFailed: {{ .Failed }}",
+      "helpTextPrompt": "📝 Send the new help text. HTML formatting is supported. Send <code>{{ .Reset }}</code> to restore the default.",
+      "helpTextSaved": "✅ The help text has been updated.",
+      "helpTextReset": "✅ The help text has been restored to the default.",
+      "helpTextEmpty": "❌ The help text is empty.",
+      "helpTextInvalid": "❌ Telegram refused to render that text, so it was not saved.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Failed to save the help text.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",

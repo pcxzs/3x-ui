@@ -2103,7 +2103,9 @@
       "restartDesc": "راه‌اندازی مجدد هسته Xray (مدیر)",
       "clearallDesc": "صفر کردن ترافیک همه کاربران (مدیر)",
       "pmUsage": "❗ پیام خود را بعد از دستور بنویسید، مثلاً <code>/pm نمی‌توانم وصل شوم</code>",
-      "sendUsage": "❗ روش استفاده: <code>/send &lt;chatId&gt; &lt;پیام&gt;</code>"
+      "sendUsage": "❗ روش استفاده: <code>/send &lt;chatId&gt; &lt;پیام&gt;</code>",
+      "helpAdminExtraCommands": "برای ارسال پیام همگانی به همه کاربران متصل:\r\n<code>/broadcast</code>\r\n\r\nبرای پاسخ به یک کاربر:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nبرای تغییر متن راهنمای کاربران:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "برای ارسال پیام به مدیر:\r\n<code>/pm [Text]</code>\r\n\r\nبرای دیدن دوباره این راهنما:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ متن پیام همگانی خالی است.",
       "broadcastNoRecipients": "❌ هنوز هیچ کاربری به حساب تلگرام متصل نشده است.",
       "broadcastCancelled": "❌ ارسال پیام همگانی لغو شد.",
-      "broadcastDone": "✅ ارسال پیام همگانی پایان یافت.\r\nتحویل‌شده: {{ .Sent }}\r\nناموفق: {{ .Failed }}"
+      "broadcastDone": "✅ ارسال پیام همگانی پایان یافت.\r\nتحویل‌شده: {{ .Sent }}\r\nناموفق: {{ .Failed }}",
+      "helpTextPrompt": "📝 متن جدید راهنما را بفرستید. قالب‌بندی HTML پشتیبانی می‌شود. برای بازگرداندن حالت پیش‌فرض <code>{{ .Reset }}</code> بفرستید.",
+      "helpTextSaved": "✅ متن راهنما به‌روزرسانی شد.",
+      "helpTextReset": "✅ متن راهنما به حالت پیش‌فرض بازگردانده شد.",
+      "helpTextEmpty": "❌ متن راهنما خالی است.",
+      "helpTextInvalid": "❌ تلگرام نتوانست این متن را نمایش دهد، بنابراین ذخیره نشد.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ ذخیره متن راهنما ناموفق بود.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",

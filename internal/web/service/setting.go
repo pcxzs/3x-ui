@@ -76,6 +76,7 @@ var defaultValueMap = map[string]string{
 	"tgBotProxy":                  "",
 	"tgBotAPIServer":              "",
 	"tgBotChatId":                 "",
+	"tgBotHelpText":               "",
 	"tgRunTime":                   "@daily",
 	"tgBotBackup":                 "false",
 	"tgCpu":                       "80",
@@ -550,6 +551,14 @@ func (s *SettingService) GetTgBotChatId() (string, error) {
 
 func (s *SettingService) SetTgBotChatId(chatIds string) error {
 	return s.setString("tgBotChatId", chatIds)
+}
+
+func (s *SettingService) GetTgBotHelpText() (string, error) {
+	return s.getString("tgBotHelpText")
+}
+
+func (s *SettingService) SetTgBotHelpText(text string) error {
+	return s.setString("tgBotHelpText", text)
 }
 
 func (s *SettingService) GetTgbotEnabled() (bool, error) {

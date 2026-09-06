@@ -2103,7 +2103,9 @@
       "restartDesc": "Перезапустить ядро Xray (админ)",
       "clearallDesc": "Сбросить трафик всех клиентов (админ)",
       "pmUsage": "❗ Напишите сообщение после команды, например <code>/pm не могу подключиться</code>",
-      "sendUsage": "❗ Использование: <code>/send &lt;chatId&gt; &lt;сообщение&gt;</code>"
+      "sendUsage": "❗ Использование: <code>/send &lt;chatId&gt; &lt;сообщение&gt;</code>",
+      "helpAdminExtraCommands": "Разослать сообщение всем привязанным клиентам:\r\n<code>/broadcast</code>\r\n\r\nОтветить клиенту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nИзменить текст справки для клиентов:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Написать администратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказать эту справку снова:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "Загрузка процессора составляет {{ .Percent }}%, что превышает пороговое значение {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ Текст рассылки пуст.",
       "broadcastNoRecipients": "❌ Пока нет пользователей, привязанных к Telegram.",
       "broadcastCancelled": "❌ Рассылка отменена.",
-      "broadcastDone": "✅ Рассылка завершена.\r\nДоставлено: {{ .Sent }}\r\nОшибок: {{ .Failed }}"
+      "broadcastDone": "✅ Рассылка завершена.\r\nДоставлено: {{ .Sent }}\r\nОшибок: {{ .Failed }}",
+      "helpTextPrompt": "📝 Отправьте новый текст справки. Поддерживается HTML-форматирование. Отправьте <code>{{ .Reset }}</code>, чтобы вернуть текст по умолчанию.",
+      "helpTextSaved": "✅ Текст справки обновлён.",
+      "helpTextReset": "✅ Текст справки возвращён к значению по умолчанию.",
+      "helpTextEmpty": "❌ Текст справки пуст.",
+      "helpTextInvalid": "❌ Telegram не смог отобразить этот текст, поэтому он не сохранён.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Не удалось сохранить текст справки.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",

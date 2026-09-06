@@ -2103,7 +2103,9 @@
       "restartDesc": "Mulai ulang inti Xray (admin)",
       "clearallDesc": "Reset trafik semua klien (admin)",
       "pmUsage": "❗ Tulis pesan Anda setelah perintah, misalnya <code>/pm saya tidak bisa terhubung</code>",
-      "sendUsage": "❗ Penggunaan: <code>/send &lt;chatId&gt; &lt;pesan&gt;</code>"
+      "sendUsage": "❗ Penggunaan: <code>/send &lt;chatId&gt; &lt;pesan&gt;</code>",
+      "helpAdminExtraCommands": "Untuk menyiarkan pesan ke semua klien yang tertaut:\r\n<code>/broadcast</code>\r\n\r\nUntuk membalas klien:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nUntuk mengubah teks bantuan yang dilihat klien:\r\n<code>/sethelp</code>",
+      "helpClientExtraCommands": "Untuk mengirim pesan ke administrator:\r\n<code>/pm [Text]</code>\r\n\r\nUntuk melihat bantuan ini lagi:\r\n<code>/help</code>"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2189,7 +2191,13 @@
       "broadcastEmpty": "❌ Pesan siaran kosong.",
       "broadcastNoRecipients": "❌ Belum ada pengguna yang tertaut ke akun Telegram.",
       "broadcastCancelled": "❌ Siaran dibatalkan.",
-      "broadcastDone": "✅ Siaran selesai.\r\nTerkirim: {{ .Sent }}\r\nGagal: {{ .Failed }}"
+      "broadcastDone": "✅ Siaran selesai.\r\nTerkirim: {{ .Sent }}\r\nGagal: {{ .Failed }}",
+      "helpTextPrompt": "📝 Kirim teks bantuan yang baru. Format HTML didukung. Kirim <code>{{ .Reset }}</code> untuk mengembalikan ke bawaan.",
+      "helpTextSaved": "✅ Teks bantuan telah diperbarui.",
+      "helpTextReset": "✅ Teks bantuan telah dikembalikan ke bawaan.",
+      "helpTextEmpty": "❌ Teks bantuan kosong.",
+      "helpTextInvalid": "❌ Telegram menolak menampilkan teks tersebut, jadi tidak disimpan.\r\n{{ .Error }}",
+      "helpTextFailed": "❌ Gagal menyimpan teks bantuan.\r\n{{ .Error }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
