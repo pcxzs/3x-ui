@@ -2086,7 +2086,6 @@
       "start": "👋 こんにちは、<i>{{ .Firstname }}</i>。\r\n",
       "welcome": "🤖 <b>{{ .Hostname }}</b> 管理ボットへようこそ。\r\n",
       "status": "✅ ボットは正常に動作しています！",
-      "usage": "❗ 検索するテキストを入力してください！",
       "getID": "🆔 あなたのIDは：<code>{{ .ID }}</code>",
       "helpAdminCommands": "Xray Coreを再起動するには：\r\n<code>/restart</code>\r\n\r\nクライアントの電子メールを検索するには：\r\n<code>/usage [電子メール]</code>\r\n\r\nインバウンド（クライアントの統計情報を含む）を検索するには：\r\n<code>/inbound [備考]</code>\r\n\r\nTelegramチャットID：\r\n<code>/id</code>",
       "helpClientCommands": "統計情報を検索するには、次のコマンドを使用してください：\r\n<code>/usage [電子メール]</code>\r\n\r\nTelegramチャットID：\r\n<code>/id</code>",

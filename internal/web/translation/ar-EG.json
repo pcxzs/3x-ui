@@ -2086,7 +2086,6 @@
       "start": "👋 أهلا <i>{{ .Firstname }}</i>.\r\n",
       "welcome": "🤖 أهلا بيك في بوت إدارة <b>{{ .Hostname }}</b>.\r\n",
       "status": "✅ البوت شغال!",
-      "usage": "❗ من فضلك ادخل نص للتبحث عنه!",
       "getID": "🆔 الـ ID بتاعك: <code>{{ .ID }}</code>",
       "helpAdminCommands": "عشان تعيد تشغيل Xray Core:\r\n<code>/restart</code>\r\n\r\nعشان تدور على إيميل عميل:\r\n<code>/usage [Email]</code>\r\n\r\nعشان تدور على إدخالات (مع إحصائيات العملاء):\r\n<code>/inbound [Remark]</code>\r\n\r\nID شات Telegram:\r\n<code>/id</code>",
       "helpClientCommands": "عشان تدور على الإحصائيات، استخدم الأمر ده:\r\n\r\n<code>/usage [Email]</code>\r\n\r\nID شات Telegram:\r\n<code>/id</code>",

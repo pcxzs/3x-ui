@@ -2086,7 +2086,6 @@
       "start": "👋 سلام <i>{{ .Firstname }}</i>.\r\n",
       "welcome": "🤖 به ربات مدیریت <b>{{ .Hostname }}</b> خوش آمدید.\r\n",
       "status": "✅ ربات در حالت عادی است!",
-      "usage": "❗ لطفاً یک متن برای جستجو وارد کنید!",
       "getID": "🆔 شناسه شما: <code>{{ .ID }}</code>",
       "helpAdminCommands": "برای راه‌اندازی مجدد Xray Core:\r\n<code>/restart</code>\r\n\r\nبرای جستجوی ایمیل مشتری:\r\n<code>/usage [ایمیل]</code>\r\n\r\nبرای جستجوی ورودی‌ها (با آمار مشتری):\r\n<code>/inbound [توضیحات]</code>\r\n\r\nشناسه گفتگوی تلگرام:\r\n<code>/id</code>",
       "helpClientCommands": "برای جستجوی آمار، از دستور زیر استفاده کنید:\r\n<code>/usage [ایمیل]</code>\r\n\r\nشناسه گفتگوی تلگرام:\r\n<code>/id</code>",

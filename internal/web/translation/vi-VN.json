@@ -2086,7 +2086,6 @@
       "start": "👋 Xin chào <i>{{ .Firstname }}</i>.\r\n",
       "welcome": "🤖 Chào mừng đến với bot quản lý của <b>{{ .Hostname }}</b>.\r\n",
       "status": "✅ Bot hoạt động bình thường!",
-      "usage": "❗ Vui lòng cung cấp văn bản để tìm kiếm!",
       "getID": "🆔 ID của bạn: <code>{{ .ID }}</code>",
       "helpAdminCommands": "Để khởi động lại Xray Core:\r\n<code>/restart</code>\r\n\r\nĐể tìm kiếm email của khách hàng:\r\n<code>/usage [Email]</code>\r\n\r\nĐể tìm kiếm các nhập (với số liệu thống kê của khách hàng):\r\n<code>/inbound [Ghi chú]</code>\r\n\r\nID Trò chuyện Telegram:\r\n<code>/id</code>",
       "helpClientCommands": "Để tìm kiếm thống kê, sử dụng lệnh sau:\r\n<code>/usage [Email]</code>\r\n\r\nID Trò chuyện Telegram:\r\n<code>/id</code>",

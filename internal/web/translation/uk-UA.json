@@ -2086,7 +2086,6 @@
       "start": "👋 Привіт <i>{{ .Firstname }}</i>.\r\n",
       "welcome": "🤖 Ласкаво просимо до <b>{{ .Hostname }}</b> бота керування.\r\n",
       "status": "✅ Бот в порядку!",
-      "usage": "❗ Введіть текст для пошуку!",
       "getID": "🆔 Ваш ідентифікатор: <code>{{ .ID }}</code>",
       "helpAdminCommands": "Для перезапуску Xray Core:\r\n<code>/restart</code>\r\n\r\nДля пошуку електронної пошти клієнта:\r\n<code>/usage [Електронна пошта]</code>\r\n\r\nДля пошуку вхідних (зі статистикою клієнта):\r\n<code>/inbound [Примітка]</code>\r\n\r\nID чату Telegram:\r\n<code>/id</code>",
       "helpClientCommands": "Для пошуку статистики використовуйте наступну команду:\r\n<code>/usage [Електронна пошта]</code>\r\n\r\nID чату Telegram:\r\n<code>/id</code>",

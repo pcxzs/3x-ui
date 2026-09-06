@@ -2086,7 +2086,6 @@
       "start": "👋 Hola <i>{{ .Firstname }}</i>.\r\n",
       "welcome": "🤖 Bienvenido al bot de gestión de <b>{{ .Hostname }}</b>.\r\n",
       "status": "✅ ¡El bot está bien!",
-      "usage": "❗ ¡Por favor proporciona un texto para buscar!",
       "getID": "🆔 Tu ID: <code>{{ .ID }}</code>",
       "helpAdminCommands": "Para reiniciar Xray Core:\r\n<code>/restart</code>\r\n\r\nPara buscar un correo electrónico de cliente:\r\n<code>/usage [Correo electrónico]</code>\r\n\r\nPara buscar entradas (con estadísticas de cliente):\r\n<code>/inbound [Observación]</code>\r\n\r\nID de Chat de Telegram:\r\n<code>/id</code>",
       "helpClientCommands": "Para buscar estadísticas, utiliza el siguiente comando:\r\n<code>/usage [Correo electrónico]</code>\r\n\r\nID de Chat de Telegram:\r\n<code>/id</code>",

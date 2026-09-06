@@ -243,7 +243,10 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userL
 				t.getClientUsage(chatId, message.From.ID, commandArgs[0])
 			}
 		} else {
-			msg += t.I18nBot("tgbot.commands.usage")
+			// Bare /usage answers for the caller's own configs. Printing the
+			// syntax instead made the common case the one that needed an
+			// argument the customer would have to look up first.
+			t.getClientUsage(chatId, message.From.ID)
 		}
 	case "broadcast":
 		onlyMessage = true

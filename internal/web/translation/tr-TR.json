@@ -2086,7 +2086,6 @@
       "start": "👋 Merhaba <i>{{ .Firstname }}</i>.\r\n",
       "welcome": "🤖 <b>{{ .Hostname }}</b> yönetim botuna hoş geldiniz.\r\n",
       "status": "✅ Bot çalışıyor!",
-      "usage": "❗ Lütfen aramak için bir metin sağlayın!",
       "getID": "🆔 Kimliğiniz: <code>{{ .ID }}</code>",
       "helpAdminCommands": "Xray Core'u yeniden başlatmak için:\r\n<code>/restart</code>\r\n\r\nBir kullanıcının istatistiklerini aramak için:\r\n<code>/usage [E-posta]</code>\r\n\r\nGelen bağlantılarnı aramak için (kullanıcı istatistikleri ile):\r\n<code>/inbound [Açıklama]</code>\r\n\r\nTelegram Sohbet Kimliği (Chat ID):\r\n<code>/id</code>",
       "helpClientCommands": "İstatistiklerinizi görmek için şu komutu kullanın:\r\n\r\n<code>/usage [E-posta]</code>\r\n\r\nTelegram Sohbet Kimliği:\r\n<code>/id</code>",

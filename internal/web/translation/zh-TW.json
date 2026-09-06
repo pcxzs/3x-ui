@@ -2086,7 +2086,6 @@
       "start": "👋 你好，<i>{{ .Firstname }}</i>。\r\n",
       "welcome": "🤖 歡迎來到 <b>{{ .Hostname }}</b> 管理機器人。\r\n",
       "status": "✅ 機器人正常執行！",
-      "usage": "❗ 請輸入要搜尋的文字！",
       "getID": "🆔 您的 ID 為：<code>{{ .ID }}</code>",
       "helpAdminCommands": "要重新啟動 Xray Core：\r\n<code>/restart</code>\r\n\r\n要搜尋客戶電子郵件：\r\n<code>/usage [電子郵件]</code>\r\n\r\n要搜尋入站（帶有客戶統計資料）：\r\n<code>/inbound [備註]</code>\r\n\r\nTelegram 聊天 ID：\r\n<code>/id</code>",
       "helpClientCommands": "要搜尋統計資料，請使用以下命令：\r\n<code>/usage [電子郵件]</code>\r\n\r\nTelegram 聊天 ID：\r\n<code>/id</code>",
