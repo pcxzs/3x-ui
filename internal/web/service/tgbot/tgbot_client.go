@@ -724,16 +724,16 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 
 	output := t.clientInfoMsg(traffic, true, true, true, true, true, true)
 
-	inlineKeyboard := tu.InlineKeyboard(
+	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.refresh")).WithCallbackData(t.encodeQuery("client_refresh "+email)),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.refresh")).WithCallbackData(t.encodeQuery("client_refresh " + email)),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.resetTraffic")).WithCallbackData(t.encodeQuery("reset_traffic "+email)),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.limitTraffic")).WithCallbackData(t.encodeQuery("limit_traffic "+email)),
 		),
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.resetExpire")).WithCallbackData(t.encodeQuery("reset_exp "+email)),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.resetExpire")).WithCallbackData(t.encodeQuery("reset_exp " + email)),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.ipLog")).WithCallbackData(t.encodeQuery("ip_log "+email)),
@@ -751,7 +751,18 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.editClient")).WithCallbackData(t.encodeQuery("client_edit "+email)),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.deleteClient")).WithCallbackData(t.encodeQuery("client_delete "+email)),
 		),
-	)
+	}
+
+	// Only offered once a client is actually bound. One config per Telegram
+	// account means a customer moving to a new account cannot rebind until the
+	// old binding is cleared, so this is the admin's release valve.
+	if record, err := t.clientService.GetRecordByEmail(nil, email); err == nil && record.TgID != 0 {
+		rows = append(rows, tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.removeTGUser")).WithCallbackData(t.encodeQuery("tgid_remove "+email)),
+		))
+	}
+
+	inlineKeyboard := tu.InlineKeyboardGrid(rows)
 	if len(messageID) > 0 {
 		t.editMessageTgBot(chatId, messageID[0], output, inlineKeyboard)
 	} else {
