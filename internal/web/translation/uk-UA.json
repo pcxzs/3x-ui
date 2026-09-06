@@ -2170,7 +2170,10 @@
       "eventNodeDown": "Вузол {{ .Name }} НЕДОСТУПНИЙ",
       "eventNodeUp": "Вузол {{ .Name }} ДОСТУПНИЙ",
       "eventLoginFallback": "Невдала спроба входу з {{ .Source }}",
-      "memoryThreshold": "Використання пам'яті {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%"
+      "memoryThreshold": "Використання пам'яті {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
+      "inviteBound": "✅ Ваш акаунт Telegram прив'язано до <code>{{ .Email }}</code>.\r\n",
+      "inviteInvalid": "❗ Це посилання-запрошення недійсне або вже використане.\r\n",
+      "inviteLink": "🔗 Посилання-запрошення для <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nПерший, хто його відкриє, буде прив'язаний до цього клієнта.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 Email",
       "change_comment": "⚙️💬 Коментар",
       "ResetAllTraffics": "Скинути весь трафік",
-      "SortedTrafficUsageReport": "Відсортований звіт про використання трафіку"
+      "SortedTrafficUsageReport": "Відсортований звіт про використання трафіку",
+      "inviteLink": "🔗 Посилання-запрошення"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

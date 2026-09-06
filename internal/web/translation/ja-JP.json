@@ -2170,7 +2170,10 @@
       "eventNodeDown": "ノード {{ .Name }} がダウンしています",
       "eventNodeUp": "ノード {{ .Name }} が復旧しました",
       "eventLoginFallback": "{{ .Source }} からのログインに失敗しました",
-      "memoryThreshold": "メモリ使用率 {{ .Percent }}% がしきい値 {{ .Threshold }}% を超えました"
+      "memoryThreshold": "メモリ使用率 {{ .Percent }}% がしきい値 {{ .Threshold }}% を超えました",
+      "inviteBound": "✅ あなたの Telegram アカウントは <code>{{ .Email }}</code> にリンクされました。\r\n",
+      "inviteInvalid": "❗ この招待リンクは無効か、すでに使用されています。\r\n",
+      "inviteLink": "🔗 <code>{{ .Email }}</code> の招待リンク:\r\n<code>{{ .Link }}</code>\r\n\r\n最初に開いた人がこのクライアントにリンクされます。\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 メール",
       "change_comment": "⚙️💬 コメント",
       "ResetAllTraffics": "すべてのトラフィックをリセット",
-      "SortedTrafficUsageReport": "ソートされたトラフィック使用レポート"
+      "SortedTrafficUsageReport": "ソートされたトラフィック使用レポート",
+      "inviteLink": "🔗 招待リンク"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

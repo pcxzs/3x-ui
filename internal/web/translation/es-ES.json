@@ -2170,7 +2170,10 @@
       "eventNodeDown": "El nodo {{ .Name }} está CAÍDO",
       "eventNodeUp": "El nodo {{ .Name }} está ACTIVO",
       "eventLoginFallback": "Inicio de sesión fallido desde {{ .Source }}",
-      "memoryThreshold": "Uso de memoria {{ .Percent }}% supera el umbral de {{ .Threshold }}%"
+      "memoryThreshold": "Uso de memoria {{ .Percent }}% supera el umbral de {{ .Threshold }}%",
+      "inviteBound": "✅ Tu cuenta de Telegram ahora está vinculada a <code>{{ .Email }}</code>.\r\n",
+      "inviteInvalid": "❗ Este enlace de invitación no es válido o ya se ha utilizado.\r\n",
+      "inviteLink": "🔗 Enlace de invitación para <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nLa primera persona que lo abra quedará vinculada a este cliente.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 Email",
       "change_comment": "⚙️💬 Comentario",
       "ResetAllTraffics": "Reiniciar todo el tráfico",
-      "SortedTrafficUsageReport": "Informe de uso de tráfico ordenado"
+      "SortedTrafficUsageReport": "Informe de uso de tráfico ordenado",
+      "inviteLink": "🔗 Enlace de invitación"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

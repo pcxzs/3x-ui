@@ -2170,7 +2170,10 @@
       "eventNodeDown": "{{ .Name }} düğümü ÇEVRİMDIŞI",
       "eventNodeUp": "{{ .Name }} düğümü ÇEVRİMİÇİ",
       "eventLoginFallback": "{{ .Source }} adresinden oturum açma başarısız",
-      "memoryThreshold": "Bellek kullanımı {{ .Percent }}% eşiği {{ .Threshold }}% aşıyor"
+      "memoryThreshold": "Bellek kullanımı {{ .Percent }}% eşiği {{ .Threshold }}% aşıyor",
+      "inviteBound": "✅ Telegram hesabınız <code>{{ .Email }}</code> ile bağlandı.\r\n",
+      "inviteInvalid": "❗ Bu davet bağlantısı geçersiz veya daha önce kullanılmış.\r\n",
+      "inviteLink": "🔗 <code>{{ .Email }}</code> için davet bağlantısı:\r\n<code>{{ .Link }}</code>\r\n\r\nBağlantıyı ilk açan kişi bu istemciye bağlanır.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 E-posta",
       "change_comment": "⚙️💬 Yorum",
       "ResetAllTraffics": "Tüm Trafikleri Sıfırla",
-      "SortedTrafficUsageReport": "Sıralı Trafik Kullanım Raporu"
+      "SortedTrafficUsageReport": "Sıralı Trafik Kullanım Raporu",
+      "inviteLink": "🔗 Davet Bağlantısı"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

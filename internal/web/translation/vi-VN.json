@@ -2170,7 +2170,10 @@
       "eventNodeDown": "Node {{ .Name }} đã NGỪNG HOẠT ĐỘNG",
       "eventNodeUp": "Node {{ .Name }} đã HOẠT ĐỘNG",
       "eventLoginFallback": "Đăng nhập thất bại từ {{ .Source }}",
-      "memoryThreshold": "Sử dụng bộ nhớ {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%"
+      "memoryThreshold": "Sử dụng bộ nhớ {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
+      "inviteBound": "✅ Tài khoản Telegram của bạn đã được liên kết với <code>{{ .Email }}</code>.\r\n",
+      "inviteInvalid": "❗ Liên kết mời này không hợp lệ hoặc đã được sử dụng.\r\n",
+      "inviteLink": "🔗 Liên kết mời cho <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nNgười đầu tiên mở nó sẽ được liên kết với client này.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 Email",
       "change_comment": "⚙️💬 Bình Luận",
       "ResetAllTraffics": "Đặt lại tất cả lưu lượng",
-      "SortedTrafficUsageReport": "Báo cáo sử dụng lưu lượng đã sắp xếp"
+      "SortedTrafficUsageReport": "Báo cáo sử dụng lưu lượng đã sắp xếp",
+      "inviteLink": "🔗 Liên kết mời"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

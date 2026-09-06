@@ -2170,7 +2170,10 @@
       "eventNodeDown": "Узел {{ .Name }} НЕДОСТУПЕН",
       "eventNodeUp": "Узел {{ .Name }} В СЕТИ",
       "eventLoginFallback": "Неудачный вход с {{ .Source }}",
-      "memoryThreshold": "🔴 Использование памяти {{ .Percent }}% превышает пороговое значение {{ .Threshold }}%"
+      "memoryThreshold": "🔴 Использование памяти {{ .Percent }}% превышает пороговое значение {{ .Threshold }}%",
+      "inviteBound": "✅ Ваш аккаунт Telegram привязан к <code>{{ .Email }}</code>.\r\n",
+      "inviteInvalid": "❗ Эта ссылка-приглашение недействительна или уже использована.\r\n",
+      "inviteLink": "🔗 Ссылка-приглашение для <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nПервый, кто её откроет, будет привязан к этому клиенту.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 Email",
       "change_comment": "⚙️💬 Комментарий",
       "ResetAllTraffics": "Сбросить весь трафик",
-      "SortedTrafficUsageReport": "Отсортированный отчет об использовании трафика"
+      "SortedTrafficUsageReport": "Отсортированный отчет об использовании трафика",
+      "inviteLink": "🔗 Ссылка-приглашение"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

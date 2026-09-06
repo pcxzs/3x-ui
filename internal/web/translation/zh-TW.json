@@ -2170,7 +2170,10 @@
       "eventNodeDown": "節點 {{ .Name }} 已離線",
       "eventNodeUp": "節點 {{ .Name }} 已上線",
       "eventLoginFallback": "來自 {{ .Source }} 的登入失敗",
-      "memoryThreshold": "記憶體使用率 {{ .Percent }}% 超過閾值 {{ .Threshold }}%"
+      "memoryThreshold": "記憶體使用率 {{ .Percent }}% 超過閾值 {{ .Threshold }}%",
+      "inviteBound": "✅ 您的 Telegram 帳號已綁定至 <code>{{ .Email }}</code>。\r\n",
+      "inviteInvalid": "❗ 此邀請連結無效或已被使用。\r\n",
+      "inviteLink": "🔗 <code>{{ .Email }}</code> 的邀請連結：\r\n<code>{{ .Link }}</code>\r\n\r\n第一個開啟它的人將綁定至此客戶端。\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 電子郵件",
       "change_comment": "⚙️💬 評論",
       "ResetAllTraffics": "重設所有流量",
-      "SortedTrafficUsageReport": "排序過的流量使用報告"
+      "SortedTrafficUsageReport": "排序過的流量使用報告",
+      "inviteLink": "🔗 邀請連結"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

@@ -2170,7 +2170,10 @@
       "eventNodeDown": "Node {{ .Name }} is DOWN",
       "eventNodeUp": "Node {{ .Name }} is UP",
       "eventLoginFallback": "Login failed from {{ .Source }}",
-      "memoryThreshold": "Memory Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%"
+      "memoryThreshold": "Memory Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
+      "inviteBound": "✅ Your Telegram account is now linked to <code>{{ .Email }}</code>.\r\n",
+      "inviteInvalid": "❗ This invite link is invalid or has already been used.\r\n",
+      "inviteLink": "🔗 Invite link for <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nThe first person to open it is linked to this client.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 Email",
       "change_comment": "⚙️💬 Comment",
       "ResetAllTraffics": "Reset All Traffic",
-      "SortedTrafficUsageReport": "Sorted Traffic Usage Report"
+      "SortedTrafficUsageReport": "Sorted Traffic Usage Report",
+      "inviteLink": "🔗 Invite Link"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

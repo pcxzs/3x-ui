@@ -104,6 +104,17 @@ func (s *ClientService) GetInboundIdsForEmail(tx *gorm.DB, email string) ([]int,
 	return ids, nil
 }
 
+func (s *ClientService) GetRecordBySubID(subId string) (*model.ClientRecord, error) {
+	if subId == "" {
+		return nil, errors.New("sub_id must not be empty")
+	}
+	row := &model.ClientRecord{}
+	if err := database.GetDB().Where("sub_id = ?", subId).First(row).Error; err != nil {
+		return nil, err
+	}
+	return row, nil
+}
+
 func (s *ClientService) GetRecordsByTgID(tgId int64) ([]*model.ClientRecord, error) {
 	if tgId <= 0 {
 		return nil, errors.New("tg_id must be a positive integer")

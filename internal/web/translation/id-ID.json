@@ -2170,7 +2170,10 @@
       "eventNodeDown": "Node {{ .Name }} MATI",
       "eventNodeUp": "Node {{ .Name }} AKTIF",
       "eventLoginFallback": "Gagal masuk dari {{ .Source }}",
-      "memoryThreshold": "Penggunaan memori {{ .Percent }}% melebihi ambang batas {{ .Threshold }}%"
+      "memoryThreshold": "Penggunaan memori {{ .Percent }}% melebihi ambang batas {{ .Threshold }}%",
+      "inviteBound": "✅ Akun Telegram Anda kini tertaut ke <code>{{ .Email }}</code>.\r\n",
+      "inviteInvalid": "❗ Tautan undangan ini tidak valid atau sudah digunakan.\r\n",
+      "inviteLink": "🔗 Tautan undangan untuk <code>{{ .Email }}</code>:\r\n<code>{{ .Link }}</code>\r\n\r\nOrang pertama yang membukanya akan tertaut ke klien ini.\r\n"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2212,7 +2215,8 @@
       "change_email": "⚙️📧 Email",
       "change_comment": "⚙️💬 Komentar",
       "ResetAllTraffics": "Reset Semua Lalu Lintas",
-      "SortedTrafficUsageReport": "Laporan Penggunaan Lalu Lintas yang Terurut"
+      "SortedTrafficUsageReport": "Laporan Penggunaan Lalu Lintas yang Terurut",
+      "inviteLink": "🔗 Tautan Undangan"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",
