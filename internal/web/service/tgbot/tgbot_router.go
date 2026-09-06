@@ -1663,7 +1663,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 				continue
 			}
 
-			output := t.clientInfoMsg(traffic, false, false, false, false, true, false)
+			output := t.clientInfoMsg(traffic, false, false, false, false, true, false, true)
 			t.SendMsgToTgbot(chatId, output, tu.ReplyKeyboardRemove())
 		}
 		for _, extra_emails := range extra_emails {

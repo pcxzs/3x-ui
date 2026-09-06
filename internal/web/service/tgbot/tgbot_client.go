@@ -57,7 +57,7 @@ func (t *Tgbot) BuildClientDraftMessage() string {
 		ipLimit = fmt.Sprint(client_LimitIP)
 	}
 
-	attached := t.describeAttachedInbounds(receiver_inbound_IDs)
+	attached := t.describeAttachedInbounds(receiver_inbound_IDs, false)
 	if attached == "" {
 		attached = "—"
 	}
@@ -86,7 +86,10 @@ func (t *Tgbot) BuildClientDraftMessage() string {
 
 // describeAttachedInbounds returns a short "remark1, remark2" list for the given
 // inbound ids, falling back to "#id" when an inbound can't be loaded.
-func (t *Tgbot) describeAttachedInbounds(ids []int) string {
+// A disabled inbound carries no traffic, so listing it on a customer's card
+// offers them a route that cannot work. Admins keep seeing it, marked, because
+// "attached but switched off" is exactly what explains a support ticket.
+func (t *Tgbot) describeAttachedInbounds(ids []int, hideDisabled bool) string {
 	if len(ids) == 0 {
 		return ""
 	}
@@ -94,12 +97,21 @@ func (t *Tgbot) describeAttachedInbounds(ids []int) string {
 	for _, id := range ids {
 		ib, err := t.inboundService.GetInbound(id)
 		if err != nil || ib == nil {
+			if hideDisabled {
+				continue
+			}
 			parts = append(parts, fmt.Sprintf("#%d", id))
+			continue
+		}
+		if !ib.Enable && hideDisabled {
 			continue
 		}
 		label := ib.Remark
 		if label == "" {
 			label = fmt.Sprintf("#%d", id)
+		}
+		if !ib.Enable {
+			label += " ❌"
 		}
 		parts = append(parts, label)
 	}
@@ -448,6 +460,7 @@ func (t *Tgbot) clientInfoMsg(
 	printDate bool,
 	printTraffic bool,
 	printRefreshed bool,
+	hideDisabledInbounds bool,
 ) string {
 	now := time.Now().Unix()
 	expiryTime := ""
@@ -518,7 +531,9 @@ func (t *Tgbot) clientInfoMsg(
 	output := ""
 	output += t.I18nBot("tgbot.messages.email", "Email=="+traffic.Email)
 	if attachIds, err := t.clientService.GetInboundIdsForEmail(nil, traffic.Email); err == nil && len(attachIds) > 0 {
-		output += fmt.Sprintf("🔗 Inbounds: %s\r\n", t.describeAttachedInbounds(attachIds))
+		if list := t.describeAttachedInbounds(attachIds, hideDisabledInbounds); list != "" {
+			output += fmt.Sprintf("🔗 Inbounds: %s\r\n", list)
+		}
 	}
 	if printEnabled {
 		output += t.I18nBot("tgbot.messages.enabled", "Enable=="+enabled)
@@ -572,7 +587,7 @@ func (t *Tgbot) getClientUsage(chatId int64, tgUserID int64, email ...string) {
 		if len(email) > 0 {
 			for _, traffic := range traffics {
 				if traffic.Email == email[0] {
-					output := t.clientInfoMsg(traffic, true, true, true, true, true, true)
+					output := t.clientInfoMsg(traffic, true, true, true, true, true, true, true)
 					t.SendMsgToTgbot(chatId, output)
 					return
 				}
@@ -582,7 +597,7 @@ func (t *Tgbot) getClientUsage(chatId int64, tgUserID int64, email ...string) {
 			return
 		} else {
 			for _, traffic := range traffics {
-				output += t.clientInfoMsg(traffic, true, true, true, true, true, false)
+				output += t.clientInfoMsg(traffic, true, true, true, true, true, false, true)
 				output += "\r\n"
 			}
 		}
@@ -722,7 +737,7 @@ func (t *Tgbot) searchClient(chatId int64, email string, messageID ...int) {
 		return
 	}
 
-	output := t.clientInfoMsg(traffic, true, true, true, true, true, true)
+	output := t.clientInfoMsg(traffic, true, true, true, true, true, true, false)
 
 	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(

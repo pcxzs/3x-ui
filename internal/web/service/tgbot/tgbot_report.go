@@ -273,7 +273,7 @@ func (t *Tgbot) getExhausted(chatId int64) {
 		output += t.I18nBot("tgbot.messages.depleteSoon", "Deplete=="+t.I18nBot("tgbot.clients"))
 		var buttons []telego.InlineKeyboardButton
 		for _, traffic := range exhaustedClients {
-			output += t.clientInfoMsg(&traffic, true, false, false, true, true, false)
+			output += t.clientInfoMsg(&traffic, true, false, false, true, true, false, false)
 			output += "\r\n"
 			buttons = append(buttons, tu.InlineKeyboardButton(traffic.Email).WithCallbackData(t.encodeQuery("client_get_usage "+traffic.Email)))
 		}
@@ -321,14 +321,14 @@ func (t *Tgbot) buildExhaustedNotice(exhausted, disabled []xray.ClientTraffic) s
 		output.WriteString(t.I18nBot("tgbot.clients"))
 		output.WriteString(":\r\n")
 		for _, traffic := range disabled {
-			output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false))
+			output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false, true))
 			output.WriteString("\r\n")
 		}
 	}
 	output.WriteString("\r\n")
 	output.WriteString(t.I18nBot("tgbot.messages.depleteSoon", "Deplete=="+strconv.Itoa(len(exhausted))))
 	for _, traffic := range exhausted {
-		output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false))
+		output.WriteString(t.clientInfoMsg(&traffic, true, false, false, true, true, false, true))
 		output.WriteString("\r\n")
 	}
 	return output.String()

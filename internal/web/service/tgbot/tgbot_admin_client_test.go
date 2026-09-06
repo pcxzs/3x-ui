@@ -3,6 +3,7 @@ package tgbot
 import (
 	"encoding/json"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/mhsanaei/3x-ui/v3/internal/database"
@@ -172,5 +173,62 @@ func TestEditClientRecordRejectsDuplicateEmail(t *testing.T) {
 	}
 	if email := mustRecord(t, tg, "first@x").Email; email != "first@x" {
 		t.Fatalf("email after failed rename = %q, want %q", email, "first@x")
+	}
+}
+
+// A disabled inbound carries no traffic, so offering it to a customer as one of
+// "their" inbounds points them at a route that cannot work. An admin still needs
+// to see it, because attached-but-off is what explains a support ticket.
+func TestDescribeAttachedInboundsHidesDisabledFromCustomers(t *testing.T) {
+	dbDir := t.TempDir()
+	t.Setenv("XUI_DB_FOLDER", dbDir)
+	if err := database.InitDB(filepath.Join(dbDir, "x-ui.db")); err != nil {
+		t.Fatalf("InitDB: %v", err)
+	}
+	t.Cleanup(func() { _ = database.CloseDB() })
+
+	live := &model.Inbound{Tag: "live", Remark: "live-inbound", Enable: true, Port: 32001, Protocol: model.VLESS, Settings: `{"clients":[]}`}
+	off := &model.Inbound{Tag: "off", Remark: "off-inbound", Enable: false, Port: 32002, Protocol: model.VLESS, Settings: `{"clients":[]}`}
+	for _, ib := range []*model.Inbound{live, off} {
+		if err := database.GetDB().Create(ib).Error; err != nil {
+			t.Fatalf("create inbound: %v", err)
+		}
+	}
+
+	tg := &Tgbot{}
+	ids := []int{live.Id, off.Id}
+
+	customer := tg.describeAttachedInbounds(ids, true)
+	if strings.Contains(customer, "off-inbound") {
+		t.Fatalf("customer view %q must not list a disabled inbound", customer)
+	}
+	if !strings.Contains(customer, "live-inbound") {
+		t.Fatalf("customer view %q must still list the working inbound", customer)
+	}
+
+	admin := tg.describeAttachedInbounds(ids, false)
+	if !strings.Contains(admin, "off-inbound") || !strings.Contains(admin, "❌") {
+		t.Fatalf("admin view %q must list the disabled inbound and mark it", admin)
+	}
+}
+
+// A client attached only to disabled inbounds must not render a bare header
+// with an empty list after its entries are filtered out.
+func TestDescribeAttachedInboundsAllDisabled(t *testing.T) {
+	dbDir := t.TempDir()
+	t.Setenv("XUI_DB_FOLDER", dbDir)
+	if err := database.InitDB(filepath.Join(dbDir, "x-ui.db")); err != nil {
+		t.Fatalf("InitDB: %v", err)
+	}
+	t.Cleanup(func() { _ = database.CloseDB() })
+
+	off := &model.Inbound{Tag: "off-only", Remark: "off-only", Enable: false, Port: 32003, Protocol: model.VLESS, Settings: `{"clients":[]}`}
+	if err := database.GetDB().Create(off).Error; err != nil {
+		t.Fatalf("create inbound: %v", err)
+	}
+
+	tg := &Tgbot{}
+	if got := tg.describeAttachedInbounds([]int{off.Id}, true); got != "" {
+		t.Fatalf("customer view = %q, want empty so the caller omits the line", got)
 	}
 }
