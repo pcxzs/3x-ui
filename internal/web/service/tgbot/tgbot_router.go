@@ -1280,6 +1280,17 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		return
 	}
 
+	// Carries a number, so it cannot be an exact-match case below. Admin-only,
+	// like the hour picker it sits beside in Bot Settings.
+	if limit, ok := parseBindLimitCallback(callbackQuery.Data); ok {
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.bindLimit"))
+		t.applyBindLimit(chatId, limit, callbackQuery.Message.GetMessageID())
+		return
+	}
+
 	// Carries a tag, so it cannot be an exact-match case below.
 	if messageKey, ok := parseGuideCallback(callbackQuery.Data); ok {
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.setupGuide"))
@@ -1463,6 +1474,12 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		}
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.dailyHour"))
 		t.hourMenu(chatId, callbackQuery.Message.GetMessageID())
+	case "settings_bindings":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.bindLimit"))
+		t.bindLimitMenu(chatId, callbackQuery.Message.GetMessageID())
 	case "server_panel_logs":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelLogs"))
 		t.sendPanelLogs(chatId)

@@ -82,7 +82,7 @@ func TestAdminPanelReachesEveryAction(t *testing.T) {
 		// Messaging
 		"broadcast", "remind_now", "set_help",
 		// Bot settings
-		"notify_settings", "admin_features", "settings_hour", "commands",
+		"notify_settings", "admin_features", "settings_hour", "settings_bindings", "commands",
 		// Bulk
 		"bulk_preview extend", "bulk_preview disable", "del_depleted", "reset_all_traffics",
 	} {

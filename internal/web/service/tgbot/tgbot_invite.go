@@ -62,11 +62,13 @@ func (t *Tgbot) claimInvite(chatId int64, from *telego.User, token string, isAdm
 	fromID := from.ID
 	outcome, records := t.resolveInviteToken(token, fromID)
 
-	// One config per Telegram account: a second claim would let one person
-	// collect other people's subscriptions by collecting their links.
-	if outcome == inviteBindable && !isAdmin && t.holdsAnyClient(fromID, records) {
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteAlreadyHolder"))
-		return
+	// One account may hold several subscriptions — a customer often manages a
+	// relative's config — but only up to the ceiling an admin set.
+	if outcome == inviteBindable && !isAdmin {
+		if allowed, limit := t.bindingHeadroom(fromID, records); !allowed {
+			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBindLimit", "Limit=="+bindLimitLabel(limit)))
+			return
+		}
 	}
 
 	switch outcome {
@@ -84,7 +86,7 @@ func (t *Tgbot) claimInvite(chatId int64, from *telego.User, token string, isAdm
 		}
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+strings.Join(bound, ", ")))
 		if len(fresh) > 0 {
-			t.notifyNewClient(from, fresh)
+			t.notifyNewClient(from, fresh, t.heldSubscriptions(fromID))
 		}
 	default:
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteInvalid"))
@@ -114,25 +116,6 @@ func (t *Tgbot) inviteDiagnosis(token string, records []*model.ClientRecord) str
 		return t.I18nBot("tgbot.messages.inviteDiagUnknown", "Token=="+token)
 	}
 	return t.I18nBot("tgbot.messages.inviteDiagTaken", "Detail=="+holders)
-}
-
-// Records behind the token being claimed do not count: re-tapping a link for a
-// subscription the caller already partly holds must still complete the binding.
-func (t *Tgbot) holdsAnyClient(tgID int64, exempt []*model.ClientRecord) bool {
-	held, err := t.clientService.GetRecordsByTgID(tgID)
-	if err != nil || len(held) == 0 {
-		return false
-	}
-	inToken := make(map[int]bool, len(exempt))
-	for _, record := range exempt {
-		inToken[record.Id] = true
-	}
-	for _, record := range held {
-		if !inToken[record.Id] {
-			return true
-		}
-	}
-	return false
 }
 
 func recordEmails(records []*model.ClientRecord) string {
@@ -217,7 +200,7 @@ func freshBindings(records []*model.ClientRecord) []string {
 
 // Carries a tappable mention so an admin can open the chat, and the numeric id
 // so they can still find the account if the display name is unusable.
-func (t *Tgbot) newClientNotice(tgID int64, firstName, username string, emails []string) string {
+func (t *Tgbot) newClientNotice(tgID int64, firstName, username string, emails []string, held int) string {
 	id := strconv.FormatInt(tgID, 10)
 	name := html.EscapeString(firstName)
 	if name == "" {
@@ -228,14 +211,21 @@ func (t *Tgbot) newClientNotice(tgID int64, firstName, username string, emails [
 		mention += " (@" + html.EscapeString(username) + ")"
 	}
 
-	return t.I18nBot("tgbot.messages.newClientHeader") + "\r\n" +
+	notice := t.I18nBot("tgbot.messages.newClientHeader") + "\r\n" +
 		mention + " · <code>" + id + "</code>\r\n" +
 		html.EscapeString(strings.Join(emails, ", "))
+
+	// Named only once the account holds more than the config that just bound,
+	// so an ordinary first arrival reads exactly as it always did.
+	if held > 1 {
+		notice += "\r\n" + t.I18nBot("tgbot.messages.newClientHolding", "Count=="+strconv.Itoa(held))
+	}
+	return notice
 }
 
 // A lookup failure notifies anyway: an admin ignoring a notice is cheaper than
 // silently missing every customer who arrives.
-func (t *Tgbot) notifyNewClient(from *telego.User, emails []string) {
+func (t *Tgbot) notifyNewClient(from *telego.User, emails []string, held int) {
 	enabled, err := t.settingService.GetTgBotNotifyNewClient()
 	if err != nil {
 		logger.Warning("tgbot: new-client notification setting lookup failed:", err)
@@ -253,6 +243,6 @@ func (t *Tgbot) notifyNewClient(from *telego.User, emails []string) {
 	)
 	for _, adminId := range adminIds {
 		scoped := t.forUser(adminId)
-		scoped.SendMsgToTgbot(adminId, scoped.newClientNotice(from.ID, from.FirstName, from.Username, emails), replyKeyboard)
+		scoped.SendMsgToTgbot(adminId, scoped.newClientNotice(from.ID, from.FirstName, from.Username, emails, held), replyKeyboard)
 	}
 }

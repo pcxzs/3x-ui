@@ -107,6 +107,7 @@ func (t *Tgbot) adminSettingsKeyboard() *telego.InlineKeyboardMarkup {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dailyHour")).WithCallbackData(t.encodeQuery("settings_hour")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.bindLimit")).WithCallbackData(t.encodeQuery("settings_bindings")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.commands")).WithCallbackData(t.encodeQuery("commands")),

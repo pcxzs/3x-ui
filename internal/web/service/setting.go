@@ -86,6 +86,7 @@ var defaultValueMap = map[string]string{
 	"tgBotDailyHour":              "8",
 	"tgBotSilentNotices":          "true",
 	"tgBotAllowSelfReset":         "false",
+	"tgBotMaxBindings":            "5",
 	"tgBotRenewOptOut":            "{}",
 	"tgBotRenewReqAt":             "{}",
 	"tgBotQuotaWarned":            "{}",
@@ -660,6 +661,16 @@ func (s *SettingService) GetTgBotAllowSelfReset() (bool, error) {
 
 func (s *SettingService) SetTgBotAllowSelfReset(value bool) error {
 	return s.setBool("tgBotAllowSelfReset", value)
+}
+
+// How many subscriptions one Telegram account may hold. 1 is the original
+// one-config-per-account rule and 0 removes the ceiling entirely.
+func (s *SettingService) GetTgBotMaxBindings() (int, error) {
+	return s.getInt("tgBotMaxBindings")
+}
+
+func (s *SettingService) SetTgBotMaxBindings(limit int) error {
+	return s.setString("tgBotMaxBindings", strconv.Itoa(limit))
 }
 
 func (s *SettingService) GetTgBotSilentNotices() (bool, error) {

@@ -88,10 +88,10 @@ func TestOwnsClientRejectsMissingIdentity(t *testing.T) {
 func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
 	adminOnly := []string{
 		"admin_panel", "admin_clients", "admin_reports", "admin_messaging", "admin_settings",
-		"admin_features", "settings_hour", "bulk_menu", "roster_search",
+		"admin_features", "settings_hour", "settings_bindings", "bulk_menu", "roster_search",
 		"client_roster", "notify_settings", "broadcast", "set_help", "get_backup",
 		"remind_now", "remind_send",
-		"set_hour 8", "feature_toggle feature_self_reset", "notify_toggle notify_quota",
+		"set_hour 8", "set_bindmax 5", "feature_toggle feature_self_reset", "notify_toggle notify_quota",
 		"roster_filter unbound", "bulk_preview extend", "bulk_apply disable",
 		"reset_exp amy@example.com", "client_delete_c amy@example.com",
 		"toggle_enable_c amy@example.com", "pm_reply 777",
@@ -106,10 +106,14 @@ func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
 	}
 }
 
-// The hour picker is admin-only, so its parser must not be reachable through
-// the customer allowlist even though it is matched before the outer switch.
+// The hour and binding-limit pickers are admin-only, so their parsers must not
+// be reachable through the customer allowlist even though both are matched
+// before the outer switch.
 func TestHourCallbackIsNotACustomerAction(t *testing.T) {
-	for _, data := range []string{"set_hour 0", "set_hour 8", "set_hour 23"} {
+	for _, data := range []string{
+		"set_hour 0", "set_hour 8", "set_hour 23",
+		"set_bindmax 0", "set_bindmax 1", "set_bindmax 50",
+	} {
 		if _, _, ok := clientSelfAction(data); ok {
 			t.Fatalf("%q parses as a customer action", data)
 		}

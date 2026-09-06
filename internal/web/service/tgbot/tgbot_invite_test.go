@@ -150,36 +150,83 @@ func TestInviteDiagnosis(t *testing.T) {
 	}
 }
 
-// One config per Telegram account: without this a customer could collect other
-// people's subscriptions simply by collecting their invite links.
-func TestHoldsAnyClient(t *testing.T) {
+// A second subscription is now allowed, but only up to the ceiling: without a
+// ceiling a customer could collect other people's configs by collecting their
+// invite links.
+func TestBindingHeadroom(t *testing.T) {
 	initInviteDB(t)
-	seedClient(t, "already@x", "subheld0000000007", 8100)
+	seedClient(t, "held-a@x", "subheld0000000007", 8100)
+	seedClient(t, "held-b@x", "subheld0000000107", 8100)
 	seedClient(t, "offered@x", "suboffer000000008", 0)
 
 	tg := &Tgbot{}
 	_, offered := tg.resolveInviteToken("suboffer000000008", 8100)
 
-	if !tg.holdsAnyClient(8100, offered) {
-		t.Fatal("an account already holding an unrelated client must be blocked")
+	tests := []struct {
+		name  string
+		limit int
+		tgID  int64
+		want  bool
+	}{
+		{"a holder may take a second config", 5, 8100, true},
+		{"a limit of one restores the old rule", 1, 8100, false},
+		{"a full account is refused", 2, 8100, false},
+		{"unlimited never refuses", 0, 8100, true},
+		{"an account holding nothing may claim", 1, 8101, true},
 	}
-	if tg.holdsAnyClient(8101, offered) {
-		t.Fatal("an account holding nothing must be allowed to claim")
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			if err := tg.settingService.SetTgBotMaxBindings(tc.limit); err != nil {
+				t.Fatalf("SetTgBotMaxBindings: %v", err)
+			}
+			allowed, limit := tg.bindingHeadroom(tc.tgID, offered)
+			if allowed != tc.want {
+				t.Fatalf("bindingHeadroom = %v, want %v", allowed, tc.want)
+			}
+			if limit != tc.limit {
+				t.Fatalf("reported limit = %d, want %d", limit, tc.limit)
+			}
+		})
 	}
 }
 
 // Re-tapping the link for a subscription the caller already partly holds must
 // still complete the binding rather than being read as a second config.
-func TestHoldsAnyClientIgnoresTheTokenBeingClaimed(t *testing.T) {
+func TestBindingHeadroomIgnoresTheTokenBeingClaimed(t *testing.T) {
 	initInviteDB(t)
 	const shared = "subresume00000009"
 	seedClient(t, "resume-a@x", shared, 8200)
 	seedClient(t, "resume-b@x", shared, 0)
 
 	tg := &Tgbot{}
+	if err := tg.settingService.SetTgBotMaxBindings(1); err != nil {
+		t.Fatalf("SetTgBotMaxBindings: %v", err)
+	}
 	_, records := tg.resolveInviteToken(shared, 8200)
-	if tg.holdsAnyClient(8200, records) {
-		t.Fatal("records behind the claimed token must not count against the cap")
+	if allowed, _ := tg.bindingHeadroom(8200, records); !allowed {
+		t.Fatal("records behind the claimed token must not count against the ceiling")
+	}
+}
+
+// The ceiling counts subscriptions, not client records: one subscription
+// spanning several inbounds is a single config to the customer, and counting
+// its parts would refuse a household long before it reached the limit.
+func TestBindingHeadroomCountsSubscriptionsNotRecords(t *testing.T) {
+	initInviteDB(t)
+	const spread = "subspread00000010"
+	seedClient(t, "spread-a@x", spread, 8300)
+	seedClient(t, "spread-b@x", spread, 8300)
+	seedClient(t, "spread-c@x", spread, 8300)
+	seedClient(t, "next@x", "subnext0000000011", 0)
+
+	tg := &Tgbot{}
+	if err := tg.settingService.SetTgBotMaxBindings(2); err != nil {
+		t.Fatalf("SetTgBotMaxBindings: %v", err)
+	}
+	_, offered := tg.resolveInviteToken("subnext0000000011", 8300)
+	if allowed, _ := tg.bindingHeadroom(8300, offered); !allowed {
+		t.Fatal("three inbounds of one subscription must count as one config")
 	}
 }
 
@@ -269,7 +316,7 @@ func TestNewClientNotice(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			notice := tg.newClientNotice(7000, tc.firstName, tc.username, []string{"a@x"})
+			notice := tg.newClientNotice(7000, tc.firstName, tc.username, []string{"a@x"}, 1)
 			for _, want := range tc.want {
 				if !strings.Contains(notice, want) {
 					t.Fatalf("notice is missing %q: %q", want, notice)
@@ -281,5 +328,20 @@ func TestNewClientNotice(t *testing.T) {
 				}
 			}
 		})
+	}
+}
+
+// A customer holding several configs is the case the ceiling exists to bound,
+// so an admin must be able to see it on the arrival notice; a first arrival
+// must read exactly as it did before.
+func TestNewClientNoticeNamesTheHoldingCount(t *testing.T) {
+	initLangDB(t)
+	tg := new(Tgbot)
+
+	if notice := tg.newClientNotice(7000, "Amy", "", []string{"a@x"}, 1); strings.Contains(notice, "newClientHolding") {
+		t.Fatalf("a first arrival must not carry a holding count: %q", notice)
+	}
+	if notice := tg.newClientNotice(7000, "Amy", "", []string{"b@x"}, 3); !strings.Contains(notice, "newClientHolding") {
+		t.Fatalf("a repeat holder must carry a holding count: %q", notice)
 	}
 }
