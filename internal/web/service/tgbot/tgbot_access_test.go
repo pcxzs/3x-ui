@@ -81,3 +81,39 @@ func TestOwnsClientRejectsMissingIdentity(t *testing.T) {
 		})
 	}
 }
+
+// The default-deny gate is what stops a non-admin reaching an admin callback.
+// Anything listed here must stay outside the customer allowlist, or a level-1
+// user could disable clients in bulk or reset another customer's config.
+func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
+	adminOnly := []string{
+		"admin_panel", "admin_clients", "admin_reports", "admin_messaging",
+		"admin_features", "settings_hour", "bulk_menu", "roster_search",
+		"client_roster", "notify_settings", "broadcast", "set_help", "get_backup",
+		"set_hour 8", "feature_toggle feature_self_reset", "notify_toggle notify_quota",
+		"roster_filter unbound", "bulk_preview extend", "bulk_apply disable",
+		"reset_exp amy@example.com", "client_delete_c amy@example.com",
+		"toggle_enable_c amy@example.com", "pm_reply 777",
+	}
+
+	for _, data := range adminOnly {
+		t.Run(data, func(t *testing.T) {
+			if isClientSelfCallback(data) {
+				t.Fatalf("%q is reachable by a non-admin", data)
+			}
+		})
+	}
+}
+
+// The hour picker is admin-only, so its parser must not be reachable through
+// the customer allowlist even though it is matched before the outer switch.
+func TestHourCallbackIsNotACustomerAction(t *testing.T) {
+	for _, data := range []string{"set_hour 0", "set_hour 8", "set_hour 23"} {
+		if _, _, ok := clientSelfAction(data); ok {
+			t.Fatalf("%q parses as a customer action", data)
+		}
+		if isClientSelfCallback(data) {
+			t.Fatalf("%q passes the customer level gate", data)
+		}
+	}
+}
