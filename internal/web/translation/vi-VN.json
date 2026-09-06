@@ -86,7 +86,6 @@
     "uploaded": "Đã tải lên",
     "expiry": "Hết hạn",
     "totalQuota": "Tổng hạn mức",
-    "individualLinks": "Liên kết riêng lẻ",
     "active": "Hoạt động",
     "inactive": "Không hoạt động",
     "unlimited": "Không giới hạn",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ Thông báo cho khách sẽ được gửi lúc {{ .Hour }} giờ máy chủ.",
       "remindPreview": "🔔 <b>Nhắc khách hàng ngay</b>\r\nSắp hết hạn hoặc đã hết hạn: {{ .Renew }}\r\nSắp hết dung lượng: {{ .Quota }}\r\n\r\nGửi thông báo hôm nay ngay lập tức và bỏ qua lần chạy theo lịch.",
       "remindNothing": "Hiện không có khách hàng nào cần nhắc.",
-      "remindDone": "✅ Đã gửi nhắc nhở. Lần chạy theo lịch hôm nay đã xong."
+      "remindDone": "✅ Đã gửi nhắc nhở. Lần chạy theo lịch hôm nay đã xong.",
+      "configsChoose": "👇 Chọn cách nhận cấu hình của bạn:",
+      "chooseOneConfig": "👇 Bạn muốn cấu hình nào?",
+      "configHeaderAll": "Cấu hình của bạn"
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2311,7 +2313,7 @@
       "serverUsage": "Sử Dụng Máy Chủ",
       "getInbounds": "Lấy cổng vào",
       "depleteSoon": "Depleted Soon",
-      "clientUsage": "Lấy Sử Dụng",
+      "clientUsage": "📊 Sử dụng",
       "onlines": "Khách hàng trực tuyến",
       "commands": "Lệnh",
       "refresh": "🔄 Cập Nhật",
@@ -2407,7 +2409,13 @@
       "silentNotices": "Thông báo im lặng",
       "dailyHour": "🕗 Giờ thông báo hằng ngày",
       "remindNow": "🔔 Nhắc ngay",
-      "confirmRemind": "✅ Nhắc {{ .Count }} khách hàng"
+      "confirmRemind": "✅ Nhắc {{ .Count }} khách hàng",
+      "myConfigs": "📶 Cấu hình của tôi",
+      "getAllConfigs": "📥 Lấy tất cả",
+      "getOneConfig": "🎯 Lấy một",
+      "subLink": "🔄 Liên kết đăng ký",
+      "qrCode": "📷 Mã QR",
+      "botCommands": "💬 Lệnh bot"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

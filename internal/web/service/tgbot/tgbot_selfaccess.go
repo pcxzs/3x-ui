@@ -12,6 +12,8 @@ var clientSelfPrefixes = []string{
 	"client_sub_links ",
 	"client_individual_links ",
 	"client_qr_links ",
+	"client_one_link ",
+	"link_one ",
 	"qr_sub ",
 	"qr_subjson ",
 	"qr_pick ",
@@ -31,9 +33,10 @@ func clientSelfAction(data string) (verb string, arg string, ok bool) {
 	return "", "", false
 }
 
-// The target is always the first field; qr_one carries "<email> <index>".
+// The target is always the first field; qr_one and link_one carry
+// "<email> <index>", so the index must not reach the ownership check.
 func clientSelfTarget(verb, arg string) string {
-	if verb == "qr_one" {
+	if verb == "qr_one" || verb == "link_one" {
 		email, _, _ := strings.Cut(strings.TrimSpace(arg), " ")
 		return email
 	}

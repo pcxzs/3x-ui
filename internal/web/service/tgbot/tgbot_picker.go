@@ -76,6 +76,12 @@ func (t *Tgbot) runClientSelfAction(chatId int64, from *telego.User, verb string
 		t.sendClientIndividualLinks(chatId, arg)
 	case "client_qr_links":
 		t.sendClientQRLinks(chatId, arg)
+	case "client_one_link":
+		t.oneLinkPicker(chatId, arg)
+	case "link_one":
+		if target, index, ok := splitEmailIndexTarget(arg); ok {
+			t.sendOneLink(chatId, target, index)
+		}
 	case "qr_sub":
 		t.sendSubscriptionQR(chatId, arg, false)
 	case "qr_subjson":
@@ -83,7 +89,7 @@ func (t *Tgbot) runClientSelfAction(chatId int64, from *telego.User, verb string
 	case "qr_pick":
 		t.qrLinkPicker(chatId, arg)
 	case "qr_one":
-		if target, index, ok := splitQRTarget(arg); ok {
+		if target, index, ok := splitEmailIndexTarget(arg); ok {
 			t.sendIndividualLinkQR(chatId, target, index)
 		}
 	case "renew_req":

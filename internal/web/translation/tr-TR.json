@@ -86,7 +86,6 @@
     "uploaded": "Yüklenen",
     "expiry": "Son Kullanma",
     "totalQuota": "Toplam Kota",
-    "individualLinks": "Bireysel Bağlantılar",
     "active": "Aktif",
     "inactive": "Pasif",
     "unlimited": "Sınırsız",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ Müşteri bildirimleri sunucu saatiyle {{ .Hour }} gönderilecek.",
       "remindPreview": "🔔 <b>Müşterilere şimdi hatırlat</b>\r\nSüresi dolan veya dolmak üzere: {{ .Renew }}\r\nTrafiği azalan: {{ .Quota }}\r\n\r\nBugünün bildirimlerini hemen gönderir, zamanlanmış çalıştırmayı atlar.",
       "remindNothing": "Şu anda hatırlatma gereken müşteri yok.",
-      "remindDone": "✅ Hatırlatmalar gönderildi. Bugünün zamanlanmış görevi tamamlandı."
+      "remindDone": "✅ Hatırlatmalar gönderildi. Bugünün zamanlanmış görevi tamamlandı.",
+      "configsChoose": "👇 Yapılandırmanızı nasıl alacağınızı seçin:",
+      "chooseOneConfig": "👇 Hangi yapılandırmayı istiyorsunuz?",
+      "configHeaderAll": "Yapılandırmalarınız"
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2311,7 +2313,7 @@
       "serverUsage": "Sunucu Kullanımı",
       "getInbounds": "Gelen Bağlantılarnı Al",
       "depleteSoon": "Kotası Dolmak Üzere",
-      "clientUsage": "Kullanıcı İstatistikleri",
+      "clientUsage": "📊 Kullanım",
       "onlines": "Çevrimiçi Kullanıcılar",
       "commands": "Komutlar",
       "refresh": "🔄 Yenile",
@@ -2407,7 +2409,13 @@
       "silentNotices": "Sessiz bildirimler",
       "dailyHour": "🕗 Günlük bildirim saati",
       "remindNow": "🔔 Şimdi hatırlat",
-      "confirmRemind": "✅ {{ .Count }} müşteriye hatırlat"
+      "confirmRemind": "✅ {{ .Count }} müşteriye hatırlat",
+      "myConfigs": "📶 Yapılandırmalarım",
+      "getAllConfigs": "📥 Tümünü al",
+      "getOneConfig": "🎯 Birini al",
+      "subLink": "🔄 Abonelik bağlantısı",
+      "qrCode": "📷 QR kod",
+      "botCommands": "💬 Bot komutları"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

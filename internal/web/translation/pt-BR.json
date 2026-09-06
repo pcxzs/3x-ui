@@ -86,7 +86,6 @@
     "uploaded": "Enviado",
     "expiry": "Validade",
     "totalQuota": "Cota total",
-    "individualLinks": "Links individuais",
     "active": "Ativo",
     "inactive": "Inativo",
     "unlimited": "Ilimitado",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ Os avisos aos clientes serão enviados às {{ .Hour }} no horário do servidor.",
       "remindPreview": "🔔 <b>Lembrar os clientes agora</b>\r\nA vencer ou vencidos: {{ .Renew }}\r\nCom pouco tráfego: {{ .Quota }}\r\n\r\nEnvia os avisos de hoje na hora e pula a execução agendada.",
       "remindNothing": "Nenhum cliente precisa de lembrete agora.",
-      "remindDone": "✅ Lembretes enviados. A execução agendada de hoje está concluída."
+      "remindDone": "✅ Lembretes enviados. A execução agendada de hoje está concluída.",
+      "configsChoose": "👇 Escolha como obter sua config:",
+      "chooseOneConfig": "👇 Qual config você quer?",
+      "configHeaderAll": "Suas configs"
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2311,7 +2313,7 @@
       "serverUsage": "Uso do servidor",
       "getInbounds": "Obter Inbounds",
       "depleteSoon": "Esgotar em breve",
-      "clientUsage": "Obter uso",
+      "clientUsage": "📊 Uso",
       "onlines": "Clientes online",
       "commands": "Comandos",
       "refresh": "🔄 Atualizar",
@@ -2407,7 +2409,13 @@
       "silentNotices": "Avisos silenciosos",
       "dailyHour": "🕗 Horário do aviso diário",
       "remindNow": "🔔 Lembrar agora",
-      "confirmRemind": "✅ Lembrar {{ .Count }} cliente(s)"
+      "confirmRemind": "✅ Lembrar {{ .Count }} cliente(s)",
+      "myConfigs": "📶 Minhas configs",
+      "getAllConfigs": "📥 Obter todos",
+      "getOneConfig": "🎯 Obter um",
+      "subLink": "🔄 Link de assinatura",
+      "qrCode": "📷 Código QR",
+      "botCommands": "💬 Comandos do bot"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

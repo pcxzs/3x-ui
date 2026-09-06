@@ -106,34 +106,25 @@ func (t *Tgbot) adminMessagingKeyboard() *telego.InlineKeyboardMarkup {
 	)
 }
 
-// clientKeyboard is what a customer sees, and what an admin sees first. The
-// Admin row is appended only for admins, so nothing hints at a second panel.
+// clientKeyboard is what a customer sees, and what an admin sees first. Every
+// way of getting or rotating a config lives behind My Configs, so the grid is
+// the same five buttons whether or not self-reset is switched on.
 func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
 	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.myConfigs")).WithCallbackData(t.encodeQuery("client_configs")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.clientUsage")).WithCallbackData(t.encodeQuery("client_traffic")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.help")).WithCallbackData(t.encodeQuery("client_help")),
-		),
-		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("pages.settings.subSettings")).WithCallbackData(t.encodeQuery("client_sub_links")),
-			tu.InlineKeyboardButton(t.I18nBot("subscription.individualLinks")).WithCallbackData(t.encodeQuery("client_individual_links")),
-		),
-		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("qrCode")).WithCallbackData(t.encodeQuery("client_qr_links")),
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.setupGuide")).WithCallbackData(t.encodeQuery("client_guide")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.messageAdmin")).WithCallbackData(t.encodeQuery("client_pm")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.settings")).WithCallbackData(t.encodeQuery("client_settings")),
 		),
 	}
-	// Offered only where an operator opted in, so a customer is never shown a
-	// destructive button that would refuse them.
-	if t.selfResetEnabled() {
-		rows = append(rows, tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.selfReset")).WithCallbackData(t.encodeQuery("client_reset_self")),
-		))
-	}
+	// The Admin row is appended only for admins, so nothing hints at a second
+	// panel to everyone else.
 	if level == levelAdmin {
 		rows = append(rows, tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.adminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),

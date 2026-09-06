@@ -86,7 +86,6 @@
     "uploaded": "Diunggah",
     "expiry": "Kedaluwarsa",
     "totalQuota": "Kuota total",
-    "individualLinks": "Tautan individual",
     "active": "Aktif",
     "inactive": "Nonaktif",
     "unlimited": "Tanpa batas",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ Notifikasi pelanggan akan dikirim pukul {{ .Hour }} waktu server.",
       "remindPreview": "🔔 <b>Ingatkan pelanggan sekarang</b>\r\nSegera atau sudah kedaluwarsa: {{ .Renew }}\r\nKuota menipis: {{ .Quota }}\r\n\r\nMengirim pemberitahuan hari ini sekarang dan melewati jadwal harian.",
       "remindNothing": "Tidak ada pelanggan yang perlu diingatkan saat ini.",
-      "remindDone": "✅ Pengingat terkirim. Tugas terjadwal hari ini selesai."
+      "remindDone": "✅ Pengingat terkirim. Tugas terjadwal hari ini selesai.",
+      "configsChoose": "👇 Pilih cara mendapatkan konfigurasi Anda:",
+      "chooseOneConfig": "👇 Konfigurasi mana yang Anda inginkan?",
+      "configHeaderAll": "Konfigurasi Anda"
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2311,7 +2313,7 @@
       "serverUsage": "Penggunaan Server",
       "getInbounds": "Dapatkan Inbounds",
       "depleteSoon": "Habis Sebentar",
-      "clientUsage": "Dapatkan Penggunaan",
+      "clientUsage": "📊 Penggunaan",
       "onlines": "Klien Online",
       "commands": "Perintah",
       "refresh": "🔄 Perbarui",
@@ -2407,7 +2409,13 @@
       "silentNotices": "Notifikasi senyap",
       "dailyHour": "🕗 Waktu notifikasi harian",
       "remindNow": "🔔 Ingatkan sekarang",
-      "confirmRemind": "✅ Ingatkan {{ .Count }} pelanggan"
+      "confirmRemind": "✅ Ingatkan {{ .Count }} pelanggan",
+      "myConfigs": "📶 Konfigurasi saya",
+      "getAllConfigs": "📥 Ambil semua",
+      "getOneConfig": "🎯 Ambil satu",
+      "subLink": "🔄 Tautan langganan",
+      "qrCode": "📷 Kode QR",
+      "botCommands": "💬 Perintah bot"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

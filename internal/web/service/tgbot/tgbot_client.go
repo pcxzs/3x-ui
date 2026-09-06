@@ -259,7 +259,7 @@ func (t *Tgbot) sendClientSubLinks(chatId int64, email string) {
 	}
 	rows := [][]telego.InlineKeyboardButton{
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("subscription.individualLinks")).WithCallbackData(t.encodeQuery("client_individual_links " + email)),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.getAllConfigs")).WithCallbackData(t.encodeQuery("client_individual_links " + email)),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.qrSubscription")).WithCallbackData(t.encodeQuery("qr_sub " + email)),
@@ -393,8 +393,9 @@ func (t *Tgbot) clientInfoMsg(
 	return output
 }
 
-// getClientUsage retrieves and sends client usage information to the chat.
-func (t *Tgbot) getClientUsage(chatId int64, tgUserID int64, email ...string) {
+// getClientUsage retrieves and sends client usage information to the chat. A
+// non-zero messageID re-renders an existing report instead of sending a new one.
+func (t *Tgbot) getClientUsage(chatId int64, tgUserID int64, messageID int, email ...string) {
 	traffics, err := t.inboundService.GetClientTrafficTgBot(tgUserID)
 	if err != nil {
 		logger.Warning(err)
@@ -431,9 +432,18 @@ func (t *Tgbot) getClientUsage(chatId int64, tgUserID int64, email ...string) {
 	}
 
 	output += t.I18nBot("tgbot.messages.refreshedOn", "Time=="+time.Now().Format("2006-01-02 15:04:05"))
-	t.SendMsgToTgbot(chatId, output)
-	output = t.I18nBot("tgbot.commands.pleaseChoose")
-	t.SendAnswer(chatId, output, t.levelOf(tgUserID))
+
+	keyboard := tu.InlineKeyboard(tu.InlineKeyboardRow(
+		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.refresh")).WithCallbackData(t.encodeQuery("client_usage_refresh")),
+		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToMenu")).WithCallbackData(t.encodeQuery("client_menu")),
+	))
+	// Refresh edits the report in place so checking twice does not push the rest
+	// of the conversation off screen; a report too long to edit is sent paged.
+	if messageID > 0 && len(output) <= telegramPageLimit {
+		t.editMessageTgBot(chatId, messageID, output, keyboard)
+		return
+	}
+	t.SendMsgToTgbot(chatId, output, keyboard)
 }
 
 // searchClientIps searches and sends client IP addresses for the given email.

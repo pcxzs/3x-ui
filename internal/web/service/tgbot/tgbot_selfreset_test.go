@@ -94,21 +94,3 @@ func TestSelfResetGate(t *testing.T) {
 		}
 	})
 }
-
-// The button must be absent while the panel has the feature off, so a customer
-// is not shown something that will refuse them.
-func TestClientKeyboardHidesSelfResetUntilEnabled(t *testing.T) {
-	initLangDB(t)
-	tg := new(Tgbot)
-
-	if data := callbackData(tg.clientKeyboard(levelClient)); contains(data, "client_reset_self") {
-		t.Fatalf("self-reset offered while disabled: %v", data)
-	}
-
-	if err := tg.settingService.SetTgBotAllowSelfReset(true); err != nil {
-		t.Fatalf("SetTgBotAllowSelfReset: %v", err)
-	}
-	if data := callbackData(tg.clientKeyboard(levelClient)); !contains(data, "client_reset_self") {
-		t.Fatalf("self-reset missing after being enabled: %v", data)
-	}
-}

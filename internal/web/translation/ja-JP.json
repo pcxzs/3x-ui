@@ -86,7 +86,6 @@
     "uploaded": "アップロード",
     "expiry": "有効期限",
     "totalQuota": "合計クォータ",
-    "individualLinks": "個別リンク",
     "active": "有効",
     "inactive": "無効",
     "unlimited": "無制限",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ 利用者への通知はサーバー時間 {{ .Hour }} に送信されます。",
       "remindPreview": "🔔 <b>今すぐ利用者に通知</b>\r\n期限切れ間近・超過: {{ .Renew }}\r\n通信量が残りわずか: {{ .Quota }}\r\n\r\n本日の通知をすぐに送信し、定時実行はスキップします。",
       "remindNothing": "現在、通知が必要な利用者はいません。",
-      "remindDone": "✅ 通知を送信しました。本日の定時実行は完了です。"
+      "remindDone": "✅ 通知を送信しました。本日の定時実行は完了です。",
+      "configsChoose": "👇 設定の受け取り方法を選択してください：",
+      "chooseOneConfig": "👇 どの設定が必要ですか？",
+      "configHeaderAll": "あなたの設定"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2311,7 +2313,7 @@
       "serverUsage": "サーバーの使用状況",
       "getInbounds": "インバウンド情報を取得",
       "depleteSoon": "間もなく消耗",
-      "clientUsage": "使用状況を取得",
+      "clientUsage": "📊 使用状況",
       "onlines": "オンラインクライアント",
       "commands": "コマンド",
       "refresh": "🔄 更新",
@@ -2407,7 +2409,13 @@
       "silentNotices": "サイレント通知",
       "dailyHour": "🕗 毎日の通知時刻",
       "remindNow": "🔔 今すぐ通知",
-      "confirmRemind": "✅ {{ .Count }} 人に通知"
+      "confirmRemind": "✅ {{ .Count }} 人に通知",
+      "myConfigs": "📶 マイ設定",
+      "getAllConfigs": "📥 すべて取得",
+      "getOneConfig": "🎯 1つ取得",
+      "subLink": "🔄 サブスクリプションリンク",
+      "qrCode": "📷 QRコード",
+      "botCommands": "💬 ボットコマンド"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

@@ -52,6 +52,10 @@ func TestClientSelfTargetExtraction(t *testing.T) {
 		{"qr_one", "alice@x 3", "alice@x"},
 		{"qr_one", "  alice@x 12  ", "alice@x"},
 		{"qr_one", "alice@x", "alice@x"},
+		{"client_one_link", "alice@x", "alice@x"},
+		{"link_one", "alice@x 3", "alice@x"},
+		{"link_one", "  alice@x 12  ", "alice@x"},
+		{"link_one", "alice@x", "alice@x"},
 	}
 	for _, tc := range tests {
 		if got := clientSelfTarget(tc.verb, tc.arg); got != tc.want {

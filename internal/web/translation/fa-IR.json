@@ -87,7 +87,6 @@
     "uploaded": "آپلود",
     "expiry": "تاریخ پایان",
     "totalQuota": "حجم کلی",
-    "individualLinks": "لینک‌های تکی",
     "active": "فعال",
     "inactive": "غیرفعال",
     "unlimited": "نامحدود",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ اعلان‌های مشتریان ساعت {{ .Hour }} به وقت سرور ارسال می‌شود.",
       "remindPreview": "🔔 <b>یادآوری فوری به مشتریان</b>\r\nنزدیک انقضا یا منقضی‌شده: {{ .Renew }}\r\nترافیک رو به اتمام: {{ .Quota }}\r\n\r\nاعلان‌های امروز بی‌درنگ ارسال می‌شود و اجرای زمان‌بندی‌شده انجام نمی‌شود.",
       "remindNothing": "در حال حاضر هیچ مشتری نیاز به یادآوری ندارد.",
-      "remindDone": "✅ یادآوری‌ها ارسال شد. کار زمان‌بندی‌شده امروز انجام شد."
+      "remindDone": "✅ یادآوری‌ها ارسال شد. کار زمان‌بندی‌شده امروز انجام شد.",
+      "configsChoose": "👇 نحوه دریافت کانفیگ خود را انتخاب کنید:",
+      "chooseOneConfig": "👇 کدام کانفیگ را می‌خواهید؟",
+      "configHeaderAll": "کانفیگ‌های شما"
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2311,7 +2313,7 @@
       "serverUsage": "استفاده از سیستم",
       "getInbounds": "دریافت ورودی‌ها",
       "depleteSoon": "به‌زودی به پایان خواهد رسید",
-      "clientUsage": "دریافت آمار کاربر",
+      "clientUsage": "📊 مصرف",
       "onlines": "کاربران آنلاین",
       "commands": "دستورات",
       "refresh": "🔄 تازه‌سازی",
@@ -2407,7 +2409,13 @@
       "silentNotices": "اعلان بی‌صدا",
       "dailyHour": "🕗 ساعت اعلان روزانه",
       "remindNow": "🔔 یادآوری فوری",
-      "confirmRemind": "✅ یادآوری به {{ .Count }} مشتری"
+      "confirmRemind": "✅ یادآوری به {{ .Count }} مشتری",
+      "myConfigs": "📶 کانفیگ‌های من",
+      "getAllConfigs": "📥 دریافت همه",
+      "getOneConfig": "🎯 دریافت یکی",
+      "subLink": "🔄 لینک سابسکریپشن",
+      "qrCode": "📷 کد QR",
+      "botCommands": "💬 دستورات ربات"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

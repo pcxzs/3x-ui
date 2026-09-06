@@ -23,8 +23,8 @@ func TestGuidePlatformsArePickableAndAllowed(t *testing.T) {
 			t.Fatalf("platform %q has no instructions to show", platform.tag)
 		}
 	}
-	if !contains(data, "client_menu") {
-		t.Fatalf("guide picker has no way back: %v", data)
+	if !contains(data, "client_help") {
+		t.Fatalf("guide picker has no way back to the help hub: %v", data)
 	}
 }
 

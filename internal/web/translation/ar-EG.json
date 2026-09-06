@@ -86,7 +86,6 @@
     "uploaded": "الرفع",
     "expiry": "تاريخ الانتهاء",
     "totalQuota": "الحصة الإجمالية",
-    "individualLinks": "روابط فردية",
     "active": "نشط",
     "inactive": "غير نشط",
     "unlimited": "غير محدود",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ ستُرسل إشعارات العملاء الساعة {{ .Hour }} بتوقيت الخادم.",
       "remindPreview": "🔔 <b>تذكير العملاء الآن</b>\r\nقارب على الانتهاء أو منتهٍ: {{ .Renew }}\r\nالترافيك على وشك النفاد: {{ .Quota }}\r\n\r\nيرسل إشعارات اليوم فورًا ويتخطى التشغيل المجدول.",
       "remindNothing": "لا يوجد عميل يحتاج إلى تذكير الآن.",
-      "remindDone": "✅ تم إرسال التذكيرات. انتهت مهمة اليوم المجدولة."
+      "remindDone": "✅ تم إرسال التذكيرات. انتهت مهمة اليوم المجدولة.",
+      "configsChoose": "👇 اختر طريقة الحصول على إعداداتك:",
+      "chooseOneConfig": "👇 أي إعداد تريد؟",
+      "configHeaderAll": "إعداداتك"
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2311,7 +2313,7 @@
       "serverUsage": "استخدام السيرفر",
       "getInbounds": "احصل على الإدخالات",
       "depleteSoon": "هينتهي قريب",
-      "clientUsage": "استخدام العميل",
+      "clientUsage": "📊 الاستخدام",
       "onlines": "العملاء الأونلاين",
       "commands": "الأوامر",
       "refresh": "🔄 تجديد",
@@ -2407,7 +2409,13 @@
       "silentNotices": "إشعارات صامتة",
       "dailyHour": "🕗 وقت الإشعار اليومي",
       "remindNow": "🔔 تذكير الآن",
-      "confirmRemind": "✅ تذكير {{ .Count }} عميل"
+      "confirmRemind": "✅ تذكير {{ .Count }} عميل",
+      "myConfigs": "📶 إعداداتي",
+      "getAllConfigs": "📥 الحصول على الكل",
+      "getOneConfig": "🎯 الحصول على واحد",
+      "subLink": "🔄 رابط الاشتراك",
+      "qrCode": "📷 كود QR",
+      "botCommands": "💬 أوامر البوت"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

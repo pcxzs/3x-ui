@@ -123,7 +123,7 @@ func (t *Tgbot) sendClientIndividualLinks(chatId int64, email string) {
 		if i == 0 {
 			msg.WriteString(t.clientHeader(email))
 		}
-		msg.WriteString(t.I18nBot("subscription.individualLinks"))
+		msg.WriteString(t.I18nBot("tgbot.messages.configHeaderAll"))
 		msg.WriteString(":\r\n")
 		for _, link := range cleaned[i:j] {
 			msg.WriteString("<code>")
@@ -228,8 +228,9 @@ func (t *Tgbot) sendClientQRLinks(chatId int64, email string) {
 	t.SendMsgToTgbot(chatId, t.clientHeader(email)+t.I18nBot("tgbot.messages.qrChoose", "Email=="+email), tu.InlineKeyboardGrid(rows))
 }
 
-// splitQRTarget pulls "<email> <index>" out of a qr_one callback.
-func splitQRTarget(arg string) (string, int, bool) {
+// splitEmailIndexTarget pulls "<email> <index>" out of a qr_one or link_one
+// callback.
+func splitEmailIndexTarget(arg string) (string, int, bool) {
 	email, idx, found := strings.Cut(strings.TrimSpace(arg), " ")
 	if !found || email == "" {
 		return "", 0, false

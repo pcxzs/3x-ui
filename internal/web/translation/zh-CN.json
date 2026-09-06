@@ -86,7 +86,6 @@
     "uploaded": "已上传",
     "expiry": "到期",
     "totalQuota": "总配额",
-    "individualLinks": "单独链接",
     "active": "启用",
     "inactive": "停用",
     "unlimited": "无限制",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ 客户通知将在服务器时间 {{ .Hour }} 发送。",
       "remindPreview": "🔔 <b>立即提醒用户</b>\r\n即将到期或已到期：{{ .Renew }}\r\n流量将用尽：{{ .Quota }}\r\n\r\n立刻发送今天的通知，并跳过定时任务。",
       "remindNothing": "目前没有需要提醒的用户。",
-      "remindDone": "✅ 提醒已发送，今天的定时任务已完成。"
+      "remindDone": "✅ 提醒已发送，今天的定时任务已完成。",
+      "configsChoose": "👇 请选择获取配置的方式：",
+      "chooseOneConfig": "👇 你需要哪个配置？",
+      "configHeaderAll": "你的配置"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2311,7 +2313,7 @@
       "serverUsage": "服务器使用情况",
       "getInbounds": "获取入站信息",
       "depleteSoon": "即将耗尽",
-      "clientUsage": "获取使用情况",
+      "clientUsage": "📊 使用情况",
       "onlines": "在线客户端",
       "commands": "命令",
       "refresh": "🔄 刷新",
@@ -2407,7 +2409,13 @@
       "silentNotices": "静默通知",
       "dailyHour": "🕗 每日通知时间",
       "remindNow": "🔔 立即提醒",
-      "confirmRemind": "✅ 提醒 {{ .Count }} 位用户"
+      "confirmRemind": "✅ 提醒 {{ .Count }} 位用户",
+      "myConfigs": "📶 我的配置",
+      "getAllConfigs": "📥 获取全部",
+      "getOneConfig": "🎯 获取单个",
+      "subLink": "🔄 订阅链接",
+      "qrCode": "📷 二维码",
+      "botCommands": "💬 机器人命令"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

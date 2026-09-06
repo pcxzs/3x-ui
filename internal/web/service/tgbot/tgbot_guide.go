@@ -47,7 +47,7 @@ func (t *Tgbot) guideKeyboard() *telego.InlineKeyboardMarkup {
 	}
 	rows := tu.InlineKeyboardCols(2, buttons...)
 	rows = append(rows, tu.InlineKeyboardRow(
-		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToMenu")).WithCallbackData(t.encodeQuery("client_menu")),
+		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToMenu")).WithCallbackData(t.encodeQuery("client_help")),
 	))
 	return tu.InlineKeyboardGrid(rows)
 }

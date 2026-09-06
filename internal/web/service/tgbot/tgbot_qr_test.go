@@ -47,9 +47,9 @@ func TestSplitQRTarget(t *testing.T) {
 	}
 
 	for _, tc := range tests {
-		email, index, ok := splitQRTarget(tc.arg)
+		email, index, ok := splitEmailIndexTarget(tc.arg)
 		if email != tc.wantEmail || index != tc.wantIndex || ok != tc.wantOK {
-			t.Errorf("splitQRTarget(%q) = (%q, %d, %v), want (%q, %d, %v)",
+			t.Errorf("splitEmailIndexTarget(%q) = (%q, %d, %v), want (%q, %d, %v)",
 				tc.arg, email, index, ok, tc.wantEmail, tc.wantIndex, tc.wantOK)
 		}
 	}

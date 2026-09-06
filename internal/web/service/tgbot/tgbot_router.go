@@ -269,13 +269,13 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, level userL
 			if isAdmin {
 				t.searchClient(chatId, commandArgs[0])
 			} else {
-				t.getClientUsage(chatId, message.From.ID, commandArgs[0])
+				t.getClientUsage(chatId, message.From.ID, 0, commandArgs[0])
 			}
 		} else {
 			// Bare /usage answers for the caller's own configs. Printing the
 			// syntax instead made the common case the one that needed an
 			// argument the customer would have to look up first.
-			t.getClientUsage(chatId, message.From.ID)
+			t.getClientUsage(chatId, message.From.ID, 0)
 		}
 	case "broadcast":
 		onlyMessage = true
@@ -480,8 +480,16 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 				t.qrLinkPicker(chatId, email)
 				return
 			case "qr_one":
-				if target, index, ok := splitQRTarget(strings.Join(dataArray[1:], " ")); ok {
+				if target, index, ok := splitEmailIndexTarget(strings.Join(dataArray[1:], " ")); ok {
 					t.sendIndividualLinkQR(chatId, target, index)
+				}
+				return
+			case "client_one_link":
+				t.oneLinkPicker(chatId, email)
+				return
+			case "link_one":
+				if target, index, ok := splitEmailIndexTarget(strings.Join(dataArray[1:], " ")); ok {
+					t.sendOneLink(chatId, target, index)
 				}
 				return
 			case "client_invite_link":
@@ -1316,15 +1324,16 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	case "client_traffic":
 		tgUserID := callbackQuery.From.ID
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientUsage"))
-		t.getClientUsage(chatId, tgUserID)
+		t.getClientUsage(chatId, tgUserID, 0)
+	case "client_usage_refresh":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+		t.getClientUsage(chatId, callbackQuery.From.ID, callbackQuery.Message.GetMessageID())
 	case "client_commands":
-		// Kept for keyboards already sitting in chat history, whose Commands
-		// button was replaced by Help.
-		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.botCommands"))
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpClientCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpClientExtraCommands"))
 	case "client_help":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.help"))
-		t.SendMsgToTgbot(chatId, t.helpText())
+		t.helpMenu(chatId)
 	case "client_guide":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.setupGuide"))
 		t.guideMenu(chatId)
@@ -1340,6 +1349,11 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	case "client_menu":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.backToMenu"))
 		t.SendAnswer(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), level)
+	case "client_configs":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.myConfigs"))
+		t.configsMenu(chatId)
+	case "client_one_link":
+		t.clientPicker(chatId, &callbackQuery.From, "client_one_link", level)
 	case "client_sub_links":
 		t.clientPicker(chatId, &callbackQuery.From, "client_sub_links", level)
 	case "client_individual_links":
@@ -1792,7 +1806,7 @@ func isClientSelfCallback(data string) bool {
 	case "client_traffic", "client_commands", "client_help", "client_sub_links",
 		"client_individual_links", "client_qr_links", "client_pm",
 		"client_settings", "client_menu", "settings_lang", "client_reset_self",
-		"client_guide":
+		"client_guide", "client_configs", "client_one_link", "client_usage_refresh":
 		return true
 	}
 	if _, ok := parseGuideCallback(data); ok {

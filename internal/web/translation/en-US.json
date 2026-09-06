@@ -87,7 +87,6 @@
     "uploaded": "Uploaded",
     "expiry": "Expiry",
     "totalQuota": "Total quota",
-    "individualLinks": "Individual links",
     "active": "Active",
     "inactive": "Inactive",
     "unlimited": "Unlimited",
@@ -2292,7 +2291,10 @@
       "dailyHourSaved": "✅ Customer notices will be sent at {{ .Hour }} server time.",
       "remindPreview": "🔔 <b>Remind customers now</b>\r\nExpiring or overdue: {{ .Renew }}\r\nLow on traffic: {{ .Quota }}\r\n\r\nSends today's notices at once and skips the scheduled run.",
       "remindNothing": "Nobody is due a reminder right now.",
-      "remindDone": "✅ Reminders sent. Today's scheduled pass is done."
+      "remindDone": "✅ Reminders sent. Today's scheduled pass is done.",
+      "configsChoose": "👇 Choose how to get your config:",
+      "chooseOneConfig": "👇 Which config do you want?",
+      "configHeaderAll": "Your configs"
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2311,7 +2313,7 @@
       "serverUsage": "Server Usage",
       "getInbounds": "Get Inbounds",
       "depleteSoon": "Deplete Soon",
-      "clientUsage": "Get Usage",
+      "clientUsage": "📊 Usage",
       "onlines": "Online Clients",
       "commands": "Commands",
       "refresh": "🔄 Refresh",
@@ -2407,7 +2409,13 @@
       "silentNotices": "Silent notices",
       "dailyHour": "🕗 Daily notice time",
       "remindNow": "🔔 Remind now",
-      "confirmRemind": "✅ Remind {{ .Count }} customer(s)"
+      "confirmRemind": "✅ Remind {{ .Count }} customer(s)",
+      "myConfigs": "📶 My Configs",
+      "getAllConfigs": "📥 Get all",
+      "getOneConfig": "🎯 Get one",
+      "subLink": "🔄 Subscription link",
+      "qrCode": "📷 QR code",
+      "botCommands": "💬 Bot commands"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

@@ -1,6 +1,7 @@
 package tgbot
 
 import (
+	"slices"
 	"strings"
 	"testing"
 
@@ -41,18 +42,35 @@ func contains(values []string, want string) bool {
 func TestClientKeyboardButtons(t *testing.T) {
 	initLangDB(t)
 	tg := &Tgbot{}
-	data := callbackData(tg.clientKeyboard(levelClient))
+	markup := tg.clientKeyboard(levelClient)
+	data := callbackData(markup)
 
-	for _, want := range []string{"client_help", "client_pm", "client_settings"} {
+	for _, want := range []string{"client_configs", "client_traffic", "client_help", "client_pm", "client_settings"} {
 		if !contains(data, want) {
 			t.Fatalf("client keyboard is missing %q: %v", want, data)
 		}
 	}
-	if contains(data, "client_commands") {
-		t.Fatalf("the commands button was replaced by help but is still shown: %v", data)
+	// Every other customer action hangs off My Configs or Help now. A button that
+	// climbs back to the top level is what made the old keyboard unreadable.
+	for _, moved := range []string{
+		"client_sub_links", "client_individual_links", "client_qr_links",
+		"client_guide", "client_commands", "client_reset_self",
+	} {
+		if contains(data, moved) {
+			t.Fatalf("%q belongs in a submenu but is on the main keyboard: %v", moved, data)
+		}
 	}
 	if contains(data, "admin_panel") {
 		t.Fatalf("a customer keyboard hints at the admin panel: %v", data)
+	}
+
+	// 2-1-2, with Help alone in the middle.
+	rows := make([]int, 0, len(markup.InlineKeyboard))
+	for _, row := range markup.InlineKeyboard {
+		rows = append(rows, len(row))
+	}
+	if want := []int{2, 1, 2}; !slices.Equal(rows, want) {
+		t.Fatalf("client keyboard rows are %v, want %v", rows, want)
 	}
 }
 

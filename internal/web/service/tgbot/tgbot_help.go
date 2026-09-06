@@ -4,6 +4,9 @@ import (
 	"strings"
 
 	"github.com/mhsanaei/3x-ui/v3/internal/logger"
+
+	"github.com/mymmrac/telego"
+	tu "github.com/mymmrac/telego/telegoutil"
 )
 
 const (
@@ -23,6 +26,26 @@ func (t *Tgbot) helpText() string {
 		return t.I18nBot("tgbot.commands.help")
 	}
 	return stored
+}
+
+// Help is the one place a customer looks when stuck, so the setup guide and the
+// command sheet hang off it rather than competing with it on the main keyboard.
+func (t *Tgbot) helpKeyboard() *telego.InlineKeyboardMarkup {
+	return tu.InlineKeyboard(
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.botCommands")).WithCallbackData(t.encodeQuery("client_commands")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.setupGuide")).WithCallbackData(t.encodeQuery("client_guide")),
+		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToMenu")).WithCallbackData(t.encodeQuery("client_menu")),
+		),
+	)
+}
+
+// The text arrives with the hub rather than behind it: one tap still answers
+// the common case, and the buttons are there when it does not.
+func (t *Tgbot) helpMenu(chatId int64) {
+	t.SendMsgToTgbot(chatId, t.helpText(), t.helpKeyboard())
 }
 
 // The admin command sheet is built in one place so /help and the Commands
