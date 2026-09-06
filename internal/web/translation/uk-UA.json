@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "Розіслати повідомлення всім прив'язаним клієнтам:\r\n<code>/broadcast</code>\r\n\r\nВідповісти клієнту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nЗмінити текст довідки для клієнтів:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Написати адміністратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказати цю довідку знову:\r\n<code>/help</code>",
       "whoisUsage": "Щоб дізнатися, якими клієнтами володіє акаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "Відкрити керування сервером:\r\n<code>/server</code>"
+      "serverMenuUsage": "Відкрити керування сервером:\r\n<code>/server</code>",
+      "clientsUsage": "Список усіх клієнтів зі строком і трафіком:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "Навантаження ЦП  {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Не вдалося перезапустити панель.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ Вхідне {{ .Remark }} увімкнено.",
       "inboundDisabled": "❌ Вхідне {{ .Remark }} вимкнено.",
-      "inboundToggleFailed": "❗ Не вдалося змінити стан вхідного.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Не вдалося змінити стан вхідного.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>Клієнти: {{ .Count }}</b>\r\nВідсортовано за строком, найближчі згори.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "не розпочато",
+      "rosterEmpty": "👥 Клієнтів ще немає.",
+      "rosterTruncated": "… і ще {{ .Count }}. Для конкретного клієнта використайте <code>/usage [Email]</code>."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Перезапустити панель",
       "toggleInbound": "🔀 Увімкнути / вимкнути вхідне",
       "confirmXrayStop": "⏹ Так, зупинити Xray",
-      "confirmPanelRestart": "♻️ Так, перезапустити панель"
+      "confirmPanelRestart": "♻️ Так, перезапустити панель",
+      "clientRoster": "👥 Звіт за клієнтами"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

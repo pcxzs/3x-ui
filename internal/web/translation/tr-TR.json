@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "Bağlı tüm istemcilere toplu mesaj göndermek için:\r\n<code>/broadcast</code>\r\n\r\nBir istemciye yanıt vermek için:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nİstemcilerin gördüğü yardım metnini değiştirmek için:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Yöneticiye mesaj göndermek için:\r\n<code>/pm [Text]</code>\r\n\r\nBu yardımı yeniden görmek için:\r\n<code>/help</code>",
       "whoisUsage": "Bir Telegram hesabının hangi istemcilere sahip olduğunu görmek için:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "Sunucu denetimlerini açmak için:\r\n<code>/server</code>"
+      "serverMenuUsage": "Sunucu denetimlerini açmak için:\r\n<code>/server</code>",
+      "clientsUsage": "Tüm istemcileri bitiş tarihi ve kullanımıyla listelemek için:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Yükü ({{ .Percent }}%), {{ .Threshold }}% eşiğini aşıyor",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Panel yeniden başlatılamadı.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ {{ .Remark }} gelen bağlantısı etkinleştirildi.",
       "inboundDisabled": "❌ {{ .Remark }} gelen bağlantısı devre dışı bırakıldı.",
-      "inboundToggleFailed": "❗ Gelen bağlantı durumu değiştirilemedi.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Gelen bağlantı durumu değiştirilemedi.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>İstemciler: {{ .Count }}</b>\r\nBitiş tarihine göre, en yakın olan önce.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "başlamadı",
+      "rosterEmpty": "👥 Henüz istemci yok.",
+      "rosterTruncated": "… ve {{ .Count }} tane daha. Belirli bir istemci için <code>/usage [Email]</code> kullanın."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Paneli Yeniden Başlat",
       "toggleInbound": "🔀 Gelen Bağlantıyı Aç / Kapat",
       "confirmXrayStop": "⏹ Evet, Xray'i durdur",
-      "confirmPanelRestart": "♻️ Evet, paneli yeniden başlat"
+      "confirmPanelRestart": "♻️ Evet, paneli yeniden başlat",
+      "clientRoster": "👥 Tüm İstemci Raporu"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

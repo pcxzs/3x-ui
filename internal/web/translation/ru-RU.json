@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "Разослать сообщение всем привязанным клиентам:\r\n<code>/broadcast</code>\r\n\r\nОтветить клиенту:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nИзменить текст справки для клиентов:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Написать администратору:\r\n<code>/pm [Text]</code>\r\n\r\nПоказать эту справку снова:\r\n<code>/help</code>",
       "whoisUsage": "Чтобы узнать, какими клиентами владеет аккаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "Открыть управление сервером:\r\n<code>/server</code>"
+      "serverMenuUsage": "Открыть управление сервером:\r\n<code>/server</code>",
+      "clientsUsage": "Список всех клиентов со сроком и трафиком:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "Загрузка процессора составляет {{ .Percent }}%, что превышает пороговое значение {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Не удалось перезапустить панель.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ Входящее {{ .Remark }} включено.",
       "inboundDisabled": "❌ Входящее {{ .Remark }} выключено.",
-      "inboundToggleFailed": "❗ Не удалось изменить состояние входящего.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Не удалось изменить состояние входящего.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>Клиенты: {{ .Count }}</b>\r\nОтсортированы по сроку, ближайшие сверху.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "не начат",
+      "rosterEmpty": "👥 Клиентов пока нет.",
+      "rosterTruncated": "… и ещё {{ .Count }}. Для конкретного клиента используйте <code>/usage [Email]</code>."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Перезапустить панель",
       "toggleInbound": "🔀 Включить / выключить входящее",
       "confirmXrayStop": "⏹ Да, остановить Xray",
-      "confirmPanelRestart": "♻️ Да, перезапустить панель"
+      "confirmPanelRestart": "♻️ Да, перезапустить панель",
+      "clientRoster": "👥 Отчёт по клиентам"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

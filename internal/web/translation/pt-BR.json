@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "Para transmitir uma mensagem a todos os clientes vinculados:\r\n<code>/broadcast</code>\r\n\r\nPara responder a um cliente:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nPara alterar o texto de ajuda que os clientes veem:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Para enviar mensagem ao administrador:\r\n<code>/pm [Text]</code>\r\n\r\nPara ver esta ajuda novamente:\r\n<code>/help</code>",
       "whoisUsage": "Para consultar quais clientes uma conta do Telegram possui:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "Para abrir os controles do servidor:\r\n<code>/server</code>"
+      "serverMenuUsage": "Para abrir os controles do servidor:\r\n<code>/server</code>",
+      "clientsUsage": "Para listar todos os clientes com expiração e consumo:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "A carga da CPU {{ .Percent }}% excede o limite de {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Não foi possível reiniciar o painel.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ A entrada {{ .Remark }} está ativada.",
       "inboundDisabled": "❌ A entrada {{ .Remark }} está desativada.",
-      "inboundToggleFailed": "❗ Não foi possível alterar o estado da entrada.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Não foi possível alterar o estado da entrada.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>Clientes: {{ .Count }}</b>\r\nOrdenados por expiração, os mais próximos primeiro.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "não iniciado",
+      "rosterEmpty": "👥 Ainda não há clientes.",
+      "rosterTruncated": "… e mais {{ .Count }}. Use <code>/usage [Email]</code> para um cliente específico."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Reiniciar o painel",
       "toggleInbound": "🔀 Ativar / desativar entrada",
       "confirmXrayStop": "⏹ Sim, parar o Xray",
-      "confirmPanelRestart": "♻️ Sim, reiniciar o painel"
+      "confirmPanelRestart": "♻️ Sim, reiniciar o painel",
+      "clientRoster": "👥 Relatório de clientes"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

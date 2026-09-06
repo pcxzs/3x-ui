@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "To broadcast a message to all linked clients:\r\n<code>/broadcast</code>\r\n\r\nTo reply to a client:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nTo change the help text clients see:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "To message the administrator:\r\n<code>/pm [Text]</code>\r\n\r\nTo see this help again:\r\n<code>/help</code>",
       "whoisUsage": "To look up which clients a Telegram account holds:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "To open the server controls:\r\n<code>/server</code>"
+      "serverMenuUsage": "To open the server controls:\r\n<code>/server</code>",
+      "clientsUsage": "To list every client with expiry and usage:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Could not restart the panel.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ Inbound {{ .Remark }} is now enabled.",
       "inboundDisabled": "❌ Inbound {{ .Remark }} is now disabled.",
-      "inboundToggleFailed": "❗ Could not change the inbound state.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Could not change the inbound state.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>Clients: {{ .Count }}</b>\r\nSorted by expiry, soonest first.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "not started",
+      "rosterEmpty": "👥 There are no clients yet.",
+      "rosterTruncated": "… and {{ .Count }} more. Use <code>/usage [Email]</code> for a specific client."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Restart Panel",
       "toggleInbound": "🔀 Enable / Disable Inbound",
       "confirmXrayStop": "⏹ Yes, stop Xray",
-      "confirmPanelRestart": "♻️ Yes, restart the panel"
+      "confirmPanelRestart": "♻️ Yes, restart the panel",
+      "clientRoster": "👥 All Clients Report"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "Để phát tin tới tất cả khách hàng đã liên kết:\r\n<code>/broadcast</code>\r\n\r\nĐể trả lời một khách hàng:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nĐể thay đổi nội dung trợ giúp mà khách hàng thấy:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Để nhắn tin cho quản trị viên:\r\n<code>/pm [Text]</code>\r\n\r\nĐể xem lại trợ giúp này:\r\n<code>/help</code>",
       "whoisUsage": "Để xem một tài khoản Telegram đang giữ những khách hàng nào:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "Để mở điều khiển máy chủ:\r\n<code>/server</code>"
+      "serverMenuUsage": "Để mở điều khiển máy chủ:\r\n<code>/server</code>",
+      "clientsUsage": "Để liệt kê mọi khách hàng kèm hạn dùng và lưu lượng:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "Sử dụng CPU {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Không thể khởi động lại bảng điều khiển.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ Inbound {{ .Remark }} đã được bật.",
       "inboundDisabled": "❌ Inbound {{ .Remark }} đã bị tắt.",
-      "inboundToggleFailed": "❗ Không thể thay đổi trạng thái inbound.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Không thể thay đổi trạng thái inbound.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>Khách hàng: {{ .Count }}</b>\r\nSắp xếp theo hạn dùng, gần nhất trước.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "chưa bắt đầu",
+      "rosterEmpty": "👥 Chưa có khách hàng nào.",
+      "rosterTruncated": "… và {{ .Count }} mục nữa. Dùng <code>/usage [Email]</code> cho một khách hàng cụ thể."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Khởi động lại bảng điều khiển",
       "toggleInbound": "🔀 Bật / tắt inbound",
       "confirmXrayStop": "⏹ Có, dừng Xray",
-      "confirmPanelRestart": "♻️ Có, khởi động lại bảng điều khiển"
+      "confirmPanelRestart": "♻️ Có, khởi động lại bảng điều khiển",
+      "clientRoster": "👥 Báo cáo tất cả khách hàng"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

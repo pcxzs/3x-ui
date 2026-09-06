@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "向所有已綁定的使用者群發訊息：\r\n<code>/broadcast</code>\r\n\r\n回覆某位使用者：\r\n<code>/send [ChatID] [Text]</code>\r\n\r\n修改使用者看到的說明內容：\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "聯絡管理員：\r\n<code>/pm [Text]</code>\r\n\r\n再次查看本說明：\r\n<code>/help</code>",
       "whoisUsage": "查詢某個 Telegram 帳號擁有哪些用戶端:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "開啟伺服器控制：\r\n<code>/server</code>"
+      "serverMenuUsage": "開啟伺服器控制：\r\n<code>/server</code>",
+      "clientsUsage": "列出所有用戶及其到期時間和用量：\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率為 {{ .Percent }}%，超過閾值 {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ 無法重啟面板。\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ 入站 {{ .Remark }} 已啟用。",
       "inboundDisabled": "❌ 入站 {{ .Remark }} 已停用。",
-      "inboundToggleFailed": "❗ 無法變更入站狀態。\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ 無法變更入站狀態。\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>用戶：{{ .Count }}</b>\r\n按到期時間排序，最近的在前。",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "未開始",
+      "rosterEmpty": "👥 目前還沒有用戶。",
+      "rosterTruncated": "… 還有 {{ .Count }} 筆。查看特定用戶請使用 <code>/usage [Email]</code>。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ 重啟面板",
       "toggleInbound": "🔀 啟用 / 停用入站",
       "confirmXrayStop": "⏹ 是，停止 Xray",
-      "confirmPanelRestart": "♻️ 是，重啟面板"
+      "confirmPanelRestart": "♻️ 是，重啟面板",
+      "clientRoster": "👥 全部用戶報告"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

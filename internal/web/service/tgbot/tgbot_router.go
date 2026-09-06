@@ -259,6 +259,13 @@ func (t *Tgbot) answerCommand(message *telego.Message, chatId int64, isAdmin boo
 			break
 		}
 		t.whoIs(chatId, commandArgs[0])
+	case "clients":
+		onlyMessage = true
+		if !isAdmin {
+			handleUnknownCommand()
+			break
+		}
+		t.clientRoster(chatId)
 	case "server":
 		onlyMessage = true
 		if !isAdmin {
@@ -1293,7 +1300,7 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		t.onlineClients(chatId, callbackQuery.Message.GetMessageID())
 	case "commands":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.commands"))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.whoisUsage")+"\r\n\r\n"+t.I18nBot("tgbot.commands.serverMenuUsage"))
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.helpAdminCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.helpAdminExtraCommands")+"\r\n\r\n"+t.I18nBot("tgbot.commands.whoisUsage")+"\r\n\r\n"+t.I18nBot("tgbot.commands.serverMenuUsage")+"\r\n\r\n"+t.I18nBot("tgbot.commands.clientsUsage"))
 	case "broadcast":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.broadcast"))
 		t.startBroadcast(chatId)
@@ -1303,6 +1310,9 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 	case "broadcast_cancel":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.canceled", "Email=="))
 		t.cancelBroadcast(chatId)
+	case "client_roster":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientRoster"))
+		t.clientRoster(chatId)
 	case "server":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.serverMenu"))
 		t.serverMenu(chatId)

@@ -58,6 +58,7 @@ func (t *Tgbot) SendAnswer(chatId int64, msg string, isAdmin bool) {
 			tu.InlineKeyboardButton(t.I18nBot("qrCode")).WithCallbackData(t.encodeQuery("admin_client_qr_links")),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.clientRoster")).WithCallbackData(t.encodeQuery("client_roster")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.serverMenu")).WithCallbackData(t.encodeQuery("server")),
 		),
 	)

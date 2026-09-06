@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "Untuk menyiarkan pesan ke semua klien yang tertaut:\r\n<code>/broadcast</code>\r\n\r\nUntuk membalas klien:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nUntuk mengubah teks bantuan yang dilihat klien:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "Untuk mengirim pesan ke administrator:\r\n<code>/pm [Text]</code>\r\n\r\nUntuk melihat bantuan ini lagi:\r\n<code>/help</code>",
       "whoisUsage": "Untuk melihat klien yang dimiliki sebuah akun Telegram:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "Untuk membuka kontrol server:\r\n<code>/server</code>"
+      "serverMenuUsage": "Untuk membuka kontrol server:\r\n<code>/server</code>",
+      "clientsUsage": "Untuk menampilkan semua klien beserta masa berlaku dan pemakaian:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ Tidak dapat memulai ulang panel.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ Inbound {{ .Remark }} kini aktif.",
       "inboundDisabled": "❌ Inbound {{ .Remark }} kini nonaktif.",
-      "inboundToggleFailed": "❗ Tidak dapat mengubah status inbound.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ Tidak dapat mengubah status inbound.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>Klien: {{ .Count }}</b>\r\nDiurutkan berdasarkan masa berlaku, yang terdekat lebih dulu.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "belum dimulai",
+      "rosterEmpty": "👥 Belum ada klien.",
+      "rosterTruncated": "… dan {{ .Count }} lainnya. Gunakan <code>/usage [Email]</code> untuk klien tertentu."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ Mulai Ulang Panel",
       "toggleInbound": "🔀 Aktifkan / Nonaktifkan Inbound",
       "confirmXrayStop": "⏹ Ya, hentikan Xray",
-      "confirmPanelRestart": "♻️ Ya, mulai ulang panel"
+      "confirmPanelRestart": "♻️ Ya, mulai ulang panel",
+      "clientRoster": "👥 Laporan Semua Klien"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

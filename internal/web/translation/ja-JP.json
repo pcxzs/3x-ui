@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "連携済みの全クライアントに一斉配信する:\r\n<code>/broadcast</code>\r\n\r\nクライアントに返信する:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nクライアント向けヘルプ文を変更する:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "管理者にメッセージを送る:\r\n<code>/pm [Text]</code>\r\n\r\nこのヘルプをもう一度表示する:\r\n<code>/help</code>",
       "whoisUsage": "Telegram アカウントが保有するクライアントを調べる:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "サーバー操作を開くには:\r\n<code>/server</code>"
+      "serverMenuUsage": "サーバー操作を開くには:\r\n<code>/server</code>",
+      "clientsUsage": "有効期限と使用量つきで全クライアントを一覧するには:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "CPU使用率は{{ .Percent }}%、しきい値{{ .Threshold }}%を超えました",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ パネルを再起動できませんでした。\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ インバウンド {{ .Remark }} を有効にしました。",
       "inboundDisabled": "❌ インバウンド {{ .Remark }} を無効にしました。",
-      "inboundToggleFailed": "❗ インバウンドの状態を変更できませんでした。\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ インバウンドの状態を変更できませんでした。\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>クライアント: {{ .Count }}</b>\r\n有効期限が近い順に並べています。",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "未開始",
+      "rosterEmpty": "👥 クライアントはまだありません。",
+      "rosterTruncated": "… ほか {{ .Count }} 件。特定のクライアントは <code>/usage [Email]</code> で確認してください。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ パネルを再起動",
       "toggleInbound": "🔀 インバウンドの有効化 / 無効化",
       "confirmXrayStop": "⏹ はい、Xray を停止します",
-      "confirmPanelRestart": "♻️ はい、パネルを再起動します"
+      "confirmPanelRestart": "♻️ はい、パネルを再起動します",
+      "clientRoster": "👥 全クライアント一覧"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

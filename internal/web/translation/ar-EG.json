@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "لبث رسالة إلى جميع العملاء المرتبطين:\r\n<code>/broadcast</code>\r\n\r\nللرد على عميل:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nلتغيير نص المساعدة الذي يراه العملاء:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "لمراسلة المسؤول:\r\n<code>/pm [Text]</code>\r\n\r\nلعرض هذه المساعدة مرة أخرى:\r\n<code>/help</code>",
       "whoisUsage": "لمعرفة العملاء الذين يملكهم حساب تيليجرام:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "لفتح أدوات الخادم:\r\n<code>/server</code>"
+      "serverMenuUsage": "لفتح أدوات الخادم:\r\n<code>/server</code>",
+      "clientsUsage": "لعرض كل العملاء مع الانتهاء والاستهلاك:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "حمل المعالج {{ .Percent }}% عدى الحد المسموح ({{ .Threshold }}%)",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ تعذّر إعادة تشغيل اللوحة.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ تم تفعيل الوارد {{ .Remark }}.",
       "inboundDisabled": "❌ تم تعطيل الوارد {{ .Remark }}.",
-      "inboundToggleFailed": "❗ تعذّر تغيير حالة الوارد.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ تعذّر تغيير حالة الوارد.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>العملاء: {{ .Count }}</b>\r\nمرتّبون حسب تاريخ الانتهاء، الأقرب أولاً.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "لم تبدأ",
+      "rosterEmpty": "👥 لا يوجد عملاء بعد.",
+      "rosterTruncated": "… و{{ .Count }} غيرهم. استخدم <code>/usage [Email]</code> لعميل محدّد."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ إعادة تشغيل اللوحة",
       "toggleInbound": "🔀 تفعيل / تعطيل وارد",
       "confirmXrayStop": "⏹ نعم، أوقف Xray",
-      "confirmPanelRestart": "♻️ نعم، أعد تشغيل اللوحة"
+      "confirmPanelRestart": "♻️ نعم، أعد تشغيل اللوحة",
+      "clientRoster": "👥 تقرير كل العملاء"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

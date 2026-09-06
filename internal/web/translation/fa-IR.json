@@ -2107,7 +2107,8 @@
       "helpAdminExtraCommands": "برای ارسال پیام همگانی به همه کاربران متصل:\r\n<code>/broadcast</code>\r\n\r\nبرای پاسخ به یک کاربر:\r\n<code>/send [ChatID] [Text]</code>\r\n\r\nبرای تغییر متن راهنمای کاربران:\r\n<code>/sethelp</code>",
       "helpClientExtraCommands": "برای ارسال پیام به مدیر:\r\n<code>/pm [Text]</code>\r\n\r\nبرای دیدن دوباره این راهنما:\r\n<code>/help</code>",
       "whoisUsage": "برای دیدن کاربران متصل به یک حساب تلگرام:\r\n<code>/whois [TelegramID]</code>",
-      "serverMenuUsage": "برای باز کردن کنترل‌های سرور:\r\n<code>/server</code>"
+      "serverMenuUsage": "برای باز کردن کنترل‌های سرور:\r\n<code>/server</code>",
+      "clientsUsage": "برای فهرست همه کاربران همراه با انقضا و مصرف:\r\n<code>/clients</code>"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2219,7 +2220,12 @@
       "panelRestartFailed": "❗ راه‌اندازی مجدد پنل ممکن نشد.\r\n\r\n<code>{{ .Error }}</code>",
       "inboundEnabled": "✅ ورودی {{ .Remark }} فعال شد.",
       "inboundDisabled": "❌ ورودی {{ .Remark }} غیرفعال شد.",
-      "inboundToggleFailed": "❗ تغییر وضعیت ورودی ممکن نشد.\r\n\r\n<code>{{ .Error }}</code>"
+      "inboundToggleFailed": "❗ تغییر وضعیت ورودی ممکن نشد.\r\n\r\n<code>{{ .Error }}</code>",
+      "rosterHeader": "👥 <b>کاربران: {{ .Count }}</b>\r\nمرتب‌شده بر اساس تاریخ انقضا، نزدیک‌ترین اول.",
+      "rosterEntry": "{{ .Bound }} <code>{{ .Email }}</code>\r\n📅 {{ .Expiry }} · 📊 {{ .Used }} / {{ .Total }}",
+      "rosterNotStarted": "شروع‌نشده",
+      "rosterEmpty": "👥 هنوز کاربری وجود ندارد.",
+      "rosterTruncated": "… و {{ .Count }} مورد دیگر. برای یک کاربر مشخص از <code>/usage [Email]</code> استفاده کنید."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2284,7 +2290,8 @@
       "panelRestart": "♻️ راه‌اندازی مجدد پنل",
       "toggleInbound": "🔀 فعال / غیرفعال کردن ورودی",
       "confirmXrayStop": "⏹ بله، Xray متوقف شود",
-      "confirmPanelRestart": "♻️ بله، پنل راه‌اندازی مجدد شود"
+      "confirmPanelRestart": "♻️ بله، پنل راه‌اندازی مجدد شود",
+      "clientRoster": "👥 گزارش همه کاربران"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",
