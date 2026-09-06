@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 停用 {{ .Count }} 個已過期客戶？\n\n{{ .Clients }}",
       "bulkDone": "✅ 已套用到 {{ .Count }} 個客戶。\n\n{{ .Clients }}",
       "bulkNoTargets": "目前沒有符合該操作的客戶。",
-      "bulkTooMany": "⚠️ 符合超過 {{ .Limit }} 個客戶。請縮小範圍並使用單一客戶選單。"
+      "bulkTooMany": "⚠️ 符合超過 {{ .Limit }} 個客戶。請縮小範圍並使用單一客戶選單。",
+      "dailyHourPrompt": "🕗 請選擇向客戶傳送通知的時間（伺服器時間）。",
+      "dailyHourSaved": "✅ 客戶通知將在伺服器時間 {{ .Hour }} 傳送。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ 批次操作",
       "bulkExtend": "➕ 延長即將到期",
       "bulkDisable": "🚫 停用已過期",
-      "bulkConfirm": "✅ 套用到列出的全部"
+      "bulkConfirm": "✅ 套用到列出的全部",
+      "silentNotices": "靜音通知",
+      "dailyHour": "🕗 每日通知時間"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

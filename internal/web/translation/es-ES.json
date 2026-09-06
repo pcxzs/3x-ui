@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 ¿Desactivar {{ .Count }} cliente(s) vencido(s)?\n\n{{ .Clients }}",
       "bulkDone": "✅ Aplicado a {{ .Count }} cliente(s).\n\n{{ .Clients }}",
       "bulkNoTargets": "Ahora mismo no hay nadie que coincida con esa acción.",
-      "bulkTooMany": "⚠️ Coinciden más de {{ .Limit }} clientes. Redúcelo y usa el menú por cliente."
+      "bulkTooMany": "⚠️ Coinciden más de {{ .Limit }} clientes. Redúcelo y usa el menú por cliente.",
+      "dailyHourPrompt": "🕗 Elige la hora de envío de los avisos a clientes. Hora del servidor.",
+      "dailyHourSaved": "✅ Los avisos a clientes se enviarán a las {{ .Hour }} hora del servidor."
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ Acciones masivas",
       "bulkExtend": "➕ Ampliar los que vencen",
       "bulkDisable": "🚫 Desactivar vencidos",
-      "bulkConfirm": "✅ Aplicar a todos los listados"
+      "bulkConfirm": "✅ Aplicar a todos los listados",
+      "silentNotices": "Avisos silenciosos",
+      "dailyHour": "🕗 Hora del aviso diario"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

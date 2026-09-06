@@ -58,6 +58,12 @@ var botFeatures = []botNotification{
 		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotAllowSelfReset() },
 		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotAllowSelfReset(v) },
 	},
+	{
+		callback: "feature_silent",
+		labelKey: "tgbot.buttons.silentNotices",
+		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotSilentNotices() },
+		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotSilentNotices(v) },
+	},
 }
 
 func toggleByCallback(toggles []botNotification, callback string) (botNotification, bool) {
@@ -104,7 +110,9 @@ func (t *Tgbot) notificationsKeyboard() *telego.InlineKeyboardMarkup {
 }
 
 func (t *Tgbot) featuresKeyboard() *telego.InlineKeyboardMarkup {
-	return t.toggleKeyboard(botFeatures, "feature_toggle ")
+	return t.toggleKeyboard(botFeatures, "feature_toggle ", tu.InlineKeyboardRow(
+		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dailyHour")).WithCallbackData(t.encodeQuery("settings_hour")),
+	))
 }
 
 func (t *Tgbot) notificationsMenu(chatId int64) {

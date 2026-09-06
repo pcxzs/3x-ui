@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 Disable {{ .Count }} overdue client(s)?\n\n{{ .Clients }}",
       "bulkDone": "✅ Applied to {{ .Count }} client(s).\n\n{{ .Clients }}",
       "bulkNoTargets": "Nothing matches that action right now.",
-      "bulkTooMany": "⚠️ More than {{ .Limit }} clients match. Narrow it down and use the per-client menu."
+      "bulkTooMany": "⚠️ More than {{ .Limit }} clients match. Narrow it down and use the per-client menu.",
+      "dailyHourPrompt": "🕗 Pick the hour customer notices are sent. Server time.",
+      "dailyHourSaved": "✅ Customer notices will be sent at {{ .Hour }} server time."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ Bulk actions",
       "bulkExtend": "➕ Extend expiring",
       "bulkDisable": "🚫 Disable overdue",
-      "bulkConfirm": "✅ Apply to all listed"
+      "bulkConfirm": "✅ Apply to all listed",
+      "silentNotices": "Silent notices",
+      "dailyHour": "🕗 Daily notice time"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

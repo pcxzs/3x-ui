@@ -28,22 +28,32 @@ type rosterFilter struct {
 }
 
 var rosterFilters = []rosterFilter{
-	{name: rosterFilterAll, labelKey: "tgbot.buttons.filterAll",
-		keep: func(*service.ClientWithAttachments, time.Time) bool { return true }},
+	{
+		name: rosterFilterAll, labelKey: "tgbot.buttons.filterAll",
+		keep: func(*service.ClientWithAttachments, time.Time) bool { return true },
+	},
 	// Expiring means the ladder's own window, so "about to lapse" means the
 	// same thing in the roster as it does in the reminders.
-	{name: rosterFilterExpiring, labelKey: "tgbot.buttons.filterExpiring",
+	{
+		name: rosterFilterExpiring, labelKey: "tgbot.buttons.filterExpiring",
 		keep: func(c *service.ClientWithAttachments, now time.Time) bool {
 			return expiryRung(c.ExpiryTime, now) != rungNone
-		}},
-	{name: rosterFilterExhausted, labelKey: "tgbot.buttons.filterExhausted",
+		},
+	},
+	{
+		name: rosterFilterExhausted, labelKey: "tgbot.buttons.filterExhausted",
 		keep: func(c *service.ClientWithAttachments, _ time.Time) bool {
 			return quotaRungOf(clientUsage(c), c.TotalGB) == quotaNinetyFive
-		}},
-	{name: rosterFilterDisabled, labelKey: "tgbot.buttons.filterDisabled",
-		keep: func(c *service.ClientWithAttachments, _ time.Time) bool { return !c.Enable }},
-	{name: rosterFilterUnbound, labelKey: "tgbot.buttons.filterUnbound",
-		keep: func(c *service.ClientWithAttachments, _ time.Time) bool { return c.TgID == 0 }},
+		},
+	},
+	{
+		name: rosterFilterDisabled, labelKey: "tgbot.buttons.filterDisabled",
+		keep: func(c *service.ClientWithAttachments, _ time.Time) bool { return !c.Enable },
+	},
+	{
+		name: rosterFilterUnbound, labelKey: "tgbot.buttons.filterUnbound",
+		keep: func(c *service.ClientWithAttachments, _ time.Time) bool { return c.TgID == 0 },
+	},
 }
 
 func clientUsage(c *service.ClientWithAttachments) int64 {

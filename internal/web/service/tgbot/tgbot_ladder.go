@@ -73,11 +73,6 @@ func (t *Tgbot) ladderAlreadyRanToday(today string) bool {
 }
 
 func (t *Tgbot) notifyRenewals() {
-	today := time.Now().Format("2006-01-02")
-	if t.ladderAlreadyRanToday(today) {
-		return
-	}
-
 	records, err := t.clientService.List()
 	if err != nil {
 		logger.Warning("tgbot: renewal ladder client list failed:", err)
@@ -100,9 +95,6 @@ func (t *Tgbot) notifyRenewals() {
 
 	if summary := t.renewalSummary(byRung); summary != "" {
 		t.SendMsgToTgbotAdmins(summary)
-	}
-	if err := t.settingService.SetTgBotLadderRun(today); err != nil {
-		logger.Warning("tgbot: renewal ladder state save failed:", err)
 	}
 }
 

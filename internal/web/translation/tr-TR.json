@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 {{ .Count }} geciken istemci devre dışı bırakılsın mı?\n\n{{ .Clients }}",
       "bulkDone": "✅ {{ .Count }} istemciye uygulandı.\n\n{{ .Clients }}",
       "bulkNoTargets": "Şu anda bu işleme uyan kimse yok.",
-      "bulkTooMany": "⚠️ {{ .Limit }} istemciden fazlası eşleşiyor. Daraltın ve tek istemci menüsünü kullanın."
+      "bulkTooMany": "⚠️ {{ .Limit }} istemciden fazlası eşleşiyor. Daraltın ve tek istemci menüsünü kullanın.",
+      "dailyHourPrompt": "🕗 Müşteri bildirimlerinin gönderileceği saati seçin. Sunucu saati.",
+      "dailyHourSaved": "✅ Müşteri bildirimleri sunucu saatiyle {{ .Hour }} gönderilecek."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ Toplu işlemler",
       "bulkExtend": "➕ Süresi dolanları uzat",
       "bulkDisable": "🚫 Gecikenleri devre dışı bırak",
-      "bulkConfirm": "✅ Listelenenlerin hepsine uygula"
+      "bulkConfirm": "✅ Listelenenlerin hepsine uygula",
+      "silentNotices": "Sessiz bildirimler",
+      "dailyHour": "🕗 Günlük bildirim saati"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

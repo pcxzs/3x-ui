@@ -181,6 +181,9 @@ type Tgbot struct {
 	// Set by forUser so a reply renders in the language its recipient picked;
 	// empty means the panel-wide bot language.
 	lang string
+	// Set by quiet for the daily pass, whose notices are routine enough that
+	// they should not buzz a phone. Interactive replies keep their alert.
+	silent bool
 }
 
 // NewTgbot creates a new Tgbot instance.

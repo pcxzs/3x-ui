@@ -206,9 +206,10 @@ func (t *Tgbot) SendMsgToTgbot(chatId int64, msg string, replyMarkup ...telego.R
 	allMessages := pageMessage(msg, telegramPageLimit)
 	for n, message := range allMessages {
 		params := telego.SendMessageParams{
-			ChatID:    tu.ID(chatId),
-			Text:      message,
-			ParseMode: "HTML",
+			ChatID:              tu.ID(chatId),
+			Text:                message,
+			ParseMode:           "HTML",
+			DisableNotification: t.silent,
 		}
 		// only add replyMarkup to last message
 		if len(replyMarkup) > 0 && n == (len(allMessages)-1) {
@@ -278,7 +279,7 @@ func (t *Tgbot) sendHTMLDirect(chatId int64, text string, replyMarkup ...telego.
 		ChatID:              tu.ID(chatId),
 		Text:                text,
 		ParseMode:           "HTML",
-		DisableNotification: t.noticesAreSilent(),
+		DisableNotification: t.silent,
 	}
 	if len(replyMarkup) > 0 {
 		params.ReplyMarkup = replyMarkup[0]
@@ -287,14 +288,18 @@ func (t *Tgbot) sendHTMLDirect(chatId int64, text string, replyMarkup ...telego.
 	return err
 }
 
-// A routine reminder should not buzz a phone at the hour the pass happens to
-// run; a lookup failure keeps the buzz rather than silencing something urgent.
-func (t *Tgbot) noticesAreSilent() bool {
+// quiet returns a copy of the bot whose sends carry no alert, reading the
+// setting once rather than once per recipient. A lookup failure keeps the buzz
+// rather than silencing something an operator wanted to hear.
+func (t *Tgbot) quiet() *Tgbot {
 	silent, err := t.settingService.GetTgBotSilentNotices()
 	if err != nil {
-		return false
+		logger.Warning("tgbot: silent notice setting lookup failed:", err)
+		silent = false
 	}
-	return silent
+	scoped := *t
+	scoped.silent = silent
+	return &scoped
 }
 
 // SendMsgToTgbotAdmins sends a message to all admin Telegram chats.

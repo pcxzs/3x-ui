@@ -1264,6 +1264,17 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		return
 	}
 
+	// Carries an hour, so it cannot be an exact-match case below. Admin-only,
+	// and the gate is here rather than in the handler's caller.
+	if hour, ok := parseHourCallback(callbackQuery.Data); ok {
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.dailyHour"))
+		t.applyDailyHour(chatId, hour, callbackQuery.Message.GetMessageID())
+		return
+	}
+
 	// Carries a tag, so it cannot be an exact-match case below.
 	if messageKey, ok := parseGuideCallback(callbackQuery.Data); ok {
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.setupGuide"))
@@ -1417,6 +1428,12 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		}
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.botFeatures"))
 		t.featuresMenu(chatId)
+	case "settings_hour":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.dailyHour"))
+		t.hourMenu(chatId, callbackQuery.Message.GetMessageID())
 	case "server_panel_logs":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelLogs"))
 		t.sendPanelLogs(chatId)

@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 Tắt {{ .Count }} khách đã quá hạn?\n\n{{ .Clients }}",
       "bulkDone": "✅ Đã áp dụng cho {{ .Count }} khách.\n\n{{ .Clients }}",
       "bulkNoTargets": "Hiện không có ai khớp với thao tác này.",
-      "bulkTooMany": "⚠️ Có hơn {{ .Limit }} khách khớp. Hãy thu hẹp lại và dùng menu từng khách."
+      "bulkTooMany": "⚠️ Có hơn {{ .Limit }} khách khớp. Hãy thu hẹp lại và dùng menu từng khách.",
+      "dailyHourPrompt": "🕗 Chọn giờ gửi thông báo cho khách. Theo giờ máy chủ.",
+      "dailyHourSaved": "✅ Thông báo cho khách sẽ được gửi lúc {{ .Hour }} giờ máy chủ."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ Thao tác hàng loạt",
       "bulkExtend": "➕ Gia hạn sắp hết hạn",
       "bulkDisable": "🚫 Tắt các tài khoản quá hạn",
-      "bulkConfirm": "✅ Áp dụng cho tất cả"
+      "bulkConfirm": "✅ Áp dụng cho tất cả",
+      "silentNotices": "Thông báo im lặng",
+      "dailyHour": "🕗 Giờ thông báo hằng ngày"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

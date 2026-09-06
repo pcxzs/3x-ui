@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 期限切れの {{ .Count }} 件を無効にしますか?\n\n{{ .Clients }}",
       "bulkDone": "✅ {{ .Count }} 件に適用しました。\n\n{{ .Clients }}",
       "bulkNoTargets": "現在この操作の対象はいません。",
-      "bulkTooMany": "⚠️ {{ .Limit }} 件を超えて該当します。範囲を絞り、個別メニューをお使いください。"
+      "bulkTooMany": "⚠️ {{ .Limit }} 件を超えて該当します。範囲を絞り、個別メニューをお使いください。",
+      "dailyHourPrompt": "🕗 利用者への通知を送る時刻を選んでください。サーバー時間です。",
+      "dailyHourSaved": "✅ 利用者への通知はサーバー時間 {{ .Hour }} に送信されます。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ 一括操作",
       "bulkExtend": "➕ 期限間近を延長",
       "bulkDisable": "🚫 期限切れを無効化",
-      "bulkConfirm": "✅ 一覧すべてに適用"
+      "bulkConfirm": "✅ 一覧すべてに適用",
+      "silentNotices": "サイレント通知",
+      "dailyHour": "🕗 毎日の通知時刻"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

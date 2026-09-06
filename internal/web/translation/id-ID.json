@@ -2282,7 +2282,9 @@
       "bulkPreviewDisable": "🚫 Nonaktifkan {{ .Count }} klien yang lewat jatuh tempo?\n\n{{ .Clients }}",
       "bulkDone": "✅ Diterapkan ke {{ .Count }} klien.\n\n{{ .Clients }}",
       "bulkNoTargets": "Saat ini tidak ada yang cocok dengan aksi tersebut.",
-      "bulkTooMany": "⚠️ Lebih dari {{ .Limit }} klien cocok. Persempit dan gunakan menu per klien."
+      "bulkTooMany": "⚠️ Lebih dari {{ .Limit }} klien cocok. Persempit dan gunakan menu per klien.",
+      "dailyHourPrompt": "🕗 Pilih jam pengiriman notifikasi pelanggan. Waktu server.",
+      "dailyHourSaved": "✅ Notifikasi pelanggan akan dikirim pukul {{ .Hour }} waktu server."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2393,7 +2395,9 @@
       "bulkActions": "⚡ Aksi massal",
       "bulkExtend": "➕ Perpanjang yang akan berakhir",
       "bulkDisable": "🚫 Nonaktifkan yang lewat jatuh tempo",
-      "bulkConfirm": "✅ Terapkan ke semua yang terdaftar"
+      "bulkConfirm": "✅ Terapkan ke semua yang terdaftar",
+      "silentNotices": "Notifikasi senyap",
+      "dailyHour": "🕗 Waktu notifikasi harian"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",
