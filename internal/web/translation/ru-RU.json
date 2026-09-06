@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 Сегодня ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Завтра ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Через 3 дня ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>Напоминания о продлении отправлены</b>"
+      "renewSummaryHeader": "🔔 <b>Напоминания о продлении отправлены</b>",
+      "qrChoose": "📷 Какой QR нужен для <code>{{ .Email }}</code>?",
+      "qrChooseLink": "📷 Какую ссылку закодировать в QR для <code>{{ .Email }}</code>?",
+      "qrCaptionSub": "📷 URL подписки — {{ .Email }}\nОтсканируйте в приложении, чтобы импортировать все конфигурации сразу.",
+      "qrCaptionSubJson": "📷 URL JSON-подписки — {{ .Email }}\nДля приложений, ожидающих формат JSON.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nОтсканируйте, чтобы импортировать только этот сервер."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 Отчёт по клиентам",
       "adminPanel": "🛡 Админ",
       "backToUserPanel": "⬅️ Назад в мою панель",
-      "inviteLinks": "🔗 Ссылки-приглашения"
+      "inviteLinks": "🔗 Ссылки-приглашения",
+      "qrSubscription": "📷 QR подписки",
+      "qrSubJson": "📷 QR JSON",
+      "qrForLink": "📷 QR одной ссылки"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

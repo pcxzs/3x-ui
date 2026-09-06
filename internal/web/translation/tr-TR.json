@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 Bugün ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Yarın ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 gün sonra ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>Yenileme hatırlatmaları gönderildi</b>"
+      "renewSummaryHeader": "🔔 <b>Yenileme hatırlatmaları gönderildi</b>",
+      "qrChoose": "📷 <code>{{ .Email }}</code> için hangi QR gerekiyor?",
+      "qrChooseLink": "📷 <code>{{ .Email }}</code> için QR hangi bağlantıyı içersin?",
+      "qrCaptionSub": "📷 Abonelik URL'si — {{ .Email }}\nTüm yapılandırmaları tek seferde almak için uygulamanızda tarayın.",
+      "qrCaptionSubJson": "📷 JSON abonelik URL'si — {{ .Email }}\nJSON abonelik biçimi bekleyen uygulamalar için.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nYalnızca bu sunucuyu almak için tarayın."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 Tüm İstemci Raporu",
       "adminPanel": "🛡 Yönetim",
       "backToUserPanel": "⬅️ Kendi panelime dön",
-      "inviteLinks": "🔗 Davet Bağlantıları"
+      "inviteLinks": "🔗 Davet Bağlantıları",
+      "qrSubscription": "📷 Abonelik QR",
+      "qrSubJson": "📷 JSON QR",
+      "qrForLink": "📷 Tek bağlantı QR"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

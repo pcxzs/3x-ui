@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 Vencem hoje ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Vencem amanhã ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Vencem em 3 dias ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>Lembretes de renovação enviados</b>"
+      "renewSummaryHeader": "🔔 <b>Lembretes de renovação enviados</b>",
+      "qrChoose": "📷 Qual QR você precisa para <code>{{ .Email }}</code>?",
+      "qrChooseLink": "📷 Qual link o QR deve codificar para <code>{{ .Email }}</code>?",
+      "qrCaptionSub": "📷 URL de assinatura — {{ .Email }}\nEscaneie no seu app para importar todas as configurações de uma vez.",
+      "qrCaptionSubJson": "📷 URL de assinatura JSON — {{ .Email }}\nPara apps que usam o formato de assinatura JSON.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nEscaneie para importar apenas este servidor."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 Relatório de clientes",
       "adminPanel": "🛡 Administração",
       "backToUserPanel": "⬅️ Voltar ao meu painel",
-      "inviteLinks": "🔗 Links de convite"
+      "inviteLinks": "🔗 Links de convite",
+      "qrSubscription": "📷 QR da assinatura",
+      "qrSubJson": "📷 QR JSON",
+      "qrForLink": "📷 QR de um link"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

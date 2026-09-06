@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 Hôm nay ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Ngày mai ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Sau 3 ngày ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>Đã gửi nhắc gia hạn</b>"
+      "renewSummaryHeader": "🔔 <b>Đã gửi nhắc gia hạn</b>",
+      "qrChoose": "📷 Bạn cần mã QR nào cho <code>{{ .Email }}</code>?",
+      "qrChooseLink": "📷 QR nên mã hóa liên kết nào cho <code>{{ .Email }}</code>?",
+      "qrCaptionSub": "📷 URL đăng ký — {{ .Email }}\nQuét trong ứng dụng để nhập tất cả cấu hình cùng lúc.",
+      "qrCaptionSubJson": "📷 URL đăng ký JSON — {{ .Email }}\nDành cho ứng dụng dùng định dạng đăng ký JSON.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nQuét để chỉ nhập máy chủ này."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 Báo cáo tất cả khách hàng",
       "adminPanel": "🛡 Quản trị",
       "backToUserPanel": "⬅️ Quay lại bảng của tôi",
-      "inviteLinks": "🔗 Liên kết mời"
+      "inviteLinks": "🔗 Liên kết mời",
+      "qrSubscription": "📷 QR đăng ký",
+      "qrSubJson": "📷 QR JSON",
+      "qrForLink": "📷 QR một liên kết"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

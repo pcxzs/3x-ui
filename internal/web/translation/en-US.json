@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 Due today ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Due tomorrow ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Due in 3 days ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>Renewal reminders sent</b>"
+      "renewSummaryHeader": "🔔 <b>Renewal reminders sent</b>",
+      "qrChoose": "📷 Which QR code do you need for <code>{{ .Email }}</code>?",
+      "qrChooseLink": "📷 Which link should the QR encode for <code>{{ .Email }}</code>?",
+      "qrCaptionSub": "📷 Subscription URL — {{ .Email }}\nScan this in your client app to import every config at once.",
+      "qrCaptionSubJson": "📷 JSON subscription URL — {{ .Email }}\nFor client apps that expect the JSON subscription format.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nScan this to import just this one server."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 All Clients Report",
       "adminPanel": "🛡 Admin",
       "backToUserPanel": "⬅️ Back to my panel",
-      "inviteLinks": "🔗 Invite Links"
+      "inviteLinks": "🔗 Invite Links",
+      "qrSubscription": "📷 Subscription QR",
+      "qrSubJson": "📷 JSON QR",
+      "qrForLink": "📷 QR for one link"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

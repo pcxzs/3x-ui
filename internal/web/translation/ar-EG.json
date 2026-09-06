@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 اليوم ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 غدًا ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 بعد 3 أيام ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>تم إرسال تذكيرات التجديد</b>"
+      "renewSummaryHeader": "🔔 <b>تم إرسال تذكيرات التجديد</b>",
+      "qrChoose": "📷 أي رمز QR تحتاج لـ <code>{{ .Email }}</code>؟",
+      "qrChooseLink": "📷 أي رابط يرمّزه الـ QR لـ <code>{{ .Email }}</code>؟",
+      "qrCaptionSub": "📷 رابط الاشتراك — {{ .Email }}\nامسحه في تطبيقك لاستيراد كل الإعدادات دفعة واحدة.",
+      "qrCaptionSubJson": "📷 رابط اشتراك JSON — {{ .Email }}\nللتطبيقات التي تتوقع صيغة اشتراك JSON.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nامسحه لاستيراد هذا الخادم فقط."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 تقرير كل العملاء",
       "adminPanel": "🛡 المشرف",
       "backToUserPanel": "⬅️ العودة إلى لوحتي",
-      "inviteLinks": "🔗 روابط الدعوة"
+      "inviteLinks": "🔗 روابط الدعوة",
+      "qrSubscription": "📷 رمز الاشتراك",
+      "qrSubJson": "📷 رمز JSON",
+      "qrForLink": "📷 رمز لرابط واحد"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

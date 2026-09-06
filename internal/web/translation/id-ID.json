@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 Hari ini ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Besok ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 hari lagi ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>Pengingat perpanjangan terkirim</b>"
+      "renewSummaryHeader": "🔔 <b>Pengingat perpanjangan terkirim</b>",
+      "qrChoose": "📷 QR mana yang Anda perlukan untuk <code>{{ .Email }}</code>?",
+      "qrChooseLink": "📷 Tautan mana yang harus dikodekan QR untuk <code>{{ .Email }}</code>?",
+      "qrCaptionSub": "📷 URL langganan — {{ .Email }}\nPindai di aplikasi Anda untuk mengimpor semua konfigurasi sekaligus.",
+      "qrCaptionSubJson": "📷 URL langganan JSON — {{ .Email }}\nUntuk aplikasi yang memakai format langganan JSON.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nPindai untuk mengimpor server ini saja."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 Laporan Semua Klien",
       "adminPanel": "🛡 Admin",
       "backToUserPanel": "⬅️ Kembali ke panel saya",
-      "inviteLinks": "🔗 Tautan Undangan"
+      "inviteLinks": "🔗 Tautan Undangan",
+      "qrSubscription": "📷 QR Langganan",
+      "qrSubJson": "📷 QR JSON",
+      "qrForLink": "📷 QR satu tautan"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

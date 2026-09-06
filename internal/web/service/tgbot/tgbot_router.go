@@ -438,6 +438,20 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			case "client_qr_links":
 				t.sendClientQRLinks(chatId, email)
 				return
+			case "qr_sub":
+				t.sendSubscriptionQR(chatId, email, false)
+				return
+			case "qr_subjson":
+				t.sendSubscriptionQR(chatId, email, true)
+				return
+			case "qr_pick":
+				t.qrLinkPicker(chatId, email)
+				return
+			case "qr_one":
+				if target, index, ok := splitQRTarget(strings.Join(dataArray[1:], " ")); ok {
+					t.sendIndividualLinkQR(chatId, target, index)
+				}
+				return
 			case "client_invite_link":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.inviteLink"))
 				t.sendInviteLink(chatId, email)
@@ -1687,6 +1701,24 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			t.sendClientQRLinks(chatId, email)
 			return
 		}
+		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_sub "); ok {
+			t.sendSubscriptionQR(chatId, after, false)
+			return
+		}
+		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_subjson "); ok {
+			t.sendSubscriptionQR(chatId, after, true)
+			return
+		}
+		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_pick "); ok {
+			t.qrLinkPicker(chatId, after)
+			return
+		}
+		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_one "); ok {
+			if target, index, ok := splitQRTarget(after); ok {
+				t.sendIndividualLinkQR(chatId, target, index)
+			}
+			return
+		}
 	}
 }
 
@@ -1706,5 +1738,9 @@ func isClientSelfCallback(data string) bool {
 	}
 	return strings.HasPrefix(data, "client_sub_links ") ||
 		strings.HasPrefix(data, "client_individual_links ") ||
-		strings.HasPrefix(data, "client_qr_links ")
+		strings.HasPrefix(data, "client_qr_links ") ||
+		strings.HasPrefix(data, "qr_sub ") ||
+		strings.HasPrefix(data, "qr_subjson ") ||
+		strings.HasPrefix(data, "qr_pick ") ||
+		strings.HasPrefix(data, "qr_one ")
 }

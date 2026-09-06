@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 今天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 明天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 天后到期 ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>已发送续费提醒</b>"
+      "renewSummaryHeader": "🔔 <b>已发送续费提醒</b>",
+      "qrChoose": "📷 需要 <code>{{ .Email }}</code> 的哪个二维码？",
+      "qrChooseLink": "📷 <code>{{ .Email }}</code> 的二维码要包含哪条链接？",
+      "qrCaptionSub": "📷 订阅链接 — {{ .Email }}\n在客户端扫描即可一次导入全部配置。",
+      "qrCaptionSubJson": "📷 JSON 订阅链接 — {{ .Email }}\n适用于使用 JSON 订阅格式的客户端。",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\n扫描可仅导入此节点。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 全部客户报告",
       "adminPanel": "🛡 管理",
       "backToUserPanel": "⬅️ 返回我的面板",
-      "inviteLinks": "🔗 邀请链接"
+      "inviteLinks": "🔗 邀请链接",
+      "qrSubscription": "📷 订阅二维码",
+      "qrSubJson": "📷 JSON 二维码",
+      "qrForLink": "📷 单条链接二维码"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

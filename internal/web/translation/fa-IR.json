@@ -2244,7 +2244,12 @@
       "renewSummaryToday": "📅 امروز ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 فردا ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 سه روز دیگر ({{ .Count }}): {{ .Clients }}",
-      "renewSummaryHeader": "🔔 <b>یادآوری‌های تمدید ارسال شد</b>"
+      "renewSummaryHeader": "🔔 <b>یادآوری‌های تمدید ارسال شد</b>",
+      "qrChoose": "📷 برای <code>{{ .Email }}</code> کدام QR را می‌خواهید؟",
+      "qrChooseLink": "📷 QR کدام لینک <code>{{ .Email }}</code> را رمزگذاری کند؟",
+      "qrCaptionSub": "📷 لینک اشتراک — {{ .Email }}\nبرای وارد کردن همهٔ کانفیگ‌ها این را در برنامه اسکن کنید.",
+      "qrCaptionSubJson": "📷 لینک اشتراک JSON — {{ .Email }}\nبرای برنامه‌هایی که فرمت اشتراک JSON می‌خواهند.",
+      "qrCaptionLink": "📷 {{ .Label }} — {{ .Email }}\nبرای وارد کردن فقط همین سرور اسکن کنید."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2313,7 +2318,10 @@
       "clientRoster": "👥 گزارش همه کاربران",
       "adminPanel": "🛡 مدیریت",
       "backToUserPanel": "⬅️ بازگشت به پنل من",
-      "inviteLinks": "🔗 لینک‌های دعوت"
+      "inviteLinks": "🔗 لینک‌های دعوت",
+      "qrSubscription": "📷 QR اشتراک",
+      "qrSubJson": "📷 QR جیسون",
+      "qrForLink": "📷 QR یک لینک"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",
