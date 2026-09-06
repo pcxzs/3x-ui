@@ -36,6 +36,12 @@ var botNotifications = []botNotification{
 		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyNewClient(v) },
 	},
 	{
+		callback: "notify_quota",
+		labelKey: "tgbot.buttons.notifyQuota",
+		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotNotifyQuota() },
+		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyQuota(v) },
+	},
+	{
 		callback: "notify_backup",
 		labelKey: "tgbot.buttons.notifyBackup",
 		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotBackup() },

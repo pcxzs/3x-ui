@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 本期不再提醒 <code>{{ .Email }}</code>。续费后提醒会重新开启。",
       "renewRequested": "✅ 续费请求已发送，我们会尽快回复您。",
       "renewRequestThrottled": "⏳ 您今天已经提交过续费请求，请等待回复。",
-      "renewRequestCard": "🔄 <b>续费请求</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>续费请求</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 您已使用 <code>{{ .Email }}</code> 流量的 {{ .Percent }}%，剩余 {{ .Remaining }}。",
+      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> 仅剩 {{ .Remaining }} — 已使用 {{ .Percent }}%。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 返回",
       "notifyNewClient": "新客户提醒",
       "renewRequest": "🔄 续费",
-      "renewMute": "🔕 停止提醒"
+      "renewMute": "🔕 停止提醒",
+      "notifyQuota": "流量预警"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 Anda tidak akan diingatkan lagi tentang <code>{{ .Email }}</code> pada periode ini. Perpanjangan mengaktifkannya kembali.",
       "renewRequested": "✅ Permintaan perpanjangan Anda telah dikirim. Anda akan segera dihubungi.",
       "renewRequestThrottled": "⏳ Anda sudah meminta perpanjangan hari ini. Mohon tunggu balasan.",
-      "renewRequestCard": "🔄 <b>Permintaan perpanjangan</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>Permintaan perpanjangan</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 Anda telah memakai {{ .Percent }}% kuota <code>{{ .Email }}</code>. Sisa {{ .Remaining }}.",
+      "quotaNinetyFive": "⚠️ Hanya tersisa {{ .Remaining }} pada <code>{{ .Email }}</code> — {{ .Percent }}% kuota terpakai."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 Kembali",
       "notifyNewClient": "Pemberitahuan Pelanggan Baru",
       "renewRequest": "🔄 Perpanjang",
-      "renewMute": "🔕 Hentikan pengingat"
+      "renewMute": "🔕 Hentikan pengingat",
+      "notifyQuota": "Peringatan kuota"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

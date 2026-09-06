@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 Bạn sẽ không được nhắc về <code>{{ .Email }}</code> trong kỳ này nữa. Gia hạn sẽ bật lại nhắc nhở.",
       "renewRequested": "✅ Yêu cầu gia hạn của bạn đã được gửi. Bạn sẽ sớm nhận được phản hồi.",
       "renewRequestThrottled": "⏳ Bạn đã yêu cầu gia hạn hôm nay. Vui lòng chờ phản hồi.",
-      "renewRequestCard": "🔄 <b>Yêu cầu gia hạn</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>Yêu cầu gia hạn</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 Bạn đã dùng {{ .Percent }}% lưu lượng của <code>{{ .Email }}</code>. Còn lại {{ .Remaining }}.",
+      "quotaNinetyFive": "⚠️ Chỉ còn {{ .Remaining }} trên <code>{{ .Email }}</code> — đã dùng {{ .Percent }}%."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 Quay lại",
       "notifyNewClient": "Cảnh báo khách hàng mới",
       "renewRequest": "🔄 Gia hạn",
-      "renewMute": "🔕 Ngừng nhắc"
+      "renewMute": "🔕 Ngừng nhắc",
+      "notifyQuota": "Cảnh báo lưu lượng"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

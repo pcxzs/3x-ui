@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 You will not be reminded about <code>{{ .Email }}</code> again this period. Renewing it turns reminders back on.",
       "renewRequested": "✅ Your renewal request has been sent. You will hear back shortly.",
       "renewRequestThrottled": "⏳ You already asked to renew today. Please wait for a reply.",
-      "renewRequestCard": "🔄 <b>Renewal requested</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>Renewal requested</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 You have used {{ .Percent }}% of the traffic on <code>{{ .Email }}</code>. {{ .Remaining }} left.",
+      "quotaNinetyFive": "⚠️ Only {{ .Remaining }} left on <code>{{ .Email }}</code> — {{ .Percent }}% of your traffic is used."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 Back",
       "notifyNewClient": "New Customer Alerts",
       "renewRequest": "🔄 Renew",
-      "renewMute": "🔕 Stop reminders"
+      "renewMute": "🔕 Stop reminders",
+      "notifyQuota": "Traffic warnings"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

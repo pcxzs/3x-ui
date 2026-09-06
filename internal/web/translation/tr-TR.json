@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 Bu dönem <code>{{ .Email }}</code> için tekrar hatırlatılmayacaksınız. Yenileme hatırlatmaları geri açar.",
       "renewRequested": "✅ Yenileme talebiniz gönderildi. Kısa süre içinde dönüş yapılacak.",
       "renewRequestThrottled": "⏳ Bugün zaten yenileme talebinde bulundunuz. Lütfen yanıtı bekleyin.",
-      "renewRequestCard": "🔄 <b>Yenileme talebi</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>Yenileme talebi</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 <code>{{ .Email }}</code> trafiğinin %{{ .Percent }} kadarını kullandınız. {{ .Remaining }} kaldı.",
+      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> için yalnızca {{ .Remaining }} kaldı — trafiğin %{{ .Percent }} kadarı kullanıldı."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 Geri",
       "notifyNewClient": "Yeni Müşteri Bildirimleri",
       "renewRequest": "🔄 Yenile",
-      "renewMute": "🔕 Hatırlatma"
+      "renewMute": "🔕 Hatırlatma",
+      "notifyQuota": "Trafik uyarıları"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

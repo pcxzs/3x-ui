@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 今期は <code>{{ .Email }}</code> の通知を送りません。更新すると通知が再開します。",
       "renewRequested": "✅ 更新リクエストを送信しました。まもなくご連絡します。",
       "renewRequestThrottled": "⏳ 本日はすでに更新を申請済みです。返信をお待ちください。",
-      "renewRequestCard": "🔄 <b>更新リクエスト</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>更新リクエスト</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 <code>{{ .Email }}</code> の通信量を {{ .Percent }}% 使用しました。残り {{ .Remaining }} です。",
+      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> の残りは {{ .Remaining }} のみです — {{ .Percent }}% を使用済みです。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 戻る",
       "notifyNewClient": "新規顧客の通知",
       "renewRequest": "🔄 更新",
-      "renewMute": "🔕 通知を止める"
+      "renewMute": "🔕 通知を止める",
+      "notifyQuota": "通信量の警告"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

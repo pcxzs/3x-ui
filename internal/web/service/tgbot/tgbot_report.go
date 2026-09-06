@@ -44,6 +44,7 @@ func (t *Tgbot) SendReport() {
 	// Customer-facing notices are not an operator preference: a client is told
 	// their own subscription is lapsing whatever the admin's report settings are.
 	t.notifyExhausted()
+	t.notifyQuota()
 	t.notifyRenewals()
 
 	backupEnable, err := t.settingService.GetTgBotBackup()

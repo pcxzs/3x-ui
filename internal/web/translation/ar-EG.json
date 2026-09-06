@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 لن يتم تذكيرك بشأن <code>{{ .Email }}</code> مرة أخرى هذه الفترة. التجديد يعيد تفعيل التذكيرات.",
       "renewRequested": "✅ تم إرسال طلب التجديد. سيصلك الرد قريبًا.",
       "renewRequestThrottled": "⏳ لقد طلبت التجديد اليوم بالفعل. يرجى انتظار الرد.",
-      "renewRequestCard": "🔄 <b>طلب تجديد</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>طلب تجديد</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 لقد استهلكت {{ .Percent }}٪ من باقة <code>{{ .Email }}</code>. المتبقي {{ .Remaining }}.",
+      "quotaNinetyFive": "⚠️ لم يتبق سوى {{ .Remaining }} في <code>{{ .Email }}</code> — تم استهلاك {{ .Percent }}٪."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 رجوع",
       "notifyNewClient": "تنبيهات العملاء الجدد",
       "renewRequest": "🔄 تجديد",
-      "renewMute": "🔕 إيقاف التذكير"
+      "renewMute": "🔕 إيقاف التذكير",
+      "notifyQuota": "تنبيهات الاستهلاك"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

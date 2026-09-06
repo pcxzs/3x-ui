@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 دیگر درباره <code>{{ .Email }}</code> در این دوره یادآوری دریافت نمی‌کنید. با تمدید، یادآوری‌ها دوباره فعال می‌شوند.",
       "renewRequested": "✅ درخواست تمدید شما ارسال شد. به‌زودی پاسخ می‌گیرید.",
       "renewRequestThrottled": "⏳ امروز قبلاً درخواست تمدید داده‌اید. لطفاً منتظر پاسخ بمانید.",
-      "renewRequestCard": "🔄 <b>درخواست تمدید</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>درخواست تمدید</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 شما {{ .Percent }}٪ از حجم <code>{{ .Email }}</code> را مصرف کرده‌اید. {{ .Remaining }} باقی مانده است.",
+      "quotaNinetyFive": "⚠️ تنها {{ .Remaining }} از <code>{{ .Email }}</code> باقی مانده است — {{ .Percent }}٪ حجم شما مصرف شده."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 بازگشت",
       "notifyNewClient": "اطلاع از مشتری جدید",
       "renewRequest": "🔄 تمدید",
-      "renewMute": "🔕 یادآوری نکن"
+      "renewMute": "🔕 یادآوری نکن",
+      "notifyQuota": "هشدار حجم"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

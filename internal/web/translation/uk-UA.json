@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 Нагадування про <code>{{ .Email }}</code> у цьому періоді вимкнено. Продовження ввімкне їх знову.",
       "renewRequested": "✅ Запит на продовження надіслано. Незабаром вам відповідять.",
       "renewRequestThrottled": "⏳ Ви вже запитали продовження сьогодні. Зачекайте на відповідь.",
-      "renewRequestCard": "🔄 <b>Запит на продовження</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>Запит на продовження</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 Використано {{ .Percent }}% трафіку на <code>{{ .Email }}</code>. Залишилось {{ .Remaining }}.",
+      "quotaNinetyFive": "⚠️ На <code>{{ .Email }}</code> лишилось лише {{ .Remaining }} — витрачено {{ .Percent }}%."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 Назад",
       "notifyNewClient": "Сповіщення про нових клієнтів",
       "renewRequest": "🔄 Продовжити",
-      "renewMute": "🔕 Не нагадувати"
+      "renewMute": "🔕 Не нагадувати",
+      "notifyQuota": "Попередження про трафік"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

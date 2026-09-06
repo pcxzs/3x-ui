@@ -2261,7 +2261,9 @@
       "renewMuted": "🔕 Você não será mais avisado sobre <code>{{ .Email }}</code> neste período. Renovar reativa os avisos.",
       "renewRequested": "✅ Seu pedido de renovação foi enviado. Você terá retorno em breve.",
       "renewRequestThrottled": "⏳ Você já pediu renovação hoje. Aguarde uma resposta.",
-      "renewRequestCard": "🔄 <b>Renovação solicitada</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}"
+      "renewRequestCard": "🔄 <b>Renovação solicitada</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
+      "quotaEighty": "📊 Você usou {{ .Percent }}% do tráfego de <code>{{ .Email }}</code>. Restam {{ .Remaining }}.",
+      "quotaNinetyFive": "⚠️ Restam apenas {{ .Remaining }} em <code>{{ .Email }}</code> — {{ .Percent }}% já foi usado."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2351,7 +2353,8 @@
       "backToSettings": "🔙 Voltar",
       "notifyNewClient": "Avisos de novos clientes",
       "renewRequest": "🔄 Renovar",
-      "renewMute": "🔕 Parar avisos"
+      "renewMute": "🔕 Parar avisos",
+      "notifyQuota": "Avisos de tráfego"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",
