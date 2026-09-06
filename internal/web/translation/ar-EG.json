@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>ماك</b>\n1. ثبّت <b>Hiddify</b> أو <b>V2Box</b>.\n2. افتح صفحة روابط الاشتراك في هذا البوت وانسخ رابط اشتراكك.\n3. في التطبيق أضف اشتراكًا والصق الرابط.\n4. حدّث الاشتراك واختر خادمًا ثم اتصل.",
       "guideLinux": "🐧 <b>لينكس</b>\n1. ثبّت <b>Hiddify</b> (AppImage) أو <b>Nekoray</b>.\n2. افتح صفحة روابط الاشتراك في هذا البوت وانسخ رابط اشتراكك.\n3. في التطبيق أضف اشتراكًا والصق الرابط.\n4. حدّث الاشتراك واختر خادمًا ثم اتصل.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 أرسل بريدًا إلكترونيًا أو جزءًا من ملاحظة أو معرّف تيليجرام للبحث."
+      "rosterSearchPrompt": "🔍 أرسل بريدًا إلكترونيًا أو جزءًا من ملاحظة أو معرّف تيليجرام للبحث.",
+      "bulkMenu": "⚡ <b>إجراءات جماعية</b>\nكل إجراء يعرض من سيتأثر قبل التطبيق.",
+      "bulkPreviewExtend": "➕ تمديد {{ .Count }} عميلًا لمدة {{ .Days }} يومًا؟\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 تعطيل {{ .Count }} عميلًا متأخرًا؟\n\n{{ .Clients }}",
+      "bulkDone": "✅ تم التطبيق على {{ .Count }} عميلًا.\n\n{{ .Clients }}",
+      "bulkNoTargets": "لا يوجد ما ينطبق عليه هذا الإجراء الآن.",
+      "bulkTooMany": "⚠️ يتطابق أكثر من {{ .Limit }} عميلًا. قلّل العدد واستخدم قائمة العميل الواحد."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "استُهلكت",
       "filterDisabled": "معطّل",
       "filterUnbound": "غير مرتبط",
-      "rosterSearch": "🔍 بحث"
+      "rosterSearch": "🔍 بحث",
+      "bulkActions": "⚡ إجراءات جماعية",
+      "bulkExtend": "➕ تمديد المنتهية قريبًا",
+      "bulkDisable": "🚫 تعطيل المتأخرة",
+      "bulkConfirm": "✅ طبّق على كل المذكورين"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

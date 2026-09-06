@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. Instala <b>Hiddify</b> o <b>V2Box</b>.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, añade una suscripción y pega la URL.\n4. Actualiza la suscripción, elige un servidor y conéctate.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Instala <b>Hiddify</b> (AppImage) o <b>Nekoray</b>.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, añade una suscripción y pega la URL.\n4. Actualiza la suscripción, elige un servidor y conéctate.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Envía un correo, parte de un comentario o un ID de Telegram para buscar."
+      "rosterSearchPrompt": "🔍 Envía un correo, parte de un comentario o un ID de Telegram para buscar.",
+      "bulkMenu": "⚡ <b>Acciones masivas</b>\nCada una muestra a quién afectará antes de aplicarse.",
+      "bulkPreviewExtend": "➕ ¿Ampliar {{ .Count }} cliente(s) por {{ .Days }} días?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 ¿Desactivar {{ .Count }} cliente(s) vencido(s)?\n\n{{ .Clients }}",
+      "bulkDone": "✅ Aplicado a {{ .Count }} cliente(s).\n\n{{ .Clients }}",
+      "bulkNoTargets": "Ahora mismo no hay nadie que coincida con esa acción.",
+      "bulkTooMany": "⚠️ Coinciden más de {{ .Limit }} clientes. Redúcelo y usa el menú por cliente."
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Sin tráfico",
       "filterDisabled": "Desactivados",
       "filterUnbound": "Sin vincular",
-      "rosterSearch": "🔍 Buscar"
+      "rosterSearch": "🔍 Buscar",
+      "bulkActions": "⚡ Acciones masivas",
+      "bulkExtend": "➕ Ampliar los que vencen",
+      "bulkDisable": "🚫 Desactivar vencidos",
+      "bulkConfirm": "✅ Aplicar a todos los listados"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

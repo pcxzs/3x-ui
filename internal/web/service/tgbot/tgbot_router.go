@@ -1205,6 +1205,12 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 				t.toggleInbound(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
 			case "feature_toggle":
 				t.toggleFeature(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
+			case "bulk_preview":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.bulkActions"))
+				t.bulkPreview(chatId, dataArray[1])
+			case "bulk_apply":
+				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+				t.bulkApply(chatId, dataArray[1])
 			case "roster_filter":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientRoster"))
 				t.clientRosterFiltered(chatId, dataArray[1])
@@ -1387,6 +1393,12 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		}
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.clientRoster"))
 		t.clientRoster(chatId)
+	case "bulk_menu":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.bulkActions"))
+		t.bulkMenu(chatId)
 	case "roster_search":
 		if !isAdmin {
 			return

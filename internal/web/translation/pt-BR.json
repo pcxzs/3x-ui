@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. Instale <b>Hiddify</b> ou <b>V2Box</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Instale <b>Hiddify</b> (AppImage) ou <b>Nekoray</b>.\n2. Abra a página de links de assinatura neste bot e copie sua URL.\n3. No app, adicione uma assinatura e cole a URL.\n4. Atualize a assinatura, escolha um servidor e conecte.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Envie um e-mail, parte de um comentário ou um ID do Telegram para buscar."
+      "rosterSearchPrompt": "🔍 Envie um e-mail, parte de um comentário ou um ID do Telegram para buscar.",
+      "bulkMenu": "⚡ <b>Ações em massa</b>\nCada uma lista quem será afetado antes de aplicar.",
+      "bulkPreviewExtend": "➕ Estender {{ .Count }} cliente(s) por {{ .Days }} dias?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 Desativar {{ .Count }} cliente(s) vencido(s)?\n\n{{ .Clients }}",
+      "bulkDone": "✅ Aplicado a {{ .Count }} cliente(s).\n\n{{ .Clients }}",
+      "bulkNoTargets": "No momento nada corresponde a essa ação.",
+      "bulkTooMany": "⚠️ Mais de {{ .Limit }} clientes correspondem. Restrinja e use o menu por cliente."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Sem tráfego",
       "filterDisabled": "Desativados",
       "filterUnbound": "Sem vínculo",
-      "rosterSearch": "🔍 Buscar"
+      "rosterSearch": "🔍 Buscar",
+      "bulkActions": "⚡ Ações em massa",
+      "bulkExtend": "➕ Estender os que vencem",
+      "bulkDisable": "🚫 Desativar vencidos",
+      "bulkConfirm": "✅ Aplicar a todos os listados"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

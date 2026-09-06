@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. Install <b>Hiddify</b> or <b>V2Box</b>.\n2. Open the Subscription links page in this bot and copy your subscription URL.\n3. In the app, add a subscription and paste the URL.\n4. Update the subscription, pick a server and connect.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Install <b>Hiddify</b> (AppImage) or <b>Nekoray</b>.\n2. Open the Subscription links page in this bot and copy your subscription URL.\n3. In the app, add a subscription and paste the URL.\n4. Update the subscription, pick a server and connect.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Send an email, a comment fragment, or a Telegram ID to search for."
+      "rosterSearchPrompt": "🔍 Send an email, a comment fragment, or a Telegram ID to search for.",
+      "bulkMenu": "⚡ <b>Bulk actions</b>\nEach one lists who it would touch before applying.",
+      "bulkPreviewExtend": "➕ Extend {{ .Count }} client(s) by {{ .Days }} days?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 Disable {{ .Count }} overdue client(s)?\n\n{{ .Clients }}",
+      "bulkDone": "✅ Applied to {{ .Count }} client(s).\n\n{{ .Clients }}",
+      "bulkNoTargets": "Nothing matches that action right now.",
+      "bulkTooMany": "⚠️ More than {{ .Limit }} clients match. Narrow it down and use the per-client menu."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Exhausted",
       "filterDisabled": "Disabled",
       "filterUnbound": "Unbound",
-      "rosterSearch": "🔍 Search"
+      "rosterSearch": "🔍 Search",
+      "bulkActions": "⚡ Bulk actions",
+      "bulkExtend": "➕ Extend expiring",
+      "bulkDisable": "🚫 Disable overdue",
+      "bulkConfirm": "✅ Apply to all listed"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

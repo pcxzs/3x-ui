@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. Установите <b>Hiddify</b> или <b>V2Box</b>.\n2. Откройте страницу ссылок подписки в этом боте и скопируйте свою ссылку.\n3. В приложении добавьте подписку и вставьте ссылку.\n4. Обновите подписку, выберите сервер и подключитесь.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Установите <b>Hiddify</b> (AppImage) или <b>Nekoray</b>.\n2. Откройте страницу ссылок подписки в этом боте и скопируйте свою ссылку.\n3. В приложении добавьте подписку и вставьте ссылку.\n4. Обновите подписку, выберите сервер и подключитесь.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Отправьте email, часть комментария или Telegram ID для поиска."
+      "rosterSearchPrompt": "🔍 Отправьте email, часть комментария или Telegram ID для поиска.",
+      "bulkMenu": "⚡ <b>Массовые действия</b>\nКаждое покажет, кого затронет, до применения.",
+      "bulkPreviewExtend": "➕ Продлить {{ .Count }} клиент(ов) на {{ .Days }} дней?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 Отключить {{ .Count }} просроченных клиент(ов)?\n\n{{ .Clients }}",
+      "bulkDone": "✅ Применено к {{ .Count }} клиент(ам).\n\n{{ .Clients }}",
+      "bulkNoTargets": "Сейчас под это действие ничего не подпадает.",
+      "bulkTooMany": "⚠️ Подходит более {{ .Limit }} клиентов. Сузьте выборку и используйте меню отдельного клиента."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Исчерпан трафик",
       "filterDisabled": "Отключены",
       "filterUnbound": "Без Telegram",
-      "rosterSearch": "🔍 Поиск"
+      "rosterSearch": "🔍 Поиск",
+      "bulkActions": "⚡ Массовые действия",
+      "bulkExtend": "➕ Продлить истекающие",
+      "bulkDisable": "🚫 Отключить просроченные",
+      "bulkConfirm": "✅ Применить ко всем"
     },
     "answers": {
       "successfulOperation": "✅ Успешно!",

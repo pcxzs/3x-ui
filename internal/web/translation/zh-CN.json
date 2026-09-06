@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. 安装 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
       "guideLinux": "🐧 <b>Linux</b>\n1. 安装 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 请发送邮箱、备注片段或 Telegram ID 进行搜索。"
+      "rosterSearchPrompt": "🔍 请发送邮箱、备注片段或 Telegram ID 进行搜索。",
+      "bulkMenu": "⚡ <b>批量操作</b>\n每项操作在执行前都会列出受影响的客户。",
+      "bulkPreviewExtend": "➕ 将 {{ .Count }} 个客户延长 {{ .Days }} 天？\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 停用 {{ .Count }} 个已过期客户？\n\n{{ .Clients }}",
+      "bulkDone": "✅ 已应用到 {{ .Count }} 个客户。\n\n{{ .Clients }}",
+      "bulkNoTargets": "当前没有符合该操作的客户。",
+      "bulkTooMany": "⚠️ 匹配超过 {{ .Limit }} 个客户。请缩小范围并使用单客户菜单。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "流量耗尽",
       "filterDisabled": "已停用",
       "filterUnbound": "未绑定",
-      "rosterSearch": "🔍 搜索"
+      "rosterSearch": "🔍 搜索",
+      "bulkActions": "⚡ 批量操作",
+      "bulkExtend": "➕ 延长即将到期",
+      "bulkDisable": "🚫 停用已过期",
+      "bulkConfirm": "✅ 应用到列出的全部"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

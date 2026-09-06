@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. Pasang <b>Hiddify</b> atau <b>V2Box</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Pasang <b>Hiddify</b> (AppImage) atau <b>Nekoray</b>.\n2. Buka halaman tautan langganan di bot ini dan salin URL langganan Anda.\n3. Di aplikasi, tambahkan langganan dan tempel URL-nya.\n4. Perbarui langganan, pilih server, lalu sambungkan.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Kirim email, potongan komentar, atau ID Telegram untuk dicari."
+      "rosterSearchPrompt": "🔍 Kirim email, potongan komentar, atau ID Telegram untuk dicari.",
+      "bulkMenu": "⚡ <b>Aksi massal</b>\nMasing-masing menampilkan siapa yang terdampak sebelum diterapkan.",
+      "bulkPreviewExtend": "➕ Perpanjang {{ .Count }} klien selama {{ .Days }} hari?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 Nonaktifkan {{ .Count }} klien yang lewat jatuh tempo?\n\n{{ .Clients }}",
+      "bulkDone": "✅ Diterapkan ke {{ .Count }} klien.\n\n{{ .Clients }}",
+      "bulkNoTargets": "Saat ini tidak ada yang cocok dengan aksi tersebut.",
+      "bulkTooMany": "⚠️ Lebih dari {{ .Limit }} klien cocok. Persempit dan gunakan menu per klien."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Kuota habis",
       "filterDisabled": "Nonaktif",
       "filterUnbound": "Belum tertaut",
-      "rosterSearch": "🔍 Cari"
+      "rosterSearch": "🔍 Cari",
+      "bulkActions": "⚡ Aksi massal",
+      "bulkExtend": "➕ Perpanjang yang akan berakhir",
+      "bulkDisable": "🚫 Nonaktifkan yang lewat jatuh tempo",
+      "bulkConfirm": "✅ Terapkan ke semua yang terdaftar"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

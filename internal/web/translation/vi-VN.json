@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. Cài <b>Hiddify</b> hoặc <b>V2Box</b>.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, thêm một đăng ký và dán URL vào.\n4. Cập nhật đăng ký, chọn máy chủ rồi kết nối.",
       "guideLinux": "🐧 <b>Linux</b>\n1. Cài <b>Hiddify</b> (AppImage) hoặc <b>Nekoray</b>.\n2. Mở trang link đăng ký trong bot này và sao chép URL của bạn.\n3. Trong ứng dụng, thêm một đăng ký và dán URL vào.\n4. Cập nhật đăng ký, chọn máy chủ rồi kết nối.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Gửi email, một phần ghi chú, hoặc Telegram ID để tìm."
+      "rosterSearchPrompt": "🔍 Gửi email, một phần ghi chú, hoặc Telegram ID để tìm.",
+      "bulkMenu": "⚡ <b>Thao tác hàng loạt</b>\nMỗi thao tác liệt kê ai bị ảnh hưởng trước khi áp dụng.",
+      "bulkPreviewExtend": "➕ Gia hạn {{ .Count }} khách thêm {{ .Days }} ngày?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 Tắt {{ .Count }} khách đã quá hạn?\n\n{{ .Clients }}",
+      "bulkDone": "✅ Đã áp dụng cho {{ .Count }} khách.\n\n{{ .Clients }}",
+      "bulkNoTargets": "Hiện không có ai khớp với thao tác này.",
+      "bulkTooMany": "⚠️ Có hơn {{ .Limit }} khách khớp. Hãy thu hẹp lại và dùng menu từng khách."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Hết lưu lượng",
       "filterDisabled": "Đã tắt",
       "filterUnbound": "Chưa liên kết",
-      "rosterSearch": "🔍 Tìm kiếm"
+      "rosterSearch": "🔍 Tìm kiếm",
+      "bulkActions": "⚡ Thao tác hàng loạt",
+      "bulkExtend": "➕ Gia hạn sắp hết hạn",
+      "bulkDisable": "🚫 Tắt các tài khoản quá hạn",
+      "bulkConfirm": "✅ Áp dụng cho tất cả"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

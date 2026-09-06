@@ -51,6 +51,9 @@ func (t *Tgbot) adminClientsKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.allClients")).WithCallbackData(t.encodeQuery("get_inbounds")),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.bulkActions")).WithCallbackData(t.encodeQuery("bulk_menu")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.delDepleted")).WithCallbackData(t.encodeQuery("del_depleted")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.ResetAllTraffics")).WithCallbackData(t.encodeQuery("reset_all_traffics")),
 		),

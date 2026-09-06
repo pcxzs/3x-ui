@@ -2276,7 +2276,13 @@
       "guideMacos": "💻 <b>macOS</b>\n1. <b>Hiddify</b> veya <b>V2Box</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
       "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) veya <b>Nekoray</b> kurun.\n2. Bu botta Abonelik bağlantıları sayfasını açıp abonelik adresinizi kopyalayın.\n3. Uygulamada bir abonelik ekleyip adresi yapıştırın.\n4. Aboneliği güncelleyin, bir sunucu seçip bağlanın.",
       "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}",
-      "rosterSearchPrompt": "🔍 Aramak için bir e-posta, not parçası veya Telegram kimliği gönderin."
+      "rosterSearchPrompt": "🔍 Aramak için bir e-posta, not parçası veya Telegram kimliği gönderin.",
+      "bulkMenu": "⚡ <b>Toplu işlemler</b>\nHer biri uygulamadan önce kimleri etkileyeceğini listeler.",
+      "bulkPreviewExtend": "➕ {{ .Count }} istemci {{ .Days }} gün uzatılsın mı?\n\n{{ .Clients }}",
+      "bulkPreviewDisable": "🚫 {{ .Count }} geciken istemci devre dışı bırakılsın mı?\n\n{{ .Clients }}",
+      "bulkDone": "✅ {{ .Count }} istemciye uygulandı.\n\n{{ .Clients }}",
+      "bulkNoTargets": "Şu anda bu işleme uyan kimse yok.",
+      "bulkTooMany": "⚠️ {{ .Limit }} istemciden fazlası eşleşiyor. Daraltın ve tek istemci menüsünü kullanın."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2383,7 +2389,11 @@
       "filterExhausted": "Kotası dolan",
       "filterDisabled": "Devre dışı",
       "filterUnbound": "Bağlanmamış",
-      "rosterSearch": "🔍 Ara"
+      "rosterSearch": "🔍 Ara",
+      "bulkActions": "⚡ Toplu işlemler",
+      "bulkExtend": "➕ Süresi dolanları uzat",
+      "bulkDisable": "🚫 Gecikenleri devre dışı bırak",
+      "bulkConfirm": "✅ Listelenenlerin hepsine uygula"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",
