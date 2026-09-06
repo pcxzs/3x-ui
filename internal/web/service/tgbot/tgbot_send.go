@@ -79,6 +79,7 @@ func (t *Tgbot) adminReportsKeyboard() *telego.InlineKeyboardMarkup {
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.notifications")).WithCallbackData(t.encodeQuery("notify_settings")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.botFeatures")).WithCallbackData(t.encodeQuery("admin_features")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
@@ -120,6 +121,13 @@ func (t *Tgbot) clientKeyboard(level userLevel) *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.messageAdmin")).WithCallbackData(t.encodeQuery("client_pm")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.settings")).WithCallbackData(t.encodeQuery("client_settings")),
 		),
+	}
+	// Offered only where an operator opted in, so a customer is never shown a
+	// destructive button that would refuse them.
+	if t.selfResetEnabled() {
+		rows = append(rows, tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.selfReset")).WithCallbackData(t.encodeQuery("client_reset_self")),
+		))
 	}
 	if level == levelAdmin {
 		rows = append(rows, tu.InlineKeyboardRow(

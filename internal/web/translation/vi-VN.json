@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ Bạn đã yêu cầu gia hạn hôm nay. Vui lòng chờ phản hồi.",
       "renewRequestCard": "🔄 <b>Yêu cầu gia hạn</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 Bạn đã dùng {{ .Percent }}% lưu lượng của <code>{{ .Email }}</code>. Còn lại {{ .Remaining }}.",
-      "quotaNinetyFive": "⚠️ Chỉ còn {{ .Remaining }} trên <code>{{ .Email }}</code> — đã dùng {{ .Percent }}%."
+      "quotaNinetyFive": "⚠️ Chỉ còn {{ .Remaining }} trên <code>{{ .Email }}</code> — đã dùng {{ .Percent }}%.",
+      "selfResetWarning": "⚠️ Thao tác này thay khóa của <code>{{ .Email }}</code>. Mọi thiết bị bạn đã cài sẽ ngừng hoạt động cho tới khi bạn nhập link mới. Người có link cũ cũng mất quyền truy cập.",
+      "selfResetDone": "✅ Đã đặt lại <code>{{ .Email }}</code>. Hãy nhập các link bên dưới trên từng thiết bị của bạn.",
+      "selfResetDisabled": "Tùy chọn này không khả dụng. Vui lòng nhắn cho quản trị viên.",
+      "selfResetThrottled": "⏳ Bạn đã đặt lại cấu hình này hôm nay. Vui lòng thử lại vào ngày mai.",
+      "botFeatures": "🧩 <b>Tính năng bot</b>\nChọn những gì khách hàng có thể tự làm."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "Cảnh báo khách hàng mới",
       "renewRequest": "🔄 Gia hạn",
       "renewMute": "🔕 Ngừng nhắc",
-      "notifyQuota": "Cảnh báo lưu lượng"
+      "notifyQuota": "Cảnh báo lưu lượng",
+      "selfReset": "🔑 Đặt lại cấu hình của tôi",
+      "confirmSelfReset": "✅ Có, đặt lại tất cả",
+      "allowSelfReset": "Khách tự đặt lại cấu hình",
+      "botFeatures": "🧩 Tính năng bot"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

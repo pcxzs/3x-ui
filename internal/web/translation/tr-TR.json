@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ Bugün zaten yenileme talebinde bulundunuz. Lütfen yanıtı bekleyin.",
       "renewRequestCard": "🔄 <b>Yenileme talebi</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 <code>{{ .Email }}</code> trafiğinin %{{ .Percent }} kadarını kullandınız. {{ .Remaining }} kaldı.",
-      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> için yalnızca {{ .Remaining }} kaldı — trafiğin %{{ .Percent }} kadarı kullanıldı."
+      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> için yalnızca {{ .Remaining }} kaldı — trafiğin %{{ .Percent }} kadarı kullanıldı.",
+      "selfResetWarning": "⚠️ Bu, <code>{{ .Email }}</code> anahtarlarını değiştirir. Kurduğunuz tüm cihazlar, yeni bağlantıları içe aktarana kadar çalışmayı durdurur. Eski bağlantıyı paylaştığınız kişiler de erişimini kaybeder.",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> sıfırlandı. Aşağıdaki bağlantıları her cihazınıza aktarın.",
+      "selfResetDisabled": "Bu seçenek kullanılamıyor. Lütfen bir yöneticiye yazın.",
+      "selfResetThrottled": "⏳ Bu yapılandırmayı bugün zaten sıfırladınız. Yarın tekrar deneyin.",
+      "botFeatures": "🧩 <b>Bot özellikleri</b>\nMüşterilerin kendi başlarına neler yapabileceğini ayarlayın."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "Yeni Müşteri Bildirimleri",
       "renewRequest": "🔄 Yenile",
       "renewMute": "🔕 Hatırlatma",
-      "notifyQuota": "Trafik uyarıları"
+      "notifyQuota": "Trafik uyarıları",
+      "selfReset": "🔑 Yapılandırmalarımı sıfırla",
+      "confirmSelfReset": "✅ Evet, hepsini sıfırla",
+      "allowSelfReset": "Müşteri yapılandırma sıfırlama",
+      "botFeatures": "🧩 Bot özellikleri"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

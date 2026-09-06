@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ Você já pediu renovação hoje. Aguarde uma resposta.",
       "renewRequestCard": "🔄 <b>Renovação solicitada</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 Você usou {{ .Percent }}% do tráfego de <code>{{ .Email }}</code>. Restam {{ .Remaining }}.",
-      "quotaNinetyFive": "⚠️ Restam apenas {{ .Remaining }} em <code>{{ .Email }}</code> — {{ .Percent }}% já foi usado."
+      "quotaNinetyFive": "⚠️ Restam apenas {{ .Remaining }} em <code>{{ .Email }}</code> — {{ .Percent }}% já foi usado.",
+      "selfResetWarning": "⚠️ Isso substitui as chaves de <code>{{ .Email }}</code>. Todos os seus dispositivos vão parar de funcionar até você importar os novos links. Quem tinha o link antigo também perde o acesso.",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> foi redefinido. Importe os links abaixo em cada dispositivo.",
+      "selfResetDisabled": "Esta opção não está disponível. Envie uma mensagem a um administrador.",
+      "selfResetThrottled": "⏳ Você já redefiniu esta config hoje. Tente novamente amanhã.",
+      "botFeatures": "🧩 <b>Recursos do bot</b>\nDefina o que os clientes podem fazer sozinhos."
     },
     "buttons": {
       "closeKeyboard": "❌ Fechar teclado",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "Avisos de novos clientes",
       "renewRequest": "🔄 Renovar",
       "renewMute": "🔕 Parar avisos",
-      "notifyQuota": "Avisos de tráfego"
+      "notifyQuota": "Avisos de tráfego",
+      "selfReset": "🔑 Redefinir minhas configs",
+      "confirmSelfReset": "✅ Sim, redefinir tudo",
+      "allowSelfReset": "Reset de config pelo cliente",
+      "botFeatures": "🧩 Recursos do bot"
     },
     "answers": {
       "successfulOperation": "✅ Operação bem-sucedida!",

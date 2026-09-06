@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ امروز قبلاً درخواست تمدید داده‌اید. لطفاً منتظر پاسخ بمانید.",
       "renewRequestCard": "🔄 <b>درخواست تمدید</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 شما {{ .Percent }}٪ از حجم <code>{{ .Email }}</code> را مصرف کرده‌اید. {{ .Remaining }} باقی مانده است.",
-      "quotaNinetyFive": "⚠️ تنها {{ .Remaining }} از <code>{{ .Email }}</code> باقی مانده است — {{ .Percent }}٪ حجم شما مصرف شده."
+      "quotaNinetyFive": "⚠️ تنها {{ .Remaining }} از <code>{{ .Email }}</code> باقی مانده است — {{ .Percent }}٪ حجم شما مصرف شده.",
+      "selfResetWarning": "⚠️ این کار کلیدهای <code>{{ .Email }}</code> را عوض می‌کند. تمام دستگاه‌هایی که تنظیم کرده‌اید تا وارد کردن لینک‌های جدید کار نخواهند کرد. هرکسی هم که لینک قدیمی را داشته دسترسی‌اش قطع می‌شود.",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> بازنشانی شد. لینک‌های زیر را روی هر دستگاه خود وارد کنید.",
+      "selfResetDisabled": "این گزینه در دسترس نیست. لطفاً به ادمین پیام دهید.",
+      "selfResetThrottled": "⏳ امروز این کانفیگ را بازنشانی کرده‌اید. لطفاً فردا دوباره تلاش کنید.",
+      "botFeatures": "🧩 <b>قابلیت‌های ربات</b>\nتعیین کنید مشتری‌ها چه کارهایی را خودشان می‌توانند انجام دهند."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "اطلاع از مشتری جدید",
       "renewRequest": "🔄 تمدید",
       "renewMute": "🔕 یادآوری نکن",
-      "notifyQuota": "هشدار حجم"
+      "notifyQuota": "هشدار حجم",
+      "selfReset": "🔑 بازنشانی کانفیگ‌های من",
+      "confirmSelfReset": "✅ بله، همه را بازنشانی کن",
+      "allowSelfReset": "بازنشانی کانفیگ توسط مشتری",
+      "botFeatures": "🧩 قابلیت‌های ربات"
     },
     "answers": {
       "successfulOperation": "✅ انجام شد!",

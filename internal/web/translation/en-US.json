@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ You already asked to renew today. Please wait for a reply.",
       "renewRequestCard": "🔄 <b>Renewal requested</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 You have used {{ .Percent }}% of the traffic on <code>{{ .Email }}</code>. {{ .Remaining }} left.",
-      "quotaNinetyFive": "⚠️ Only {{ .Remaining }} left on <code>{{ .Email }}</code> — {{ .Percent }}% of your traffic is used."
+      "quotaNinetyFive": "⚠️ Only {{ .Remaining }} left on <code>{{ .Email }}</code> — {{ .Percent }}% of your traffic is used.",
+      "selfResetWarning": "⚠️ This replaces the keys behind <code>{{ .Email }}</code>. Every device you have set up will stop working until you import the new links. Anyone you shared the old link with loses access too.",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> has been reset. Import the links below on each of your devices.",
+      "selfResetDisabled": "This option is not available. Please message an admin.",
+      "selfResetThrottled": "⏳ You have already reset this config today. Please try again tomorrow.",
+      "botFeatures": "🧩 <b>Bot features</b>\nSwitch what customers can do for themselves."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "New Customer Alerts",
       "renewRequest": "🔄 Renew",
       "renewMute": "🔕 Stop reminders",
-      "notifyQuota": "Traffic warnings"
+      "notifyQuota": "Traffic warnings",
+      "selfReset": "🔑 Reset my configs",
+      "confirmSelfReset": "✅ Yes, reset everything",
+      "allowSelfReset": "Customer config reset",
+      "botFeatures": "🧩 Bot features"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

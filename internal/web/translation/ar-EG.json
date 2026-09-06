@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ لقد طلبت التجديد اليوم بالفعل. يرجى انتظار الرد.",
       "renewRequestCard": "🔄 <b>طلب تجديد</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 لقد استهلكت {{ .Percent }}٪ من باقة <code>{{ .Email }}</code>. المتبقي {{ .Remaining }}.",
-      "quotaNinetyFive": "⚠️ لم يتبق سوى {{ .Remaining }} في <code>{{ .Email }}</code> — تم استهلاك {{ .Percent }}٪."
+      "quotaNinetyFive": "⚠️ لم يتبق سوى {{ .Remaining }} في <code>{{ .Email }}</code> — تم استهلاك {{ .Percent }}٪.",
+      "selfResetWarning": "⚠️ سيؤدي هذا إلى تغيير مفاتيح <code>{{ .Email }}</code>. ستتوقف كل أجهزتك عن العمل حتى تستورد الروابط الجديدة، وسيفقد أي شخص شاركته الرابط القديم إمكانية الوصول.",
+      "selfResetDone": "✅ تمت إعادة تعيين <code>{{ .Email }}</code>. استورد الروابط أدناه على كل أجهزتك.",
+      "selfResetDisabled": "هذا الخيار غير متاح. يرجى مراسلة المشرف.",
+      "selfResetThrottled": "⏳ لقد أعدت تعيين هذا الإعداد اليوم بالفعل. حاول مرة أخرى غدًا.",
+      "botFeatures": "🧩 <b>ميزات البوت</b>\nتحكم فيما يمكن للعملاء فعله بأنفسهم."
     },
     "buttons": {
       "closeKeyboard": "❌ اقفل الكيبورد",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "تنبيهات العملاء الجدد",
       "renewRequest": "🔄 تجديد",
       "renewMute": "🔕 إيقاف التذكير",
-      "notifyQuota": "تنبيهات الاستهلاك"
+      "notifyQuota": "تنبيهات الاستهلاك",
+      "selfReset": "🔑 إعادة تعيين إعداداتي",
+      "confirmSelfReset": "✅ نعم، أعد تعيين كل شيء",
+      "allowSelfReset": "إعادة تعيين العميل لإعداداته",
+      "botFeatures": "🧩 ميزات البوت"
     },
     "answers": {
       "successfulOperation": "✅ العملية نجحت!",

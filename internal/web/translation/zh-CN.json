@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ 您今天已经提交过续费请求，请等待回复。",
       "renewRequestCard": "🔄 <b>续费请求</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 您已使用 <code>{{ .Email }}</code> 流量的 {{ .Percent }}%，剩余 {{ .Remaining }}。",
-      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> 仅剩 {{ .Remaining }} — 已使用 {{ .Percent }}%。"
+      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> 仅剩 {{ .Remaining }} — 已使用 {{ .Percent }}%。",
+      "selfResetWarning": "⚠️ 这会更换 <code>{{ .Email }}</code> 的密钥。在您导入新链接之前，所有已配置的设备都将无法使用；持有旧链接的人也会失去访问权限。",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> 已重置。请在您的每台设备上导入下面的链接。",
+      "selfResetDisabled": "此功能不可用，请联系管理员。",
+      "selfResetThrottled": "⏳ 您今天已经重置过此配置，请明天再试。",
+      "botFeatures": "🧩 <b>机器人功能</b>\n设置客户可以自助完成的操作。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "新客户提醒",
       "renewRequest": "🔄 续费",
       "renewMute": "🔕 停止提醒",
-      "notifyQuota": "流量预警"
+      "notifyQuota": "流量预警",
+      "selfReset": "🔑 重置我的配置",
+      "confirmSelfReset": "✅ 是的，全部重置",
+      "allowSelfReset": "客户自助重置配置",
+      "botFeatures": "🧩 机器人功能"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

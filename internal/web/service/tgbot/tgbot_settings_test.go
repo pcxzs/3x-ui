@@ -39,6 +39,7 @@ func contains(values []string, want string) bool {
 // The customer keyboard is the whole navigable surface for a level-1 user, so
 // what it does and does not offer is the feature.
 func TestClientKeyboardButtons(t *testing.T) {
+	initLangDB(t)
 	tg := &Tgbot{}
 	data := callbackData(tg.clientKeyboard(levelClient))
 
@@ -56,6 +57,7 @@ func TestClientKeyboardButtons(t *testing.T) {
 }
 
 func TestClientKeyboardShowsAdminPanelToAdmins(t *testing.T) {
+	initLangDB(t)
 	tg := &Tgbot{}
 	if data := callbackData(tg.clientKeyboard(levelAdmin)); !contains(data, "admin_panel") {
 		t.Fatalf("admin keyboard lost the admin panel: %v", data)

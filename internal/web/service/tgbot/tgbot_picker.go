@@ -90,5 +90,9 @@ func (t *Tgbot) runClientSelfAction(chatId int64, from *telego.User, verb string
 		t.requestRenewal(chatId, from, arg)
 	case "renew_mute":
 		t.muteRenewal(chatId, from.ID, arg)
+	case "client_reset_self":
+		t.confirmSelfReset(chatId, from.ID, arg)
+	case "client_reset_self_c":
+		t.applySelfReset(chatId, from.ID, arg)
 	}
 }

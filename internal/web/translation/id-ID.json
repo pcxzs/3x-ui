@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ Anda sudah meminta perpanjangan hari ini. Mohon tunggu balasan.",
       "renewRequestCard": "🔄 <b>Permintaan perpanjangan</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 Anda telah memakai {{ .Percent }}% kuota <code>{{ .Email }}</code>. Sisa {{ .Remaining }}.",
-      "quotaNinetyFive": "⚠️ Hanya tersisa {{ .Remaining }} pada <code>{{ .Email }}</code> — {{ .Percent }}% kuota terpakai."
+      "quotaNinetyFive": "⚠️ Hanya tersisa {{ .Remaining }} pada <code>{{ .Email }}</code> — {{ .Percent }}% kuota terpakai.",
+      "selfResetWarning": "⚠️ Ini mengganti kunci di balik <code>{{ .Email }}</code>. Semua perangkat Anda akan berhenti bekerja sampai Anda mengimpor tautan baru. Siapa pun yang memegang tautan lama juga kehilangan akses.",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> telah disetel ulang. Impor tautan di bawah ini di setiap perangkat Anda.",
+      "selfResetDisabled": "Opsi ini tidak tersedia. Silakan hubungi admin.",
+      "selfResetThrottled": "⏳ Anda sudah menyetel ulang konfigurasi ini hari ini. Coba lagi besok.",
+      "botFeatures": "🧩 <b>Fitur bot</b>\nAtur apa yang bisa dilakukan pelanggan sendiri."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "Pemberitahuan Pelanggan Baru",
       "renewRequest": "🔄 Perpanjang",
       "renewMute": "🔕 Hentikan pengingat",
-      "notifyQuota": "Peringatan kuota"
+      "notifyQuota": "Peringatan kuota",
+      "selfReset": "🔑 Setel ulang konfigurasi saya",
+      "confirmSelfReset": "✅ Ya, setel ulang semuanya",
+      "allowSelfReset": "Reset konfigurasi oleh pelanggan",
+      "botFeatures": "🧩 Fitur bot"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

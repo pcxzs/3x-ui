@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ 您今天已經送出續約請求，請等待回覆。",
       "renewRequestCard": "🔄 <b>續約請求</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 您已使用 <code>{{ .Email }}</code> 流量的 {{ .Percent }}%，剩餘 {{ .Remaining }}。",
-      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> 僅剩 {{ .Remaining }} — 已使用 {{ .Percent }}%。"
+      "quotaNinetyFive": "⚠️ <code>{{ .Email }}</code> 僅剩 {{ .Remaining }} — 已使用 {{ .Percent }}%。",
+      "selfResetWarning": "⚠️ 這會更換 <code>{{ .Email }}</code> 的金鑰。在您匯入新連結之前，所有已設定的裝置都將無法使用；持有舊連結的人也會失去存取權限。",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> 已重設。請在您的每台裝置上匯入下面的連結。",
+      "selfResetDisabled": "此功能不可用，請聯絡管理員。",
+      "selfResetThrottled": "⏳ 您今天已經重設過此設定，請明天再試。",
+      "botFeatures": "🧩 <b>機器人功能</b>\n設定客戶可以自助完成的操作。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "新客戶提醒",
       "renewRequest": "🔄 續約",
       "renewMute": "🔕 停止提醒",
-      "notifyQuota": "流量預警"
+      "notifyQuota": "流量預警",
+      "selfReset": "🔑 重設我的設定",
+      "confirmSelfReset": "✅ 是的，全部重設",
+      "allowSelfReset": "客戶自助重設設定",
+      "botFeatures": "🧩 機器人功能"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

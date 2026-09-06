@@ -2263,7 +2263,12 @@
       "renewRequestThrottled": "⏳ Ви вже запитали продовження сьогодні. Зачекайте на відповідь.",
       "renewRequestCard": "🔄 <b>Запит на продовження</b>\n{{ .Client }}\n📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Used }}",
       "quotaEighty": "📊 Використано {{ .Percent }}% трафіку на <code>{{ .Email }}</code>. Залишилось {{ .Remaining }}.",
-      "quotaNinetyFive": "⚠️ На <code>{{ .Email }}</code> лишилось лише {{ .Remaining }} — витрачено {{ .Percent }}%."
+      "quotaNinetyFive": "⚠️ На <code>{{ .Email }}</code> лишилось лише {{ .Remaining }} — витрачено {{ .Percent }}%.",
+      "selfResetWarning": "⚠️ Це замінить ключі для <code>{{ .Email }}</code>. Усі налаштовані пристрої перестануть працювати, доки ви не імпортуєте нові посилання. Доступ втратить і той, кому ви дали старе посилання.",
+      "selfResetDone": "✅ <code>{{ .Email }}</code> скинуто. Імпортуйте посилання нижче на кожному пристрої.",
+      "selfResetDisabled": "Ця можливість недоступна. Напишіть адміністратору.",
+      "selfResetThrottled": "⏳ Ви вже скидали цей конфіг сьогодні. Спробуйте завтра.",
+      "botFeatures": "🧩 <b>Функції бота</b>\nЩо клієнти можуть робити самостійно."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",
@@ -2354,7 +2359,11 @@
       "notifyNewClient": "Сповіщення про нових клієнтів",
       "renewRequest": "🔄 Продовжити",
       "renewMute": "🔕 Не нагадувати",
-      "notifyQuota": "Попередження про трафік"
+      "notifyQuota": "Попередження про трафік",
+      "selfReset": "🔑 Скинути мої конфіги",
+      "confirmSelfReset": "✅ Так, скинути все",
+      "allowSelfReset": "Скидання конфігу клієнтом",
+      "botFeatures": "🧩 Функції бота"
     },
     "answers": {
       "successfulOperation": "✅ Операція успішна!",

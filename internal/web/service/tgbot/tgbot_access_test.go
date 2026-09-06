@@ -9,6 +9,7 @@ import (
 // resolve through clientSelfAction — the gate that re-checks ownership. A new
 // targeted callback added without that gate is an IDOR, and fails here.
 func TestTargetedClientCallbacksAreOwnershipChecked(t *testing.T) {
+	initLangDB(t)
 	tg := &Tgbot{}
 	const email = "amy@example.com"
 

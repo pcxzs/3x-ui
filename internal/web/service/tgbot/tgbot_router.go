@@ -1203,6 +1203,8 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 			case "server_inbound_toggle":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
 				t.toggleInbound(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
+			case "feature_toggle":
+				t.toggleFeature(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
 			case "notify_toggle":
 				t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
 				t.toggleNotification(chatId, dataArray[1], callbackQuery.Message.GetMessageID())
@@ -1309,6 +1311,9 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		t.clientPicker(chatId, &callbackQuery.From, "client_individual_links", level)
 	case "client_qr_links":
 		t.clientPicker(chatId, &callbackQuery.From, "client_qr_links", level)
+	case "client_reset_self":
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.selfReset"))
+		t.clientPicker(chatId, &callbackQuery.From, "client_reset_self", level)
 	case "onlines":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.onlines"))
 		t.onlineClients(chatId)
@@ -1372,6 +1377,12 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	case "notify_settings":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.notifications"))
 		t.notificationsMenu(chatId)
+	case "admin_features":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.botFeatures"))
+		t.featuresMenu(chatId)
 	case "server_panel_logs":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.panelLogs"))
 		t.sendPanelLogs(chatId)
@@ -1712,7 +1723,7 @@ func isClientSelfCallback(data string) bool {
 	switch data {
 	case "client_traffic", "client_commands", "client_help", "client_sub_links",
 		"client_individual_links", "client_qr_links", "client_pm",
-		"client_settings", "client_menu", "settings_lang":
+		"client_settings", "client_menu", "settings_lang", "client_reset_self":
 		return true
 	}
 	if _, ok := parseLangCallback(data); ok {

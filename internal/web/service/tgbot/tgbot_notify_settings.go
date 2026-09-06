@@ -49,10 +49,21 @@ var botNotifications = []botNotification{
 	},
 }
 
-func notificationByCallback(callback string) (botNotification, bool) {
-	for _, notification := range botNotifications {
-		if notification.callback == callback {
-			return notification, true
+// Feature switches share the toggle machinery but not the fail-open default:
+// selfResetEnabled reads its own setting and fails closed.
+var botFeatures = []botNotification{
+	{
+		callback: "feature_self_reset",
+		labelKey: "tgbot.buttons.allowSelfReset",
+		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotAllowSelfReset() },
+		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotAllowSelfReset(v) },
+	},
+}
+
+func toggleByCallback(toggles []botNotification, callback string) (botNotification, bool) {
+	for _, toggle := range toggles {
+		if toggle.callback == callback {
+			return toggle, true
 		}
 	}
 	return botNotification{}, false
@@ -73,42 +84,70 @@ func (t *Tgbot) notificationToggleLabel(notification botNotification) string {
 	return mark + " " + t.I18nBot(notification.labelKey)
 }
 
-func (t *Tgbot) notificationsKeyboard() *telego.InlineKeyboardMarkup {
-	rows := make([][]telego.InlineKeyboardButton, 0, len(botNotifications)+1)
-	for _, notification := range botNotifications {
+func (t *Tgbot) toggleKeyboard(toggles []botNotification, prefix string, extra ...[]telego.InlineKeyboardButton) *telego.InlineKeyboardMarkup {
+	rows := make([][]telego.InlineKeyboardButton, 0, len(toggles)+len(extra)+1)
+	for _, toggle := range toggles {
 		rows = append(rows, tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.notificationToggleLabel(notification)).
-				WithCallbackData(t.encodeQuery("notify_toggle "+notification.callback)),
+			tu.InlineKeyboardButton(t.notificationToggleLabel(toggle)).
+				WithCallbackData(t.encodeQuery(prefix+toggle.callback)),
 		))
 	}
+	rows = append(rows, extra...)
 	rows = append(rows, tu.InlineKeyboardRow(
 		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_reports")),
 	))
 	return tu.InlineKeyboard(rows...)
 }
 
+func (t *Tgbot) notificationsKeyboard() *telego.InlineKeyboardMarkup {
+	return t.toggleKeyboard(botNotifications, "notify_toggle ")
+}
+
+func (t *Tgbot) featuresKeyboard() *telego.InlineKeyboardMarkup {
+	return t.toggleKeyboard(botFeatures, "feature_toggle ")
+}
+
 func (t *Tgbot) notificationsMenu(chatId int64) {
 	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.notifications"), t.notificationsKeyboard())
 }
 
+func (t *Tgbot) featuresMenu(chatId int64) {
+	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.botFeatures"), t.featuresKeyboard())
+}
+
 func (t *Tgbot) toggleNotification(chatId int64, callback string, messageID int) {
-	notification, found := notificationByCallback(callback)
+	t.applyToggle(chatId, botNotifications, callback, messageID, t.notificationsKeyboard, t.notificationsMenu)
+}
+
+func (t *Tgbot) toggleFeature(chatId int64, callback string, messageID int) {
+	t.applyToggle(chatId, botFeatures, callback, messageID, t.featuresKeyboard, t.featuresMenu)
+}
+
+func (t *Tgbot) applyToggle(
+	chatId int64,
+	toggles []botNotification,
+	callback string,
+	messageID int,
+	keyboard func() *telego.InlineKeyboardMarkup,
+	menu func(int64),
+) {
+	toggle, found := toggleByCallback(toggles, callback)
 	if !found {
 		return
 	}
-	enabled, err := notification.get(t)
+	enabled, err := toggle.get(t)
 	if err != nil {
-		logger.Warning("tgbot: notification setting lookup failed:", err)
+		logger.Warning("tgbot: toggle lookup failed:", err)
 		enabled = true
 	}
-	if err := notification.set(t, !enabled); err != nil {
-		logger.Warning("tgbot: notification setting save failed:", err)
+	if err := toggle.set(t, !enabled); err != nil {
+		logger.Warning("tgbot: toggle save failed:", err)
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"))
 		return
 	}
 	if messageID > 0 {
-		t.editMessageCallbackTgBot(chatId, messageID, t.notificationsKeyboard())
+		t.editMessageCallbackTgBot(chatId, messageID, keyboard())
 		return
 	}
-	t.notificationsMenu(chatId)
+	menu(chatId)
 }

@@ -18,6 +18,8 @@ var clientSelfPrefixes = []string{
 	"qr_one ",
 	"renew_req ",
 	"renew_mute ",
+	"client_reset_self ",
+	"client_reset_self_c ",
 }
 
 func clientSelfAction(data string) (verb string, arg string, ok bool) {
