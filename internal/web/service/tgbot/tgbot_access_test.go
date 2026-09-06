@@ -87,7 +87,7 @@ func TestOwnsClientRejectsMissingIdentity(t *testing.T) {
 // user could disable clients in bulk or reset another customer's config.
 func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
 	adminOnly := []string{
-		"admin_panel", "admin_clients", "admin_reports", "admin_messaging",
+		"admin_panel", "admin_clients", "admin_reports", "admin_messaging", "admin_settings",
 		"admin_features", "settings_hour", "bulk_menu", "roster_search",
 		"client_roster", "notify_settings", "broadcast", "set_help", "get_backup",
 		"remind_now", "remind_send",

@@ -22,7 +22,7 @@ func (t *Tgbot) sendResponse(chatId int64, msg string, onlyMessage bool, level u
 	}
 }
 
-// The console is a hub of four sections rather than one wall of buttons: the
+// The console is a hub of five sections rather than one wall of buttons: the
 // top level says what the bot can do, and each section holds the detail.
 func (t *Tgbot) adminKeyboard() *telego.InlineKeyboardMarkup {
 	return tu.InlineKeyboard(
@@ -31,8 +31,11 @@ func (t *Tgbot) adminKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.sectionReports")).WithCallbackData(t.encodeQuery("admin_reports")),
 		),
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.sectionMessaging")).WithCallbackData(t.encodeQuery("admin_messaging")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.serverMenu")).WithCallbackData(t.encodeQuery("server")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.sectionMessaging")).WithCallbackData(t.encodeQuery("admin_messaging")),
+		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.sectionSettings")).WithCallbackData(t.encodeQuery("admin_settings")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToUserPanel")).WithCallbackData(t.encodeQuery("user_panel")),
@@ -40,6 +43,8 @@ func (t *Tgbot) adminKeyboard() *telego.InlineKeyboardMarkup {
 	)
 }
 
+// Who the customers are. Every fleet-wide change lives behind Bulk actions, so
+// nothing here can touch more than the one client the admin picked.
 func (t *Tgbot) adminClientsKeyboard() *telego.InlineKeyboardMarkup {
 	return tu.InlineKeyboard(
 		tu.InlineKeyboardRow(
@@ -47,15 +52,12 @@ func (t *Tgbot) adminClientsKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.addClient")).WithCallbackData(t.encodeQuery("add_client")),
 		),
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.inviteLinks")).WithCallbackData(t.encodeQuery("invite_links")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.allClients")).WithCallbackData(t.encodeQuery("get_inbounds")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.onlines")).WithCallbackData(t.encodeQuery("onlines")),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.inviteLinks")).WithCallbackData(t.encodeQuery("invite_links")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.bulkActions")).WithCallbackData(t.encodeQuery("bulk_menu")),
-		),
-		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.delDepleted")).WithCallbackData(t.encodeQuery("del_depleted")),
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.ResetAllTraffics")).WithCallbackData(t.encodeQuery("reset_all_traffics")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
@@ -63,26 +65,17 @@ func (t *Tgbot) adminClientsKeyboard() *telego.InlineKeyboardMarkup {
 	)
 }
 
+// Read-only lists only. Anything that changes state belongs in Clients or
+// Server, and the bot's own switches belong in Bot Settings.
 func (t *Tgbot) adminReportsKeyboard() *telego.InlineKeyboardMarkup {
 	return tu.InlineKeyboard(
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.serverUsage")).WithCallbackData(t.encodeQuery("get_usage")),
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.onlines")).WithCallbackData(t.encodeQuery("onlines")),
-		),
-		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.SortedTrafficUsageReport")).WithCallbackData(t.encodeQuery("get_sorted_traffic_usage_report")),
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.depleteSoon")).WithCallbackData(t.encodeQuery("deplete_soon")),
-		),
-		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.getInbounds")).WithCallbackData(t.encodeQuery("inbounds")),
+		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.depleteSoon")).WithCallbackData(t.encodeQuery("deplete_soon")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.getBanLogs")).WithCallbackData(t.encodeQuery("get_banlogs")),
-		),
-		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dbBackup")).WithCallbackData(t.encodeQuery("get_backup")),
-		),
-		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.notifications")).WithCallbackData(t.encodeQuery("notify_settings")),
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.botFeatures")).WithCallbackData(t.encodeQuery("admin_features")),
 		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
@@ -94,10 +87,28 @@ func (t *Tgbot) adminMessagingKeyboard() *telego.InlineKeyboardMarkup {
 	return tu.InlineKeyboard(
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.broadcast")).WithCallbackData(t.encodeQuery("broadcast")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.remindNow")).WithCallbackData(t.encodeQuery("remind_now")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.setHelpText")).WithCallbackData(t.encodeQuery("set_help")),
 		),
 		tu.InlineKeyboardRow(
-			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.remindNow")).WithCallbackData(t.encodeQuery("remind_now")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
+		),
+	)
+}
+
+// How the bot itself behaves, kept apart from the reports it produces.
+func (t *Tgbot) adminSettingsKeyboard() *telego.InlineKeyboardMarkup {
+	return tu.InlineKeyboard(
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.notifications")).WithCallbackData(t.encodeQuery("notify_settings")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.botFeatures")).WithCallbackData(t.encodeQuery("admin_features")),
+		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dailyHour")).WithCallbackData(t.encodeQuery("settings_hour")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.commands")).WithCallbackData(t.encodeQuery("commands")),
 		),
 		tu.InlineKeyboardRow(

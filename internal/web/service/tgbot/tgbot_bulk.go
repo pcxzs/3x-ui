@@ -73,6 +73,10 @@ func (t *Tgbot) bulkKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.bulkDisable")).WithCallbackData(t.encodeQuery("bulk_preview "+bulkDisable)),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.delDepleted")).WithCallbackData(t.encodeQuery("del_depleted")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.ResetAllTraffics")).WithCallbackData(t.encodeQuery("reset_all_traffics")),
+		),
+		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_clients")),
 		),
 	)
@@ -179,4 +183,82 @@ func emailList(clients []bulkClient) []string {
 		emails = append(emails, clients[i].Email)
 	}
 	return emails
+}
+
+// The two fleet-wide sweeps sit beside actions that name their targets, so they
+// name a count rather than asking a bare "are you sure?".
+func (t *Tgbot) sweepKeyboard(confirmKey, confirmData, cancelData string) *telego.InlineKeyboardMarkup {
+	return tu.InlineKeyboard(
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot(confirmKey)).WithCallbackData(t.encodeQuery(confirmData)),
+		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.cancel")).WithCallbackData(t.encodeQuery(cancelData)),
+		),
+	)
+}
+
+// Counted with the same clause the delete itself uses, so the number on the
+// confirm is the number that will go.
+func (t *Tgbot) confirmDelDepleted(chatId int64) {
+	count, err := t.clientService.CountDepleted()
+	if err != nil {
+		logger.Warning("tgbot: depleted count failed:", err)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"), t.bulkKeyboard())
+		return
+	}
+	if count == 0 {
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.depletedNone"), t.bulkKeyboard())
+		return
+	}
+	t.SendMsgToTgbot(chatId,
+		t.I18nBot("tgbot.messages.depletedPreview", "Count=="+strconv.Itoa(count)),
+		t.sweepKeyboard("tgbot.buttons.confirmDelDepleted", "del_depleted_c", "del_depleted_cancel"))
+}
+
+func (t *Tgbot) confirmResetAllTraffic(chatId int64) {
+	emails, err := t.inboundService.GetAllEmails()
+	if err != nil {
+		logger.Warning("tgbot: reset-all count failed:", err)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"), t.bulkKeyboard())
+		return
+	}
+	if len(emails) == 0 {
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.bulkNoTargets"), t.bulkKeyboard())
+		return
+	}
+	t.SendMsgToTgbot(chatId,
+		t.I18nBot("tgbot.messages.resetAllPreview", "Count=="+strconv.Itoa(len(emails))),
+		t.sweepKeyboard("tgbot.buttons.confirmResetTraffic", "reset_all_traffics_c", "reset_all_traffics_cancel"))
+}
+
+// One summary rather than a message per client: a panel with a few hundred
+// clients would otherwise hit Telegram's rate limit part-way through the sweep.
+func (t *Tgbot) resetAllTraffic(chatId int64) {
+	emails, err := t.inboundService.GetAllEmails()
+	if err != nil {
+		logger.Warning("tgbot: reset-all lookup failed:", err)
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation"), t.bulkKeyboard())
+		return
+	}
+
+	done, failed := 0, 0
+	for _, email := range emails {
+		if err := t.inboundService.ResetClientTrafficByEmail(email); err != nil {
+			logger.Warning("tgbot: reset traffic failed for", email, ":", err)
+			failed++
+			continue
+		}
+		done++
+	}
+	t.SendMsgToTgbot(chatId,
+		t.I18nBot("tgbot.messages.resetAllDone", "Ok=="+strconv.Itoa(done), "Failed=="+strconv.Itoa(failed)),
+		t.bulkKeyboard())
+}
+
+// Cancelling lands back in the menu the sweep was launched from rather than on
+// a toast that vanishes, so the admin keeps their place.
+func (t *Tgbot) cancelSweep(chatId int64, messageID int) {
+	t.deleteMessageTgBot(chatId, messageID)
+	t.bulkMenu(chatId)
 }

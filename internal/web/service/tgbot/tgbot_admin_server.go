@@ -71,17 +71,19 @@ func formatXrayLogEntries(entries []service.LogEntry) []string {
 	return lines
 }
 
-func (t *Tgbot) serverMenu(chatId int64) {
-	running := t.xrayService.IsXrayRunning()
-
+// Split from serverMenu so the layout can be asserted without a running Xray
+// or a live bot.
+func (t *Tgbot) serverKeyboard(running bool) *telego.InlineKeyboardMarkup {
 	xrayToggle := tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.xrayStart")).WithCallbackData(t.encodeQuery("server_xray_restart"))
-	header := t.I18nBot("tgbot.messages.serverXrayStopped")
 	if running {
 		xrayToggle = tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.xrayStop")).WithCallbackData(t.encodeQuery("server_xray_stop"))
-		header = t.I18nBot("tgbot.messages.serverXrayRunning")
 	}
 
-	keyboard := tu.InlineKeyboard(
+	return tu.InlineKeyboard(
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.serverUsage")).WithCallbackData(t.encodeQuery("get_usage")),
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dbBackup")).WithCallbackData(t.encodeQuery("get_backup")),
+		),
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.panelLogs")).WithCallbackData(t.encodeQuery("server_panel_logs")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.xrayLogs")).WithCallbackData(t.encodeQuery("server_xray_logs")),
@@ -96,8 +98,20 @@ func (t *Tgbot) serverMenu(chatId int64) {
 		tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.panelRestart")).WithCallbackData(t.encodeQuery("server_panel_restart")),
 		),
+		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_panel")),
+		),
 	)
-	t.SendMsgToTgbot(chatId, header, keyboard)
+}
+
+func (t *Tgbot) serverMenu(chatId int64) {
+	running := t.xrayService.IsXrayRunning()
+
+	header := t.I18nBot("tgbot.messages.serverXrayStopped")
+	if running {
+		header = t.I18nBot("tgbot.messages.serverXrayRunning")
+	}
+	t.SendMsgToTgbot(chatId, header, t.serverKeyboard(running))
 }
 
 func (t *Tgbot) sendPanelLogs(chatId int64) {

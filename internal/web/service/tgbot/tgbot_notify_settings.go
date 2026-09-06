@@ -111,17 +111,16 @@ func (t *Tgbot) notificationToggleLabel(notification botNotification) string {
 	return mark + " " + string(notification.audience) + " " + t.I18nBot(notification.labelKey)
 }
 
-func (t *Tgbot) toggleKeyboard(toggles []botNotification, prefix string, extra ...[]telego.InlineKeyboardButton) *telego.InlineKeyboardMarkup {
-	rows := make([][]telego.InlineKeyboardButton, 0, len(toggles)+len(extra)+1)
+func (t *Tgbot) toggleKeyboard(toggles []botNotification, prefix string) *telego.InlineKeyboardMarkup {
+	rows := make([][]telego.InlineKeyboardButton, 0, len(toggles)+1)
 	for _, toggle := range toggles {
 		rows = append(rows, tu.InlineKeyboardRow(
 			tu.InlineKeyboardButton(t.notificationToggleLabel(toggle)).
 				WithCallbackData(t.encodeQuery(prefix+toggle.callback)),
 		))
 	}
-	rows = append(rows, extra...)
 	rows = append(rows, tu.InlineKeyboardRow(
-		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_reports")),
+		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.backToAdminPanel")).WithCallbackData(t.encodeQuery("admin_settings")),
 	))
 	return tu.InlineKeyboard(rows...)
 }
@@ -131,9 +130,7 @@ func (t *Tgbot) notificationsKeyboard() *telego.InlineKeyboardMarkup {
 }
 
 func (t *Tgbot) featuresKeyboard() *telego.InlineKeyboardMarkup {
-	return t.toggleKeyboard(botFeatures, "feature_toggle ", tu.InlineKeyboardRow(
-		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.dailyHour")).WithCallbackData(t.encodeQuery("settings_hour")),
-	))
+	return t.toggleKeyboard(botFeatures, "feature_toggle ")
 }
 
 func (t *Tgbot) notificationsMenu(chatId int64) {
