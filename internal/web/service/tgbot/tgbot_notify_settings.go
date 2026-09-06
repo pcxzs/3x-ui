@@ -7,45 +7,63 @@ import (
 	tu "github.com/mymmrac/telego/telegoutil"
 )
 
+// Who a notice reaches. Every row is marked so an admin can tell which switch
+// silences their own inbox from the one that silences the customer's.
+type notifyAudience string
+
+const (
+	audienceNone     notifyAudience = ""
+	audienceAdmin    notifyAudience = "👑"
+	audienceCustomer notifyAudience = "👤"
+)
+
 // One notice the admin can switch off. Read and write stay together so a new
 // notice cannot be listed in the menu without being wired to its setting.
 type botNotification struct {
 	callback string
 	labelKey string
+	audience notifyAudience
 	get      func(*Tgbot) (bool, error)
 	set      func(*Tgbot, bool) error
 }
 
+// Listed admin-first so the two audiences read as blocks rather than as marks
+// the eye has to pick out row by row.
 var botNotifications = []botNotification{
 	{
 		callback: "notify_usage",
 		labelKey: "tgbot.buttons.notifyServerUsage",
+		audience: audienceAdmin,
 		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotNotifyServerUsage() },
 		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyServerUsage(v) },
 	},
 	{
 		callback: "notify_deplete",
 		labelKey: "tgbot.buttons.notifyDepleteSoon",
+		audience: audienceAdmin,
 		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotNotifyDepleteSoon() },
 		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyDepleteSoon(v) },
 	},
 	{
 		callback: "notify_new_client",
 		labelKey: "tgbot.buttons.notifyNewClient",
+		audience: audienceAdmin,
 		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotNotifyNewClient() },
 		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyNewClient(v) },
 	},
 	{
-		callback: "notify_quota",
-		labelKey: "tgbot.buttons.notifyQuota",
-		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotNotifyQuota() },
-		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyQuota(v) },
-	},
-	{
 		callback: "notify_backup",
 		labelKey: "tgbot.buttons.notifyBackup",
+		audience: audienceAdmin,
 		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotBackup() },
 		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotBackup(v) },
+	},
+	{
+		callback: "notify_quota",
+		labelKey: "tgbot.buttons.notifyQuota",
+		audience: audienceCustomer,
+		get:      func(t *Tgbot) (bool, error) { return t.settingService.GetTgBotNotifyQuota() },
+		set:      func(t *Tgbot, v bool) error { return t.settingService.SetTgBotNotifyQuota(v) },
 	},
 }
 
@@ -87,7 +105,10 @@ func (t *Tgbot) notificationToggleLabel(notification botNotification) string {
 	if enabled {
 		mark = "✅"
 	}
-	return mark + " " + t.I18nBot(notification.labelKey)
+	if notification.audience == audienceNone {
+		return mark + " " + t.I18nBot(notification.labelKey)
+	}
+	return mark + " " + string(notification.audience) + " " + t.I18nBot(notification.labelKey)
 }
 
 func (t *Tgbot) toggleKeyboard(toggles []botNotification, prefix string, extra ...[]telego.InlineKeyboardButton) *telego.InlineKeyboardMarkup {

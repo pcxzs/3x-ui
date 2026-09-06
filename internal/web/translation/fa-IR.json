@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 امروز ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 فردا ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 سه روز دیگر ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>اعلان‌ها</b>\r\nبرای روشن یا خاموش کردن هر مورد روی آن بزنید. مشتریان همیشه دربارهٔ اشتراک خودشان مطلع می‌شوند.",
+      "notifications": "⚙️ <b>اعلان‌ها</b>\r\nبرای روشن یا خاموش کردن هر مورد روی آن بزنید. 👑 برای مدیران و 👤 برای مشتریان است.",
       "renewSummaryTwoDays": "📅 سررسید تا ۲ روز دیگر ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>یادآوری‌های تمدید ارسال شد</b>",
       "qrChoose": "📷 برای <code>{{ .Email }}</code> کدام QR را می‌خواهید؟",

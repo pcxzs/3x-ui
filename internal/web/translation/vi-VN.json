@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 Hôm nay ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Ngày mai ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Sau 3 ngày ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>Thông báo</b>\r\nChạm để bật hoặc tắt. Khách hàng luôn được thông báo về gói của chính họ.",
+      "notifications": "⚙️ <b>Thông báo</b>\r\nChạm để bật hoặc tắt. 👑 gửi cho quản trị viên, 👤 gửi cho khách hàng.",
       "renewSummaryTwoDays": "📅 Đến hạn sau 2 ngày ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Đã gửi nhắc gia hạn</b>",
       "qrChoose": "📷 Bạn cần mã QR nào cho <code>{{ .Email }}</code>?",

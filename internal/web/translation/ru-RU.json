@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 Сегодня ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Завтра ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Через 3 дня ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>Уведомления</b>\r\nНажмите, чтобы включить или выключить. Клиенты всегда получают уведомления о своей подписке.",
+      "notifications": "⚙️ <b>Уведомления</b>\r\nНажмите, чтобы включить или выключить. 👑 — администраторам, 👤 — клиентам.",
       "renewSummaryTwoDays": "📅 Истекает через 2 дня ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Напоминания о продлении отправлены</b>",
       "qrChoose": "📷 Какой QR нужен для <code>{{ .Email }}</code>?",

@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 Bugün ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Yarın ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 gün sonra ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>Bildirimler</b>\r\nAçmak veya kapatmak için dokunun. Müşteriler kendi abonelikleri hakkında her zaman bilgilendirilir.",
+      "notifications": "⚙️ <b>Bildirimler</b>\r\nAçmak veya kapatmak için dokunun. 👑 yöneticilere, 👤 müşterilere gider.",
       "renewSummaryTwoDays": "📅 2 gün içinde doluyor ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Yenileme hatırlatmaları gönderildi</b>",
       "qrChoose": "📷 <code>{{ .Email }}</code> için hangi QR gerekiyor?",

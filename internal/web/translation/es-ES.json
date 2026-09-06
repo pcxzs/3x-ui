@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 Vencen hoy ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Vencen mañana ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 Vencen en 3 días ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>Notificaciones</b>\r\nToca una para activarla o desactivarla. Los clientes siempre reciben avisos sobre su propia suscripción.",
+      "notifications": "⚙️ <b>Notificaciones</b>\r\nToca una para activarla o desactivarla. 👑 va a los administradores, 👤 va a los clientes.",
       "renewSummaryTwoDays": "📅 Vence en 2 días ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Recordatorios de renovación enviados</b>",
       "qrChoose": "📷 ¿Qué código QR necesitas para <code>{{ .Email }}</code>?",

@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 今天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 明天到期 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 天後到期 ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>通知</b>\r\n點按以開啟或關閉。客戶一律會收到關於自己訂閱的通知。",
+      "notifications": "⚙️ <b>通知</b>\r\n點按以開啟或關閉。👑 傳送給管理員，👤 傳送給客戶。",
       "renewSummaryTwoDays": "📅 2 天後到期（{{ .Count }}）：{{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>已發送續費提醒</b>",
       "qrChoose": "📷 需要 <code>{{ .Email }}</code> 的哪個 QR？",

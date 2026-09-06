@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 Hari ini ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 Besok ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3 hari lagi ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>Notifikasi</b>\r\nKetuk untuk menyalakan atau mematikan. Pelanggan selalu diberi tahu tentang langganan mereka sendiri.",
+      "notifications": "⚙️ <b>Notifikasi</b>\r\nKetuk untuk menyalakan atau mematikan. 👑 untuk admin, 👤 untuk pelanggan.",
       "renewSummaryTwoDays": "📅 Jatuh tempo dalam 2 hari ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>Pengingat perpanjangan terkirim</b>",
       "qrChoose": "📷 QR mana yang Anda perlukan untuk <code>{{ .Email }}</code>?",

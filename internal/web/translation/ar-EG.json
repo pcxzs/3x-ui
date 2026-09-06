@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 اليوم ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 غدًا ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 بعد 3 أيام ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>الإشعارات</b>\r\nاضغط على أي منها لتشغيله أو إيقافه. يتم دائمًا إخطار العملاء بشأن اشتراكهم.",
+      "notifications": "⚙️ <b>الإشعارات</b>\r\nاضغط على أي منها لتشغيله أو إيقافه. 👑 للمسؤولين و👤 للعملاء.",
       "renewSummaryTwoDays": "📅 تنتهي خلال يومين ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>تم إرسال تذكيرات التجديد</b>",
       "qrChoose": "📷 أي رمز QR تحتاج لـ <code>{{ .Email }}</code>؟",

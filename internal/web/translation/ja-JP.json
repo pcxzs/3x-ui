@@ -2248,7 +2248,7 @@
       "renewSummaryToday": "📅 本日 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryTomorrow": "📅 明日 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryThreeDays": "📅 3日後 ({{ .Count }}): {{ .Clients }}",
-      "notifications": "⚙️ <b>通知</b>\r\nタップしてオン・オフを切り替えます。顧客には自身のサブスクリプションについて常に通知されます。",
+      "notifications": "⚙️ <b>通知</b>\r\nタップしてオン・オフを切り替えます。👑 は管理者宛て、👤 は顧客宛てです。",
       "renewSummaryTwoDays": "📅 2 日後に期限 ({{ .Count }}): {{ .Clients }}",
       "renewSummaryHeader": "🔔 <b>更新リマインダーを送信しました</b>",
       "qrChoose": "📷 <code>{{ .Email }}</code> のどの QR が必要ですか？",
