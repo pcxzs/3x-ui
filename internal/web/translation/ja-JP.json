@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "現在この操作の対象はいません。",
       "bulkTooMany": "⚠️ {{ .Limit }} 件を超えて該当します。範囲を絞り、個別メニューをお使いください。",
       "dailyHourPrompt": "🕗 利用者への通知を送る時刻を選んでください。サーバー時間です。",
-      "dailyHourSaved": "✅ 利用者への通知はサーバー時間 {{ .Hour }} に送信されます。"
+      "dailyHourSaved": "✅ 利用者への通知はサーバー時間 {{ .Hour }} に送信されます。",
+      "remindPreview": "🔔 <b>今すぐ利用者に通知</b>\r\n期限切れ間近・超過: {{ .Renew }}\r\n通信量が残りわずか: {{ .Quota }}\r\n\r\n本日の通知をすぐに送信し、定時実行はスキップします。",
+      "remindNothing": "現在、通知が必要な利用者はいません。",
+      "remindDone": "✅ 通知を送信しました。本日の定時実行は完了です。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 期限切れを無効化",
       "bulkConfirm": "✅ 一覧すべてに適用",
       "silentNotices": "サイレント通知",
-      "dailyHour": "🕗 毎日の通知時刻"
+      "dailyHour": "🕗 毎日の通知時刻",
+      "remindNow": "🔔 今すぐ通知",
+      "confirmRemind": "✅ {{ .Count }} 人に通知"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

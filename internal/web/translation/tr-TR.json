@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "Şu anda bu işleme uyan kimse yok.",
       "bulkTooMany": "⚠️ {{ .Limit }} istemciden fazlası eşleşiyor. Daraltın ve tek istemci menüsünü kullanın.",
       "dailyHourPrompt": "🕗 Müşteri bildirimlerinin gönderileceği saati seçin. Sunucu saati.",
-      "dailyHourSaved": "✅ Müşteri bildirimleri sunucu saatiyle {{ .Hour }} gönderilecek."
+      "dailyHourSaved": "✅ Müşteri bildirimleri sunucu saatiyle {{ .Hour }} gönderilecek.",
+      "remindPreview": "🔔 <b>Müşterilere şimdi hatırlat</b>\r\nSüresi dolan veya dolmak üzere: {{ .Renew }}\r\nTrafiği azalan: {{ .Quota }}\r\n\r\nBugünün bildirimlerini hemen gönderir, zamanlanmış çalıştırmayı atlar.",
+      "remindNothing": "Şu anda hatırlatma gereken müşteri yok.",
+      "remindDone": "✅ Hatırlatmalar gönderildi. Bugünün zamanlanmış görevi tamamlandı."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 Gecikenleri devre dışı bırak",
       "bulkConfirm": "✅ Listelenenlerin hepsine uygula",
       "silentNotices": "Sessiz bildirimler",
-      "dailyHour": "🕗 Günlük bildirim saati"
+      "dailyHour": "🕗 Günlük bildirim saati",
+      "remindNow": "🔔 Şimdi hatırlat",
+      "confirmRemind": "✅ {{ .Count }} müşteriye hatırlat"
     },
     "answers": {
       "successfulOperation": "✅ İşlem başarılı!",

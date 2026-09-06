@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "Ahora mismo no hay nadie que coincida con esa acción.",
       "bulkTooMany": "⚠️ Coinciden más de {{ .Limit }} clientes. Redúcelo y usa el menú por cliente.",
       "dailyHourPrompt": "🕗 Elige la hora de envío de los avisos a clientes. Hora del servidor.",
-      "dailyHourSaved": "✅ Los avisos a clientes se enviarán a las {{ .Hour }} hora del servidor."
+      "dailyHourSaved": "✅ Los avisos a clientes se enviarán a las {{ .Hour }} hora del servidor.",
+      "remindPreview": "🔔 <b>Recordar a los clientes ahora</b>\r\nPor vencer o vencidos: {{ .Renew }}\r\nCon poco tráfico: {{ .Quota }}\r\n\r\nEnvía los avisos de hoy de inmediato y omite la ejecución programada.",
+      "remindNothing": "Ningún cliente necesita un recordatorio ahora mismo.",
+      "remindDone": "✅ Recordatorios enviados. La tarea programada de hoy ya está hecha."
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 Desactivar vencidos",
       "bulkConfirm": "✅ Aplicar a todos los listados",
       "silentNotices": "Avisos silenciosos",
-      "dailyHour": "🕗 Hora del aviso diario"
+      "dailyHour": "🕗 Hora del aviso diario",
+      "remindNow": "🔔 Recordar ahora",
+      "confirmRemind": "✅ Recordar a {{ .Count }} cliente(s)"
     },
     "answers": {
       "successfulOperation": "✅ ¡Exitosa!",

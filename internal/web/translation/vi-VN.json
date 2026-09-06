@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "Hiện không có ai khớp với thao tác này.",
       "bulkTooMany": "⚠️ Có hơn {{ .Limit }} khách khớp. Hãy thu hẹp lại và dùng menu từng khách.",
       "dailyHourPrompt": "🕗 Chọn giờ gửi thông báo cho khách. Theo giờ máy chủ.",
-      "dailyHourSaved": "✅ Thông báo cho khách sẽ được gửi lúc {{ .Hour }} giờ máy chủ."
+      "dailyHourSaved": "✅ Thông báo cho khách sẽ được gửi lúc {{ .Hour }} giờ máy chủ.",
+      "remindPreview": "🔔 <b>Nhắc khách hàng ngay</b>\r\nSắp hết hạn hoặc đã hết hạn: {{ .Renew }}\r\nSắp hết dung lượng: {{ .Quota }}\r\n\r\nGửi thông báo hôm nay ngay lập tức và bỏ qua lần chạy theo lịch.",
+      "remindNothing": "Hiện không có khách hàng nào cần nhắc.",
+      "remindDone": "✅ Đã gửi nhắc nhở. Lần chạy theo lịch hôm nay đã xong."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 Tắt các tài khoản quá hạn",
       "bulkConfirm": "✅ Áp dụng cho tất cả",
       "silentNotices": "Thông báo im lặng",
-      "dailyHour": "🕗 Giờ thông báo hằng ngày"
+      "dailyHour": "🕗 Giờ thông báo hằng ngày",
+      "remindNow": "🔔 Nhắc ngay",
+      "confirmRemind": "✅ Nhắc {{ .Count }} khách hàng"
     },
     "answers": {
       "successfulOperation": "✅ Thành công!",

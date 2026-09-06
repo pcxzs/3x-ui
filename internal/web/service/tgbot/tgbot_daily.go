@@ -60,16 +60,22 @@ func (t *Tgbot) RunDailyPass() {
 		return
 	}
 
+	t.reminderPass()
+
+	if err := t.settingService.SetTgBotLadderRun(today); err != nil {
+		logger.Warning("tgbot: daily pass state save failed:", err)
+	}
+}
+
+// The notices themselves, with no gate of their own, so the Remind-now button
+// sends exactly what the schedule would have sent.
+func (t *Tgbot) reminderPass() {
 	// Every notice in the pass goes out quietly, including the admin summary:
 	// nothing here is urgent enough to alert at a fixed hour each day.
 	quiet := t.quiet()
 	quiet.notifyRenewals()
 	quiet.notifyExhausted()
 	quiet.notifyQuota()
-
-	if err := t.settingService.SetTgBotLadderRun(today); err != nil {
-		logger.Warning("tgbot: daily pass state save failed:", err)
-	}
 }
 
 // Four rows of six so a whole day fits without scrolling.

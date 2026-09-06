@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "Nothing matches that action right now.",
       "bulkTooMany": "⚠️ More than {{ .Limit }} clients match. Narrow it down and use the per-client menu.",
       "dailyHourPrompt": "🕗 Pick the hour customer notices are sent. Server time.",
-      "dailyHourSaved": "✅ Customer notices will be sent at {{ .Hour }} server time."
+      "dailyHourSaved": "✅ Customer notices will be sent at {{ .Hour }} server time.",
+      "remindPreview": "🔔 <b>Remind customers now</b>\r\nExpiring or overdue: {{ .Renew }}\r\nLow on traffic: {{ .Quota }}\r\n\r\nSends today's notices at once and skips the scheduled run.",
+      "remindNothing": "Nobody is due a reminder right now.",
+      "remindDone": "✅ Reminders sent. Today's scheduled pass is done."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 Disable overdue",
       "bulkConfirm": "✅ Apply to all listed",
       "silentNotices": "Silent notices",
-      "dailyHour": "🕗 Daily notice time"
+      "dailyHour": "🕗 Daily notice time",
+      "remindNow": "🔔 Remind now",
+      "confirmRemind": "✅ Remind {{ .Count }} customer(s)"
     },
     "answers": {
       "successfulOperation": "✅ Operation successful!",

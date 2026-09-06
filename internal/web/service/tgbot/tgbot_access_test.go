@@ -90,6 +90,7 @@ func TestAdminCallbacksAreNotCustomerReachable(t *testing.T) {
 		"admin_panel", "admin_clients", "admin_reports", "admin_messaging",
 		"admin_features", "settings_hour", "bulk_menu", "roster_search",
 		"client_roster", "notify_settings", "broadcast", "set_help", "get_backup",
+		"remind_now", "remind_send",
 		"set_hour 8", "feature_toggle feature_self_reset", "notify_toggle notify_quota",
 		"roster_filter unbound", "bulk_preview extend", "bulk_apply disable",
 		"reset_exp amy@example.com", "client_delete_c amy@example.com",

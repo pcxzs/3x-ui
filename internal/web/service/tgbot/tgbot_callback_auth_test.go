@@ -14,7 +14,7 @@ func TestAnswerCallbackDeniesPrivilegedActionToNonAdmin(t *testing.T) {
 	}()
 
 	tg := &Tgbot{}
-	for _, data := range []string{"get_backup", "reset_all_traffics_c", "add_client", "onlines", "inbounds", "admin_panel", "invite_links", "admin_clients", "admin_reports", "admin_messaging", "set_help"} {
+	for _, data := range []string{"get_backup", "reset_all_traffics_c", "add_client", "onlines", "inbounds", "admin_panel", "invite_links", "admin_clients", "admin_reports", "admin_messaging", "set_help", "remind_now", "remind_send"} {
 		for _, level := range []userLevel{levelStranger, levelClient} {
 			q := &telego.CallbackQuery{
 				Data:    data,
@@ -41,6 +41,7 @@ func TestIsClientSelfCallback(t *testing.T) {
 		"server", "server_panel_logs", "server_xray_logs", "server_xray_restart",
 		"server_xray_stop_c", "server_panel_restart_c", "server_inbounds", "server_inbound_toggle 1",
 		"client_roster", "admin_panel", "invite_links", "admin_clients", "admin_reports", "admin_messaging", "set_help",
+		"remind_now", "remind_send",
 	}
 	for _, d := range denied {
 		if isClientSelfCallback(d) {

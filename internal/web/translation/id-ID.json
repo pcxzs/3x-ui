@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "Saat ini tidak ada yang cocok dengan aksi tersebut.",
       "bulkTooMany": "⚠️ Lebih dari {{ .Limit }} klien cocok. Persempit dan gunakan menu per klien.",
       "dailyHourPrompt": "🕗 Pilih jam pengiriman notifikasi pelanggan. Waktu server.",
-      "dailyHourSaved": "✅ Notifikasi pelanggan akan dikirim pukul {{ .Hour }} waktu server."
+      "dailyHourSaved": "✅ Notifikasi pelanggan akan dikirim pukul {{ .Hour }} waktu server.",
+      "remindPreview": "🔔 <b>Ingatkan pelanggan sekarang</b>\r\nSegera atau sudah kedaluwarsa: {{ .Renew }}\r\nKuota menipis: {{ .Quota }}\r\n\r\nMengirim pemberitahuan hari ini sekarang dan melewati jadwal harian.",
+      "remindNothing": "Tidak ada pelanggan yang perlu diingatkan saat ini.",
+      "remindDone": "✅ Pengingat terkirim. Tugas terjadwal hari ini selesai."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 Nonaktifkan yang lewat jatuh tempo",
       "bulkConfirm": "✅ Terapkan ke semua yang terdaftar",
       "silentNotices": "Notifikasi senyap",
-      "dailyHour": "🕗 Waktu notifikasi harian"
+      "dailyHour": "🕗 Waktu notifikasi harian",
+      "remindNow": "🔔 Ingatkan sekarang",
+      "confirmRemind": "✅ Ingatkan {{ .Count }} pelanggan"
     },
     "answers": {
       "successfulOperation": "✅ Operasi berhasil!",

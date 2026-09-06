@@ -1367,6 +1367,18 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 	case "broadcast_cancel":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.canceled", "Email=="))
 		t.cancelBroadcast(chatId)
+	case "remind_now":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.remindNow"))
+		t.remindPreview(chatId)
+	case "remind_send":
+		if !isAdmin {
+			return
+		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+		t.runManualReminders(chatId)
 	case "admin_panel":
 		if !isAdmin {
 			return

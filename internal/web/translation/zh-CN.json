@@ -2289,7 +2289,10 @@
       "bulkNoTargets": "当前没有符合该操作的客户。",
       "bulkTooMany": "⚠️ 匹配超过 {{ .Limit }} 个客户。请缩小范围并使用单客户菜单。",
       "dailyHourPrompt": "🕗 请选择向客户发送通知的时间（服务器时间）。",
-      "dailyHourSaved": "✅ 客户通知将在服务器时间 {{ .Hour }} 发送。"
+      "dailyHourSaved": "✅ 客户通知将在服务器时间 {{ .Hour }} 发送。",
+      "remindPreview": "🔔 <b>立即提醒用户</b>\r\n即将到期或已到期：{{ .Renew }}\r\n流量将用尽：{{ .Quota }}\r\n\r\n立刻发送今天的通知，并跳过定时任务。",
+      "remindNothing": "目前没有需要提醒的用户。",
+      "remindDone": "✅ 提醒已发送，今天的定时任务已完成。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",
@@ -2402,7 +2405,9 @@
       "bulkDisable": "🚫 停用已过期",
       "bulkConfirm": "✅ 应用到列出的全部",
       "silentNotices": "静默通知",
-      "dailyHour": "🕗 每日通知时间"
+      "dailyHour": "🕗 每日通知时间",
+      "remindNow": "🔔 立即提醒",
+      "confirmRemind": "✅ 提醒 {{ .Count }} 位用户"
     },
     "answers": {
       "successfulOperation": "✅ 成功！",

@@ -97,6 +97,7 @@ func (t *Tgbot) adminMessagingKeyboard() *telego.InlineKeyboardMarkup {
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.setHelpText")).WithCallbackData(t.encodeQuery("set_help")),
 		),
 		tu.InlineKeyboardRow(
+			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.remindNow")).WithCallbackData(t.encodeQuery("remind_now")),
 			tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.commands")).WithCallbackData(t.encodeQuery("commands")),
 		),
 		tu.InlineKeyboardRow(
