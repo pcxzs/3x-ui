@@ -2109,7 +2109,9 @@
       "whoisUsage": "Để xem một tài khoản Telegram đang giữ những khách hàng nào:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Để mở điều khiển máy chủ:\r\n<code>/server</code>",
       "clientsUsage": "Để liệt kê mọi khách hàng kèm hạn dùng và lưu lượng:\r\n<code>/clients</code>",
-      "strangerGreeting": "Xin chào 👋"
+      "strangerGreeting": "Xin chào 👋",
+      "clientsDesc": "Liệt kê mọi khách hàng (quản trị)",
+      "serverDesc": "Điều khiển máy chủ (quản trị)"
     },
     "messages": {
       "cpuThreshold": "Sử dụng CPU {{ .Percent }}% vượt quá ngưỡng {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Ghi chú quản trị: không có khách hàng nào với subId <code>{{ .Token }}</code>.",
       "inviteDiagTaken": "🔎 Ghi chú quản trị: đã được liên kết — {{ .Detail }}",
       "adminPanel": "🛡 <b>Bảng quản trị</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Liên kết mời</b> — {{ .Count }} khách hàng\r\n✅ đã liên kết · ❌ chưa. Chạm vào một mục để lấy liên kết."
+      "invitePicker": "🔗 <b>Liên kết mời</b> — {{ .Count }} khách hàng\r\n✅ đã liên kết · ❌ chưa. Chạm vào một mục để lấy liên kết.",
+      "inviteAlreadyHolder": "❗ Tài khoản Telegram của bạn đã liên kết với một cấu hình. Liên hệ quản trị viên nếu cần đổi."
     },
     "buttons": {
       "closeKeyboard": "❌ Đóng Bàn Phím",

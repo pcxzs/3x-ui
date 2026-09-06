@@ -16,6 +16,7 @@ const (
 	inviteTaken
 	inviteAlreadyOwned
 	inviteBindable
+	inviteHasClient
 )
 
 // A client's SubID doubles as its invite token. Unknown and already-claimed
@@ -55,6 +56,14 @@ func (t *Tgbot) resolveInviteToken(token string, fromID int64) (inviteOutcome, [
 
 func (t *Tgbot) claimInvite(chatId int64, fromID int64, token string, isAdmin bool) {
 	outcome, records := t.resolveInviteToken(token, fromID)
+
+	// One config per Telegram account: a second claim would let one person
+	// collect other people's subscriptions by collecting their links.
+	if outcome == inviteBindable && !isAdmin && t.holdsAnyClient(fromID, records) {
+		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteAlreadyHolder"))
+		return
+	}
+
 	switch outcome {
 	case inviteAlreadyOwned:
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.inviteBound", "Email=="+recordEmails(records)))
@@ -94,6 +103,25 @@ func (t *Tgbot) inviteDiagnosis(token string, records []*model.ClientRecord) str
 		return t.I18nBot("tgbot.messages.inviteDiagUnknown", "Token=="+token)
 	}
 	return t.I18nBot("tgbot.messages.inviteDiagTaken", "Detail=="+holders)
+}
+
+// Records behind the token being claimed do not count: re-tapping a link for a
+// subscription the caller already partly holds must still complete the binding.
+func (t *Tgbot) holdsAnyClient(tgID int64, exempt []*model.ClientRecord) bool {
+	held, err := t.clientService.GetRecordsByTgID(tgID)
+	if err != nil || len(held) == 0 {
+		return false
+	}
+	inToken := make(map[int]bool, len(exempt))
+	for _, record := range exempt {
+		inToken[record.Id] = true
+	}
+	for _, record := range held {
+		if !inToken[record.Id] {
+			return true
+		}
+	}
+	return false
 }
 
 func recordEmails(records []*model.ClientRecord) string {

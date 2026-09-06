@@ -2109,7 +2109,9 @@
       "whoisUsage": "Чтобы узнать, какими клиентами владеет аккаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Открыть управление сервером:\r\n<code>/server</code>",
       "clientsUsage": "Список всех клиентов со сроком и трафиком:\r\n<code>/clients</code>",
-      "strangerGreeting": "Привет 👋"
+      "strangerGreeting": "Привет 👋",
+      "clientsDesc": "Список клиентов (админ)",
+      "serverDesc": "Управление сервером (админ)"
     },
     "messages": {
       "cpuThreshold": "Загрузка процессора составляет {{ .Percent }}%, что превышает пороговое значение {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Заметка для админа: клиента с subId <code>{{ .Token }}</code> нет.",
       "inviteDiagTaken": "🔎 Заметка для админа: уже привязан — {{ .Detail }}",
       "adminPanel": "🛡 <b>Панель админа</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Ссылки-приглашения</b> — {{ .Count }} клиентов\r\n✅ привязан · ❌ нет. Нажмите, чтобы получить ссылку."
+      "invitePicker": "🔗 <b>Ссылки-приглашения</b> — {{ .Count }} клиентов\r\n✅ привязан · ❌ нет. Нажмите, чтобы получить ссылку.",
+      "inviteAlreadyHolder": "❗ Ваш аккаунт Telegram уже привязан к конфигурации. Обратитесь к админу, если нужно сменить."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрыть клавиатуру",

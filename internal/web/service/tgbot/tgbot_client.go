@@ -164,10 +164,14 @@ func (t *Tgbot) buildSubscriptionURLs(email string) (string, string, error) {
 		scheme = "https"
 	}
 
-	// Fallbacks
+	// Fallbacks, most authoritative first. The OS hostname is last because it
+	// is the one candidate that is never reachable from a customer's device.
 	if subDomain == "" {
-		// try panel domain, otherwise OS hostname
 		if d, err := t.settingService.GetWebDomain(); err == nil && d != "" {
+			subDomain = d
+		} else if d := domainFromCertificate(subCertFile); d != "" {
+			subDomain = d
+		} else if d := t.panelCertDomain(); d != "" {
 			subDomain = d
 		} else if hostname != "" {
 			subDomain = hostname
@@ -223,6 +227,16 @@ func (t *Tgbot) buildSubscriptionURLs(email string) (string, string, error) {
 		subJsonURL = ""
 	}
 	return subURL, subJsonURL, nil
+}
+
+// The subscription server often reuses the panel's certificate, so it is worth
+// consulting when the subscription listener has none of its own.
+func (t *Tgbot) panelCertDomain() string {
+	certFile, err := t.settingService.GetCertFile()
+	if err != nil {
+		return ""
+	}
+	return domainFromCertificate(certFile)
 }
 
 // sendClientSubLinks sends the subscription links for the client to the chat.
@@ -351,11 +365,11 @@ func (t *Tgbot) sendClientQRLinks(chatId int64, email string) {
 
 	// Send sub URL QR (filename: sub.png)
 	if png, err := createQR(subURL, 320); err == nil {
-		document := tu.Document(
+		photo := tu.Photo(
 			tu.ID(chatId),
 			tu.FileFromBytes(png, "sub.png"),
 		)
-		_, _ = bot.SendDocument(context.Background(), document)
+		_, _ = bot.SendPhoto(context.Background(), photo)
 	} else {
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation")+"\r\n"+err.Error())
 	}
@@ -363,11 +377,11 @@ func (t *Tgbot) sendClientQRLinks(chatId int64, email string) {
 	// Send JSON URL QR (filename: subjson.png) when available
 	if subJsonURL != "" {
 		if png, err := createQR(subJsonURL, 320); err == nil {
-			document := tu.Document(
+			photo := tu.Photo(
 				tu.ID(chatId),
 				tu.FileFromBytes(png, "subjson.png"),
 			)
-			_, _ = bot.SendDocument(context.Background(), document)
+			_, _ = bot.SendPhoto(context.Background(), photo)
 		} else {
 			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation")+"\r\n"+err.Error())
 		}
@@ -409,13 +423,13 @@ func (t *Tgbot) sendClientQRLinks(chatId int64, email string) {
 					if png, err := createQR(cleaned[i], 320); err == nil {
 						// Use the email as filename for individual link QR
 						filename := email + ".png"
-						document := tu.Document(
+						photo := tu.Photo(
 							tu.ID(chatId),
 							tu.FileFromBytes(png, filename),
 						)
-						_, _ = bot.SendDocument(context.Background(), document)
+						_, _ = bot.SendPhoto(context.Background(), photo)
 						// Reduced delay for better performance
-						if i < max-1 { // Only delay between documents, not after the last one
+						if i < max-1 { // Only delay between photos, not after the last one
 							time.Sleep(50 * time.Millisecond)
 						}
 					}

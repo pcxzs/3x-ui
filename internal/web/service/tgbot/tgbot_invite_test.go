@@ -149,3 +149,36 @@ func TestInviteDiagnosis(t *testing.T) {
 		t.Fatalf("diagnosis key = %q, want the unknown-token key", key)
 	}
 }
+
+// One config per Telegram account: without this a customer could collect other
+// people's subscriptions simply by collecting their invite links.
+func TestHoldsAnyClient(t *testing.T) {
+	initInviteDB(t)
+	seedClient(t, "already@x", "subheld0000000007", 8100)
+	seedClient(t, "offered@x", "suboffer000000008", 0)
+
+	tg := &Tgbot{}
+	_, offered := tg.resolveInviteToken("suboffer000000008", 8100)
+
+	if !tg.holdsAnyClient(8100, offered) {
+		t.Fatal("an account already holding an unrelated client must be blocked")
+	}
+	if tg.holdsAnyClient(8101, offered) {
+		t.Fatal("an account holding nothing must be allowed to claim")
+	}
+}
+
+// Re-tapping the link for a subscription the caller already partly holds must
+// still complete the binding rather than being read as a second config.
+func TestHoldsAnyClientIgnoresTheTokenBeingClaimed(t *testing.T) {
+	initInviteDB(t)
+	const shared = "subresume00000009"
+	seedClient(t, "resume-a@x", shared, 8200)
+	seedClient(t, "resume-b@x", shared, 0)
+
+	tg := &Tgbot{}
+	_, records := tg.resolveInviteToken(shared, 8200)
+	if tg.holdsAnyClient(8200, records) {
+		t.Fatal("records behind the claimed token must not count against the cap")
+	}
+}

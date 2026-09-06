@@ -2109,7 +2109,9 @@
       "whoisUsage": "Para consultar qué clientes tiene una cuenta de Telegram:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Para abrir los controles del servidor:\r\n<code>/server</code>",
       "clientsUsage": "Para listar todos los clientes con caducidad y consumo:\r\n<code>/clients</code>",
-      "strangerGreeting": "Hola 👋"
+      "strangerGreeting": "Hola 👋",
+      "clientsDesc": "Listar todos los clientes (admin)",
+      "serverDesc": "Controles del servidor (admin)"
     },
     "messages": {
       "cpuThreshold": "El uso de CPU {{ .Percent }}% es mayor que el umbral {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Nota de administrador: ningún cliente tiene el subId <code>{{ .Token }}</code>.",
       "inviteDiagTaken": "🔎 Nota de administrador: ya vinculado — {{ .Detail }}",
       "adminPanel": "🛡 <b>Panel de administración</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Enlaces de invitación</b> — {{ .Count }} clientes\r\n✅ vinculado · ❌ sin vincular. Toca uno para su enlace."
+      "invitePicker": "🔗 <b>Enlaces de invitación</b> — {{ .Count }} clientes\r\n✅ vinculado · ❌ sin vincular. Toca uno para su enlace.",
+      "inviteAlreadyHolder": "❗ Tu cuenta de Telegram ya está vinculada a una configuración. Pide a un administrador si necesitas cambiarla."
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",

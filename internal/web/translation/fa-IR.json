@@ -2109,7 +2109,9 @@
       "whoisUsage": "برای دیدن کاربران متصل به یک حساب تلگرام:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "برای باز کردن کنترل‌های سرور:\r\n<code>/server</code>",
       "clientsUsage": "برای فهرست همه کاربران همراه با انقضا و مصرف:\r\n<code>/clients</code>",
-      "strangerGreeting": "سلام 👋"
+      "strangerGreeting": "سلام 👋",
+      "clientsDesc": "فهرست همه کاربران (ادمین)",
+      "serverDesc": "کنترل‌های سرور (ادمین)"
     },
     "messages": {
       "cpuThreshold": "بار ‌پردازنده {{ .Percent }}% بیشتر از آستانه است {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 یادداشت ادمین: هیچ کاربری با subId <code>{{ .Token }}</code> وجود ندارد.",
       "inviteDiagTaken": "🔎 یادداشت ادمین: از قبل متصل است — {{ .Detail }}",
       "adminPanel": "🛡 <b>پنل مدیریت</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>لینک‌های دعوت</b> — {{ .Count }} کاربر\r\n✅ متصل · ❌ متصل‌نشده. برای گرفتن لینک، یکی را انتخاب کنید."
+      "invitePicker": "🔗 <b>لینک‌های دعوت</b> — {{ .Count }} کاربر\r\n✅ متصل · ❌ متصل‌نشده. برای گرفتن لینک، یکی را انتخاب کنید.",
+      "inviteAlreadyHolder": "❗ حساب تلگرام شما از قبل به یک کانفیگ متصل است. برای تغییر با ادمین تماس بگیرید."
     },
     "buttons": {
       "closeKeyboard": "❌ بستن کیبورد",

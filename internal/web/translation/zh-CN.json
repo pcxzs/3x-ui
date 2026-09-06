@@ -2109,7 +2109,9 @@
       "whoisUsage": "查询某个 Telegram 账号拥有哪些客户端:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "打开服务器控制：\r\n<code>/server</code>",
       "clientsUsage": "列出所有客户及其到期时间和用量：\r\n<code>/clients</code>",
-      "strangerGreeting": "你好 👋"
+      "strangerGreeting": "你好 👋",
+      "clientsDesc": "列出所有客户（管理员）",
+      "serverDesc": "服务器控制（管理员）"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率为 {{ .Percent }}%，超过阈值 {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 管理员提示：没有客户使用 subId <code>{{ .Token }}</code>。",
       "inviteDiagTaken": "🔎 管理员提示：已绑定 — {{ .Detail }}",
       "adminPanel": "🛡 <b>管理面板</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>邀请链接</b> — {{ .Count }} 位客户\r\n✅ 已绑定 · ❌ 未绑定。点击任意一项获取链接。"
+      "invitePicker": "🔗 <b>邀请链接</b> — {{ .Count }} 位客户\r\n✅ 已绑定 · ❌ 未绑定。点击任意一项获取链接。",
+      "inviteAlreadyHolder": "❗ 你的 Telegram 账号已绑定一个配置。如需更换请联系管理员。"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",

@@ -2109,7 +2109,9 @@
       "whoisUsage": "Щоб дізнатися, якими клієнтами володіє акаунт Telegram:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Відкрити керування сервером:\r\n<code>/server</code>",
       "clientsUsage": "Список усіх клієнтів зі строком і трафіком:\r\n<code>/clients</code>",
-      "strangerGreeting": "Привіт 👋"
+      "strangerGreeting": "Привіт 👋",
+      "clientsDesc": "Список клієнтів (адмін)",
+      "serverDesc": "Керування сервером (адмін)"
     },
     "messages": {
       "cpuThreshold": "Навантаження ЦП  {{ .Percent }}% перевищує порогове значення {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Нотатка для адміна: клієнта з subId <code>{{ .Token }}</code> немає.",
       "inviteDiagTaken": "🔎 Нотатка для адміна: вже прив'язаний — {{ .Detail }}",
       "adminPanel": "🛡 <b>Панель адміна</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Запрошення</b> — {{ .Count }} клієнтів\r\n✅ прив'язаний · ❌ ні. Натисніть, щоб отримати посилання."
+      "invitePicker": "🔗 <b>Запрошення</b> — {{ .Count }} клієнтів\r\n✅ прив'язаний · ❌ ні. Натисніть, щоб отримати посилання.",
+      "inviteAlreadyHolder": "❗ Ваш акаунт Telegram уже прив'язаний до конфігурації. Зверніться до адміна, щоб змінити."
     },
     "buttons": {
       "closeKeyboard": "❌ Закрити клавіатуру",

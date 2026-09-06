@@ -2109,7 +2109,9 @@
       "whoisUsage": "查詢某個 Telegram 帳號擁有哪些用戶端:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "開啟伺服器控制：\r\n<code>/server</code>",
       "clientsUsage": "列出所有用戶及其到期時間和用量：\r\n<code>/clients</code>",
-      "strangerGreeting": "你好 👋"
+      "strangerGreeting": "你好 👋",
+      "clientsDesc": "列出所有用戶（管理員）",
+      "serverDesc": "伺服器控制（管理員）"
     },
     "messages": {
       "cpuThreshold": "CPU 使用率為 {{ .Percent }}%，超過閾值 {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 管理員提示：沒有用戶使用 subId <code>{{ .Token }}</code>。",
       "inviteDiagTaken": "🔎 管理員提示：已綁定 — {{ .Detail }}",
       "adminPanel": "🛡 <b>管理面板</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>邀請連結</b> — {{ .Count }} 位用戶\r\n✅ 已綁定 · ❌ 未綁定。點擊任一項取得連結。"
+      "invitePicker": "🔗 <b>邀請連結</b> — {{ .Count }} 位用戶\r\n✅ 已綁定 · ❌ 未綁定。點擊任一項取得連結。",
+      "inviteAlreadyHolder": "❗ 你的 Telegram 帳號已綁定一個設定。如需更換請聯絡管理員。"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",

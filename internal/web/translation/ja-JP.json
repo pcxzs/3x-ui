@@ -2109,7 +2109,9 @@
       "whoisUsage": "Telegram アカウントが保有するクライアントを調べる:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "サーバー操作を開くには:\r\n<code>/server</code>",
       "clientsUsage": "有効期限と使用量つきで全クライアントを一覧するには:\r\n<code>/clients</code>",
-      "strangerGreeting": "こんにちは 👋"
+      "strangerGreeting": "こんにちは 👋",
+      "clientsDesc": "全クライアント一覧 (管理者)",
+      "serverDesc": "サーバー操作 (管理者)"
     },
     "messages": {
       "cpuThreshold": "CPU使用率は{{ .Percent }}%、しきい値{{ .Threshold }}%を超えました",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 管理者向け: subId <code>{{ .Token }}</code> のクライアントは存在しません。",
       "inviteDiagTaken": "🔎 管理者向け: すでに紐付け済み — {{ .Detail }}",
       "adminPanel": "🛡 <b>管理パネル</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>招待リンク</b> — {{ .Count }} 件\r\n✅ 紐付け済み · ❌ 未紐付け。タップするとリンクが出ます。"
+      "invitePicker": "🔗 <b>招待リンク</b> — {{ .Count }} 件\r\n✅ 紐付け済み · ❌ 未紐付け。タップするとリンクが出ます。",
+      "inviteAlreadyHolder": "❗ このアカウントは既に設定に紐付いています。変更が必要なら管理者にご連絡ください。"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",

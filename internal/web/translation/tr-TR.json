@@ -2109,7 +2109,9 @@
       "whoisUsage": "Bir Telegram hesabının hangi istemcilere sahip olduğunu görmek için:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Sunucu denetimlerini açmak için:\r\n<code>/server</code>",
       "clientsUsage": "Tüm istemcileri bitiş tarihi ve kullanımıyla listelemek için:\r\n<code>/clients</code>",
-      "strangerGreeting": "Merhaba 👋"
+      "strangerGreeting": "Merhaba 👋",
+      "clientsDesc": "Tüm istemcileri listele (yönetici)",
+      "serverDesc": "Sunucu denetimleri (yönetici)"
     },
     "messages": {
       "cpuThreshold": "CPU Yükü ({{ .Percent }}%), {{ .Threshold }}% eşiğini aşıyor",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Yönetici notu: <code>{{ .Token }}</code> subId'li istemci yok.",
       "inviteDiagTaken": "🔎 Yönetici notu: zaten bağlı — {{ .Detail }}",
       "adminPanel": "🛡 <b>Yönetim paneli</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Davet bağlantıları</b> — {{ .Count }} istemci\r\n✅ bağlı · ❌ değil. Bağlantı için birine dokunun."
+      "invitePicker": "🔗 <b>Davet bağlantıları</b> — {{ .Count }} istemci\r\n✅ bağlı · ❌ değil. Bağlantı için birine dokunun.",
+      "inviteAlreadyHolder": "❗ Telegram hesabınız zaten bir yapılandırmaya bağlı. Değiştirmek için yöneticiye başvurun."
     },
     "buttons": {
       "closeKeyboard": "❌ Klavyeyi Kapat",

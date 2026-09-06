@@ -2109,7 +2109,9 @@
       "whoisUsage": "Untuk melihat klien yang dimiliki sebuah akun Telegram:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "Untuk membuka kontrol server:\r\n<code>/server</code>",
       "clientsUsage": "Untuk menampilkan semua klien beserta masa berlaku dan pemakaian:\r\n<code>/clients</code>",
-      "strangerGreeting": "Halo 👋"
+      "strangerGreeting": "Halo 👋",
+      "clientsDesc": "Daftar semua klien (admin)",
+      "serverDesc": "Kontrol server (admin)"
     },
     "messages": {
       "cpuThreshold": "Beban CPU {{ .Percent }}% melebihi batas {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Catatan admin: tidak ada klien dengan subId <code>{{ .Token }}</code>.",
       "inviteDiagTaken": "🔎 Catatan admin: sudah terhubung — {{ .Detail }}",
       "adminPanel": "🛡 <b>Panel admin</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Tautan undangan</b> — {{ .Count }} klien\r\n✅ sudah terhubung · ❌ belum. Ketuk salah satu untuk tautannya."
+      "invitePicker": "🔗 <b>Tautan undangan</b> — {{ .Count }} klien\r\n✅ sudah terhubung · ❌ belum. Ketuk salah satu untuk tautannya.",
+      "inviteAlreadyHolder": "❗ Akun Telegram Anda sudah terhubung ke sebuah konfigurasi. Hubungi admin bila perlu diganti."
     },
     "buttons": {
       "closeKeyboard": "❌ Tutup Papan Ketik",

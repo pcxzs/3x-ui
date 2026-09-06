@@ -2109,7 +2109,9 @@
       "whoisUsage": "To look up which clients a Telegram account holds:\r\n<code>/whois [TelegramID]</code>",
       "serverMenuUsage": "To open the server controls:\r\n<code>/server</code>",
       "clientsUsage": "To list every client with expiry and usage:\r\n<code>/clients</code>",
-      "strangerGreeting": "Hello there 👋"
+      "strangerGreeting": "Hello there 👋",
+      "clientsDesc": "List all clients (admin)",
+      "serverDesc": "Server controls (admin)"
     },
     "messages": {
       "cpuThreshold": "CPU Load {{ .Percent }}% exceeds the threshold of {{ .Threshold }}%",
@@ -2230,7 +2232,8 @@
       "inviteDiagUnknown": "🔎 Admin note: no client on this panel has subId <code>{{ .Token }}</code>.",
       "inviteDiagTaken": "🔎 Admin note: already bound — {{ .Detail }}",
       "adminPanel": "🛡 <b>Admin panel</b> — {{ .Hostname }}",
-      "invitePicker": "🔗 <b>Invite links</b> — {{ .Count }} clients\r\n✅ already bound · ❌ not yet. Tap one for its link."
+      "invitePicker": "🔗 <b>Invite links</b> — {{ .Count }} clients\r\n✅ already bound · ❌ not yet. Tap one for its link.",
+      "inviteAlreadyHolder": "❗ Your Telegram account is already linked to a config. Ask an admin if you need to switch."
     },
     "buttons": {
       "closeKeyboard": "❌ Close Keyboard",

@@ -25,6 +25,7 @@ import (
 
 	"github.com/mymmrac/telego"
 	th "github.com/mymmrac/telego/telegohandler"
+	tu "github.com/mymmrac/telego/telegoutil"
 	"github.com/valyala/fasthttp"
 	"github.com/valyala/fasthttp/fasthttpproxy"
 )
@@ -341,20 +342,37 @@ func (t *Tgbot) trySetBotCommands(bot *telego.Bot) {
 		}
 	}()
 
-	err := bot.SetMyCommands(context.Background(), &telego.SetMyCommandsParams{
-		Commands: []telego.BotCommand{
-			{Command: "start", Description: t.I18nBot("tgbot.commands.startDesc")},
-			{Command: "help", Description: t.I18nBot("tgbot.commands.helpDesc")},
-			{Command: "status", Description: t.I18nBot("tgbot.commands.statusDesc")},
-			{Command: "id", Description: t.I18nBot("tgbot.commands.idDesc")},
-			{Command: "usage", Description: t.I18nBot("tgbot.commands.usageDesc")},
-			{Command: "inbound", Description: t.I18nBot("tgbot.commands.inboundDesc")},
-			{Command: "restart", Description: t.I18nBot("tgbot.commands.restartDesc")},
-			{Command: "clearall", Description: t.I18nBot("tgbot.commands.clearallDesc")},
-		},
-	})
-	if err != nil {
+	// The default scope reaches everyone who can find the bot, so it lists only
+	// what a customer may run; admin commands are published per admin chat.
+	clientCommands := []telego.BotCommand{
+		{Command: "start", Description: t.I18nBot("tgbot.commands.startDesc")},
+		{Command: "help", Description: t.I18nBot("tgbot.commands.helpDesc")},
+		{Command: "status", Description: t.I18nBot("tgbot.commands.statusDesc")},
+		{Command: "id", Description: t.I18nBot("tgbot.commands.idDesc")},
+		{Command: "usage", Description: t.I18nBot("tgbot.commands.usageDesc")},
+	}
+	adminCommands := append(append([]telego.BotCommand{}, clientCommands...),
+		telego.BotCommand{Command: "clients", Description: t.I18nBot("tgbot.commands.clientsDesc")},
+		telego.BotCommand{Command: "server", Description: t.I18nBot("tgbot.commands.serverDesc")},
+		telego.BotCommand{Command: "inbound", Description: t.I18nBot("tgbot.commands.inboundDesc")},
+		telego.BotCommand{Command: "restart", Description: t.I18nBot("tgbot.commands.restartDesc")},
+		telego.BotCommand{Command: "clearall", Description: t.I18nBot("tgbot.commands.clearallDesc")},
+	)
+
+	if err := bot.SetMyCommands(context.Background(), &telego.SetMyCommandsParams{
+		Commands: clientCommands,
+		Scope:    tu.ScopeDefault(),
+	}); err != nil {
 		logger.Warning("Failed to set bot commands:", err)
+	}
+
+	for _, adminId := range adminIds {
+		if err := bot.SetMyCommands(context.Background(), &telego.SetMyCommandsParams{
+			Commands: adminCommands,
+			Scope:    tu.ScopeChat(tu.ID(adminId)),
+		}); err != nil {
+			logger.Warning("Failed to set admin bot commands:", err)
+		}
 	}
 }
 
