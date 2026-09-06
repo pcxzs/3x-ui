@@ -2274,7 +2274,8 @@
       "guideAndroid": "🤖 <b>Android</b>\n1. Google Play から <b>v2rayNG</b> または <b>Hiddify</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで <b>+</b> → <b>Import from clipboard</b> をタップします。\n4. 購読を更新し、サーバーを選んで接続します。",
       "guideWindows": "🪟 <b>Windows</b>\n1. <b>Hiddify</b> または <b>v2rayN</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
       "guideMacos": "💻 <b>macOS</b>\n1. <b>Hiddify</b> または <b>V2Box</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
-      "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) または <b>Nekoray</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。"
+      "guideLinux": "🐧 <b>Linux</b>\n1. <b>Hiddify</b> (AppImage) または <b>Nekoray</b> をインストールします。\n2. このボットの購読リンクのページを開き、購読 URL をコピーします。\n3. アプリで購読を追加し、URL を貼り付けます。\n4. 購読を更新し、サーバーを選んで接続します。",
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
     },
     "buttons": {
       "closeKeyboard": "❌ キーボードを閉じる",

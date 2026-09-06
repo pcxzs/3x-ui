@@ -2274,7 +2274,8 @@
       "guideAndroid": "🤖 <b>安卓</b>\n1. 从 Google Play 安装 <b>v2rayNG</b> 或 <b>Hiddify</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中点击 <b>+</b> → <b>Import from clipboard</b>。\n4. 更新订阅，选择服务器并连接。",
       "guideWindows": "🪟 <b>Windows</b>\n1. 安装 <b>Hiddify</b> 或 <b>v2rayN</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
       "guideMacos": "💻 <b>macOS</b>\n1. 安装 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
-      "guideLinux": "🐧 <b>Linux</b>\n1. 安装 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。"
+      "guideLinux": "🐧 <b>Linux</b>\n1. 安装 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本机器人中打开订阅链接页面，复制您的订阅地址。\n3. 在应用中添加订阅并粘贴地址。\n4. 更新订阅，选择服务器并连接。",
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 关闭键盘",

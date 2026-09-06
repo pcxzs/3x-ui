@@ -118,6 +118,11 @@ func (t *Tgbot) sendClientIndividualLinks(chatId int64, email string) {
 	for i := 0; i < len(cleaned); i += maxPerMessage {
 		j := min(i+maxPerMessage, len(cleaned))
 		var msg strings.Builder
+		// Only the first chunk is headed, so a long link list does not repeat
+		// the client's expiry once per message.
+		if i == 0 {
+			msg.WriteString(t.clientHeader(email))
+		}
 		msg.WriteString(t.I18nBot("subscription.individualLinks"))
 		msg.WriteString(":\r\n")
 		for _, link := range cleaned[i:j] {
@@ -220,7 +225,7 @@ func (t *Tgbot) sendClientQRLinks(chatId int64, email string) {
 	rows = append(rows, tu.InlineKeyboardRow(
 		tu.InlineKeyboardButton(t.I18nBot("tgbot.buttons.qrForLink")).WithCallbackData(t.encodeQuery("qr_pick "+email)),
 	))
-	t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.messages.qrChoose", "Email=="+email), tu.InlineKeyboardGrid(rows))
+	t.SendMsgToTgbot(chatId, t.clientHeader(email)+t.I18nBot("tgbot.messages.qrChoose", "Email=="+email), tu.InlineKeyboardGrid(rows))
 }
 
 // splitQRTarget pulls "<email> <index>" out of a qr_one callback.

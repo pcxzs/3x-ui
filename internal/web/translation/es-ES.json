@@ -2274,7 +2274,8 @@
       "guideAndroid": "🤖 <b>Android</b>\n1. Instala <b>v2rayNG</b> o <b>Hiddify</b> desde Google Play.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, pulsa <b>+</b> → <b>Import from clipboard</b>.\n4. Actualiza la suscripción, elige un servidor y conéctate.",
       "guideWindows": "🪟 <b>Windows</b>\n1. Instala <b>Hiddify</b> o <b>v2rayN</b>.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, añade una suscripción y pega la URL.\n4. Actualiza la suscripción, elige un servidor y conéctate.",
       "guideMacos": "💻 <b>macOS</b>\n1. Instala <b>Hiddify</b> o <b>V2Box</b>.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, añade una suscripción y pega la URL.\n4. Actualiza la suscripción, elige un servidor y conéctate.",
-      "guideLinux": "🐧 <b>Linux</b>\n1. Instala <b>Hiddify</b> (AppImage) o <b>Nekoray</b>.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, añade una suscripción y pega la URL.\n4. Actualiza la suscripción, elige un servidor y conéctate."
+      "guideLinux": "🐧 <b>Linux</b>\n1. Instala <b>Hiddify</b> (AppImage) o <b>Nekoray</b>.\n2. Abre la página de enlaces de suscripción en este bot y copia tu URL.\n3. En la app, añade una suscripción y pega la URL.\n4. Actualiza la suscripción, elige un servidor y conéctate.",
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
     },
     "buttons": {
       "closeKeyboard": "❌ Cerrar Teclado",

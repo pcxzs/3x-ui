@@ -2274,7 +2274,8 @@
       "guideAndroid": "🤖 <b>Android</b>\n1. 從 Google Play 安裝 <b>v2rayNG</b> 或 <b>Hiddify</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中點擊 <b>+</b> → <b>Import from clipboard</b>。\n4. 更新訂閱，選擇伺服器並連線。",
       "guideWindows": "🪟 <b>Windows</b>\n1. 安裝 <b>Hiddify</b> 或 <b>v2rayN</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
       "guideMacos": "💻 <b>macOS</b>\n1. 安裝 <b>Hiddify</b> 或 <b>V2Box</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
-      "guideLinux": "🐧 <b>Linux</b>\n1. 安裝 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。"
+      "guideLinux": "🐧 <b>Linux</b>\n1. 安裝 <b>Hiddify</b>（AppImage）或 <b>Nekoray</b>。\n2. 在本機器人中開啟訂閱連結頁面，複製您的訂閱網址。\n3. 在應用程式中新增訂閱並貼上網址。\n4. 更新訂閱，選擇伺服器並連線。",
+      "clientHeader": "📧 <code>{{ .Email }}</code>\n📅 {{ .Expiry }}\n📊 {{ .Remaining }}"
     },
     "buttons": {
       "closeKeyboard": "❌ 關閉鍵盤",

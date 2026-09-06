@@ -253,7 +253,7 @@ func (t *Tgbot) sendClientSubLinks(chatId int64, email string) {
 		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation")+"\r\n"+err.Error())
 		return
 	}
-	msg := "Subscription URL:\r\n<code>" + subURL + "</code>"
+	msg := t.clientHeader(email) + "Subscription URL:\r\n<code>" + subURL + "</code>"
 	if subJsonURL != "" {
 		msg += "\r\n\r\nJSON URL:\r\n<code>" + subJsonURL + "</code>"
 	}
