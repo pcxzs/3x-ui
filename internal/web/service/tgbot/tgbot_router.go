@@ -1304,72 +1304,11 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.backToMenu"))
 		t.SendAnswer(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), level)
 	case "client_sub_links":
-		// show user's own clients to choose one for sub links
-		tgUserID := callbackQuery.From.ID
-		traffics, err := t.inboundService.GetClientTrafficTgBot(tgUserID)
-		if err != nil {
-			// fallback to message
-			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation")+"\r\n"+err.Error())
-			return
-		}
-		if len(traffics) == 0 {
-			t.SendMsgToTgbot(chatId, t.noBoundClientMsg(level))
-			return
-		}
-		var buttons []telego.InlineKeyboardButton
-		for _, tr := range traffics {
-			buttons = append(buttons, tu.InlineKeyboardButton(tr.Email).WithCallbackData(t.encodeQuery("client_sub_links "+tr.Email)))
-		}
-		cols := 1
-		if len(buttons) >= 6 {
-			cols = 2
-		}
-		keyboard := tu.InlineKeyboardGrid(tu.InlineKeyboardCols(cols, buttons...))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), keyboard)
+		t.clientPicker(chatId, &callbackQuery.From, "client_sub_links", level)
 	case "client_individual_links":
-		// show user's clients to choose for individual links
-		tgUserID := callbackQuery.From.ID
-		traffics, err := t.inboundService.GetClientTrafficTgBot(tgUserID)
-		if err != nil {
-			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOperation")+"\r\n"+err.Error())
-			return
-		}
-		if len(traffics) == 0 {
-			t.SendMsgToTgbot(chatId, t.noBoundClientMsg(level))
-			return
-		}
-		var buttons2 []telego.InlineKeyboardButton
-		for _, tr := range traffics {
-			buttons2 = append(buttons2, tu.InlineKeyboardButton(tr.Email).WithCallbackData(t.encodeQuery("client_individual_links "+tr.Email)))
-		}
-		cols2 := 1
-		if len(buttons2) >= 6 {
-			cols2 = 2
-		}
-		keyboard2 := tu.InlineKeyboardGrid(tu.InlineKeyboardCols(cols2, buttons2...))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), keyboard2)
+		t.clientPicker(chatId, &callbackQuery.From, "client_individual_links", level)
 	case "client_qr_links":
-		// show user's clients to choose for QR codes
-		tgUserID := callbackQuery.From.ID
-		traffics, err := t.inboundService.GetClientTrafficTgBot(tgUserID)
-		if err != nil {
-			t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.answers.errorOccurred")+"\r\n"+err.Error())
-			return
-		}
-		if len(traffics) == 0 {
-			t.SendMsgToTgbot(chatId, t.noBoundClientMsg(level))
-			return
-		}
-		var buttons3 []telego.InlineKeyboardButton
-		for _, tr := range traffics {
-			buttons3 = append(buttons3, tu.InlineKeyboardButton(tr.Email).WithCallbackData(t.encodeQuery("client_qr_links "+tr.Email)))
-		}
-		cols3 := 1
-		if len(buttons3) >= 6 {
-			cols3 = 2
-		}
-		keyboard3 := tu.InlineKeyboardGrid(tu.InlineKeyboardCols(cols3, buttons3...))
-		t.SendMsgToTgbot(chatId, t.I18nBot("tgbot.commands.pleaseChoose"), keyboard3)
+		t.clientPicker(chatId, &callbackQuery.From, "client_qr_links", level)
 	case "onlines":
 		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.onlines"))
 		t.onlineClients(chatId)
@@ -1756,30 +1695,8 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 		if !isAdmin && !t.ownsClient(callbackQuery.From.ID, clientSelfTarget(verb, arg)) {
 			return
 		}
-		switch verb {
-		case "client_sub_links":
-			t.sendClientSubLinks(chatId, arg)
-		case "client_individual_links":
-			t.sendClientIndividualLinks(chatId, arg)
-		case "client_qr_links":
-			t.sendClientQRLinks(chatId, arg)
-		case "qr_sub":
-			t.sendSubscriptionQR(chatId, arg, false)
-		case "qr_subjson":
-			t.sendSubscriptionQR(chatId, arg, true)
-		case "qr_pick":
-			t.qrLinkPicker(chatId, arg)
-		case "qr_one":
-			if target, index, ok := splitQRTarget(arg); ok {
-				t.sendIndividualLinkQR(chatId, target, index)
-			}
-		case "renew_req":
-			t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.renewRequest"))
-			t.requestRenewal(chatId, &callbackQuery.From, arg)
-		case "renew_mute":
-			t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.buttons.renewMute"))
-			t.muteRenewal(chatId, callbackQuery.From.ID, arg)
-		}
+		t.sendCallbackAnswerTgBot(callbackQuery.ID, t.I18nBot("tgbot.answers.successfulOperation"))
+		t.runClientSelfAction(chatId, &callbackQuery.From, verb, arg)
 	}
 }
 
