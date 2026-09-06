@@ -1692,38 +1692,32 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, level userLe
 
 		}
 	default:
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "client_sub_links "); ok {
-			email := after
-			t.sendClientSubLinks(chatId, email)
+		verb, arg, matched := clientSelfAction(callbackQuery.Data)
+		if !matched {
 			return
 		}
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "client_individual_links "); ok {
-			email := after
-			t.sendClientIndividualLinks(chatId, email)
+		// An admin reaching here would already have been served by the block
+		// above; for everyone else the target must be one of their own clients.
+		if !isAdmin && !t.ownsClient(callbackQuery.From.ID, clientSelfTarget(verb, arg)) {
 			return
 		}
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "client_qr_links "); ok {
-			email := after
-			t.sendClientQRLinks(chatId, email)
-			return
-		}
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_sub "); ok {
-			t.sendSubscriptionQR(chatId, after, false)
-			return
-		}
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_subjson "); ok {
-			t.sendSubscriptionQR(chatId, after, true)
-			return
-		}
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_pick "); ok {
-			t.qrLinkPicker(chatId, after)
-			return
-		}
-		if after, ok := strings.CutPrefix(callbackQuery.Data, "qr_one "); ok {
-			if target, index, ok := splitQRTarget(after); ok {
+		switch verb {
+		case "client_sub_links":
+			t.sendClientSubLinks(chatId, arg)
+		case "client_individual_links":
+			t.sendClientIndividualLinks(chatId, arg)
+		case "client_qr_links":
+			t.sendClientQRLinks(chatId, arg)
+		case "qr_sub":
+			t.sendSubscriptionQR(chatId, arg, false)
+		case "qr_subjson":
+			t.sendSubscriptionQR(chatId, arg, true)
+		case "qr_pick":
+			t.qrLinkPicker(chatId, arg)
+		case "qr_one":
+			if target, index, ok := splitQRTarget(arg); ok {
 				t.sendIndividualLinkQR(chatId, target, index)
 			}
-			return
 		}
 	}
 }
@@ -1742,11 +1736,6 @@ func isClientSelfCallback(data string) bool {
 		"client_individual_links", "client_qr_links":
 		return true
 	}
-	return strings.HasPrefix(data, "client_sub_links ") ||
-		strings.HasPrefix(data, "client_individual_links ") ||
-		strings.HasPrefix(data, "client_qr_links ") ||
-		strings.HasPrefix(data, "qr_sub ") ||
-		strings.HasPrefix(data, "qr_subjson ") ||
-		strings.HasPrefix(data, "qr_pick ") ||
-		strings.HasPrefix(data, "qr_one ")
+	_, _, ok := clientSelfAction(data)
+	return ok
 }
