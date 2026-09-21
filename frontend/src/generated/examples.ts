@@ -2,9 +2,20 @@
 export const EXAMPLES: Record<string, unknown> = {
   "AllSetting": {
     "datepicker": "",
+    "discordAdminIds": "",
+    "discordBotBackup": false,
+    "discordBotEnable": false,
+    "discordBotToken": "",
+    "discordChannelId": "",
+    "discordCpu": 0,
+    "discordEnabledEvents": "",
+    "discordLang": "",
+    "discordMemory": 0,
+    "discordRunTime": "",
     "expireDiff": 0,
     "externalTrafficInformEnable": false,
     "externalTrafficInformURI": "",
+    "happLinkEnable": false,
     "ipLimitAllowlist": "",
     "ldapAutoCreate": false,
     "ldapAutoDelete": false,
@@ -30,6 +41,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "outboundDownThreshold": 1,
     "pageSize": 0,
     "panelOutbound": "",
+    "realityScanCandidates": "",
     "remarkTemplate": "",
     "restartXrayOnClientDisable": false,
     "sessionMaxAge": 1,
@@ -46,6 +58,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "smtpTo": "",
     "smtpUsername": "",
     "subAnnounce": "",
+    "subCalendarExpireInclusive": false,
     "subCertFile": "",
     "subClashAutoDetect": false,
     "subClashEnable": false,
@@ -88,6 +101,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "subInfoNodeEnable": false,
     "subJsonAlwaysArray": false,
     "subJsonAutoDetect": false,
+    "subJsonDns": "",
     "subJsonEnable": false,
     "subJsonFinalMask": "",
     "subJsonMux": "",
@@ -101,6 +115,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "subListen": "",
     "subPath": "",
     "subPort": 1,
+    "subProfileMode": "",
     "subProfileUrl": "",
     "subRoutingRules": "",
     "subShowIdentityOnAllLinks": false,
@@ -136,10 +151,22 @@ export const EXAMPLES: Record<string, unknown> = {
   },
   "AllSettingView": {
     "datepicker": "",
+    "discordAdminIds": "",
+    "discordBotBackup": false,
+    "discordBotEnable": false,
+    "discordBotToken": "",
+    "discordChannelId": "",
+    "discordCpu": 0,
+    "discordEnabledEvents": "",
+    "discordLang": "",
+    "discordMemory": 0,
+    "discordRunTime": "",
     "expireDiff": 0,
     "externalTrafficInformEnable": false,
     "externalTrafficInformURI": "",
+    "happLinkEnable": false,
     "hasApiToken": false,
+    "hasDiscordBotToken": false,
     "hasLdapPassword": false,
     "hasNordSecret": false,
     "hasSmtpPassword": false,
@@ -171,6 +198,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "outboundDownThreshold": 1,
     "pageSize": 0,
     "panelOutbound": "",
+    "realityScanCandidates": "",
     "remarkTemplate": "",
     "restartXrayOnClientDisable": false,
     "sessionMaxAge": 1,
@@ -187,6 +215,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "smtpTo": "",
     "smtpUsername": "",
     "subAnnounce": "",
+    "subCalendarExpireInclusive": false,
     "subCertFile": "",
     "subClashAutoDetect": false,
     "subClashEnable": false,
@@ -229,6 +258,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "subInfoNodeEnable": false,
     "subJsonAlwaysArray": false,
     "subJsonAutoDetect": false,
+    "subJsonDns": "",
     "subJsonEnable": false,
     "subJsonFinalMask": "",
     "subJsonMux": "",
@@ -242,6 +272,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "subListen": "",
     "subPath": "",
     "subPort": 1,
+    "subProfileMode": "",
     "subProfileUrl": "",
     "subRoutingRules": "",
     "subShowIdentityOnAllLinks": false,
@@ -547,6 +578,9 @@ export const EXAMPLES: Record<string, unknown> = {
     "reason": "categoryMissing",
     "token": "geosite:blabla"
   },
+  "HappLinkResult": {
+    "encryptedLink": "happ://crypt5/example"
+  },
   "HistoryOfSeeders": {
     "id": 0,
     "seederName": ""
@@ -557,6 +591,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "alpn": [
       ""
     ],
+    "cipherSuites": "",
     "createdAt": 0,
     "echConfigList": "",
     "excludeFromSubTypes": [
@@ -602,6 +637,7 @@ export const EXAMPLES: Record<string, unknown> = {
     "alpn": [
       ""
     ],
+    "cipherSuites": "",
     "echConfigList": "",
     "excludeFromSubTypes": [
       ""

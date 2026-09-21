@@ -3,7 +3,6 @@
 package locale
 
 import (
-	"embed"
 	"encoding/json"
 	"io/fs"
 	"os"
@@ -37,7 +36,7 @@ type SettingService interface {
 }
 
 // InitLocalizer initializes the internationalization system with embedded translation files.
-func InitLocalizer(i18nFS embed.FS, settingService SettingService) error {
+func InitLocalizer(i18nFS fs.FS, settingService SettingService) error {
 	// set default bundle to English
 	i18nBundle = i18n.NewBundle(language.MustParse("en-US"))
 	i18nBundle.RegisterUnmarshalFunc("json", json.Unmarshal)
@@ -160,6 +159,31 @@ func localize(localizer *i18n.Localizer, key string, params []string) string {
 	return msg
 }
 
+// LocalizerFor returns a new Localizer for the given language tag using the global bundle.
+func LocalizerFor(lang string) *i18n.Localizer {
+	if i18nBundle == nil {
+		return nil
+	}
+	return i18n.NewLocalizer(i18nBundle, lang)
+}
+
+// I18nForLang retrieves a localized message for a specific language tag with optional params.
+func I18nForLang(lang string, key string, params ...string) string {
+	loc := LocalizerFor(lang)
+	if loc == nil {
+		return key
+	}
+	templateData := createTemplateData(params)
+	msg, err := loc.Localize(&i18n.LocalizeConfig{
+		MessageID:    key,
+		TemplateData: templateData,
+	})
+	if err != nil {
+		return key
+	}
+	return msg
+}
+
 // initTGBotLocalizer initializes the bot localizer with the configured language.
 func initTGBotLocalizer(settingService SettingService) error {
 	botLang, err := settingService.GetTgLang()
@@ -222,7 +246,7 @@ func loadTranslationsFromDisk(bundle *i18n.Bundle) error {
 }
 
 // parseTranslationFiles parses embedded translation files and adds them to the i18n bundle.
-func parseTranslationFiles(i18nFS embed.FS, i18nBundle *i18n.Bundle) error {
+func parseTranslationFiles(i18nFS fs.FS, i18nBundle *i18n.Bundle) error {
 	err := fs.WalkDir(i18nFS, "translation",
 		func(path string, d fs.DirEntry, err error) error {
 			if err != nil {
@@ -233,7 +257,7 @@ func parseTranslationFiles(i18nFS embed.FS, i18nBundle *i18n.Bundle) error {
 				return nil
 			}
 
-			data, err := i18nFS.ReadFile(path)
+			data, err := fs.ReadFile(i18nFS, path)
 			if err != nil {
 				return err
 			}

@@ -78,8 +78,10 @@ func (s *SubClashService) getClash(subId string, host string, legacy bool) (stri
 		if ext.Enable {
 			hasEnabledClient = true
 		}
+		// Count the client even when no proxy comes out of this link, so the
+		// quota header does not shrink because a node is unrepresentable in Clash.
+		seenEmails[ext.Email] = struct{}{}
 		if !ext.Active {
-			seenEmails[ext.Email] = struct{}{}
 			hasInactiveExternal = true
 			continue
 		}
@@ -89,7 +91,6 @@ func (s *SubClashService) getClash(subId string, host string, legacy bool) (stri
 				name = ext.Email
 			}
 			if proxy := s.clashProxyFromExternal(el.Link, name); proxy != nil {
-				seenEmails[ext.Email] = struct{}{}
 				proxies = append(proxies, proxy)
 			}
 		}
@@ -112,7 +113,7 @@ func (s *SubClashService) getClash(subId string, host string, legacy bool) (stri
 	slices.Sort(emails)
 	traffic, _ := subReq.AggregateTrafficByEmails(emails)
 	traffic.Enable = hasEnabledClient
-	header := fmt.Sprintf("upload=%d; download=%d; total=%d; expire=%d", traffic.Up, traffic.Down, traffic.Total, traffic.ExpiryTime/1000)
+	header := subReq.subscriptionUserinfo(traffic)
 
 	if mode, remark := subReq.resolveInfoNodeRemark(subId, emails, traffic, len(proxies) > 0); mode != infoNodeNone {
 		dummyProxy := map[string]any{

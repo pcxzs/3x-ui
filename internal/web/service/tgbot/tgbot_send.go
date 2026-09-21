@@ -197,7 +197,7 @@ func splitMessageLines(block string, limit int) []string {
 
 // SendMsgToTgbot sends a message to the Telegram bot with optional reply markup.
 func (t *Tgbot) SendMsgToTgbot(chatId int64, msg string, replyMarkup ...telego.ReplyMarkup) {
-	if !isRunning {
+	if !t.IsRunning() {
 		return
 	}
 
@@ -306,12 +306,13 @@ func (t *Tgbot) quiet() *Tgbot {
 
 // SendMsgToTgbotAdmins sends a message to all admin Telegram chats.
 func (t *Tgbot) SendMsgToTgbotAdmins(msg string, replyMarkup ...telego.ReplyMarkup) {
+	admins := adminSnapshot()
 	if len(replyMarkup) > 0 {
-		for _, adminId := range adminIds {
+		for _, adminId := range admins {
 			t.SendMsgToTgbot(adminId, msg, replyMarkup[0])
 		}
 	} else {
-		for _, adminId := range adminIds {
+		for _, adminId := range admins {
 			t.SendMsgToTgbot(adminId, msg)
 		}
 	}

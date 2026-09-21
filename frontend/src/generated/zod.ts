@@ -12,9 +12,6 @@ export type ProcessState = z.infer<typeof ProcessStateSchema>;
 export const ProtocolSchema = z.string();
 export type Protocol = z.infer<typeof ProtocolSchema>;
 
-export const SubLinkProviderSchema = z.unknown();
-export type SubLinkProvider = z.infer<typeof SubLinkProviderSchema>;
-
 export const staticEgressResolverSchema = z.string();
 export type staticEgressResolver = z.infer<typeof staticEgressResolverSchema>;
 
@@ -26,9 +23,20 @@ export type transportBits = z.infer<typeof transportBitsSchema>;
 
 export const AllSettingSchema = z.object({
   datepicker: z.string(),
+  discordAdminIds: z.string(),
+  discordBotBackup: z.boolean(),
+  discordBotEnable: z.boolean(),
+  discordBotToken: z.string(),
+  discordChannelId: z.string(),
+  discordCpu: z.number().int().min(0).max(100),
+  discordEnabledEvents: z.string(),
+  discordLang: z.string(),
+  discordMemory: z.number().int().min(0).max(100),
+  discordRunTime: z.string(),
   expireDiff: z.number().int().min(0),
   externalTrafficInformEnable: z.boolean(),
   externalTrafficInformURI: z.string(),
+  happLinkEnable: z.boolean(),
   ipLimitAllowlist: z.string(),
   ldapAutoCreate: z.boolean(),
   ldapAutoDelete: z.boolean(),
@@ -54,6 +62,7 @@ export const AllSettingSchema = z.object({
   outboundDownThreshold: z.number().int().min(1).max(100),
   pageSize: z.number().int().min(0).max(1000),
   panelOutbound: z.string(),
+  realityScanCandidates: z.string(),
   remarkTemplate: z.string(),
   restartXrayOnClientDisable: z.boolean(),
   sessionMaxAge: z.number().int().min(1).max(525600),
@@ -70,6 +79,7 @@ export const AllSettingSchema = z.object({
   smtpTo: z.string(),
   smtpUsername: z.string(),
   subAnnounce: z.string(),
+  subCalendarExpireInclusive: z.boolean(),
   subCertFile: z.string(),
   subClashAutoDetect: z.boolean(),
   subClashEnable: z.boolean(),
@@ -112,6 +122,7 @@ export const AllSettingSchema = z.object({
   subInfoNodeEnable: z.boolean(),
   subJsonAlwaysArray: z.boolean(),
   subJsonAutoDetect: z.boolean(),
+  subJsonDns: z.string(),
   subJsonEnable: z.boolean(),
   subJsonFinalMask: z.string(),
   subJsonMux: z.string(),
@@ -125,6 +136,7 @@ export const AllSettingSchema = z.object({
   subListen: z.string(),
   subPath: z.string(),
   subPort: z.number().int().min(1).max(65535),
+  subProfileMode: z.string(),
   subProfileUrl: z.string(),
   subRoutingRules: z.string(),
   subShowIdentityOnAllLinks: z.boolean(),
@@ -162,10 +174,22 @@ export type AllSetting = z.infer<typeof AllSettingSchema>;
 
 export const AllSettingViewSchema = z.object({
   datepicker: z.string(),
+  discordAdminIds: z.string(),
+  discordBotBackup: z.boolean(),
+  discordBotEnable: z.boolean(),
+  discordBotToken: z.string(),
+  discordChannelId: z.string(),
+  discordCpu: z.number().int().min(0).max(100),
+  discordEnabledEvents: z.string(),
+  discordLang: z.string(),
+  discordMemory: z.number().int().min(0).max(100),
+  discordRunTime: z.string(),
   expireDiff: z.number().int().min(0),
   externalTrafficInformEnable: z.boolean(),
   externalTrafficInformURI: z.string(),
+  happLinkEnable: z.boolean(),
   hasApiToken: z.boolean(),
+  hasDiscordBotToken: z.boolean(),
   hasLdapPassword: z.boolean(),
   hasNordSecret: z.boolean(),
   hasSmtpPassword: z.boolean(),
@@ -197,6 +221,7 @@ export const AllSettingViewSchema = z.object({
   outboundDownThreshold: z.number().int().min(1).max(100),
   pageSize: z.number().int().min(0).max(1000),
   panelOutbound: z.string(),
+  realityScanCandidates: z.string(),
   remarkTemplate: z.string(),
   restartXrayOnClientDisable: z.boolean(),
   sessionMaxAge: z.number().int().min(1).max(525600),
@@ -213,6 +238,7 @@ export const AllSettingViewSchema = z.object({
   smtpTo: z.string(),
   smtpUsername: z.string(),
   subAnnounce: z.string(),
+  subCalendarExpireInclusive: z.boolean(),
   subCertFile: z.string(),
   subClashAutoDetect: z.boolean(),
   subClashEnable: z.boolean(),
@@ -255,6 +281,7 @@ export const AllSettingViewSchema = z.object({
   subInfoNodeEnable: z.boolean(),
   subJsonAlwaysArray: z.boolean(),
   subJsonAutoDetect: z.boolean(),
+  subJsonDns: z.string(),
   subJsonEnable: z.boolean(),
   subJsonFinalMask: z.string(),
   subJsonMux: z.string(),
@@ -268,6 +295,7 @@ export const AllSettingViewSchema = z.object({
   subListen: z.string(),
   subPath: z.string(),
   subPort: z.number().int().min(1).max(65535),
+  subProfileMode: z.string(),
   subProfileUrl: z.string(),
   subRoutingRules: z.string(),
   subShowIdentityOnAllLinks: z.boolean(),
@@ -530,6 +558,11 @@ export const GeodataTokenIssueSchema = z.object({
 });
 export type GeodataTokenIssue = z.infer<typeof GeodataTokenIssueSchema>;
 
+export const HappLinkResultSchema = z.object({
+  encryptedLink: z.string(),
+});
+export type HappLinkResult = z.infer<typeof HappLinkResultSchema>;
+
 export const HistoryOfSeedersSchema = z.object({
   id: z.number().int(),
   seederName: z.string(),
@@ -540,6 +573,7 @@ export const HostSchema = z.object({
   address: z.string(),
   allowInsecure: z.boolean(),
   alpn: z.array(z.string()),
+  cipherSuites: z.string(),
   createdAt: z.number().int(),
   echConfigList: z.string(),
   excludeFromSubTypes: z.array(z.string()),
@@ -577,6 +611,7 @@ export type Host = z.infer<typeof HostSchema>;
 export const HostGroupSchema = z.object({
   allowInsecure: z.boolean(),
   alpn: z.array(z.string()),
+  cipherSuites: z.string(),
   echConfigList: z.string(),
   excludeFromSubTypes: z.array(z.string()),
   finalMask: z.string(),
